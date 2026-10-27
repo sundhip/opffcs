@@ -116,6 +116,14 @@ export const ResultsBrowser: React.FC = () => {
     return map;
   }, [courses]);
 
+  const courseCreditsMap = useMemo(() => {
+    const map: Record<string, number> = {};
+    courses.forEach((c) => {
+      map[c.code] = c.credits;
+    });
+    return map;
+  }, [courses]);
+
   // Extract all timetables from result
   const rawTimetables = useMemo(() => {
     return generationResult?.timetables || [];
@@ -697,6 +705,7 @@ export const ResultsBrowser: React.FC = () => {
         <WeeklyTimetable
           timeline={currentTimetable.per_day_timeline}
           courseTitles={courseTitlesMap}
+          courseCredits={courseCreditsMap}
           timetableObj={currentTimetable}
           title={`Conflict-Free Timetable (ID: ${currentTimetable.timetable_id})`}
           subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")}`}

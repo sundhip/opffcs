@@ -44,9 +44,33 @@ describe("WeeklyTimetable Rendering", () => {
           course_code: "BACSE204",
           faculty_name: "Dr. Alan Turing",
           venue: "SJTG01"
+        },
+        {
+          day: "MON",
+          start_time: "14:00",
+          end_time: "15:40",
+          start_min: 840,
+          end_min: 940,
+          kind: "lab",
+          slot_label: "L31+L32",
+          course_code: "BACSE204",
+          faculty_name: "Dr. Alan Turing",
+          venue: "SJL01"
         }
       ],
       TUE: [
+        {
+          day: "TUE",
+          start_time: "08:00",
+          end_time: "08:50",
+          start_min: 480,
+          end_min: 530,
+          kind: "theory",
+          slot_label: "B1",
+          course_code: "BACSE205",
+          faculty_name: "Dr. Nikola Tesla",
+          venue: "SJTG02"
+        },
         {
           day: "TUE",
           start_time: "14:00",
@@ -77,13 +101,15 @@ describe("WeeklyTimetable Rendering", () => {
     expect(screen.getAllByText("BACSE204").length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText("BACSE205").length).toBeGreaterThanOrEqual(1);
 
-    // Enrolled Courses Summary Table
+    // Enrolled Courses Summary Table with separate Theory and Lab rows
     expect(screen.getByText("Enrolled Courses Summary")).toBeInTheDocument();
-    expect(screen.getByText("Software Engineering")).toBeInTheDocument();
-    expect(screen.getByText("AI & ML")).toBeInTheDocument();
-    expect(screen.getByText("Dr. Alan Turing")).toBeInTheDocument();
-    expect(screen.getByText("Dr. Nikola Tesla")).toBeInTheDocument();
-    expect(screen.getByText("8")).toBeInTheDocument(); // 4 + 4 = 8 total credits
+    expect(screen.getAllByText("Software Engineering").length).toBe(2);
+    expect(screen.getAllByText("AI & ML").length).toBe(2);
+    expect(screen.getAllByText("theory").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("lab").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Dr. Alan Turing").length).toBe(2);
+    expect(screen.getAllByText("Dr. Nikola Tesla").length).toBe(2);
+    expect(screen.getByText("8")).toBeInTheDocument(); // (3+1) + (3+1) = 8 total credits
   });
 
   it("can toggle between VIT Slot Matrix and Quick Visualization (Timeline) mode", () => {

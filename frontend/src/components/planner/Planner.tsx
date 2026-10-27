@@ -37,6 +37,26 @@ const ALL_TIME_OPTIONS = [
   { label: "19:30", min: 1170 }
 ];
 
+const KNOWN_COURSE_CREDITS: Record<string, number> = {
+  BASTS102: 1,
+  BAHSM100: 3,
+  ANCILLARY: 3,
+  BACSE204: 4,
+  BACSE205: 4,
+  BAMAT205: 4,
+  BACSE324: 4,
+  BACSE339: 4,
+  BACSE345: 4,
+  BAMGT213: 3,
+  BAMGT215: 3,
+  BAMGT217: 3,
+  BAHUM204: 3,
+  BAHUM205: 3,
+  BAHUM203: 3,
+  BAMGT221: 3,
+  BAHUM202: 3
+};
+
 export const Planner: React.FC = () => {
   const {
     courses,
@@ -76,7 +96,7 @@ export const Planner: React.FC = () => {
   const totalSelectedCredits = useMemo(() => {
     return selectedCourseCodes.reduce((sum, code) => {
       const c = courses.find((item) => item.code === code);
-      return sum + (c ? c.credits : 0);
+      return sum + (c?.credits || KNOWN_COURSE_CREDITS[code] || 3);
     }, 0);
   }, [courses, selectedCourseCodes]);
 

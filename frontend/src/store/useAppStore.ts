@@ -177,10 +177,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     const nextConfigs = { ...state.courseConfigs };
     if (!isSelected && !nextConfigs[courseCode]) {
       const course = state.courses.find((c) => c.code === courseCode);
+      const hasLab = course ? Boolean(course.has_lab) : ["BACSE204", "BACSE205", "BACSE324", "BACSE339", "BACSE345"].includes(courseCode);
       nextConfigs[courseCode] = {
         course_code: courseCode,
         include_theory: course ? (course.has_theory ?? true) : true,
-        include_lab: course ? (course.has_lab ?? false) : false,
+        include_lab: hasLab,
         allowed_theory_faculty: [],
         blocked_theory_faculty: [],
         allowed_lab_faculty: [],
@@ -315,10 +316,12 @@ export const useAppStore = create<AppState>((set, get) => ({
 
     try {
       const coursesPayload = state.selectedCourseCodes.map((code) => {
+        const course = state.courses.find((c) => c.code === code);
+        const hasLabDefault = course ? Boolean(course.has_lab) : ["BACSE204", "BACSE205", "BACSE324", "BACSE339", "BACSE345"].includes(code);
         const cfg = state.courseConfigs[code] || {
           course_code: code,
           include_theory: true,
-          include_lab: false,
+          include_lab: hasLabDefault,
           allowed_theory_faculty: [],
           blocked_theory_faculty: [],
           allowed_lab_faculty: [],
@@ -327,8 +330,8 @@ export const useAppStore = create<AppState>((set, get) => ({
         };
         return {
           course_code: code,
-          include_theory: cfg.include_theory,
-          include_lab: cfg.include_lab,
+          include_theory: cfg.include_theory ?? true,
+          include_lab: cfg.include_lab ?? hasLabDefault,
           allowed_theory_faculty: cfg.allowed_theory_faculty,
           blocked_theory_faculty: cfg.blocked_theory_faculty,
           allowed_lab_faculty: cfg.allowed_lab_faculty,

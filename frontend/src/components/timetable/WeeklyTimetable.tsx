@@ -38,7 +38,33 @@ const DAY_LABELS: Record<string, string> = {
   FRI: "Friday"
 };
 
-// Known course credits fallback
+// Known course credits and theory/lab split structure
+export interface CourseCreditStructure {
+  theory: number;
+  lab: number;
+  total: number;
+}
+
+export const COURSE_CREDIT_STRUCTURE: Record<string, CourseCreditStructure> = {
+  BASTS102: { theory: 1, lab: 0, total: 1 },
+  BAHSM100: { theory: 3, lab: 0, total: 3 },
+  ANCILLARY: { theory: 3, lab: 0, total: 3 },
+  BAMGT213: { theory: 3, lab: 0, total: 3 },
+  BAMGT215: { theory: 3, lab: 0, total: 3 },
+  BAMGT217: { theory: 3, lab: 0, total: 3 },
+  BAHUM204: { theory: 3, lab: 0, total: 3 },
+  BAHUM205: { theory: 3, lab: 0, total: 3 },
+  BAHUM203: { theory: 3, lab: 0, total: 3 },
+  BAMGT221: { theory: 3, lab: 0, total: 3 },
+  BAHUM202: { theory: 3, lab: 0, total: 3 },
+  BAMAT205: { theory: 4, lab: 0, total: 4 },
+  BACSE204: { theory: 3, lab: 1, total: 4 },
+  BACSE205: { theory: 3, lab: 1, total: 4 },
+  BACSE324: { theory: 3, lab: 1, total: 4 },
+  BACSE339: { theory: 3, lab: 1, total: 4 },
+  BACSE345: { theory: 3, lab: 1, total: 4 }
+};
+
 const KNOWN_COURSE_CREDITS: Record<string, number> = {
   BASTS102: 1,
   BAHSM100: 3,
@@ -151,63 +177,105 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
   const [viewMode, setViewMode] = useState<"matrix" | "timeline">("matrix");
   const [activePopover, setActivePopover] = useState<MeetingBlock | null>(null);
 
-  // Group all enrolled course offerings for the summary table
+  // Group all enrolled course offerings and split into separate Theory & Lab rows
   const enrolledCoursesSummary = useMemo(() => {
-    const map: Record<
+    const courseMap: Record<
       string,
       {
-        courseCode: string;
-        courseTitle: string;
-        facultyName: string;
-        theorySlots: Set<string>;
-        labSlots: Set<string>;
-        venues: Set<string>;
-        credits: number;
+        theory: {
+          slots: Set<string>;
+          faculty: string;
+          venues: Set<string>;
+        } | null;
+        lab: {
+          slots: Set<string>;
+          faculty: string;
+          venues: Set<string>;
+        } | null;
       }
     > = {};
 
     Object.entries(timeline).forEach(([_, blocks]) => {
       blocks.forEach((b) => {
         const cc = b.course_code;
-        if (!map[cc]) {
-          const cred =
-            courseCredits[cc] ||
-            KNOWN_COURSE_CREDITS[cc] ||
-            (cc.startsWith("BASTS") ? 1 : 4);
-
-          map[cc] = {
-            courseCode: cc,
-            courseTitle: courseTitles[cc] || cc,
-            facultyName: b.faculty_name || "Faculty",
-            theorySlots: new Set(),
-            labSlots: new Set(),
-            venues: new Set(),
-            credits: cred
-          };
+        if (!courseMap[cc]) {
+          courseMap[cc] = { theory: null, lab: null };
         }
-
-        if (b.kind === "theory") {
-          b.slot_label.split("+").forEach((s) => map[cc].theorySlots.add(s.trim()));
+        const isLab = b.kind === "lab" || b.slot_label.trim().toUpperCase().startsWith("L");
+        if (isLab) {
+          if (!courseMap[cc].lab) {
+            courseMap[cc].lab = {
+              slots: new Set(),
+              faculty: b.faculty_name || "Faculty",
+              venues: new Set()
+            };
+          }
+          b.slot_label.split("+").forEach((s) => courseMap[cc].lab!.slots.add(s.trim()));
+          if (b.venue) courseMap[cc].lab!.venues.add(b.venue);
         } else {
-          b.slot_label.split("+").forEach((s) => map[cc].labSlots.add(s.trim()));
+          if (!courseMap[cc].theory) {
+            courseMap[cc].theory = {
+              slots: new Set(),
+              faculty: b.faculty_name || "Faculty",
+              venues: new Set()
+            };
+          }
+          b.slot_label.split("+").forEach((s) => courseMap[cc].theory!.slots.add(s.trim()));
+          if (b.venue) courseMap[cc].theory!.venues.add(b.venue);
         }
-        if (b.venue) map[cc].venues.add(b.venue);
       });
     });
 
-    return Object.values(map).map((c) => {
-      const parts: string[] = [];
-      if (c.theorySlots.size > 0) parts.push(Array.from(c.theorySlots).join("+"));
-      if (c.labSlots.size > 0) parts.push(Array.from(c.labSlots).join("+"));
-      return {
-        courseCode: c.courseCode,
-        courseTitle: c.courseTitle,
-        facultyName: c.facultyName,
-        slotString: parts.join(" / ") || "TBA",
-        venue: Array.from(c.venues).join(", ") || "TBA",
-        credits: c.credits
+    const rows: {
+      id: string;
+      courseCode: string;
+      courseTitle: string;
+      facultyName: string;
+      slotString: string;
+      venue: string;
+      credits: number;
+      kind: "theory" | "lab";
+    }[] = [];
+
+    Object.keys(courseMap).sort().forEach((cc) => {
+      const data = courseMap[cc];
+      const struct = COURSE_CREDIT_STRUCTURE[cc] || {
+        theory: (courseCredits[cc] && courseCredits[cc] <= 3) ? courseCredits[cc] : (cc.startsWith("BASTS") ? 1 : 3),
+        lab: 1,
+        total: courseCredits[cc] || 4
       };
+      const title = courseTitles[cc] || cc;
+
+      // 1. Lab row (matching reference layout)
+      if (data.lab && data.lab.slots.size > 0) {
+        rows.push({
+          id: `${cc}-lab`,
+          courseCode: cc,
+          courseTitle: title,
+          facultyName: data.lab.faculty,
+          slotString: Array.from(data.lab.slots).join("+"),
+          venue: Array.from(data.lab.venues).join(", ") || "TBA",
+          credits: struct.lab,
+          kind: "lab"
+        });
+      }
+
+      // 2. Theory row
+      if (data.theory && data.theory.slots.size > 0) {
+        rows.push({
+          id: `${cc}-theory`,
+          courseCode: cc,
+          courseTitle: title,
+          facultyName: data.theory.faculty,
+          slotString: Array.from(data.theory.slots).join("+"),
+          venue: Array.from(data.theory.venues).join(", ") || "TBA",
+          credits: struct.theory,
+          kind: "theory"
+        });
+      }
     });
+
+    return rows;
   }, [timeline, courseTitles, courseCredits]);
 
   const totalRegisteredCredits = useMemo(() => {
@@ -481,11 +549,28 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                 </thead>
                 <tbody className="divide-y divide-slate-800/80">
                   {enrolledCoursesSummary.map((item) => (
-                    <tr key={item.courseCode} className="hover:bg-slate-900/50 transition">
-                      <td className="py-3 px-4 font-mono font-bold text-indigo-300">
-                        <span className="px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/60">
-                          {item.slotString}
-                        </span>
+                    <tr key={item.id} className="hover:bg-slate-900/50 transition">
+                      <td className="py-3 px-4 font-mono font-bold">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`px-2 py-0.5 rounded border text-xs ${
+                              item.kind === "lab"
+                                ? "bg-emerald-950/80 border-emerald-800/60 text-emerald-300"
+                                : "bg-indigo-950/80 border-indigo-800/60 text-indigo-300"
+                            }`}
+                          >
+                            {item.slotString}
+                          </span>
+                          <span
+                            className={`text-[10px] font-semibold px-1.5 py-0.2 rounded uppercase ${
+                              item.kind === "lab"
+                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                : "bg-indigo-500/20 text-indigo-300 border border-indigo-500/30"
+                            }`}
+                          >
+                            {item.kind}
+                          </span>
+                        </div>
                       </td>
                       <td className="py-3 px-4 font-mono font-bold text-slate-100">{item.courseCode}</td>
                       <td className="py-3 px-4 font-medium text-slate-200">{item.courseTitle}</td>
