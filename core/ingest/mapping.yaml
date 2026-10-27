@@ -1,0 +1,99 @@
+# Ingestion schema mappings for VIT FFCS Excel files
+
+files:
+  subject_teachers_slots_reviews_corrected_v2.xlsx:
+    description: "Curated semester course offerings with faculty, slots, timings, and reviews"
+    sheet_mode: "per_course" # Each sheet is one course
+    has_header: true
+    header_row: 1
+    columns:
+      course_code: "Course Code"
+      course_title: "Subject"
+      faculty_name: "Teacher Name"
+      theory_slot: "Theory Slot"
+      theory_day: "Theory Day"
+      theory_timing: "Theory Timing"
+      lab_slot: "Lab Slot"
+      lab_day: "Lab Day"
+      lab_timing: "Lab Timing"
+      review: "Reviews / Ratings"
+      venue: null
+
+  ffcs__4__1_.xlsx:
+    description: "Master curriculum export with Batch 2025 catalog and draft course offering sheets"
+    sheet_mode: "mixed"
+    has_header: true
+    header_row: 1
+    sheets:
+      "2025":
+        skip: true # Curriculum reference catalog only, not active offerings
+      "cloud":
+        columns:
+          batch: 0
+          course_code: 1
+          course_title: 2
+          credits_l: 3
+          credits_t: 4
+          credits_p: 5
+          credits_j: 6
+          credits_c: 7
+          faculty_name: 8
+          theory_slot: 9
+          venue: 10
+          lab_slot: 11
+      "software":
+        columns:
+          batch: 0
+          course_code: 1
+          course_title: 2
+          credits_l: 3
+          credits_t: 4
+          credits_p: 5
+          credits_j: 6
+          credits_c: 7
+          faculty_name: 8
+          theory_slot: 9
+          venue: 10
+          lab_slot: 11
+      "AI ML":
+        columns:
+          batch: 0
+          course_code: 1
+          course_title: 2
+          credits_l: 3
+          credits_t: 4
+          credits_p: 5
+          credits_j: 6
+          credits_c: 7
+          faculty_name: 8
+          theory_slot: 9
+          venue: 10
+          lab_slot: 11
+      "maths":
+        columns:
+          batch: 0
+          course_code: 1
+          course_title: 2
+          credits_l: 3
+          credits_t: 4
+          credits_p: 5
+          credits_j: 6
+          credits_c: 7
+          faculty_name: 8
+          theory_slot: 9
+          venue: 10
+          lab_slot: 11
+      "embedded":
+        columns:
+          batch: 0
+          course_code: 1
+          course_title: 2
+          credits_l: 3
+          credits_t: 4
+          credits_p: 5
+          credits_j: 6
+          credits_c: 7
+          faculty_name: 8
+          theory_slot: 9
+          venue: 10
+          lab_slot: 11

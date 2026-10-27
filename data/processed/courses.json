@@ -1,0 +1,942 @@
+[
+  {
+    "id": "BASTS102",
+    "code": "BASTS102",
+    "title": "Qualitative and Quantitative Skills Practice II",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "SIXPHRASE(A PT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "ETHNUS (APT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "FACE (APT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAHSM100",
+    "code": "BAHSM100",
+    "title": "Humanities, Social Science and Management",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Humanities, Social Science and ",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHSM100",
+          "col_1": "Humanities, Social Science and Management",
+          "col_2": "No matching teacher found",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ANCILLARY",
+    "code": "ANCILLARY",
+    "title": "OPEN ELECTIVE COURSES ANCILLARY",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 2,
+        "raw_data": {
+          "col_0": "ANCILLARY",
+          "col_1": "OPEN ELECTIVE COURSES ANCILLARY",
+          "col_2": "No matching teacher found",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BACSE204",
+    "code": "BACSE204",
+    "title": "Software Engineering",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "VIJAYAKUMA R K P",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "OM KUMAR C U",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "SIVABALAKRI SHNAN M",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "PRADEEP K",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "NEELANARAY ANAN V",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "V. SAKTHIVEL",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BACSE205",
+    "code": "BACSE205",
+    "title": "Fundamentals of Artificial Intelligence and Machine Learning",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "RAJESH M",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "PRIYADARSHI NI J",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "SRIDHAR R",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "DOMINIC SAVIO M",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "KAVITHA J C",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "KAVIPRIYA G",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "PANDIYARAJ U V",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "SELLAM V",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "TAHIR MUJTABA",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "RABINDRA KUMAR SINGH",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "LAKSHMI HARIKA PALIVELA",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAMAT205",
+    "code": "BAMAT205",
+    "title": "Discrete Mathematics and Linear Algebra",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "VIDHYA V",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "KALYAN MANNA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "SAURABH CHANDRA MAURY",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "ASHIS BERA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "SAGITHYA T",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "MEGALA M",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "FATHIMA SAFIKAA S N",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "OM NAMHA SHIVAY",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "UMA MAHESWARI S",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "DHANASEKA R S",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "RAJESH KUMAR MOHAPATRA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 13,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "MUTHUNAG AI",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 14,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "RUPCHAND SUTRADHAR",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 15,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "KARTHICK G",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 16,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "PULAK KONAR",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BACSE324",
+    "code": "BACSE324",
+    "title": "Embedded Systems Architecture",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "GUGA PRIYA G",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "ABRAHAM SUDHARSON PONRAJ",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "CHANTHINI BASKAR",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "KARTHIKEYA N P R",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SINDHUJA M",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "MANIMARAN P",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "MANOJ KUMAR R",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "PRAKASH V",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SRITAMA ROY",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "REVATHI S",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SOFANA REKA S",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BACSE339",
+    "code": "BACSE339",
+    "title": "Distributed Ledger Technology",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SANDHYA P",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "ANUBHA PEARLINE S",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SENTHIL PRAKASH P N",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SARANYA M",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L39+L40",
+          "col_7": "TUE",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BACSE345",
+    "code": "BACSE345",
+    "title": "Cloud Automation Technologies",
+    "credits": null,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "PRABHAKAR AN R",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "PRIYADARSHI NI R R",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "SELVAM D",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "THANIKACHA LAM V",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "MEIGNANAM OORTHI D",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      },
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "BHULAKSHMI BONTHU",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L39+L40",
+          "col_7": "TUE",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,349 @@
+[
+  {
+    "id": "fac_ac3e88496779",
+    "raw_name": "FN",
+    "canonical_name": "FN",
+    "clean_tokens": [
+      "FN"
+    ],
+    "is_placeholder": false,
+    "source_refs": [
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "cloud",
+        "row": 1,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE345",
+          "col_2": "Cloud Automation Technologies",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "A1+TA1",
+          "col_10": "AB3-109",
+          "col_11": "L37+L38",
+          "col_12": "AB3-402",
+          "col_13": "PRABHAKAR AN R\nPRIYADARSHI NI R R\nSELVAM D"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "cloud",
+        "row": 2,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE345",
+          "col_2": "Cloud Automation Technologies",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "A1+TA1",
+          "col_10": "AB3-204",
+          "col_11": "L49+L50",
+          "col_12": "AB3-410",
+          "col_13": "THANIKACHA LAM V\nMEIGNANAM OORTHI D"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "cloud",
+        "row": 3,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE345",
+          "col_2": "Cloud Automation Technologies",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "A1+TA1",
+          "col_10": "AB3-205",
+          "col_11": "L39+L40",
+          "col_12": "AB1-209",
+          "col_13": "BHULAKSHMI BONTHU"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "software",
+        "row": 1,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE204",
+          "col_2": "Software Engineering",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "B1+TB1",
+          "col_10": "AB3-109",
+          "col_11": "L55+L56",
+          "col_12": "AB3-611",
+          "col_13": "VIJAYAKUMA R K P\nOM KUMAR C U"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "software",
+        "row": 2,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE204",
+          "col_2": "Software Engineering",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "B1+TB1",
+          "col_10": "AB3-203",
+          "col_11": "L29+L30",
+          "col_12": "AB3-602",
+          "col_13": "SIVABALAKRI SHNAN M\nPRADEEP K"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "software",
+        "row": 3,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE204",
+          "col_2": "Software Engineering",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "B1+TB1",
+          "col_10": "AB3-206",
+          "col_11": "L57+L58",
+          "col_12": "AB1-209",
+          "col_13": "NEELANARAY ANAN V\nV. SAKTHIVEL"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 1,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE205",
+          "col_2": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "E1+TE1",
+          "col_10": "AB3-103",
+          "col_11": "L43+L44",
+          "col_12": "AB3-611",
+          "col_13": "RAJESH M\nPRIYADARSHI NI J\nSRIDHAR R\nDOMINIC SAVIO M\nKAVITHA J C\nKAVIPRIYA G"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 2,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE205",
+          "col_2": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "E1+TE1",
+          "col_10": "AB3-105",
+          "col_11": "L45+L46",
+          "col_12": "AB3-402",
+          "col_13": "PANDIYARAJ U V\nSELLAM V\nTAHIR MUJTABA"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 3,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE205",
+          "col_2": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "E1+TE1",
+          "col_10": "AB3-107",
+          "col_11": "L33+L34",
+          "col_12": "AB3-202",
+          "col_13": "RABINDRA KUMAR SINGH\nLAKSHMI HARIKA PALIVELA"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 1,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L45+L46",
+          "col_13": "GUGA PRIYA G\nABRAHAM SUDHARSON PONRAJ\nCHANTHINI BASKAR"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 2,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L33+L34",
+          "col_12": "AB1-506A",
+          "col_13": "KARTHIKEYA N P R"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 3,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L57+L58",
+          "col_12": "AB1-213",
+          "col_13": "SINDHUJA M\nMANIMARAN P"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 4,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L43+L44",
+          "col_12": "AB1-213",
+          "col_13": "MANOJ KUMAR R\nPRAKASH V"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 5,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L29+L30",
+          "col_12": "AB1-506A",
+          "col_13": "SRITAMA ROY\nREVATHI S"
+        }
+      },
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "embedded",
+        "row": 6,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BACSE324",
+          "col_2": "Embedded Systems Architecture",
+          "col_3": 3,
+          "col_4": 0,
+          "col_5": 2,
+          "col_6": 0,
+          "col_7": 4,
+          "col_8": "FN",
+          "col_9": "G1+TG1",
+          "col_11": "L55+L56",
+          "col_12": "AB1-213",
+          "col_13": "SOFANA REKA S"
+        }
+      }
+    ]
+  },
+  {
+    "id": "faculty_unassigned",
+    "raw_name": "",
+    "canonical_name": "[Unassigned]",
+    "clean_tokens": [
+      "[Unassigned]"
+    ],
+    "is_placeholder": true,
+    "source_refs": [
+      {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "maths",
+        "row": 1,
+        "raw_data": {
+          "col_0": 2025,
+          "col_1": "BAMAT205",
+          "col_2": "Discrete Mathematics and Linear Algebra",
+          "col_3": 3,
+          "col_4": 1,
+          "col_5": 0,
+          "col_6": 0,
+          "col_7": 4,
+          "col_9": "C1+TC1+TCC1",
+          "col_13": "VIDHYA V\nKALYAN MANNA\nSAURABH CHANDRA MAURY\nASHIS BERA\nSAGITHYA T\nMEGALA M\nFATHIMA SAFIKAA S N\nOM NAMHA SHIVAY\nUMA MAHESWARI S\nDHANASEKA R S\nRAJESH KUMAR MOHAPATRA\nMUTHUNAG AI\nRUPCHAND SUTRADHAR\nKARTHICK G\nPULAK KONAR"
+        }
+      }
+    ]
+  }
+]

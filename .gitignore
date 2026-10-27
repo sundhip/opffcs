@@ -1,0 +1,16 @@
+# Privacy & Security
+data/privacy_salt.txt
+.salt
+.secrets/
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary / Scratch
+scratch/extracted_chats/
+*.log

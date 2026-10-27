@@ -1,0 +1,2309 @@
+[
+  {
+    "id": "off_BASTS102_fac_e312bb104b4e_F1_TF1_",
+    "course_code": "BASTS102",
+    "faculty_id": "fac_e312bb104b4e",
+    "faculty_name": "SIXPHRASE(A PT)",
+    "theory_slots": [
+      "F1",
+      "TF1"
+    ],
+    "raw_theory_slot": "F1+TF1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "SIXPHRASE(A PT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BASTS102_fac_c5b4020c350a_F1_TF1_",
+    "course_code": "BASTS102",
+    "faculty_id": "fac_c5b4020c350a",
+    "faculty_name": "ETHNUS (APT)",
+    "theory_slots": [
+      "F1",
+      "TF1"
+    ],
+    "raw_theory_slot": "F1+TF1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "ETHNUS (APT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BASTS102_fac_9324b47c934e_F1_TF1_",
+    "course_code": "BASTS102",
+    "faculty_id": "fac_9324b47c934e",
+    "faculty_name": "FACE (APT)",
+    "theory_slots": [
+      "F1",
+      "TF1"
+    ],
+    "raw_theory_slot": "F1+TF1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Qualitative and Quantitative Sk",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BASTS102",
+          "col_1": "Qualitative and Quantitative Skills Practice II",
+          "col_2": "FACE (APT)",
+          "col_3": "F1+TF1",
+          "col_4": "MON / FRI",
+          "col_5": "F1: MON 8:55\u20139:45 AM; TF1: FRI 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHSM100_faculty_unassigned_D1_TD1_",
+    "course_code": "BAHSM100",
+    "faculty_id": "faculty_unassigned",
+    "faculty_name": "[Unassigned]",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Humanities, Social Science and ",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHSM100",
+          "col_1": "Humanities, Social Science and Management",
+          "col_2": "No matching teacher found",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_ANCILLARY_faculty_unassigned_D1_TD1_",
+    "course_code": "ANCILLARY",
+    "faculty_id": "faculty_unassigned",
+    "faculty_name": "[Unassigned]",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 2,
+        "raw_data": {
+          "col_0": "ANCILLARY",
+          "col_1": "OPEN ELECTIVE COURSES ANCILLARY",
+          "col_2": "No matching teacher found",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_13088fa066c6_B1_TB1_L55_L56",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_13088fa066c6",
+    "faculty_name": "VIJAYAKUMAR K P",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L55",
+        "L56"
+      ],
+      "raw_slot": "L55+L56",
+      "day": "FRI",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L55+L56",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1224719659679537497954986628210478841855978772988968634677011659404031634832019938764440702171960500131477776348322428684950074394679422216023742653226066685385553165428286930319848019102522437867143168,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "VIJAYAKUMA R K P",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_921e5c52967a_B1_TB1_L55_L56",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_921e5c52967a",
+    "faculty_name": "OM KUMAR C U",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L55",
+        "L56"
+      ],
+      "raw_slot": "L55+L56",
+      "day": "FRI",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L55+L56",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1224719659679537497954986628210478841855978772988968634677011659404031634832019938764440702171960500131477776348322428684950074394679422216023742653226066685385553165428286930319848019102522437867143168,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "OM KUMAR C U",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_20d8e0954cbc_B1_TB1_L29_L30",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_20d8e0954cbc",
+    "faculty_name": "SIVABALAKRISHNAN M",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L29",
+        "L30"
+      ],
+      "raw_slot": "L29+L30",
+      "day": "FRI",
+      "start_time": "11:40",
+      "end_time": "13:20",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L29+L30",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 4562436266539758063685099140593703247070233423221739510756913793520220212284963701887759937055770815269806809271831145784408449244072693808609126252253839456985861886885855935273590788265607168,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "SIVABALAKRI SHNAN M",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_b37cfa0cc212_B1_TB1_L29_L30",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_b37cfa0cc212",
+    "faculty_name": "PRADEEP K",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L29",
+        "L30"
+      ],
+      "raw_slot": "L29+L30",
+      "day": "FRI",
+      "start_time": "11:40",
+      "end_time": "13:20",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L29+L30",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 4562436266539758063685099140593703247070233423221739510756913793520220212284963701887759937055770815269806809271831145784408449244072693808609126252253839456985861886885855935273590788265607168,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "PRADEEP K",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_3394c2423559_B1_TB1_L57_L58",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_3394c2423559",
+    "faculty_name": "NEELANARAYANAN V",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L57",
+        "L58"
+      ],
+      "raw_slot": "L57+L58",
+      "day": "FRI",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L57+L58",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987508151346502141120314644670469146438785829388994065084148636952885422289073413444433210433927137623251563009498962404666291290157155004448768,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "NEELANARAY ANAN V",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE204_fac_ae4447c49c47_B1_TB1_L57_L58",
+    "course_code": "BACSE204",
+    "faculty_id": "fac_ae4447c49c47",
+    "faculty_name": "V. SAKTHIVEL",
+    "theory_slots": [
+      "B1",
+      "TB1"
+    ],
+    "raw_theory_slot": "B1+TB1",
+    "lab_session": {
+      "slots": [
+        "L57",
+        "L58"
+      ],
+      "raw_slot": "L57+L58",
+      "day": "FRI",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L57+L58",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987508151346502141120314644670469146438785829388994065084148636952885422289073413444433210433927137623251563009498962404666291290157155004448768,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Software Engineering",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE204",
+          "col_1": "Software Engineering",
+          "col_2": "V. SAKTHIVEL",
+          "col_3": "B1+TB1",
+          "col_4": "TUE / MON",
+          "col_5": "B1: TUE 8:00\u20138:50 AM; TB1: MON 10:45\u201311:35 AM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_5aedf2458fc0_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_5aedf2458fc0",
+    "faculty_name": "RAJESH M",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "RAJESH M",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_28406d22b302_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_28406d22b302",
+    "faculty_name": "PRIYADARSHINI J",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "PRIYADARSHI NI J",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_35648db19c1c_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_35648db19c1c",
+    "faculty_name": "SRIDHAR R",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "SRIDHAR R",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_87b0702fb852_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_87b0702fb852",
+    "faculty_name": "DOMINIC SAVIO M",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "DOMINIC SAVIO M",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_6ee18e020f02_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_6ee18e020f02",
+    "faculty_name": "KAVITHA J C",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "KAVITHA J C",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_ba6fb39fb3f9_E1_TE1_L43_L44",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_ba6fb39fb3f9",
+    "faculty_name": "KAVIPRIYA G",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "KAVIPRIYA G",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_612d89c653ab_E1_TE1_L45_L46",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_612d89c653ab",
+    "faculty_name": "PANDIYARAJU V",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "PANDIYARAJ U V",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_dad6e72e8218_E1_TE1_L45_L46",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_dad6e72e8218",
+    "faculty_name": "SELLAM V",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "SELLAM V",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_a748b31379ab_E1_TE1_L45_L46",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_a748b31379ab",
+    "faculty_name": "TAHIR MUJTABA",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "TAHIR MUJTABA",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_7aa6dbb5b0f7_E1_TE1_L33_L34",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_7aa6dbb5b0f7",
+    "faculty_name": "RABINDRA KUMAR SINGH",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L33",
+        "L34"
+      ],
+      "raw_slot": "L33+L34",
+      "day": "MON",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L33+L34",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918967271984385600873577967573989837091139930220503214890846697511749452500686496084013429470676418587492351803639463936,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "RABINDRA KUMAR SINGH",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE205_fac_8cc9e21d7e03_E1_TE1_L33_L34",
+    "course_code": "BACSE205",
+    "faculty_id": "fac_8cc9e21d7e03",
+    "faculty_name": "LAKSHMI HARIKA PALIVELA",
+    "theory_slots": [
+      "E1",
+      "TE1"
+    ],
+    "raw_theory_slot": "E1+TE1",
+    "lab_session": {
+      "slots": [
+        "L33",
+        "L34"
+      ],
+      "raw_slot": "L33+L34",
+      "day": "MON",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L33+L34",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 253019000706985938343894079003099172865313362234423156548918967271984385600873577967573989837091139930220503214890846697511749452500686496084013429470676418587492351803639463936,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Fundamentals of Artificial Inte",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BACSE205",
+          "col_1": "Fundamentals of Artificial Intelligence and Machine Learning",
+          "col_2": "LAKSHMI HARIKA PALIVELA",
+          "col_3": "E1+TE1",
+          "col_4": "TUE / THU",
+          "col_5": "E1: TUE 9:50\u201310:40 AM; TE1: THU 10:45\u201311:35 AM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_4d1c9449366e_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_4d1c9449366e",
+    "faculty_name": "VIDHYA V",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "VIDHYA V",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_8c1000c932e6_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_8c1000c932e6",
+    "faculty_name": "KALYAN MANNA",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "KALYAN MANNA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_cd06b09d22ee_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_cd06b09d22ee",
+    "faculty_name": "SAURABH CHANDRA MAURY",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "SAURABH CHANDRA MAURY",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_37b69d32f686_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_37b69d32f686",
+    "faculty_name": "ASHIS BERA",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "ASHIS BERA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_95f6283563f7_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_95f6283563f7",
+    "faculty_name": "SAGITHYA T",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "SAGITHYA T",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_bfca3a1c8637_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_bfca3a1c8637",
+    "faculty_name": "MEGALA M",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "MEGALA M",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_f111202b5a4a_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_f111202b5a4a",
+    "faculty_name": "FATHIMA SAFIKAA S N",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "FATHIMA SAFIKAA S N",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_0e1749d4aaa4_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_0e1749d4aaa4",
+    "faculty_name": "OM NAMHA SHIVAY",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "OM NAMHA SHIVAY",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_b206ccd7fb63_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_b206ccd7fb63",
+    "faculty_name": "UMA MAHESWARI S",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "UMA MAHESWARI S",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_074e6f74394d_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_074e6f74394d",
+    "faculty_name": "DHANASEKAR S",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "DHANASEKA R S",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_a48a3947a7cb_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_a48a3947a7cb",
+    "faculty_name": "RAJESH KUMAR MOHAPATRA",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "RAJESH KUMAR MOHAPATRA",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_ef02551caeeb_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_ef02551caeeb",
+    "faculty_name": "MUTHUNAG AI",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 13,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "MUTHUNAG AI",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_90f486c05e27_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_90f486c05e27",
+    "faculty_name": "RUPCHAND SUTRADHAR",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 14,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "RUPCHAND SUTRADHAR",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_a9f380a37719_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_a9f380a37719",
+    "faculty_name": "KARTHICK G",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 15,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "KARTHICK G",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMAT205_fac_802c2e7102a0_C1_TC1_TCC1_",
+    "course_code": "BAMAT205",
+    "faculty_id": "fac_802c2e7102a0",
+    "faculty_name": "PULAK KONAR",
+    "theory_slots": [
+      "C1",
+      "TC1",
+      "TCC1"
+    ],
+    "raw_theory_slot": "C1+TC1+TCC1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Discrete Mathematics and Linear",
+        "row": 16,
+        "raw_data": {
+          "col_0": "BAMAT205",
+          "col_1": "Discrete Mathematics and Linear Algebra",
+          "col_2": "PULAK KONAR",
+          "col_3": "C1+TC1+TCC1",
+          "col_4": "WED / TUE / THU",
+          "col_5": "C1: WED 8:00\u20138:50 AM; TC1: TUE 10:45\u201311:35 AM; TCC1: THU 11:40 AM\u201312:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_01f7855ffce3_G1_TG1_L45_L46",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_01f7855ffce3",
+    "faculty_name": "GUGA PRIYA G",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "GUGA PRIYA G",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_615716b47d6a_G1_TG1_L45_L46",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_615716b47d6a",
+    "faculty_name": "ABRAHAM SUDHARSON PONRAJ",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "ABRAHAM SUDHARSON PONRAJ",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_d3e7b5ab5a89_G1_TG1_L45_L46",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_d3e7b5ab5a89",
+    "faculty_name": "CHANTHINI BASKAR",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L45",
+        "L46"
+      ],
+      "raw_slot": "L45+L46",
+      "day": "WED",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L45+L46",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "CHANTHINI BASKAR",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L45+L46",
+          "col_7": "WED",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_2f26c5c4f3e5_G1_TG1_L33_L34",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_2f26c5c4f3e5",
+    "faculty_name": "KARTHIKEYAN P R",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L33",
+        "L34"
+      ],
+      "raw_slot": "L33+L34",
+      "day": "MON",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L33+L34",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974338045328350043432873201607166920088042749726320754815471360388836012380519053908632816567250097135796245016256847506571264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "KARTHIKEYA N P R",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L33+L34",
+          "col_7": "MON",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_5e029f10605d_G1_TG1_L57_L58",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_5e029f10605d",
+    "faculty_name": "SINDHUJA M",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L57",
+        "L58"
+      ],
+      "raw_slot": "L57+L58",
+      "day": "FRI",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L57+L58",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987555715695333755769469907750123706452014073378188735699492147055316372048482531958079361480276016212593054938525555522002185626409511644299264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SINDHUJA M",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_7674d41db59a_G1_TG1_L57_L58",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_7674d41db59a",
+    "faculty_name": "MANIMARAN P",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L57",
+        "L58"
+      ],
+      "raw_slot": "L57+L58",
+      "day": "FRI",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L57+L58",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987555715695333755769469907750123706452014073378188735699492147055316372048482531958079361480276016212593054938525555522002185626409511644299264,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "MANIMARAN P",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L57+L58",
+          "col_7": "FRI",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_a511c113575c_G1_TG1_L43_L44",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_a511c113575c",
+    "faculty_name": "MANOJ KUMAR R",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974338045330812666471605273784101132204821128799801211144192901897262910010993439987142367095085877685928871911000971793137664,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "MANOJ KUMAR R",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_eb973d58aff4_G1_TG1_L43_L44",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_eb973d58aff4",
+    "faculty_name": "PRAKASH V",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L43",
+        "L44"
+      ],
+      "raw_slot": "L43+L44",
+      "day": "WED",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L43+L44",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 47587584957081974338045330812666471605273784101132204821128799801211144192901897262910010993439987142367095085877685928871911000971793137664,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "PRAKASH V",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L43+L44",
+          "col_7": "WED",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_967685314998_G1_TG1_L29_L30",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_967685314998",
+    "faculty_name": "SRITAMA ROY",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L29",
+        "L30"
+      ],
+      "raw_slot": "L29+L30",
+      "day": "FRI",
+      "start_time": "11:40",
+      "end_time": "13:20",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L29+L30",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 4562436266539758063685099140593703247070233423221739558321262625134869367548043356447773165299760009940422152781933576734167858362586339959655475130843180948914888480003191829609843144905457664,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SRITAMA ROY",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_e524d3bed355_G1_TG1_L29_L30",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_e524d3bed355",
+    "faculty_name": "REVATHI S",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L29",
+        "L30"
+      ],
+      "raw_slot": "L29+L30",
+      "day": "FRI",
+      "start_time": "11:40",
+      "end_time": "13:20",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L29+L30",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 4562436266539758063685099140593703247070233423221739558321262625134869367548043356447773165299760009940422152781933576734167858362586339959655475130843180948914888480003191829609843144905457664,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "REVATHI S",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L29+L30",
+          "col_7": "FRI",
+          "col_8": "11:40 AM\u20131:20 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE324_fac_43695d43afe9_G1_TG1_L55_L56",
+    "course_code": "BACSE324",
+    "faculty_id": "fac_43695d43afe9",
+    "faculty_name": "SOFANA REKA S",
+    "theory_slots": [
+      "G1",
+      "TG1"
+    ],
+    "raw_theory_slot": "G1+TG1",
+    "lab_session": {
+      "slots": [
+        "L55",
+        "L56"
+      ],
+      "raw_slot": "L55+L56",
+      "day": "FRI",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L55+L56",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1224719659679537497954986628210478841855978772988968634677011706968380466446669094027520356731973728375466971018937772195052505344438831334537388804272415563974894657357313523437183913438774794506993664,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Embedded Systems Architecture",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BACSE324",
+          "col_1": "Embedded Systems Architecture",
+          "col_2": "SOFANA REKA S",
+          "col_3": "G1+TG1",
+          "col_4": "TUE / MON",
+          "col_5": "G1: TUE 8:55\u20139:45 AM; TG1: MON 11:40 AM\u201312:30 PM",
+          "col_6": "L55+L56",
+          "col_7": "FRI",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE339_fac_82beb6646fa2_A1_TA1_L37_L38",
+    "course_code": "BACSE339",
+    "faculty_id": "fac_82beb6646fa2",
+    "faculty_name": "SANDHYA P",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L37",
+        "L38"
+      ],
+      "raw_slot": "L37+L38",
+      "day": "TUE",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L37+L38",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SANDHYA P",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE339_fac_a8b9854f55f6_A1_TA1_L37_L38",
+    "course_code": "BACSE339",
+    "faculty_id": "fac_a8b9854f55f6",
+    "faculty_name": "ANUBHA PEARLINE S",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L37",
+        "L38"
+      ],
+      "raw_slot": "L37+L38",
+      "day": "TUE",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L37+L38",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "ANUBHA PEARLINE S",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE339_fac_c6478be51cf8_A1_TA1_L49_L50",
+    "course_code": "BACSE339",
+    "faculty_id": "fac_c6478be51cf8",
+    "faculty_name": "SENTHIL PRAKASH P N",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L49",
+        "L50"
+      ],
+      "raw_slot": "L49+L50",
+      "day": "THU",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L49+L50",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SENTHIL PRAKASH P N",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE339_fac_aa4b682b2343_A1_TA1_L39_L40",
+    "course_code": "BACSE339",
+    "faculty_id": "fac_aa4b682b2343",
+    "faculty_name": "SARANYA M",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L39",
+        "L40"
+      ],
+      "raw_slot": "L39+L40",
+      "day": "TUE",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L39+L40",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296705795065383953381587466906855271564143890192277645769185165972291375685698559,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Distributed Ledger Technology",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE339",
+          "col_1": "Distributed Ledger Technology",
+          "col_2": "SARANYA M",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L39+L40",
+          "col_7": "TUE",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_81a764554f7c_A1_TA1_L37_L38",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_81a764554f7c",
+    "faculty_name": "PRABHAKARAN R",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L37",
+        "L38"
+      ],
+      "raw_slot": "L37+L38",
+      "day": "TUE",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L37+L38",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "PRABHAKAR AN R",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_c6885cbbfbdc_A1_TA1_L37_L38",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_c6885cbbfbdc",
+    "faculty_name": "PRIYADARSHINI R R",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L37",
+        "L38"
+      ],
+      "raw_slot": "L37+L38",
+      "day": "TUE",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L37+L38",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "PRIYADARSHI NI R R",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_d75c5b97175e_A1_TA1_L37_L38",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_d75c5b97175e",
+    "faculty_name": "SELVAM D",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L37",
+        "L38"
+      ],
+      "raw_slot": "L37+L38",
+      "day": "TUE",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L37+L38",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "SELVAM D",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L37+L38",
+          "col_7": "TUE",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_3da35c283006_A1_TA1_L49_L50",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_3da35c283006",
+    "faculty_name": "THANIKACHALAM V",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L49",
+        "L50"
+      ],
+      "raw_slot": "L49+L50",
+      "day": "THU",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L49+L50",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "THANIKACHA LAM V",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_7bd95f9fe456_A1_TA1_L49_L50",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_7bd95f9fe456",
+    "faculty_name": "MEIGNANAMOORTHI D",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L49",
+        "L50"
+      ],
+      "raw_slot": "L49+L50",
+      "day": "THU",
+      "start_time": "14:00",
+      "end_time": "15:40",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L49+L50",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "MEIGNANAM OORTHI D",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L49+L50",
+          "col_7": "THU",
+          "col_8": "2:00\u20133:40 PM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BACSE345_fac_b48ac6e28950_A1_TA1_L39_L40",
+    "course_code": "BACSE345",
+    "faculty_id": "fac_b48ac6e28950",
+    "faculty_name": "BHULAKSHMI BONTHU",
+    "theory_slots": [
+      "A1",
+      "TA1"
+    ],
+    "raw_theory_slot": "A1+TA1",
+    "lab_session": {
+      "slots": [
+        "L39",
+        "L40"
+      ],
+      "raw_slot": "L39+L40",
+      "day": "TUE",
+      "start_time": "15:50",
+      "end_time": "17:30",
+      "duration_minutes": 100
+    },
+    "raw_lab_slot": "L39+L40",
+    "venue": null,
+    "review_text": null,
+    "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296705795065383953381587466906855271564143890192277645769185165972291375685698559,
+    "source_refs": [
+      {
+        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "sheet": "Cloud Automation Technologies",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BACSE345",
+          "col_1": "Cloud Automation Technologies",
+          "col_2": "BHULAKSHMI BONTHU",
+          "col_3": "A1+TA1",
+          "col_4": "MON / FRI",
+          "col_5": "A1: MON 8:00\u20138:50 AM; TA1: FRI 9:50\u201310:40 AM",
+          "col_6": "L39+L40",
+          "col_7": "TUE",
+          "col_8": "3:50\u20135:30 PM"
+        }
+      }
+    ]
+  }
+]

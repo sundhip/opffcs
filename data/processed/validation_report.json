@@ -1,0 +1,28 @@
+{
+  "reconciliation": {
+    "raw_data_rows": 58,
+    "kept_offerings": 58,
+    "exact_duplicates_removed": 0,
+    "rejected_rows": 0,
+    "reconciled_sum": 58,
+    "difference": 0,
+    "status": "PASS"
+  },
+  "summary_counts": {
+    "distinct_courses": 9,
+    "distinct_faculty": 57,
+    "kept_offerings": 58,
+    "exact_duplicates": 0,
+    "rejected_rows": 0
+  },
+  "duplicates": [],
+  "near_duplicates": [],
+  "name_variants": [
+    {
+      "name_a": "PRIYADARSHINI J",
+      "name_b": "PRIYADARSHINI R R",
+      "similarity": 0.875
+    }
+  ],
+  "rejected_rows": []
+}

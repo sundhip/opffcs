@@ -1,0 +1,3252 @@
+{
+  "metadata": {
+    "name": "VIT Chennai Campus Default Slot Matrix",
+    "source_doc": "/docs/04_slot_grid_transcription.md",
+    "source_image": "data/raw/FFCS On The Go Default Table (Timetable).jpg",
+    "total_slots": 102,
+    "total_grid_cells": 116,
+    "days": [
+      "MON",
+      "TUE",
+      "WED",
+      "THU",
+      "FRI"
+    ]
+  },
+  "theory_intervals": [
+    {
+      "period_idx": 0,
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "period_idx": 1,
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "period_idx": 2,
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "period_idx": 3,
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "period_idx": 4,
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "period_idx": 5,
+      "start_time": "12:35",
+      "end_time": "13:25",
+      "start_minute": 755,
+      "end_minute": 805
+    },
+    {
+      "period_idx": 6,
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "period_idx": 7,
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "period_idx": 8,
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "period_idx": 9,
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "period_idx": 10,
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "period_idx": 11,
+      "start_time": "18:35",
+      "end_time": "19:25",
+      "start_minute": 1115,
+      "end_minute": 1165
+    }
+  ],
+  "lab_intervals": [
+    {
+      "period_idx": 0,
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "period_idx": 1,
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "period_idx": 2,
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "period_idx": 3,
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "period_idx": 4,
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "period_idx": 5,
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "period_idx": 6,
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "period_idx": 7,
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "period_idx": 8,
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "period_idx": 9,
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "period_idx": 10,
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "period_idx": 11,
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    }
+  ],
+  "day_table": {
+    "MON": {
+      "theory": [
+        "A1",
+        "F1",
+        "D1",
+        "TB1",
+        "TG1",
+        "S11",
+        "A2",
+        "F2",
+        "D2",
+        "TB2",
+        "TG2",
+        "S3"
+      ],
+      "lab": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5",
+        "L6",
+        "L31",
+        "L32",
+        "L33",
+        "L34",
+        "L35",
+        "L36"
+      ]
+    },
+    "TUE": {
+      "theory": [
+        "B1",
+        "G1",
+        "E1",
+        "TC1",
+        "TAA1",
+        null,
+        "B2",
+        "G2",
+        "E2",
+        "TC2",
+        "TAA2",
+        "S1"
+      ],
+      "lab": [
+        "L7",
+        "L8",
+        "L9",
+        "L10",
+        "L11",
+        "L12",
+        "L37",
+        "L38",
+        "L39",
+        "L40",
+        "L41",
+        "L42"
+      ]
+    },
+    "WED": {
+      "theory": [
+        "C1",
+        "A1",
+        "F1",
+        "TD1",
+        "TBB1",
+        null,
+        "C2",
+        "A2",
+        "F2",
+        "TD2",
+        "TBB2",
+        "S4"
+      ],
+      "lab": [
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L17",
+        "L18",
+        "L43",
+        "L44",
+        "L45",
+        "L46",
+        "L47",
+        "L48"
+      ]
+    },
+    "THU": {
+      "theory": [
+        "D1",
+        "B1",
+        "G1",
+        "TE1",
+        "TCC1",
+        null,
+        "D2",
+        "B2",
+        "G2",
+        "TE2",
+        "TCC2",
+        "S2"
+      ],
+      "lab": [
+        "L19",
+        "L20",
+        "L21",
+        "L22",
+        "L23",
+        "L24",
+        "L49",
+        "L50",
+        "L51",
+        "L52",
+        "L53",
+        "L54"
+      ]
+    },
+    "FRI": {
+      "theory": [
+        "E1",
+        "C1",
+        "TA1",
+        "TF1",
+        "TDD1",
+        "S15",
+        "E2",
+        "C2",
+        "TA2",
+        "TF2",
+        "TDD2",
+        null
+      ],
+      "lab": [
+        "L25",
+        "L26",
+        "L27",
+        "L28",
+        "L29",
+        "L30",
+        "L55",
+        "L56",
+        "L57",
+        "L58",
+        "L59",
+        "L60"
+      ]
+    }
+  },
+  "day_lab_sequences": {
+    "MON": {
+      "morning": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5",
+        "L6"
+      ],
+      "afternoon": [
+        "L31",
+        "L32",
+        "L33",
+        "L34",
+        "L35",
+        "L36"
+      ]
+    },
+    "TUE": {
+      "morning": [
+        "L7",
+        "L8",
+        "L9",
+        "L10",
+        "L11",
+        "L12"
+      ],
+      "afternoon": [
+        "L37",
+        "L38",
+        "L39",
+        "L40",
+        "L41",
+        "L42"
+      ]
+    },
+    "WED": {
+      "morning": [
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L17",
+        "L18"
+      ],
+      "afternoon": [
+        "L43",
+        "L44",
+        "L45",
+        "L46",
+        "L47",
+        "L48"
+      ]
+    },
+    "THU": {
+      "morning": [
+        "L19",
+        "L20",
+        "L21",
+        "L22",
+        "L23",
+        "L24"
+      ],
+      "afternoon": [
+        "L49",
+        "L50",
+        "L51",
+        "L52",
+        "L53",
+        "L54"
+      ]
+    },
+    "FRI": {
+      "morning": [
+        "L25",
+        "L26",
+        "L27",
+        "L28",
+        "L29",
+        "L30"
+      ],
+      "afternoon": [
+        "L55",
+        "L56",
+        "L57",
+        "L58",
+        "L59",
+        "L60"
+      ]
+    }
+  },
+  "slots": {
+    "A1": {
+      "label": "A1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        },
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 1,
+          "start_time": "08:55",
+          "end_time": "09:45",
+          "start_minute": 535,
+          "end_minute": 585
+        }
+      ]
+    },
+    "F1": {
+      "label": "F1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 1,
+          "start_time": "08:55",
+          "end_time": "09:45",
+          "start_minute": 535,
+          "end_minute": 585
+        },
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "D1": {
+      "label": "D1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "TB1": {
+      "label": "TB1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 3,
+          "start_time": "10:45",
+          "end_time": "11:35",
+          "start_minute": 645,
+          "end_minute": 695
+        }
+      ]
+    },
+    "TG1": {
+      "label": "TG1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "S11": {
+      "label": "S11",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 5,
+          "start_time": "12:35",
+          "end_time": "13:25",
+          "start_minute": 755,
+          "end_minute": 805
+        }
+      ]
+    },
+    "A2": {
+      "label": "A2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        },
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 7,
+          "start_time": "14:55",
+          "end_time": "15:45",
+          "start_minute": 895,
+          "end_minute": 945
+        }
+      ]
+    },
+    "F2": {
+      "label": "F2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 7,
+          "start_time": "14:55",
+          "end_time": "15:45",
+          "start_minute": 895,
+          "end_minute": 945
+        },
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "D2": {
+      "label": "D2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "TB2": {
+      "label": "TB2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 9,
+          "start_time": "16:45",
+          "end_time": "17:35",
+          "start_minute": 1005,
+          "end_minute": 1055
+        }
+      ]
+    },
+    "TG2": {
+      "label": "TG2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "S3": {
+      "label": "S3",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "theory",
+          "period_idx": 11,
+          "start_time": "18:35",
+          "end_time": "19:25",
+          "start_minute": 1115,
+          "end_minute": 1165
+        }
+      ]
+    },
+    "L1": {
+      "label": "L1",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "L2": {
+      "label": "L2",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 1,
+          "start_time": "08:50",
+          "end_time": "09:40",
+          "start_minute": 530,
+          "end_minute": 580
+        }
+      ]
+    },
+    "L3": {
+      "label": "L3",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "L4": {
+      "label": "L4",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 3,
+          "start_time": "10:40",
+          "end_time": "11:30",
+          "start_minute": 640,
+          "end_minute": 690
+        }
+      ]
+    },
+    "L5": {
+      "label": "L5",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "L6": {
+      "label": "L6",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 5,
+          "start_time": "12:30",
+          "end_time": "13:20",
+          "start_minute": 750,
+          "end_minute": 800
+        }
+      ]
+    },
+    "L31": {
+      "label": "L31",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "L32": {
+      "label": "L32",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 7,
+          "start_time": "14:50",
+          "end_time": "15:40",
+          "start_minute": 890,
+          "end_minute": 940
+        }
+      ]
+    },
+    "L33": {
+      "label": "L33",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "L34": {
+      "label": "L34",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 9,
+          "start_time": "16:40",
+          "end_time": "17:30",
+          "start_minute": 1000,
+          "end_minute": 1050
+        }
+      ]
+    },
+    "L35": {
+      "label": "L35",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L36": {
+      "label": "L36",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "MON",
+          "kind": "lab",
+          "period_idx": 11,
+          "start_time": "18:30",
+          "end_time": "19:20",
+          "start_minute": 1110,
+          "end_minute": 1160
+        }
+      ]
+    },
+    "B1": {
+      "label": "B1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 1,
+          "start_time": "08:55",
+          "end_time": "09:45",
+          "start_minute": 535,
+          "end_minute": 585
+        }
+      ]
+    },
+    "G1": {
+      "label": "G1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 1,
+          "start_time": "08:55",
+          "end_time": "09:45",
+          "start_minute": 535,
+          "end_minute": 585
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "E1": {
+      "label": "E1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        },
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "TC1": {
+      "label": "TC1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 3,
+          "start_time": "10:45",
+          "end_time": "11:35",
+          "start_minute": 645,
+          "end_minute": 695
+        }
+      ]
+    },
+    "TAA1": {
+      "label": "TAA1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "B2": {
+      "label": "B2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 7,
+          "start_time": "14:55",
+          "end_time": "15:45",
+          "start_minute": 895,
+          "end_minute": 945
+        }
+      ]
+    },
+    "G2": {
+      "label": "G2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 7,
+          "start_time": "14:55",
+          "end_time": "15:45",
+          "start_minute": 895,
+          "end_minute": 945
+        },
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "E2": {
+      "label": "E2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        },
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "TC2": {
+      "label": "TC2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 9,
+          "start_time": "16:45",
+          "end_time": "17:35",
+          "start_minute": 1005,
+          "end_minute": 1055
+        }
+      ]
+    },
+    "TAA2": {
+      "label": "TAA2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "S1": {
+      "label": "S1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "theory",
+          "period_idx": 11,
+          "start_time": "18:35",
+          "end_time": "19:25",
+          "start_minute": 1115,
+          "end_minute": 1165
+        }
+      ]
+    },
+    "L7": {
+      "label": "L7",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "L8": {
+      "label": "L8",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 1,
+          "start_time": "08:50",
+          "end_time": "09:40",
+          "start_minute": 530,
+          "end_minute": 580
+        }
+      ]
+    },
+    "L9": {
+      "label": "L9",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "L10": {
+      "label": "L10",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 3,
+          "start_time": "10:40",
+          "end_time": "11:30",
+          "start_minute": 640,
+          "end_minute": 690
+        }
+      ]
+    },
+    "L11": {
+      "label": "L11",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "L12": {
+      "label": "L12",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 5,
+          "start_time": "12:30",
+          "end_time": "13:20",
+          "start_minute": 750,
+          "end_minute": 800
+        }
+      ]
+    },
+    "L37": {
+      "label": "L37",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "L38": {
+      "label": "L38",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 7,
+          "start_time": "14:50",
+          "end_time": "15:40",
+          "start_minute": 890,
+          "end_minute": 940
+        }
+      ]
+    },
+    "L39": {
+      "label": "L39",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "L40": {
+      "label": "L40",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 9,
+          "start_time": "16:40",
+          "end_time": "17:30",
+          "start_minute": 1000,
+          "end_minute": 1050
+        }
+      ]
+    },
+    "L41": {
+      "label": "L41",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L42": {
+      "label": "L42",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "TUE",
+          "kind": "lab",
+          "period_idx": 11,
+          "start_time": "18:30",
+          "end_time": "19:20",
+          "start_minute": 1110,
+          "end_minute": 1160
+        }
+      ]
+    },
+    "C1": {
+      "label": "C1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        },
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 1,
+          "start_time": "08:55",
+          "end_time": "09:45",
+          "start_minute": 535,
+          "end_minute": 585
+        }
+      ]
+    },
+    "TD1": {
+      "label": "TD1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 3,
+          "start_time": "10:45",
+          "end_time": "11:35",
+          "start_minute": 645,
+          "end_minute": 695
+        }
+      ]
+    },
+    "TBB1": {
+      "label": "TBB1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "C2": {
+      "label": "C2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        },
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 7,
+          "start_time": "14:55",
+          "end_time": "15:45",
+          "start_minute": 895,
+          "end_minute": 945
+        }
+      ]
+    },
+    "TD2": {
+      "label": "TD2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 9,
+          "start_time": "16:45",
+          "end_time": "17:35",
+          "start_minute": 1005,
+          "end_minute": 1055
+        }
+      ]
+    },
+    "TBB2": {
+      "label": "TBB2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "S4": {
+      "label": "S4",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "theory",
+          "period_idx": 11,
+          "start_time": "18:35",
+          "end_time": "19:25",
+          "start_minute": 1115,
+          "end_minute": 1165
+        }
+      ]
+    },
+    "L13": {
+      "label": "L13",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "L14": {
+      "label": "L14",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 1,
+          "start_time": "08:50",
+          "end_time": "09:40",
+          "start_minute": 530,
+          "end_minute": 580
+        }
+      ]
+    },
+    "L15": {
+      "label": "L15",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "L16": {
+      "label": "L16",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 3,
+          "start_time": "10:40",
+          "end_time": "11:30",
+          "start_minute": 640,
+          "end_minute": 690
+        }
+      ]
+    },
+    "L17": {
+      "label": "L17",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "L18": {
+      "label": "L18",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 5,
+          "start_time": "12:30",
+          "end_time": "13:20",
+          "start_minute": 750,
+          "end_minute": 800
+        }
+      ]
+    },
+    "L43": {
+      "label": "L43",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "L44": {
+      "label": "L44",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 7,
+          "start_time": "14:50",
+          "end_time": "15:40",
+          "start_minute": 890,
+          "end_minute": 940
+        }
+      ]
+    },
+    "L45": {
+      "label": "L45",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "L46": {
+      "label": "L46",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 9,
+          "start_time": "16:40",
+          "end_time": "17:30",
+          "start_minute": 1000,
+          "end_minute": 1050
+        }
+      ]
+    },
+    "L47": {
+      "label": "L47",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L48": {
+      "label": "L48",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "WED",
+          "kind": "lab",
+          "period_idx": 11,
+          "start_time": "18:30",
+          "end_time": "19:20",
+          "start_minute": 1110,
+          "end_minute": 1160
+        }
+      ]
+    },
+    "TE1": {
+      "label": "TE1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 3,
+          "start_time": "10:45",
+          "end_time": "11:35",
+          "start_minute": 645,
+          "end_minute": 695
+        }
+      ]
+    },
+    "TCC1": {
+      "label": "TCC1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "TE2": {
+      "label": "TE2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 9,
+          "start_time": "16:45",
+          "end_time": "17:35",
+          "start_minute": 1005,
+          "end_minute": 1055
+        }
+      ]
+    },
+    "TCC2": {
+      "label": "TCC2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "S2": {
+      "label": "S2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "theory",
+          "period_idx": 11,
+          "start_time": "18:35",
+          "end_time": "19:25",
+          "start_minute": 1115,
+          "end_minute": 1165
+        }
+      ]
+    },
+    "L19": {
+      "label": "L19",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "L20": {
+      "label": "L20",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 1,
+          "start_time": "08:50",
+          "end_time": "09:40",
+          "start_minute": 530,
+          "end_minute": 580
+        }
+      ]
+    },
+    "L21": {
+      "label": "L21",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "L22": {
+      "label": "L22",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 3,
+          "start_time": "10:40",
+          "end_time": "11:30",
+          "start_minute": 640,
+          "end_minute": 690
+        }
+      ]
+    },
+    "L23": {
+      "label": "L23",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "L24": {
+      "label": "L24",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 5,
+          "start_time": "12:30",
+          "end_time": "13:20",
+          "start_minute": 750,
+          "end_minute": 800
+        }
+      ]
+    },
+    "L49": {
+      "label": "L49",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "L50": {
+      "label": "L50",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 7,
+          "start_time": "14:50",
+          "end_time": "15:40",
+          "start_minute": 890,
+          "end_minute": 940
+        }
+      ]
+    },
+    "L51": {
+      "label": "L51",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "L52": {
+      "label": "L52",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 9,
+          "start_time": "16:40",
+          "end_time": "17:30",
+          "start_minute": 1000,
+          "end_minute": 1050
+        }
+      ]
+    },
+    "L53": {
+      "label": "L53",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L54": {
+      "label": "L54",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "THU",
+          "kind": "lab",
+          "period_idx": 11,
+          "start_time": "18:30",
+          "end_time": "19:20",
+          "start_minute": 1110,
+          "end_minute": 1160
+        }
+      ]
+    },
+    "TA1": {
+      "label": "TA1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "TF1": {
+      "label": "TF1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 3,
+          "start_time": "10:45",
+          "end_time": "11:35",
+          "start_minute": 645,
+          "end_minute": 695
+        }
+      ]
+    },
+    "TDD1": {
+      "label": "TDD1",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "S15": {
+      "label": "S15",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 5,
+          "start_time": "12:35",
+          "end_time": "13:25",
+          "start_minute": 755,
+          "end_minute": 805
+        }
+      ]
+    },
+    "TA2": {
+      "label": "TA2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "TF2": {
+      "label": "TF2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 9,
+          "start_time": "16:45",
+          "end_time": "17:35",
+          "start_minute": 1005,
+          "end_minute": 1055
+        }
+      ]
+    },
+    "TDD2": {
+      "label": "TDD2",
+      "kind": "theory",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "theory",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L25": {
+      "label": "L25",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 0,
+          "start_time": "08:00",
+          "end_time": "08:50",
+          "start_minute": 480,
+          "end_minute": 530
+        }
+      ]
+    },
+    "L26": {
+      "label": "L26",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 1,
+          "start_time": "08:50",
+          "end_time": "09:40",
+          "start_minute": 530,
+          "end_minute": 580
+        }
+      ]
+    },
+    "L27": {
+      "label": "L27",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 2,
+          "start_time": "09:50",
+          "end_time": "10:40",
+          "start_minute": 590,
+          "end_minute": 640
+        }
+      ]
+    },
+    "L28": {
+      "label": "L28",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 3,
+          "start_time": "10:40",
+          "end_time": "11:30",
+          "start_minute": 640,
+          "end_minute": 690
+        }
+      ]
+    },
+    "L29": {
+      "label": "L29",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 4,
+          "start_time": "11:40",
+          "end_time": "12:30",
+          "start_minute": 700,
+          "end_minute": 750
+        }
+      ]
+    },
+    "L30": {
+      "label": "L30",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 5,
+          "start_time": "12:30",
+          "end_time": "13:20",
+          "start_minute": 750,
+          "end_minute": 800
+        }
+      ]
+    },
+    "L55": {
+      "label": "L55",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 6,
+          "start_time": "14:00",
+          "end_time": "14:50",
+          "start_minute": 840,
+          "end_minute": 890
+        }
+      ]
+    },
+    "L56": {
+      "label": "L56",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 7,
+          "start_time": "14:50",
+          "end_time": "15:40",
+          "start_minute": 890,
+          "end_minute": 940
+        }
+      ]
+    },
+    "L57": {
+      "label": "L57",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 8,
+          "start_time": "15:50",
+          "end_time": "16:40",
+          "start_minute": 950,
+          "end_minute": 1000
+        }
+      ]
+    },
+    "L58": {
+      "label": "L58",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 9,
+          "start_time": "16:40",
+          "end_time": "17:30",
+          "start_minute": 1000,
+          "end_minute": 1050
+        }
+      ]
+    },
+    "L59": {
+      "label": "L59",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 10,
+          "start_time": "17:40",
+          "end_time": "18:30",
+          "start_minute": 1060,
+          "end_minute": 1110
+        }
+      ]
+    },
+    "L60": {
+      "label": "L60",
+      "kind": "lab",
+      "meetings": [
+        {
+          "day": "FRI",
+          "kind": "lab",
+          "period_idx": 11,
+          "start_time": "18:30",
+          "end_time": "19:20",
+          "start_minute": 1110,
+          "end_minute": 1160
+        }
+      ]
+    }
+  },
+  "cells": [
+    {
+      "day": "MON",
+      "period_idx": 0,
+      "kind": "theory",
+      "label": "A1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "MON",
+      "period_idx": 1,
+      "kind": "theory",
+      "label": "F1",
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "day": "MON",
+      "period_idx": 2,
+      "kind": "theory",
+      "label": "D1",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "MON",
+      "period_idx": 3,
+      "kind": "theory",
+      "label": "TB1",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "day": "MON",
+      "period_idx": 4,
+      "kind": "theory",
+      "label": "TG1",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "MON",
+      "period_idx": 5,
+      "kind": "theory",
+      "label": "S11",
+      "start_time": "12:35",
+      "end_time": "13:25",
+      "start_minute": 755,
+      "end_minute": 805
+    },
+    {
+      "day": "MON",
+      "period_idx": 6,
+      "kind": "theory",
+      "label": "A2",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "MON",
+      "period_idx": 7,
+      "kind": "theory",
+      "label": "F2",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "day": "MON",
+      "period_idx": 8,
+      "kind": "theory",
+      "label": "D2",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "MON",
+      "period_idx": 9,
+      "kind": "theory",
+      "label": "TB2",
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "day": "MON",
+      "period_idx": 10,
+      "kind": "theory",
+      "label": "TG2",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "MON",
+      "period_idx": 11,
+      "kind": "theory",
+      "label": "S3",
+      "start_time": "18:35",
+      "end_time": "19:25",
+      "start_minute": 1115,
+      "end_minute": 1165
+    },
+    {
+      "day": "MON",
+      "period_idx": 0,
+      "kind": "lab",
+      "label": "L1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "MON",
+      "period_idx": 1,
+      "kind": "lab",
+      "label": "L2",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "day": "MON",
+      "period_idx": 2,
+      "kind": "lab",
+      "label": "L3",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "MON",
+      "period_idx": 3,
+      "kind": "lab",
+      "label": "L4",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "day": "MON",
+      "period_idx": 4,
+      "kind": "lab",
+      "label": "L5",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "MON",
+      "period_idx": 5,
+      "kind": "lab",
+      "label": "L6",
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "day": "MON",
+      "period_idx": 6,
+      "kind": "lab",
+      "label": "L31",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "MON",
+      "period_idx": 7,
+      "kind": "lab",
+      "label": "L32",
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "day": "MON",
+      "period_idx": 8,
+      "kind": "lab",
+      "label": "L33",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "MON",
+      "period_idx": 9,
+      "kind": "lab",
+      "label": "L34",
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "day": "MON",
+      "period_idx": 10,
+      "kind": "lab",
+      "label": "L35",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "MON",
+      "period_idx": 11,
+      "kind": "lab",
+      "label": "L36",
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    },
+    {
+      "day": "TUE",
+      "period_idx": 0,
+      "kind": "theory",
+      "label": "B1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "TUE",
+      "period_idx": 1,
+      "kind": "theory",
+      "label": "G1",
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "day": "TUE",
+      "period_idx": 2,
+      "kind": "theory",
+      "label": "E1",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "TUE",
+      "period_idx": 3,
+      "kind": "theory",
+      "label": "TC1",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "day": "TUE",
+      "period_idx": 4,
+      "kind": "theory",
+      "label": "TAA1",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "TUE",
+      "period_idx": 6,
+      "kind": "theory",
+      "label": "B2",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "TUE",
+      "period_idx": 7,
+      "kind": "theory",
+      "label": "G2",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "day": "TUE",
+      "period_idx": 8,
+      "kind": "theory",
+      "label": "E2",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "TUE",
+      "period_idx": 9,
+      "kind": "theory",
+      "label": "TC2",
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "day": "TUE",
+      "period_idx": 10,
+      "kind": "theory",
+      "label": "TAA2",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "TUE",
+      "period_idx": 11,
+      "kind": "theory",
+      "label": "S1",
+      "start_time": "18:35",
+      "end_time": "19:25",
+      "start_minute": 1115,
+      "end_minute": 1165
+    },
+    {
+      "day": "TUE",
+      "period_idx": 0,
+      "kind": "lab",
+      "label": "L7",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "TUE",
+      "period_idx": 1,
+      "kind": "lab",
+      "label": "L8",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "day": "TUE",
+      "period_idx": 2,
+      "kind": "lab",
+      "label": "L9",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "TUE",
+      "period_idx": 3,
+      "kind": "lab",
+      "label": "L10",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "day": "TUE",
+      "period_idx": 4,
+      "kind": "lab",
+      "label": "L11",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "TUE",
+      "period_idx": 5,
+      "kind": "lab",
+      "label": "L12",
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "day": "TUE",
+      "period_idx": 6,
+      "kind": "lab",
+      "label": "L37",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "TUE",
+      "period_idx": 7,
+      "kind": "lab",
+      "label": "L38",
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "day": "TUE",
+      "period_idx": 8,
+      "kind": "lab",
+      "label": "L39",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "TUE",
+      "period_idx": 9,
+      "kind": "lab",
+      "label": "L40",
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "day": "TUE",
+      "period_idx": 10,
+      "kind": "lab",
+      "label": "L41",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "TUE",
+      "period_idx": 11,
+      "kind": "lab",
+      "label": "L42",
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    },
+    {
+      "day": "WED",
+      "period_idx": 0,
+      "kind": "theory",
+      "label": "C1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "WED",
+      "period_idx": 1,
+      "kind": "theory",
+      "label": "A1",
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "day": "WED",
+      "period_idx": 2,
+      "kind": "theory",
+      "label": "F1",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "WED",
+      "period_idx": 3,
+      "kind": "theory",
+      "label": "TD1",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "day": "WED",
+      "period_idx": 4,
+      "kind": "theory",
+      "label": "TBB1",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "WED",
+      "period_idx": 6,
+      "kind": "theory",
+      "label": "C2",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "WED",
+      "period_idx": 7,
+      "kind": "theory",
+      "label": "A2",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "day": "WED",
+      "period_idx": 8,
+      "kind": "theory",
+      "label": "F2",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "WED",
+      "period_idx": 9,
+      "kind": "theory",
+      "label": "TD2",
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "day": "WED",
+      "period_idx": 10,
+      "kind": "theory",
+      "label": "TBB2",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "WED",
+      "period_idx": 11,
+      "kind": "theory",
+      "label": "S4",
+      "start_time": "18:35",
+      "end_time": "19:25",
+      "start_minute": 1115,
+      "end_minute": 1165
+    },
+    {
+      "day": "WED",
+      "period_idx": 0,
+      "kind": "lab",
+      "label": "L13",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "WED",
+      "period_idx": 1,
+      "kind": "lab",
+      "label": "L14",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "day": "WED",
+      "period_idx": 2,
+      "kind": "lab",
+      "label": "L15",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "WED",
+      "period_idx": 3,
+      "kind": "lab",
+      "label": "L16",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "day": "WED",
+      "period_idx": 4,
+      "kind": "lab",
+      "label": "L17",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "WED",
+      "period_idx": 5,
+      "kind": "lab",
+      "label": "L18",
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "day": "WED",
+      "period_idx": 6,
+      "kind": "lab",
+      "label": "L43",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "WED",
+      "period_idx": 7,
+      "kind": "lab",
+      "label": "L44",
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "day": "WED",
+      "period_idx": 8,
+      "kind": "lab",
+      "label": "L45",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "WED",
+      "period_idx": 9,
+      "kind": "lab",
+      "label": "L46",
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "day": "WED",
+      "period_idx": 10,
+      "kind": "lab",
+      "label": "L47",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "WED",
+      "period_idx": 11,
+      "kind": "lab",
+      "label": "L48",
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    },
+    {
+      "day": "THU",
+      "period_idx": 0,
+      "kind": "theory",
+      "label": "D1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "THU",
+      "period_idx": 1,
+      "kind": "theory",
+      "label": "B1",
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "day": "THU",
+      "period_idx": 2,
+      "kind": "theory",
+      "label": "G1",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "THU",
+      "period_idx": 3,
+      "kind": "theory",
+      "label": "TE1",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "day": "THU",
+      "period_idx": 4,
+      "kind": "theory",
+      "label": "TCC1",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "THU",
+      "period_idx": 6,
+      "kind": "theory",
+      "label": "D2",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "THU",
+      "period_idx": 7,
+      "kind": "theory",
+      "label": "B2",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "day": "THU",
+      "period_idx": 8,
+      "kind": "theory",
+      "label": "G2",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "THU",
+      "period_idx": 9,
+      "kind": "theory",
+      "label": "TE2",
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "day": "THU",
+      "period_idx": 10,
+      "kind": "theory",
+      "label": "TCC2",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "THU",
+      "period_idx": 11,
+      "kind": "theory",
+      "label": "S2",
+      "start_time": "18:35",
+      "end_time": "19:25",
+      "start_minute": 1115,
+      "end_minute": 1165
+    },
+    {
+      "day": "THU",
+      "period_idx": 0,
+      "kind": "lab",
+      "label": "L19",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "THU",
+      "period_idx": 1,
+      "kind": "lab",
+      "label": "L20",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "day": "THU",
+      "period_idx": 2,
+      "kind": "lab",
+      "label": "L21",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "THU",
+      "period_idx": 3,
+      "kind": "lab",
+      "label": "L22",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "day": "THU",
+      "period_idx": 4,
+      "kind": "lab",
+      "label": "L23",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "THU",
+      "period_idx": 5,
+      "kind": "lab",
+      "label": "L24",
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "day": "THU",
+      "period_idx": 6,
+      "kind": "lab",
+      "label": "L49",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "THU",
+      "period_idx": 7,
+      "kind": "lab",
+      "label": "L50",
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "day": "THU",
+      "period_idx": 8,
+      "kind": "lab",
+      "label": "L51",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "THU",
+      "period_idx": 9,
+      "kind": "lab",
+      "label": "L52",
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "day": "THU",
+      "period_idx": 10,
+      "kind": "lab",
+      "label": "L53",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "THU",
+      "period_idx": 11,
+      "kind": "lab",
+      "label": "L54",
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    },
+    {
+      "day": "FRI",
+      "period_idx": 0,
+      "kind": "theory",
+      "label": "E1",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "FRI",
+      "period_idx": 1,
+      "kind": "theory",
+      "label": "C1",
+      "start_time": "08:55",
+      "end_time": "09:45",
+      "start_minute": 535,
+      "end_minute": 585
+    },
+    {
+      "day": "FRI",
+      "period_idx": 2,
+      "kind": "theory",
+      "label": "TA1",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "FRI",
+      "period_idx": 3,
+      "kind": "theory",
+      "label": "TF1",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "start_minute": 645,
+      "end_minute": 695
+    },
+    {
+      "day": "FRI",
+      "period_idx": 4,
+      "kind": "theory",
+      "label": "TDD1",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "FRI",
+      "period_idx": 5,
+      "kind": "theory",
+      "label": "S15",
+      "start_time": "12:35",
+      "end_time": "13:25",
+      "start_minute": 755,
+      "end_minute": 805
+    },
+    {
+      "day": "FRI",
+      "period_idx": 6,
+      "kind": "theory",
+      "label": "E2",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "FRI",
+      "period_idx": 7,
+      "kind": "theory",
+      "label": "C2",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "start_minute": 895,
+      "end_minute": 945
+    },
+    {
+      "day": "FRI",
+      "period_idx": 8,
+      "kind": "theory",
+      "label": "TA2",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "FRI",
+      "period_idx": 9,
+      "kind": "theory",
+      "label": "TF2",
+      "start_time": "16:45",
+      "end_time": "17:35",
+      "start_minute": 1005,
+      "end_minute": 1055
+    },
+    {
+      "day": "FRI",
+      "period_idx": 10,
+      "kind": "theory",
+      "label": "TDD2",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "FRI",
+      "period_idx": 0,
+      "kind": "lab",
+      "label": "L25",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_minute": 480,
+      "end_minute": 530
+    },
+    {
+      "day": "FRI",
+      "period_idx": 1,
+      "kind": "lab",
+      "label": "L26",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "start_minute": 530,
+      "end_minute": 580
+    },
+    {
+      "day": "FRI",
+      "period_idx": 2,
+      "kind": "lab",
+      "label": "L27",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "start_minute": 590,
+      "end_minute": 640
+    },
+    {
+      "day": "FRI",
+      "period_idx": 3,
+      "kind": "lab",
+      "label": "L28",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "start_minute": 640,
+      "end_minute": 690
+    },
+    {
+      "day": "FRI",
+      "period_idx": 4,
+      "kind": "lab",
+      "label": "L29",
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "start_minute": 700,
+      "end_minute": 750
+    },
+    {
+      "day": "FRI",
+      "period_idx": 5,
+      "kind": "lab",
+      "label": "L30",
+      "start_time": "12:30",
+      "end_time": "13:20",
+      "start_minute": 750,
+      "end_minute": 800
+    },
+    {
+      "day": "FRI",
+      "period_idx": 6,
+      "kind": "lab",
+      "label": "L55",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "start_minute": 840,
+      "end_minute": 890
+    },
+    {
+      "day": "FRI",
+      "period_idx": 7,
+      "kind": "lab",
+      "label": "L56",
+      "start_time": "14:50",
+      "end_time": "15:40",
+      "start_minute": 890,
+      "end_minute": 940
+    },
+    {
+      "day": "FRI",
+      "period_idx": 8,
+      "kind": "lab",
+      "label": "L57",
+      "start_time": "15:50",
+      "end_time": "16:40",
+      "start_minute": 950,
+      "end_minute": 1000
+    },
+    {
+      "day": "FRI",
+      "period_idx": 9,
+      "kind": "lab",
+      "label": "L58",
+      "start_time": "16:40",
+      "end_time": "17:30",
+      "start_minute": 1000,
+      "end_minute": 1050
+    },
+    {
+      "day": "FRI",
+      "period_idx": 10,
+      "kind": "lab",
+      "label": "L59",
+      "start_time": "17:40",
+      "end_time": "18:30",
+      "start_minute": 1060,
+      "end_minute": 1110
+    },
+    {
+      "day": "FRI",
+      "period_idx": 11,
+      "kind": "lab",
+      "label": "L60",
+      "start_time": "18:30",
+      "end_time": "19:20",
+      "start_minute": 1110,
+      "end_minute": 1160
+    }
+  ]
+}

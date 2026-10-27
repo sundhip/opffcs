@@ -1,0 +1,131 @@
+{
+  "reconciliation": {
+    "raw_data_rows": 20,
+    "kept_offerings": 16,
+    "exact_duplicates_removed": 0,
+    "rejected_rows": 4,
+    "reconciled_sum": 20,
+    "difference": 0,
+    "status": "PASS"
+  },
+  "summary_counts": {
+    "distinct_courses": 5,
+    "distinct_faculty": 2,
+    "kept_offerings": 16,
+    "exact_duplicates": 0,
+    "rejected_rows": 4
+  },
+  "duplicates": [],
+  "near_duplicates": [],
+  "name_variants": [],
+  "rejected_rows": [
+    {
+      "ref": {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 6,
+        "raw_data": {
+          "col_0": "Teachers"
+        }
+      },
+      "reason": "Missing both theory and lab slot",
+      "raw_values": [
+        "Teachers",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "ref": {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 7,
+        "raw_data": {
+          "col_0": "RAJESH M\nPRIYADARSHI NI J\nSRIDHAR R\nDOMINIC SAVIO M\nKAVITHA J C\nKAVIPRIYA G"
+        }
+      },
+      "reason": "Missing both theory and lab slot",
+      "raw_values": [
+        "RAJESH M\nPRIYADARSHI NI J\nSRIDHAR R\nDOMINIC SAVIO M\nKAVITHA J C\nKAVIPRIYA G",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "ref": {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 8,
+        "raw_data": {
+          "col_0": "PANDIYARAJ U V\nSELLAM V\nTAHIR MUJTABA"
+        }
+      },
+      "reason": "Missing both theory and lab slot",
+      "raw_values": [
+        "PANDIYARAJ U V\nSELLAM V\nTAHIR MUJTABA",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "ref": {
+        "file": "ffcs__4__1_.xlsx",
+        "sheet": "AI ML",
+        "row": 9,
+        "raw_data": {
+          "col_0": "RABINDRA KUMAR SINGH\nLAKSHMI HARIKA PALIVELA"
+        }
+      },
+      "reason": "Missing both theory and lab slot",
+      "raw_values": [
+        "RABINDRA KUMAR SINGH\nLAKSHMI HARIKA PALIVELA",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}
