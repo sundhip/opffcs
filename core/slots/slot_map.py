@@ -151,3 +151,32 @@ class SlotMap:
 
 # Global default instance
 default_slot_map = SlotMap()
+
+def get_offering_meetings(offering: Any) -> List[Meeting]:
+    """
+    Convenience function to extract meetings for an offering dict or model.
+    Handles theory_slots and combined lab sessions.
+    """
+    if isinstance(offering, dict):
+        theory = offering.get("theory_slots", [])
+        lab_info = offering.get("lab_session")
+        if isinstance(lab_info, dict):
+            lab_labels = lab_info.get("labels", [])
+        elif isinstance(lab_info, list):
+            lab_labels = lab_info
+        else:
+            lab_labels = None
+    else:
+        theory = getattr(offering, "theory_slots", [])
+        lab_info = getattr(offering, "lab_session", None)
+        if isinstance(lab_info, dict):
+            lab_labels = lab_info.get("labels", [])
+        elif hasattr(lab_info, "labels"):
+            lab_labels = lab_info.labels
+        elif isinstance(lab_info, list):
+            lab_labels = lab_info
+        else:
+            lab_labels = None
+
+    return default_slot_map.get_meetings_for_offering(theory, lab_labels)
+

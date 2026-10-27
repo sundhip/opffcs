@@ -1,4 +1,4 @@
-from typing import List, Tuple, Optional, Dict
+from typing import List, Tuple, Optional, Dict, Any
 from .slot_map import Meeting, SlotMap, default_slot_map
 
 # 5-minute cells from 08:00 (480) to 20:00 (1200) -> 144 cells per day
@@ -97,3 +97,15 @@ class ClashEngine:
                 "overlap_minutes": mins
             })
         return res
+
+check_meetings_clash_interval = check_clash_interval
+
+class OfferingsBitmaskIndex:
+    def __init__(self, clash_engine: Optional[ClashEngine] = None):
+        self.engine = clash_engine or ClashEngine()
+
+    def get_offering_mask(self, offering: Any) -> int:
+        from core.slots.slot_map import get_offering_meetings
+        meetings = get_offering_meetings(offering)
+        return meetings_to_bitmask(meetings)
+

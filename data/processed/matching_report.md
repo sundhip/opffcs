@@ -2,18 +2,18 @@
 
 ## 1. Matching Performance Summary
 
-- **Total Ingested Reviews Processed**: 1,660
-- **Confident Faculty Matches (`MATCHED`)**: **563** (33.9%)
-- **Ambiguous Candidate Mentions (`AMBIGUOUS`)**: **584**
-- **Weak Candidate Mentions (`WEAK`)**: **102**
-- **Unmatched Reviews (`UNMATCHED`)**: **411**
+- **Total Ingested Reviews Processed**: 920
+- **Confident Faculty Matches (`MATCHED`)**: **248** (27.0%)
+- **Ambiguous Candidate Mentions (`AMBIGUOUS`)**: **382**
+- **Weak Candidate Mentions (`WEAK`)**: **47**
+- **Unmatched Reviews (`UNMATCHED`)**: **243**
 - **Manual Overrides Applied**: **0**
-- **Review Queue Size for Human Verification**: **686** items (saved to `match_review_queue.csv`)
+- **Review Queue Size for Human Verification**: **429** items (saved to `match_review_queue.csv`)
 
 ## 2. Faculty Coverage & Ratings Summary
 
 - **Total Canonical Faculty**: 56
-- **Faculty with at least 1 Matched Review**: 50
+- **Faculty with at least 1 Matched Review**: 43
 - **Faculty with Numeric Explicit Ratings (0-5 scale)**: 0
 - **Faculty with Low Sample (< 3 reviews or < 2 ratings)**: 56
 
@@ -21,21 +21,21 @@
 
 | Faculty Name | Faculty ID | Review Count | Rated Count | Rating Mean | Distribution [1-5] | Low Sample |
 |--------------|------------|--------------|-------------|-------------|--------------------|------------|
-| ABRAHAM SUDHARSON PONRAJ | `fac_615716b47d6a` | 30 | 0 | N/A | [0,0,0,0,0] | True |
-| SENTHIL PRAKASH P N | `fac_c6478be51cf8` | 28 | 0 | N/A | [0,0,0,0,0] | True |
-| RAJESH M | `fac_5aedf2458fc0` | 27 | 0 | N/A | [0,0,0,0,0] | True |
-| PRADEEP K | `fac_b37cfa0cc212` | 25 | 0 | N/A | [0,0,0,0,0] | True |
-| KAVITHA J C | `fac_6ee18e020f02` | 24 | 0 | N/A | [0,0,0,0,0] | True |
-| ASHIS BERA | `fac_37b69d32f686` | 24 | 0 | N/A | [0,0,0,0,0] | True |
-| ANUBHA PEARLINE S | `fac_a8b9854f55f6` | 24 | 0 | N/A | [0,0,0,0,0] | True |
-| FACE (APT) | `fac_9324b47c934e` | 23 | 0 | N/A | [0,0,0,0,0] | True |
-| ETHNUS (APT) | `fac_c5b4020c350a` | 22 | 0 | N/A | [0,0,0,0,0] | True |
-| RAJESH KUMAR MOHAPATRA | `fac_a48a3947a7cb` | 22 | 0 | N/A | [0,0,0,0,0] | True |
-| TAHIR MUJTABA | `fac_a748b31379ab` | 18 | 0 | N/A | [0,0,0,0,0] | True |
-| REVATHI S | `fac_e524d3bed355` | 18 | 0 | N/A | [0,0,0,0,0] | True |
-| VIJAYAKUMAR K P | `fac_13088fa066c6` | 17 | 0 | N/A | [0,0,0,0,0] | True |
-| SIVABALAKRISHNAN M | `fac_20d8e0954cbc` | 16 | 0 | N/A | [0,0,0,0,0] | True |
-| DHANASEKAR S | `fac_074e6f74394d` | 16 | 0 | N/A | [0,0,0,0,0] | True |
+| ABRAHAM SUDHARSON PONRAJ | `fac_615716b47d6a` | 20 | 0 | N/A | [0,0,0,0,0] | True |
+| ANUBHA PEARLINE S | `fac_a8b9854f55f6` | 20 | 0 | N/A | [0,0,0,0,0] | True |
+| KAVITHA J C | `fac_6ee18e020f02` | 19 | 0 | N/A | [0,0,0,0,0] | True |
+| RAJESH KUMAR MOHAPATRA | `fac_a48a3947a7cb` | 14 | 0 | N/A | [0,0,0,0,0] | True |
+| ASHIS BERA | `fac_37b69d32f686` | 13 | 0 | N/A | [0,0,0,0,0] | True |
+| SAURABH CHANDRA MAURY | `fac_cd06b09d22ee` | 11 | 0 | N/A | [0,0,0,0,0] | True |
+| OM NAMHA SHIVAY | `fac_0e1749d4aaa4` | 11 | 0 | N/A | [0,0,0,0,0] | True |
+| PRADEEP K | `fac_b37cfa0cc212` | 10 | 0 | N/A | [0,0,0,0,0] | True |
+| SIVABALAKRISHNAN M | `fac_20d8e0954cbc` | 8 | 0 | N/A | [0,0,0,0,0] | True |
+| SARANYA M | `fac_aa4b682b2343` | 8 | 0 | N/A | [0,0,0,0,0] | True |
+| SAGITHYA T | `fac_95f6283563f7` | 7 | 0 | N/A | [0,0,0,0,0] | True |
+| KARTHIKEYAN P R | `fac_2f26c5c4f3e5` | 7 | 0 | N/A | [0,0,0,0,0] | True |
+| SENTHIL PRAKASH P N | `fac_c6478be51cf8` | 7 | 0 | N/A | [0,0,0,0,0] | True |
+| VIJAYAKUMAR K P | `fac_13088fa066c6` | 6 | 0 | N/A | [0,0,0,0,0] | True |
+| LAKSHMI HARIKA PALIVELA | `fac_8cc9e21d7e03` | 6 | 0 | N/A | [0,0,0,0,0] | True |
 
 ## 4. Sample Matches with Explainability Chains (5 Examples)
 
@@ -46,7 +46,7 @@
 
 ### Match Example 2: `rev_m_1318_1397` -> UMA MAHESWARI S
 - **Score**: 0.85
-- **Reasons**: exact_alias:S UMA MAHESWARI, exact_alias:UMA MAHESWARI
+- **Reasons**: exact_alias:UMA MAHESWARI, exact_alias:S UMA MAHESWARI
 > "How's Uma Maheswari mam for DSA?"
 
 ### Match Example 3: `rev_m_1374_1462` -> UMA MAHESWARI S
