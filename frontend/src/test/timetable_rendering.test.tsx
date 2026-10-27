@@ -1,11 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import { WeeklyTimetable } from "../components/timetable/WeeklyTimetable";
 import { MeetingBlock } from "../types";
 
 describe("WeeklyTimetable Rendering", () => {
-  it("renders lunch transit window divider and day headers", () => {
+  it("renders the VIT slot matrix with headers, days, lunch column, and action buttons", () => {
     const timeline: Record<string, MeetingBlock[]> = {
       MON: [],
       TUE: [],
@@ -17,15 +17,20 @@ describe("WeeklyTimetable Rendering", () => {
     render(<WeeklyTimetable timeline={timeline} title="Test Timetable" />);
 
     expect(screen.getByText("Test Timetable")).toBeInTheDocument();
+    expect(screen.getByText("THEORY HOURS")).toBeInTheDocument();
+    expect(screen.getByText("LAB HOURS")).toBeInTheDocument();
     expect(screen.getByText("MON")).toBeInTheDocument();
     expect(screen.getByText("TUE")).toBeInTheDocument();
     expect(screen.getByText("WED")).toBeInTheDocument();
     expect(screen.getByText("THU")).toBeInTheDocument();
     expect(screen.getByText("FRI")).toBeInTheDocument();
-    expect(screen.getByText(/Lunch Transit Window/i)).toBeInTheDocument();
+    expect(screen.getByText("LUNCH")).toBeInTheDocument();
+    expect(screen.getByText("Download Timetable")).toBeInTheDocument();
+    expect(screen.getByText("Enable Quick Visualization")).toBeInTheDocument();
+    expect(screen.getByText("Reset Table")).toBeInTheDocument();
   });
 
-  it("renders theory meeting block and combined lab meeting block at true times", () => {
+  it("highlights enrolled theory and lab slots in matrix and shows summary table", () => {
     const timeline: Record<string, MeetingBlock[]> = {
       MON: [
         {
@@ -36,7 +41,7 @@ describe("WeeklyTimetable Rendering", () => {
           end_min: 530,
           kind: "theory",
           slot_label: "A1",
-          course_code: "CS101",
+          course_code: "BACSE204",
           faculty_name: "Dr. Alan Turing",
           venue: "SJTG01"
         }
@@ -50,7 +55,7 @@ describe("WeeklyTimetable Rendering", () => {
           end_min: 940,
           kind: "lab",
           slot_label: "L37+L38",
-          course_code: "EE103",
+          course_code: "BACSE205",
           faculty_name: "Dr. Nikola Tesla",
           venue: "TIFAC102"
         }
@@ -63,22 +68,55 @@ describe("WeeklyTimetable Rendering", () => {
     render(
       <WeeklyTimetable
         timeline={timeline}
-        courseTitles={{ CS101: "Computer Systems", EE103: "Circuits Lab" }}
+        courseTitles={{ BACSE204: "Software Engineering", BACSE205: "AI & ML" }}
+        courseCredits={{ BACSE204: 4, BACSE205: 4 }}
       />
     );
 
-    // Theory block
-    const theoryArticle = screen.getByRole("article", {
-      name: /CS101 theory from 08:00 to 08:50 in slot A1 by Dr. Alan Turing/i
-    });
-    expect(theoryArticle).toBeInTheDocument();
-    expect(theoryArticle).toHaveAttribute("tabIndex", "0");
+    // Occupied cells in matrix
+    expect(screen.getAllByText("BACSE204").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("BACSE205").length).toBeGreaterThanOrEqual(1);
 
-    // Lab block (Combined L37+L38 session rendered as ONE continuous element)
-    const labArticle = screen.getByRole("article", {
-      name: /EE103 lab from 14:00 to 15:40 in slot L37\+L38 by Dr. Nikola Tesla/i
-    });
-    expect(labArticle).toBeInTheDocument();
-    expect(labArticle).toHaveAttribute("tabIndex", "0");
+    // Enrolled Courses Summary Table
+    expect(screen.getByText("Enrolled Courses Summary")).toBeInTheDocument();
+    expect(screen.getByText("Software Engineering")).toBeInTheDocument();
+    expect(screen.getByText("AI & ML")).toBeInTheDocument();
+    expect(screen.getByText("Dr. Alan Turing")).toBeInTheDocument();
+    expect(screen.getByText("Dr. Nikola Tesla")).toBeInTheDocument();
+    expect(screen.getByText("8")).toBeInTheDocument(); // 4 + 4 = 8 total credits
+  });
+
+  it("can toggle between VIT Slot Matrix and Quick Visualization (Timeline) mode", () => {
+    const timeline: Record<string, MeetingBlock[]> = {
+      MON: [
+        {
+          day: "MON",
+          start_time: "08:00",
+          end_time: "08:50",
+          start_min: 480,
+          end_min: 530,
+          kind: "theory",
+          slot_label: "A1",
+          course_code: "BACSE204",
+          faculty_name: "Dr. Alan Turing"
+        }
+      ],
+      TUE: [],
+      WED: [],
+      THU: [],
+      FRI: []
+    };
+
+    render(<WeeklyTimetable timeline={timeline} />);
+
+    // Initially in matrix mode
+    expect(screen.getByText("THEORY HOURS")).toBeInTheDocument();
+
+    // Toggle to Timeline view
+    const toggleBtn = screen.getByText("Enable Quick Visualization");
+    fireEvent.click(toggleBtn);
+
+    // Now in Timeline mode
+    expect(screen.getByText("Switch to Slot Matrix")).toBeInTheDocument();
   });
 });

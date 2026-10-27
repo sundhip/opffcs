@@ -17,8 +17,14 @@ import {
   AlertCircle,
   Eye,
   GitCompare,
-  X
+  X,
+  Download,
+  FileSpreadsheet,
+  FileText,
+  Image as ImageIcon,
+  Archive
 } from "lucide-react";
+import { downloadTimetableExport, ExportFormat } from "../../utils/exporter";
 
 export const ResultsBrowser: React.FC = () => {
   const {
@@ -39,6 +45,8 @@ export const ResultsBrowser: React.FC = () => {
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   const [favouriteModalTimetable, setFavouriteModalTimetable] = useState<GeneratedTimetable | null>(null);
   const [favouriteName, setFavouriteName] = useState("");
+  const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
 
   const courseTitlesMap = useMemo(() => {
     const map: Record<string, string> = {};
@@ -297,6 +305,75 @@ export const ResultsBrowser: React.FC = () => {
           >
             <Printer className="w-4 h-4" />
           </button>
+
+          {/* Export Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsExportMenuOpen(!isExportMenuOpen)}
+              disabled={!currentTimetable || isExporting}
+              className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white border border-indigo-500 text-xs font-semibold flex items-center gap-1.5 transition"
+              title="Export timetable in Excel, PDF, CSV, PNG, or ZIP"
+            >
+              <Download className="w-3.5 h-3.5" />
+              {isExporting ? "Exporting..." : "Export"}
+            </button>
+
+            {isExportMenuOpen && currentTimetable && (
+              <div className="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl z-50 py-1.5 text-xs">
+                <button
+                  onClick={() => {
+                    setIsExportMenuOpen(false);
+                    downloadTimetableExport(currentTimetable, "excel", setIsExporting);
+                  }}
+                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
+                >
+                  <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Excel (.xlsx)</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setIsExportMenuOpen(false);
+                    downloadTimetableExport(currentTimetable, "pdf", setIsExporting);
+                  }}
+                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
+                >
+                  <FileText className="w-3.5 h-3.5 text-rose-400" />
+                  <span>PDF Document (.pdf)</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setIsExportMenuOpen(false);
+                    downloadTimetableExport(currentTimetable, "csv", setIsExporting);
+                  }}
+                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
+                >
+                  <FileText className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>CSV File (.csv)</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setIsExportMenuOpen(false);
+                    downloadTimetableExport(currentTimetable, "png", setIsExporting);
+                  }}
+                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
+                >
+                  <ImageIcon className="w-3.5 h-3.5 text-amber-400" />
+                  <span>High-Res Image (.png)</span>
+                </button>
+                <div className="border-t border-slate-700 my-1"></div>
+                <button
+                  onClick={() => {
+                    setIsExportMenuOpen(false);
+                    downloadTimetableExport(currentTimetable, "bundle", setIsExporting);
+                  }}
+                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 font-semibold text-indigo-300 flex items-center gap-2"
+                >
+                  <Archive className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>All Formats (.zip)</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -419,8 +496,10 @@ export const ResultsBrowser: React.FC = () => {
         <WeeklyTimetable
           timeline={currentTimetable.per_day_timeline}
           courseTitles={courseTitlesMap}
+          timetableObj={currentTimetable}
           title={`Conflict-Free Timetable (ID: ${currentTimetable.timetable_id})`}
           subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")}`}
+          onReset={() => setActiveTab("planner")}
         />
       )}
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAppStore } from "../../store/useAppStore";
 import { api } from "../../services/api";
 import { FavouriteItem } from "../../types";
+import { downloadFavouritesZip } from "../../utils/exporter";
 import {
   Star,
   Trash2,
@@ -13,7 +14,8 @@ import {
   X,
   Clock,
   User,
-  Layers
+  Layers,
+  Download
 } from "lucide-react";
 
 export const FavouritesPage: React.FC = () => {
@@ -60,9 +62,20 @@ export const FavouritesPage: React.FC = () => {
           </p>
         </div>
 
-        <span className="px-3 py-1 bg-slate-800 border border-slate-700 rounded-xl text-xs font-semibold text-slate-300">
-          {favourites.length} Saved Schedule(s)
-        </span>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => downloadFavouritesZip()}
+            disabled={favourites.length === 0}
+            className="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed border border-indigo-500 rounded-xl text-xs font-semibold text-white flex items-center gap-1.5 transition"
+            title="Export all favourites as a ZIP archive"
+          >
+            <Download className="w-3.5 h-3.5" />
+            Export All (.zip)
+          </button>
+          <span className="px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-xl text-xs font-semibold text-slate-300">
+            {favourites.length} Saved Schedule(s)
+          </span>
+        </div>
       </div>
 
       {favourites.length === 0 ? (

@@ -38,7 +38,7 @@ export const DEFAULT_SOFT_PREFERENCES: SoftPreferences = {
   minimize_gaps_weight: 0.7,
   prefer_free_days_weight: 0.6,
   preferred_time_window_weight: 0.4,
-  faculty_rating_weight: 0.8,
+  faculty_rating_weight: 0.0,
   compactness_weight: 0.5,
   preferred_start_minute: 480,
   preferred_end_minute: 1005
@@ -146,8 +146,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       await Promise.all(
         cRes.items.map(async (c) => {
           try {
-            const offs = await api.getCourseOfferings(c.code);
-            offeringsMap[c.code] = offs;
+            const offs: any = await api.getCourseOfferings(c.code);
+            offeringsMap[c.code] = Array.isArray(offs) ? offs : (offs?.offerings || []);
           } catch {
             offeringsMap[c.code] = [];
           }
@@ -178,8 +178,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       const course = state.courses.find((c) => c.code === courseCode);
       nextConfigs[courseCode] = {
         course_code: courseCode,
-        include_theory: course ? course.has_theory : true,
-        include_lab: course ? course.has_lab : false,
+        include_theory: course ? (course.has_theory ?? true) : true,
+        include_lab: course ? (course.has_lab ?? false) : false,
         allowed_theory_faculty: [],
         blocked_theory_faculty: [],
         allowed_lab_faculty: [],

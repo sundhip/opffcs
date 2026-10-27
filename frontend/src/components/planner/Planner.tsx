@@ -16,7 +16,8 @@ import {
   Star,
   Clock,
   Calendar,
-  Layers
+  Layers,
+  Info
 } from "lucide-react";
 
 const WEEKDAYS = ["MON", "TUE", "WED", "THU", "FRI"];
@@ -53,7 +54,9 @@ export const Planner: React.FC = () => {
     validationErrors,
     isGenerating,
     startGeneration,
-    cancelGeneration
+    cancelGeneration,
+    setSelectedFacultyId,
+    setActiveTab
   } = useAppStore();
 
   const [courseSearch, setCourseSearch] = useState("");
@@ -295,37 +298,52 @@ export const Planner: React.FC = () => {
                           <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto">
                             {offerings.map((off) => {
                               const fName = off.faculty_name || "Unknown";
-                              const fInfo = facultyList.find((f) => f.id === off.faculty_id);
+                              const fInfo = facultyList.find(
+                                (f) => f.id === off.faculty_id || f.canonical_name?.toUpperCase() === fName.toUpperCase()
+                              );
                               const isBlocked = cfg.blocked_theory_faculty.includes(fName);
 
                               return (
-                                <button
+                                <div
                                   key={off.id}
-                                  type="button"
-                                  onClick={() => {
-                                    const nextBlocked = isBlocked
-                                      ? cfg.blocked_theory_faculty.filter((n) => n !== fName)
-                                      : [...cfg.blocked_theory_faculty, fName];
-                                    updateCourseConfig(c.code, { blocked_theory_faculty: nextBlocked });
-                                  }}
                                   className={`px-2.5 py-1 rounded-lg border text-[11px] flex items-center gap-1.5 transition ${
                                     isBlocked
                                       ? "bg-red-950/60 border-red-700/80 text-red-300 line-through"
                                       : "bg-slate-800 border-slate-700 text-slate-200 hover:border-slate-500"
                                   }`}
-                                  title={isBlocked ? "Click to allow this faculty" : "Click to block this faculty"}
                                 >
-                                  <span>{fName}</span>
-                                  {fInfo?.rating_mean != null && (
-                                    <span className="flex items-center gap-0.5 text-amber-300 font-semibold text-[10px]">
-                                      <Star className="w-2.5 h-2.5 fill-amber-300" />
-                                      {fInfo.rating_mean.toFixed(1)}
-                                    </span>
-                                  )}
-                                  {fInfo?.low_sample && (
-                                    <span className="text-[9px] text-slate-400 font-mono">(few reviews)</span>
-                                  )}
-                                </button>
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      const nextBlocked = isBlocked
+                                        ? cfg.blocked_theory_faculty.filter((n) => n !== fName)
+                                        : [...cfg.blocked_theory_faculty, fName];
+                                      updateCourseConfig(c.code, { blocked_theory_faculty: nextBlocked });
+                                    }}
+                                    className="flex items-center gap-1.5 focus:outline-none"
+                                    title={isBlocked ? "Click to allow this faculty" : "Click to block this faculty"}
+                                  >
+                                    <span>{fName}</span>
+                                    {fInfo?.rating_mean != null && (
+                                      <span className="flex items-center gap-0.5 text-amber-300 font-semibold text-[10px]">
+                                        <Star className="w-2.5 h-2.5 fill-amber-300" />
+                                        {fInfo.rating_mean.toFixed(1)}
+                                      </span>
+                                    )}
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setSelectedFacultyId(fInfo ? fInfo.id : off.faculty_id || null);
+                                      setActiveTab("faculty");
+                                    }}
+                                    className="p-0.5 text-slate-400 hover:text-amber-300 transition"
+                                    title={`View reviews for ${fName}`}
+                                  >
+                                    <Info className="w-3 h-3" />
+                                  </button>
+                                </div>
                               );
                             })}
                           </div>
@@ -343,13 +361,69 @@ export const Planner: React.FC = () => {
                             className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                           >
                             <option value="">Any available slot (Solver decides)</option>
-                            {offerings.map((off) => (
-                              <option key={off.id} value={off.id}>
-                                {off.faculty_name} • Theory: {off.theory_slots.join("+") || "None"} • Lab:{" "}
-                                {off.lab_session?.labels.join("+") || "None"}
-                              </option>
-                            ))}
+                            {offerings.map((off) => {
+                              const thStr = off.theory_slots?.join("+") || "None";
+                              const lbStr = off.lab_session?.labels?.join("+") || (off as any).lab_slots?.join("+") || "None";
+                              return (
+                                <option key={off.id} value={off.id}>
+                                  {off.faculty_name} • Theory: {thStr} • Lab: {lbStr}
+                                </option>
+                              );
+                            })}
                           </select>
+                        </div>
+
+                        {/* Offerings & Lab Slots Breakdown Card */}
+                        <div className="pt-2 border-t border-slate-800 space-y-2">
+                          <span className="font-semibold text-slate-300 block">
+                            Slot Offerings & Lab Details ({offerings.length}):
+                          </span>
+                          <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+                            {offerings.map((off) => {
+                              const fName = off.faculty_name || "Unknown";
+                              const fInfo = facultyList.find(
+                                (f) => f.id === off.faculty_id || f.canonical_name?.toUpperCase() === fName.toUpperCase()
+                              );
+                              const thStr = off.theory_slots?.join("+") || "None";
+                              const lbStr = off.lab_session?.labels?.join("+") || (off as any).lab_slots?.join("+") || "None";
+
+                              return (
+                                <div
+                                  key={off.id}
+                                  className="p-2 rounded-lg bg-slate-800/60 border border-slate-700/60 flex items-center justify-between text-xs"
+                                >
+                                  <div>
+                                    <div className="font-semibold text-slate-200">{fName}</div>
+                                    <div className="flex flex-wrap items-center gap-2 mt-0.5 text-[11px]">
+                                      {thStr !== "None" && (
+                                        <span className="font-mono text-indigo-300 font-bold bg-indigo-950/80 px-1.5 py-0.5 rounded border border-indigo-800/50">
+                                          Theory: {thStr}
+                                        </span>
+                                      )}
+                                      {lbStr !== "None" && (
+                                        <span className="font-mono text-emerald-300 font-bold bg-emerald-950/80 px-1.5 py-0.5 rounded border border-emerald-800/50">
+                                          Lab: {lbStr}
+                                        </span>
+                                      )}
+                                      {off.venue && <span className="text-slate-400 font-mono">• {off.venue}</span>}
+                                    </div>
+                                  </div>
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setSelectedFacultyId(fInfo ? fInfo.id : off.faculty_id || null);
+                                      setActiveTab("faculty");
+                                    }}
+                                    className="px-2 py-1 rounded bg-slate-700 hover:bg-slate-600 text-slate-200 text-[11px] font-medium flex items-center gap-1 transition shrink-0"
+                                    title="View faculty reviews & ratings"
+                                  >
+                                    <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+                                    <span>Reviews ({fInfo?.review_count ?? 0})</span>
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
                       </div>
                     )}

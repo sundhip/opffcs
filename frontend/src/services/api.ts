@@ -43,7 +43,8 @@ export const api = {
   },
 
   async getCourseOfferings(courseId: string): Promise<Offering[]> {
-    return fetchJson<Offering[]>(`${API_BASE}/courses/${encodeURIComponent(courseId)}/offerings`);
+    const res = await fetchJson<any>(`${API_BASE}/courses/${encodeURIComponent(courseId)}/offerings`);
+    return Array.isArray(res) ? res : (res?.offerings || []);
   },
 
   // Faculty
