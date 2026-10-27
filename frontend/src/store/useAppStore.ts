@@ -17,6 +17,7 @@ export interface LiveFilters {
   requiredFaculty: string | null;
   maxGapMinutes: number | null;
   sortBy: "score" | "fewest_gaps" | "most_free_days" | "best_rating" | "earliest_finish";
+  shapeFilter?: "ALL" | "MORNING" | "AFTERNOON" | "FREE_DAYS" | "COMPACT" | "BALANCED";
 }
 
 export const DEFAULT_HARD_CONSTRAINTS: HardConstraints = {
@@ -349,7 +350,7 @@ export const useAppStore = create<AppState>((set, get) => ({
         hard_constraints: state.hardConstraints,
         preferences: state.softPreferences,
         locked_offering_ids: lockedIds,
-        max_results: 50,
+        max_results: 100,
         time_budget_seconds: 5.0
       };
 
@@ -417,7 +418,8 @@ export const useAppStore = create<AppState>((set, get) => ({
     requiredFreeDay: null,
     requiredFaculty: null,
     maxGapMinutes: null,
-    sortBy: "score"
+    sortBy: "score",
+    shapeFilter: "ALL"
   },
   setLiveFilters: (updates) => {
     set((state) => ({

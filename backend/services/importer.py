@@ -106,7 +106,7 @@ class DatasetImporter:
             f_name = new_faculty_map.get(off["faculty_id"], "Unknown")
             th_slots = off.get("theory_slots", [])
             lab_info = off.get("lab_session")
-            lab_labels = lab_info.get("labels", []) if lab_info else []
+            lab_labels = (lab_info.get("slots") or lab_info.get("labels", [])) if lab_info else []
             stable_k = make_stable_offering_key(c_code, f_name, th_slots, lab_labels, off.get("venue"))
             new_keys_map[stable_k] = {
                 "course_code": c_code,
@@ -352,7 +352,7 @@ class DatasetImporter:
                 fac_name = fac_name_map.get(fac_raw_id, "Unknown")
                 th_slots = off.get("theory_slots", [])
                 lab_info = off.get("lab_session")
-                lab_labels = lab_info.get("labels", []) if lab_info else []
+                lab_labels = (lab_info.get("slots") or lab_info.get("labels", [])) if lab_info else []
                 stable_k = make_stable_offering_key(c_code, fac_name, th_slots, lab_labels, off.get("venue"))
 
                 off_scoped_id = f"{dataset_id}_{off['id']}"

@@ -355,8 +355,9 @@ class TimetableSearchEngine:
                 if s.upper() in blocked_set:
                     return False
             lab_info = off.get("lab_session")
-            if lab_info and lab_info.get("labels"):
-                for l in lab_info["labels"]:
+            if lab_info:
+                slots = (lab_info.get("slots") or lab_info.get("labels") or []) if isinstance(lab_info, dict) else (getattr(lab_info, "slots", None) or getattr(lab_info, "labels", None) or [])
+                for l in slots:
                     if l.upper() in blocked_set:
                         return False
 

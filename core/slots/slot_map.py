@@ -161,7 +161,11 @@ def get_offering_meetings(offering: Any) -> List[Meeting]:
         theory = offering.get("theory_slots", [])
         lab_info = offering.get("lab_session")
         if isinstance(lab_info, dict):
-            lab_labels = lab_info.get("labels", [])
+            lab_labels = lab_info.get("slots") or lab_info.get("labels", [])
+        elif hasattr(lab_info, "slots"):
+            lab_labels = lab_info.slots
+        elif hasattr(lab_info, "labels"):
+            lab_labels = lab_info.labels
         elif isinstance(lab_info, list):
             lab_labels = lab_info
         else:
@@ -170,7 +174,9 @@ def get_offering_meetings(offering: Any) -> List[Meeting]:
         theory = getattr(offering, "theory_slots", [])
         lab_info = getattr(offering, "lab_session", None)
         if isinstance(lab_info, dict):
-            lab_labels = lab_info.get("labels", [])
+            lab_labels = lab_info.get("slots") or lab_info.get("labels", [])
+        elif hasattr(lab_info, "slots"):
+            lab_labels = lab_info.slots
         elif hasattr(lab_info, "labels"):
             lab_labels = lab_info.labels
         elif isinstance(lab_info, list):

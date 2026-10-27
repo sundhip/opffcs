@@ -75,7 +75,14 @@ def get_course_offerings(course_id: str, db: Session = Depends(get_db)):
     for off in offerings:
         fac = db.query(Faculty).filter(Faculty.id == off.faculty_id, Faculty.dataset_id == ds_id).first()
         meetings = db.query(Meeting).filter(Meeting.offering_id == off.id, Meeting.dataset_id == ds_id).all()
-        lab_labels = off.lab_session.get("labels", []) if isinstance(off.lab_session, dict) else (off.lab_session.slots if hasattr(off.lab_session, "slots") else [])
+        lab_labels = []
+        if off.lab_session:
+            if isinstance(off.lab_session, dict):
+                lab_labels = off.lab_session.get("slots") or off.lab_session.get("labels", [])
+            elif hasattr(off.lab_session, "slots"):
+                lab_labels = off.lab_session.slots
+            elif hasattr(off.lab_session, "labels"):
+                lab_labels = off.lab_session.labels
 
         fac_name = fac.canonical_name if fac else "Unknown"
         fac_id = fac.id if fac else None

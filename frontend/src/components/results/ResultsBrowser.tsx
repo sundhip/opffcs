@@ -26,6 +26,66 @@ import {
 } from "lucide-react";
 import { downloadTimetableExport, ExportFormat } from "../../utils/exporter";
 
+export type TimetableShape = "ALL" | "MORNING" | "AFTERNOON" | "FREE_DAYS" | "COMPACT" | "BALANCED";
+
+export function getTimetableShapeBadge(tt: GeneratedTimetable): { label: string; icon: string } {
+  if (tt.free_days && tt.free_days.length > 0) {
+    return { label: `${tt.free_days[0]} Off`, icon: "🌴" };
+  }
+  if (tt.longest_gap_minutes <= 60) {
+    return { label: "Zero Gaps", icon: "⚡" };
+  }
+  let morningMeetings = 0;
+  let afternoonMeetings = 0;
+  Object.values(tt.per_day_timeline).forEach((mtgs) => {
+    mtgs.forEach((m) => {
+      if (m.end_min <= 840) morningMeetings++;
+      else afternoonMeetings++;
+    });
+  });
+  if (morningMeetings > afternoonMeetings * 1.5) {
+    return { label: "Morning", icon: "🌅" };
+  }
+  if (afternoonMeetings >= morningMeetings) {
+    return { label: "Afternoon", icon: "🌇" };
+  }
+  return { label: "Balanced", icon: "⚖️" };
+}
+
+export function matchesShape(tt: GeneratedTimetable, shape: TimetableShape): boolean {
+  if (shape === "ALL") return true;
+  if (shape === "MORNING") {
+    let morningCount = 0;
+    let afternoonCount = 0;
+    Object.values(tt.per_day_timeline).forEach((mtgs) => {
+      mtgs.forEach((m) => {
+        if (m.end_min <= 840) morningCount++;
+        else afternoonCount++;
+      });
+    });
+    return (tt.latest_end ? tt.latest_end <= "14:00" : false) || morningCount >= afternoonCount * 1.5;
+  }
+  if (shape === "AFTERNOON") {
+    let afternoonCount = 0;
+    Object.values(tt.per_day_timeline).forEach((mtgs) => {
+      mtgs.forEach((m) => {
+        if (m.start_min >= 840) afternoonCount++;
+      });
+    });
+    return afternoonCount > 0;
+  }
+  if (shape === "FREE_DAYS") {
+    return tt.free_days && tt.free_days.length > 0;
+  }
+  if (shape === "COMPACT") {
+    return tt.longest_gap_minutes <= 60;
+  }
+  if (shape === "BALANCED") {
+    return tt.max_daily_hours <= 5.0 && tt.working_days.length >= 4;
+  }
+  return true;
+}
+
 export const ResultsBrowser: React.FC = () => {
   const {
     generationResult,
@@ -85,6 +145,11 @@ export const ResultsBrowser: React.FC = () => {
       });
     }
 
+    // Filter by schedule shape
+    if (liveFilters.shapeFilter && liveFilters.shapeFilter !== "ALL") {
+      list = list.filter((tt) => matchesShape(tt, liveFilters.shapeFilter!));
+    }
+
     // Sort
     if (liveFilters.sortBy === "fewest_gaps") {
       list.sort((a, b) => {
@@ -105,6 +170,18 @@ export const ResultsBrowser: React.FC = () => {
 
     return list;
   }, [rawTimetables, liveFilters]);
+
+  // Compute counts for all distinct timetable shapes across the generated set
+  const shapeCounts = useMemo(() => {
+    return {
+      ALL: rawTimetables.length,
+      MORNING: rawTimetables.filter((t) => matchesShape(t, "MORNING")).length,
+      AFTERNOON: rawTimetables.filter((t) => matchesShape(t, "AFTERNOON")).length,
+      FREE_DAYS: rawTimetables.filter((t) => matchesShape(t, "FREE_DAYS")).length,
+      COMPACT: rawTimetables.filter((t) => matchesShape(t, "COMPACT")).length,
+      BALANCED: rawTimetables.filter((t) => matchesShape(t, "BALANCED")).length
+    };
+  }, [rawTimetables]);
 
   const currentTimetable: GeneratedTimetable | undefined = filteredTimetables[currentResultIndex];
 
@@ -377,7 +454,131 @@ export const ResultsBrowser: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Live Filters & Sorting Bar */}
+      {/* 2. Top Schedule Shape Filter Pills */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-md space-y-2">
+        <div className="flex items-center justify-between px-1">
+          <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5 uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            Timetable Shapes & Variations:
+          </span>
+          <span className="text-[11px] text-slate-400 font-mono">
+            Showing {filteredTimetables.length} of {rawTimetables.length} variations
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          {[
+            { id: "ALL" as const, label: "All Variations", icon: "✨", count: shapeCounts.ALL },
+            { id: "MORNING" as const, label: "Morning Heavy", icon: "🌅", count: shapeCounts.MORNING },
+            { id: "AFTERNOON" as const, label: "Afternoon Heavy", icon: "🌇", count: shapeCounts.AFTERNOON },
+            { id: "FREE_DAYS" as const, label: "4-Day / Free Day", icon: "🌴", count: shapeCounts.FREE_DAYS },
+            { id: "COMPACT" as const, label: "Minimal Gaps", icon: "⚡", count: shapeCounts.COMPACT },
+            { id: "BALANCED" as const, label: "Balanced Load", icon: "⚖️", count: shapeCounts.BALANCED }
+          ].map((shape) => {
+            const isActive = (liveFilters.shapeFilter || "ALL") === shape.id;
+            return (
+              <button
+                key={shape.id}
+                onClick={() => setLiveFilters({ shapeFilter: shape.id })}
+                className={`px-3.5 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-2 transition active:scale-95 ${
+                  isActive
+                    ? "bg-amber-500/20 text-amber-300 border-amber-500/70 shadow-sm shadow-amber-500/20"
+                    : "bg-slate-800/80 hover:bg-slate-800 text-slate-300 border-slate-700/80 hover:border-slate-600"
+                }`}
+              >
+                <span>{shape.icon}</span>
+                <span>{shape.label}</span>
+                <span className={`px-1.5 py-0.5 rounded-md text-[10px] font-mono ${
+                  isActive ? "bg-amber-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-300"
+                }`}>
+                  {shape.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 3. Horizontal Variation Selector Ribbon */}
+      {filteredTimetables.length > 0 && (
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3 shadow-md flex items-center gap-3">
+          {/* Previous Button */}
+          <button
+            onClick={() => setCurrentResultIndex(Math.max(0, currentResultIndex - 1))}
+            disabled={currentResultIndex === 0}
+            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
+            title="Previous Variation (Left Arrow)"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          {/* Scrollable Ribbon */}
+          <div className="flex-1 overflow-x-auto flex items-center gap-2 py-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+            {filteredTimetables.map((tt, idx) => {
+              const isSelected = idx === currentResultIndex;
+              const badge = getTimetableShapeBadge(tt);
+              return (
+                <button
+                  key={tt.timetable_id}
+                  onClick={() => setCurrentResultIndex(idx)}
+                  className={`shrink-0 px-3 py-1.5 rounded-xl border text-left transition-all active:scale-95 ${
+                    isSelected
+                      ? "bg-slate-800 border-[#c6f052] ring-2 ring-[#c6f052]/60 shadow-lg shadow-[#c6f052]/10"
+                      : "bg-slate-850/80 hover:bg-slate-800 border-slate-750 text-slate-400 hover:text-slate-200"
+                  }`}
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span className={`text-[11px] font-bold font-mono ${isSelected ? "text-[#c6f052]" : "text-slate-300"}`}>
+                      #{idx + 1}
+                    </span>
+                    <span className="text-[10px]">{badge.icon}</span>
+                    <span className="text-[10px] font-medium text-slate-300 truncate max-w-[80px]">
+                      {badge.label}
+                    </span>
+                  </div>
+                  <div className="text-[9px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
+                    <span>{tt.score.toFixed(1)} pts</span>
+                    <span>•</span>
+                    <span>{tt.working_days.length}d</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={() => setCurrentResultIndex(Math.min(filteredTimetables.length - 1, currentResultIndex + 1))}
+            disabled={currentResultIndex >= filteredTimetables.length - 1}
+            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
+            title="Next Variation (Right Arrow)"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+
+          {/* Jump to index input */}
+          <div className="hidden sm:flex items-center gap-1.5 pl-2 border-l border-slate-800 shrink-0">
+            <span className="text-[11px] text-slate-400 font-medium">Jump #</span>
+            <input
+              type="number"
+              min={1}
+              max={filteredTimetables.length}
+              placeholder={String(currentResultIndex + 1)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  const val = parseInt((e.target as HTMLInputElement).value, 10);
+                  if (!isNaN(val) && val >= 1 && val <= filteredTimetables.length) {
+                    setCurrentResultIndex(val - 1);
+                    (e.target as HTMLInputElement).value = "";
+                  }
+                }
+              }}
+              className="w-14 bg-slate-800 border border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-100 font-mono text-center focus:outline-none focus:ring-1 focus:ring-amber-400"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* 4. Live Filters & Sorting Bar */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs">
         <div className="flex flex-wrap items-center gap-4">
           <span className="font-semibold text-slate-400 flex items-center gap-1.5">

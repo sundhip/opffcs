@@ -224,23 +224,26 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
     const lbSlot = dayMatrix.lab[period.periodIdx];
 
     for (const m of dayMeetings) {
-      if (m.kind === "theory" && thSlot) {
-        const labels = m.slot_label.split("+").map((s) => s.trim().toUpperCase());
-        if (labels.includes(thSlot.toUpperCase())) {
-          return { meeting: m, label: thSlot, kind: "theory" as const };
-        }
-        // Fallback: real interval overlap
-        if (m.start_min < period.theoryEndMin && period.theoryStartMin < m.end_min) {
-          return { meeting: m, label: thSlot, kind: "theory" as const };
-        }
-      } else if (m.kind === "lab" && lbSlot) {
-        const labels = m.slot_label.split("+").map((s) => s.trim().toUpperCase());
+      // Robust detection: check meeting kind or slot label prefix
+      const isLab = m.kind === "lab" || m.slot_label.toUpperCase().includes("L");
+
+      if (isLab && lbSlot) {
+        const labels = m.slot_label.toUpperCase().split(/[+,/&\s]+/).filter(Boolean);
         if (labels.includes(lbSlot.toUpperCase())) {
           return { meeting: m, label: lbSlot, kind: "lab" as const };
         }
-        // Fallback: real interval overlap
+        // Minute-accurate interval overlap fallback:
         if (m.start_min < period.labEndMin && period.labStartMin < m.end_min) {
           return { meeting: m, label: lbSlot, kind: "lab" as const };
+        }
+      } else if (!isLab && thSlot) {
+        const labels = m.slot_label.toUpperCase().split(/[+,/&\s]+/).filter(Boolean);
+        if (labels.includes(thSlot.toUpperCase())) {
+          return { meeting: m, label: thSlot, kind: "theory" as const };
+        }
+        // Minute-accurate interval overlap fallback:
+        if (m.start_min < period.theoryEndMin && period.theoryStartMin < m.end_min) {
+          return { meeting: m, label: thSlot, kind: "theory" as const };
         }
       }
     }
@@ -407,7 +410,8 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                       {dIdx === 0 ? (
                         <td
                           rowSpan={5}
-                          className="bg-slate-900 border-r border-slate-700 text-amber-400 font-black text-xs tracking-widest text-center select-none py-4 px-1 shadow-inner"
+                          data-testid="lunch-column"
+                          className="bg-slate-900 border-r border-slate-700 text-amber-400 font-black text-xs tracking-widest text-center select-none py-4 px-2 shadow-inner align-middle"
                           style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
                         >
                           LUNCH
