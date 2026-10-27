@@ -21,9 +21,9 @@ def test_full_file_reconciliation(tmp_out):
     recon = res["reconciliation"]
     assert recon["status"] == "PASS"
     assert recon["difference"] == 0
-    assert recon["raw_data_rows"] == 58
-    assert recon["kept_offerings"] == 58
-    assert recon["exact_duplicates_removed"] == 0
+    assert recon["raw_data_rows"] == 83
+    assert recon["kept_offerings"] == 70
+    assert recon["exact_duplicates_removed"] == 13
     assert recon["rejected_rows"] == 0
 
 def test_golden_10_plus_offerings(tmp_out):

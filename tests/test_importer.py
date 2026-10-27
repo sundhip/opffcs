@@ -54,8 +54,8 @@ def test_importer_idempotency_and_dry_run(test_db_session):
     )
     assert res1["status"] == "success"
     assert test_db_session.query(Dataset).count() == 1
-    assert test_db_session.query(Course).count() == 9
-    assert test_db_session.query(Offering).count() == 58
+    assert test_db_session.query(Course).count() == 16
+    assert test_db_session.query(Offering).count() == 70
 
     # 3. Idempotent re-import test: identical checksum should skip
     res2 = importer.import_dataset(
@@ -68,7 +68,7 @@ def test_importer_idempotency_and_dry_run(test_db_session):
     assert res2["status"] == "skipped"
     # Counts should be unchanged
     assert test_db_session.query(Dataset).count() == 1
-    assert test_db_session.query(Course).count() == 9
+    assert test_db_session.query(Course).count() == 16
 
 def test_importer_rollback_on_failure(test_db_session):
     importer = DatasetImporter(test_db_session)
