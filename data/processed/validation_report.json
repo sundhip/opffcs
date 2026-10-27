@@ -1,21 +1,490 @@
 {
   "reconciliation": {
-    "raw_data_rows": 58,
-    "kept_offerings": 58,
-    "exact_duplicates_removed": 0,
+    "raw_data_rows": 83,
+    "kept_offerings": 70,
+    "exact_duplicates_removed": 13,
     "rejected_rows": 0,
-    "reconciled_sum": 58,
+    "reconciled_sum": 83,
     "difference": 0,
     "status": "PASS"
   },
   "summary_counts": {
-    "distinct_courses": 9,
-    "distinct_faculty": 57,
-    "kept_offerings": 58,
-    "exact_duplicates": 0,
+    "distinct_courses": 16,
+    "distinct_faculty": 70,
+    "kept_offerings": 70,
+    "exact_duplicates": 13,
     "rejected_rows": 0
   },
-  "duplicates": [],
+  "duplicates": [
+    {
+      "course_code": "BAMGT213",
+      "faculty_name": "SHAMAL S",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Content and Brand Storytelling",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAMGT215",
+      "faculty_name": "SRILALITHA R",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAMGT215",
+      "faculty_name": "NISHA R",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAMGT217",
+      "faculty_name": "SUDARSANAM S K",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "FinTech",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM204",
+      "faculty_name": "BUVANESH C",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Fixed Income Securities",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM205",
+      "faculty_name": "BILAL A NAZEER",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM205",
+      "faculty_name": "SONY RAJ S S",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM205",
+      "faculty_name": "SHERIN PRIYAN",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM203",
+      "faculty_name": "MARIA EVELYN JUCUNDA M",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Options, Futures, and Derivativ",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAMGT221",
+      "faculty_name": "MANU JOSE",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAMGT221",
+      "faculty_name": "CARLIN JEMIMAH G J",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM202",
+      "faculty_name": "AHMAD HASAN",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 13,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    },
+    {
+      "course_code": "BAHUM202",
+      "faculty_name": "MOHD HAMMAD NAEEM",
+      "theory_slots": [
+        "D1",
+        "TD1"
+      ],
+      "lab_slots": [],
+      "venue": null,
+      "first_seen": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 14,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      "duplicate_ref": {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    }
+  ],
   "near_duplicates": [],
   "name_variants": [
     {

@@ -3,10 +3,12 @@
     "id": "BASTS102",
     "code": "BASTS102",
     "title": "Qualitative and Quantitative Skills Practice II",
-    "credits": null,
+    "credits": 1,
+    "has_theory": true,
+    "has_lab": false,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 2,
         "raw_data": {
@@ -19,7 +21,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 3,
         "raw_data": {
@@ -32,7 +34,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 4,
         "raw_data": {
@@ -50,10 +52,12 @@
     "id": "BAHSM100",
     "code": "BAHSM100",
     "title": "Humanities, Social Science and Management",
-    "credits": null,
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Humanities, Social Science and ",
         "row": 2,
         "raw_data": {
@@ -68,19 +72,416 @@
     ]
   },
   {
-    "id": "ANCILLARY",
-    "code": "ANCILLARY",
-    "title": "OPEN ELECTIVE COURSES ANCILLARY",
-    "credits": null,
+    "id": "BAMGT213",
+    "code": "BAMGT213",
+    "title": "Content and Brand Storytelling",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
         "row": 2,
         "raw_data": {
-          "col_0": "ANCILLARY",
-          "col_1": "OPEN ELECTIVE COURSES ANCILLARY",
-          "col_2": "No matching teacher found",
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Content and Brand Storytelling",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAMGT215",
+    "code": "BAMGT215",
+    "title": "Emotional Intelligence",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAMGT217",
+    "code": "BAMGT217",
+    "title": "FinTech",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "FinTech",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAHUM204",
+    "code": "BAHUM204",
+    "title": "Fixed Income Securities",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Fixed Income Securities",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAHUM205",
+    "code": "BAHUM205",
+    "title": "Intellectual Property Rights and the Law",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAHUM203",
+    "code": "BAHUM203",
+    "title": "Options, Futures, and Derivatives",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Options, Futures, and Derivativ",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAMGT221",
+    "code": "BAMGT221",
+    "title": "Personal Wealth Management",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BAHUM202",
+    "code": "BAHUM202",
+    "title": "Security Analysis and Portfolio Management",
+    "credits": 3,
+    "has_theory": true,
+    "has_lab": false,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 13,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 14,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
           "col_3": "D1+TD1",
           "col_4": "MON / WED",
           "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
@@ -92,10 +493,12 @@
     "id": "BACSE204",
     "code": "BACSE204",
     "title": "Software Engineering",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": true,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 2,
         "raw_data": {
@@ -111,7 +514,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 3,
         "raw_data": {
@@ -127,7 +530,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 4,
         "raw_data": {
@@ -143,7 +546,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 5,
         "raw_data": {
@@ -159,7 +562,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 6,
         "raw_data": {
@@ -175,7 +578,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 7,
         "raw_data": {
@@ -196,10 +599,12 @@
     "id": "BACSE205",
     "code": "BACSE205",
     "title": "Fundamentals of Artificial Intelligence and Machine Learning",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": true,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 2,
         "raw_data": {
@@ -215,7 +620,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 3,
         "raw_data": {
@@ -231,7 +636,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 4,
         "raw_data": {
@@ -247,7 +652,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 5,
         "raw_data": {
@@ -263,7 +668,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 6,
         "raw_data": {
@@ -279,7 +684,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 7,
         "raw_data": {
@@ -295,7 +700,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 8,
         "raw_data": {
@@ -311,7 +716,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 9,
         "raw_data": {
@@ -327,7 +732,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 10,
         "raw_data": {
@@ -343,7 +748,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 11,
         "raw_data": {
@@ -359,7 +764,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 12,
         "raw_data": {
@@ -380,10 +785,12 @@
     "id": "BAMAT205",
     "code": "BAMAT205",
     "title": "Discrete Mathematics and Linear Algebra",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": false,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 2,
         "raw_data": {
@@ -396,7 +803,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 3,
         "raw_data": {
@@ -409,7 +816,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 4,
         "raw_data": {
@@ -422,7 +829,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 5,
         "raw_data": {
@@ -435,7 +842,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 6,
         "raw_data": {
@@ -448,7 +855,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 7,
         "raw_data": {
@@ -461,7 +868,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 8,
         "raw_data": {
@@ -474,7 +881,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 9,
         "raw_data": {
@@ -487,7 +894,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 10,
         "raw_data": {
@@ -500,7 +907,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 11,
         "raw_data": {
@@ -513,7 +920,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 12,
         "raw_data": {
@@ -526,7 +933,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 13,
         "raw_data": {
@@ -539,7 +946,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 14,
         "raw_data": {
@@ -552,7 +959,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 15,
         "raw_data": {
@@ -565,7 +972,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 16,
         "raw_data": {
@@ -583,10 +990,12 @@
     "id": "BACSE324",
     "code": "BACSE324",
     "title": "Embedded Systems Architecture",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": true,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 2,
         "raw_data": {
@@ -602,7 +1011,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 3,
         "raw_data": {
@@ -618,7 +1027,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 4,
         "raw_data": {
@@ -634,7 +1043,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 5,
         "raw_data": {
@@ -650,7 +1059,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 6,
         "raw_data": {
@@ -666,7 +1075,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 7,
         "raw_data": {
@@ -682,7 +1091,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 8,
         "raw_data": {
@@ -698,7 +1107,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 9,
         "raw_data": {
@@ -714,7 +1123,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 10,
         "raw_data": {
@@ -730,7 +1139,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 11,
         "raw_data": {
@@ -746,7 +1155,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 12,
         "raw_data": {
@@ -767,10 +1176,12 @@
     "id": "BACSE339",
     "code": "BACSE339",
     "title": "Distributed Ledger Technology",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": true,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 2,
         "raw_data": {
@@ -786,7 +1197,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 3,
         "raw_data": {
@@ -802,7 +1213,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 4,
         "raw_data": {
@@ -818,7 +1229,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 5,
         "raw_data": {
@@ -839,10 +1250,12 @@
     "id": "BACSE345",
     "code": "BACSE345",
     "title": "Cloud Automation Technologies",
-    "credits": null,
+    "credits": 4,
+    "has_theory": true,
+    "has_lab": true,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 2,
         "raw_data": {
@@ -858,7 +1271,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 3,
         "raw_data": {
@@ -874,7 +1287,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 4,
         "raw_data": {
@@ -890,7 +1303,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 5,
         "raw_data": {
@@ -906,7 +1319,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 6,
         "raw_data": {
@@ -922,7 +1335,7 @@
         }
       },
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 7,
         "raw_data": {

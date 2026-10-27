@@ -14,7 +14,9 @@ from backend.api import (
     routes_slots,
     routes_favourites,
     routes_matches,
-    routes_generate
+    routes_generate,
+    routes_preferences,
+    routes_exports
 )
 
 # Initialize database schema
@@ -60,6 +62,8 @@ app.include_router(routes_slots.router, prefix="/api")
 app.include_router(routes_favourites.router, prefix="/api")
 app.include_router(routes_matches.router, prefix="/api")
 app.include_router(routes_generate.router, prefix="/api")
+app.include_router(routes_preferences.router, prefix="/api")
+app.include_router(routes_exports.router, prefix="/api")
 
 # Static frontend serving
 FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"

@@ -30,7 +30,7 @@ class SoftPreferences(BaseModel):
     compactness_weight: float = 1.0
     balanced_daily_load_weight: float = 1.0
     avoid_back_to_back_labs_weight: float = 1.0
-    faculty_rating_weight: float = 1.5
+    faculty_rating_weight: float = 0.0
 
 class GenerateRequest(BaseModel):
     courses: List[CourseSelection]

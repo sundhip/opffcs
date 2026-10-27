@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from backend.db.session import get_db
 from backend.db.models import Dataset, Course, Offering, Faculty, Meeting
+from core.ingest.models import KNOWN_COURSE_CREDITS
 
 router = APIRouter(prefix="/courses", tags=["Courses"])
 
@@ -35,13 +36,20 @@ def list_courses(
 
     items = []
     for c in courses:
-        off_count = db.query(Offering).filter(Offering.course_id == c.id, Offering.dataset_id == ds_id).count()
+        offerings = db.query(Offering).filter(Offering.course_id == c.id, Offering.dataset_id == ds_id).all()
+        off_count = len(offerings)
+        has_th = any(off.theory_slots and len(off.theory_slots) > 0 for off in offerings)
+        has_lb = any(bool(off.lab_session) for off in offerings)
+        credits_val = c.credits if (c.credits and c.credits > 0) else KNOWN_COURSE_CREDITS.get(c.code, 3)
+
         items.append({
             "id": c.id,
             "code": c.code,
             "title": c.title,
-            "credits": c.credits,
+            "credits": credits_val,
             "course_type": c.course_type,
+            "has_theory": has_th,
+            "has_lab": has_lb,
             "offerings_count": off_count
         })
 
@@ -67,18 +75,25 @@ def get_course_offerings(course_id: str, db: Session = Depends(get_db)):
     for off in offerings:
         fac = db.query(Faculty).filter(Faculty.id == off.faculty_id, Faculty.dataset_id == ds_id).first()
         meetings = db.query(Meeting).filter(Meeting.offering_id == off.id, Meeting.dataset_id == ds_id).all()
+        lab_labels = off.lab_session.get("labels", []) if isinstance(off.lab_session, dict) else (off.lab_session.slots if hasattr(off.lab_session, "slots") else [])
+
+        fac_name = fac.canonical_name if fac else "Unknown"
+        fac_id = fac.id if fac else None
 
         results.append({
             "id": off.id,
             "stable_key": off.stable_key,
             "course_code": course.code,
             "course_title": course.title,
+            "faculty_id": fac_id,
+            "faculty_name": fac_name,
             "faculty": {
-                "id": fac.id if fac else None,
-                "canonical_name": fac.canonical_name if fac else "Unknown",
+                "id": fac_id,
+                "canonical_name": fac_name,
                 "is_placeholder": fac.is_placeholder if fac else False
             },
-            "theory_slots": off.theory_slots,
+            "theory_slots": off.theory_slots or [],
+            "lab_slots": lab_labels,
             "lab_session": off.lab_session,
             "venue": off.venue,
             "meetings": [
@@ -97,6 +112,6 @@ def get_course_offerings(course_id: str, db: Session = Depends(get_db)):
         "course_id": course.id,
         "code": course.code,
         "title": course.title,
-        "credits": course.credits,
+        "credits": course.credits if (course.credits and course.credits > 0) else KNOWN_COURSE_CREDITS.get(course.code, 3),
         "offerings": results
     }

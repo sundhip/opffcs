@@ -25,7 +25,7 @@
   "fac_c5b4020c350a": {
     "faculty_id": "fac_c5b4020c350a",
     "canonical_name": "ETHNUS (APT)",
-    "review_count": 1,
+    "review_count": 22,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -39,20 +39,84 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-26T11:12:15",
+    "last_review_date": "2026-10-24T10:47:08",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 1
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 17,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 1,
+      "WhatsApp Chat - ffcs'29.zip": 4
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "ethnus",
+        "count": 36
+      },
+      {
+        "word": "need",
+        "count": 16
+      },
+      {
+        "word": "attached",
+        "count": 11
+      },
+      {
+        "word": "phone",
+        "count": 11
+      },
+      {
+        "word": "redacted",
+        "count": 11
+      },
+      {
+        "word": "photo",
+        "count": 11
+      },
+      {
+        "word": "jpg",
+        "count": 11
+      },
+      {
+        "word": "java",
+        "count": 8
+      },
+      {
+        "word": "both",
+        "count": 8
+      },
+      {
+        "word": "kavinn",
+        "count": 7
+      }
+    ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_8583_14724"
+      "rev_m_728_782",
+      "rev_m_731_785",
+      "rev_m_935_1055",
+      "rev_m_996_1135",
+      "rev_m_1063_1217",
+      "rev_m_1291_1546",
+      "rev_m_1314_1572",
+      "rev_m_2411_3138",
+      "rev_m_2937_3936",
+      "rev_m_2940_3941",
+      "rev_m_2988_4026",
+      "rev_m_3034_4095",
+      "rev_m_8583_14724",
+      "rev_m_4343_6004",
+      "rev_m_3115_4648",
+      "rev_m_3142_4696",
+      "rev_m_4359_6064",
+      "rev_m_3153_4724",
+      "rev_m_3378_5483",
+      "rev_m_4618_6763",
+      "rev_m_5256_11210",
+      "rev_m_5257_11211"
     ]
   },
   "fac_9324b47c934e": {
     "faculty_id": "fac_9324b47c934e",
     "canonical_name": "FACE (APT)",
-    "review_count": 4,
+    "review_count": 23,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -66,21 +130,31 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-08T17:29:00",
+    "last_review_date": "2026-07-08T18:57:27",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 4
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 13,
+      "WhatsApp Chat - ffcs'29.zip": 6
     },
     "recurring_keywords": [
       {
         "word": "phone",
-        "count": 24
+        "count": 29
       },
       {
         "word": "redacted",
-        "count": 23
+        "count": 27
+      },
+      {
+        "word": "face",
+        "count": 26
       },
       {
         "word": "team",
+        "count": 11
+      },
+      {
+        "word": "attached",
         "count": 11
       },
       {
@@ -88,28 +162,20 @@
         "count": 11
       },
       {
+        "word": "photo",
+        "count": 10
+      },
+      {
+        "word": "jpg",
+        "count": 10
+      },
+      {
         "word": "can",
-        "count": 8
+        "count": 9
       },
       {
         "word": "think",
         "count": 8
-      },
-      {
-        "word": "vit",
-        "count": 7
-      },
-      {
-        "word": "attached",
-        "count": 7
-      },
-      {
-        "word": "february",
-        "count": 6
-      },
-      {
-        "word": "per",
-        "count": 6
       }
     ],
     "low_sample": true,
@@ -117,65 +183,31 @@
       "rev_m_7791_11732",
       "rev_m_7804_12296",
       "rev_m_7809_12471",
-      "rev_m_9282_16202"
+      "rev_m_1307_1564",
+      "rev_m_1308_1565",
+      "rev_m_1309_1567",
+      "rev_m_1313_1571",
+      "rev_m_1738_2124",
+      "rev_m_2045_2527",
+      "rev_m_1430_2074",
+      "rev_m_2931_3922",
+      "rev_m_1670_2366",
+      "rev_m_1773_2496",
+      "rev_m_3398_4569",
+      "rev_m_2225_3252",
+      "rev_m_4018_5450",
+      "rev_m_4348_6025",
+      "rev_m_4400_6234",
+      "rev_m_3214_4978",
+      "rev_m_3219_5003",
+      "rev_m_4438_6359",
+      "rev_m_9282_16202",
+      "rev_m_4584_6687"
     ]
   },
-  "fac_13088fa066c6": {
-    "faculty_id": "fac_13088fa066c6",
-    "canonical_name": "VIJAYAKUMAR K P",
-    "review_count": 6,
-    "rated_count": 0,
-    "rating_mean": null,
-    "rating_median": null,
-    "rating_min": null,
-    "rating_max": null,
-    "rating_distribution": {
-      "1_star": 0,
-      "2_star": 0,
-      "3_star": 0,
-      "4_star": 0,
-      "5_star": 0
-    },
-    "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T10:02:31",
-    "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
-    },
-    "recurring_keywords": [
-      {
-        "word": "vijayakumar",
-        "count": 6
-      },
-      {
-        "word": "java",
-        "count": 5
-      },
-      {
-        "word": "how",
-        "count": 2
-      },
-      {
-        "word": "want",
-        "count": 2
-      },
-      {
-        "word": "need",
-        "count": 2
-      }
-    ],
-    "low_sample": true,
-    "review_ids": [
-      "rev_m_8615_14769",
-      "rev_m_8893_15150",
-      "rev_m_8943_15278",
-      "rev_m_9110_15652",
-      "rev_m_9124_15696",
-      "rev_m_9183_15875"
-    ]
-  },
-  "fac_921e5c52967a": {
-    "faculty_id": "fac_921e5c52967a",
-    "canonical_name": "OM KUMAR C U",
+  "fac_7f09aba7d667": {
+    "faculty_id": "fac_7f09aba7d667",
+    "canonical_name": "SHAMAL S",
     "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
@@ -190,181 +222,30 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-06T12:00:06",
+    "last_review_date": "2026-06-27T20:44:21",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 2
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
     "recurring_keywords": [
       {
-        "word": "ashutosh",
-        "count": 4
-      },
-      {
-        "word": "kumar",
-        "count": 4
-      },
-      {
-        "word": "tripathi",
-        "count": 4
-      },
-      {
-        "word": "german",
+        "word": "shamal",
         "count": 2
       },
       {
-        "word": "want",
+        "word": "management",
         "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_9050_15510",
-      "rev_m_9060_15531"
+      "rev_m_3191_4287",
+      "rev_m_8936_15259"
     ]
   },
-  "fac_20d8e0954cbc": {
-    "faculty_id": "fac_20d8e0954cbc",
-    "canonical_name": "SIVABALAKRISHNAN M",
-    "review_count": 8,
-    "rated_count": 0,
-    "rating_mean": null,
-    "rating_median": null,
-    "rating_min": null,
-    "rating_max": null,
-    "rating_distribution": {
-      "1_star": 0,
-      "2_star": 0,
-      "3_star": 0,
-      "4_star": 0,
-      "5_star": 0
-    },
-    "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-06T21:57:49",
-    "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 8
-    },
-    "recurring_keywords": [
-      {
-        "word": "sivabalakrishnan",
-        "count": 8
-      },
-      {
-        "word": "want",
-        "count": 6
-      },
-      {
-        "word": "swaminathan",
-        "count": 5
-      },
-      {
-        "word": "sahaya",
-        "count": 4
-      },
-      {
-        "word": "beni",
-        "count": 4
-      },
-      {
-        "word": "database",
-        "count": 4
-      },
-      {
-        "word": "dbms",
-        "count": 4
-      },
-      {
-        "word": "reena",
-        "count": 3
-      },
-      {
-        "word": "roy",
-        "count": 3
-      },
-      {
-        "word": "sharmiladevi",
-        "count": 2
-      }
-    ],
-    "low_sample": true,
-    "review_ids": [
-      "rev_m_8196_14173",
-      "rev_m_8938_15263",
-      "rev_m_9026_15443",
-      "rev_m_9037_15473",
-      "rev_m_9061_15534",
-      "rev_m_9087_15590",
-      "rev_m_9147_15755",
-      "rev_m_9155_15788"
-    ]
-  },
-  "fac_b37cfa0cc212": {
-    "faculty_id": "fac_b37cfa0cc212",
-    "canonical_name": "PRADEEP K",
-    "review_count": 10,
-    "rated_count": 0,
-    "rating_mean": null,
-    "rating_median": null,
-    "rating_min": null,
-    "rating_max": null,
-    "rating_distribution": {
-      "1_star": 0,
-      "2_star": 0,
-      "3_star": 0,
-      "4_star": 0,
-      "5_star": 0
-    },
-    "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-10-24T11:13:30",
-    "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 10
-    },
-    "recurring_keywords": [
-      {
-        "word": "pradeep",
-        "count": 10
-      },
-      {
-        "word": "votes",
-        "count": 6
-      },
-      {
-        "word": "java",
-        "count": 4
-      },
-      {
-        "word": "how",
-        "count": 2
-      },
-      {
-        "word": "vote",
-        "count": 2
-      },
-      {
-        "word": "chendur",
-        "count": 2
-      },
-      {
-        "word": "kumaran",
-        "count": 2
-      }
-    ],
-    "low_sample": true,
-    "review_ids": [
-      "rev_m_4808_6413",
-      "rev_m_8046_13881",
-      "rev_m_8687_14896",
-      "rev_m_8698_14916",
-      "rev_m_8783_15018",
-      "rev_m_8814_15057",
-      "rev_m_9121_15691",
-      "rev_m_9298_16245",
-      "rev_m_9522_20507",
-      "rev_m_9565_20645"
-    ]
-  },
-  "fac_3394c2423559": {
-    "faculty_id": "fac_3394c2423559",
-    "canonical_name": "NEELANARAYANAN V",
+  "fac_f95f71b5f97c": {
+    "faculty_id": "fac_f95f71b5f97c",
+    "canonical_name": "SRILALITHA R",
     "review_count": 0,
     "rated_count": 0,
     "rating_mean": null,
@@ -385,10 +266,10 @@
     "low_sample": true,
     "review_ids": []
   },
-  "fac_ae4447c49c47": {
-    "faculty_id": "fac_ae4447c49c47",
-    "canonical_name": "V. SAKTHIVEL",
-    "review_count": 2,
+  "fac_86e039a3567f": {
+    "faculty_id": "fac_86e039a3567f",
+    "canonical_name": "NISHA R",
+    "review_count": 7,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -402,26 +283,968 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T14:00:29",
+    "last_review_date": "2026-07-08T23:37:46",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 2
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 4,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "nisha",
+        "count": 7
+      },
+      {
+        "word": "jannath",
+        "count": 5
+      },
+      {
+        "word": "votes",
+        "count": 4
+      },
+      {
+        "word": "how",
+        "count": 4
+      },
+      {
+        "word": "models",
+        "count": 3
+      },
+      {
+        "word": "computation",
+        "count": 3
+      },
+      {
+        "word": "dsa",
+        "count": 2
+      },
+      {
+        "word": "linda",
+        "count": 2
+      },
+      {
+        "word": "joseph",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_2720_3615",
+      "rev_m_4175_5556",
+      "rev_m_798_879",
+      "rev_m_1948_2813",
+      "rev_m_2665_3781",
+      "rev_m_3003_4351",
+      "rev_m_4637_6793"
+    ]
+  },
+  "fac_acdd51cc7e46": {
+    "faculty_id": "fac_acdd51cc7e46",
+    "canonical_name": "SUDARSANAM S K",
+    "review_count": 0,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": null,
+    "source_breakdown": {},
+    "recurring_keywords": [],
+    "low_sample": true,
+    "review_ids": []
+  },
+  "fac_f56e14b7b81a": {
+    "faculty_id": "fac_f56e14b7b81a",
+    "canonical_name": "BUVANESH C",
+    "review_count": 0,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": null,
+    "source_breakdown": {},
+    "recurring_keywords": [],
+    "low_sample": true,
+    "review_ids": []
+  },
+  "fac_ce985dd55121": {
+    "faculty_id": "fac_ce985dd55121",
+    "canonical_name": "BILAL A NAZEER",
+    "review_count": 3,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-06-21T20:25:27",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3
+    },
+    "recurring_keywords": [
+      {
+        "word": "nazeer",
+        "count": 3
+      },
+      {
+        "word": "very",
+        "count": 2
+      },
+      {
+        "word": "from",
+        "count": 2
+      },
+      {
+        "word": "message",
+        "count": 2
+      },
+      {
+        "word": "edited",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_2513_3338",
+      "rev_m_2514_3339",
+      "rev_m_2521_3351"
+    ]
+  },
+  "fac_96c0bb47c229": {
+    "faculty_id": "fac_96c0bb47c229",
+    "canonical_name": "SONY RAJ S S",
+    "review_count": 0,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": null,
+    "source_breakdown": {},
+    "recurring_keywords": [],
+    "low_sample": true,
+    "review_ids": []
+  },
+  "fac_9d5ee1540bf9": {
+    "faculty_id": "fac_9d5ee1540bf9",
+    "canonical_name": "SHERIN PRIYAN",
+    "review_count": 3,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2025-12-08T17:50:44",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 3
+    },
+    "recurring_keywords": [
+      {
+        "word": "votes",
+        "count": 4
+      },
+      {
+        "word": "jeyavim",
+        "count": 3
+      },
+      {
+        "word": "sherin",
+        "count": 3
+      },
+      {
+        "word": "oops",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_2403_2991",
+      "rev_m_5068_6739",
+      "rev_m_7502_10996"
+    ]
+  },
+  "fac_d3e9d4f3f2ad": {
+    "faculty_id": "fac_d3e9d4f3f2ad",
+    "canonical_name": "MARIA EVELYN JUCUNDA M",
+    "review_count": 5,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-10-24T14:28:17",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "phone",
+        "count": 15
+      },
+      {
+        "word": "redacted",
+        "count": 15
+      },
+      {
+        "word": "learn",
+        "count": 9
+      },
+      {
+        "word": "attached",
+        "count": 8
+      },
+      {
+        "word": "photo",
+        "count": 8
+      },
+      {
+        "word": "jpg",
+        "count": 8
+      },
+      {
+        "word": "september",
+        "count": 8
+      },
+      {
+        "word": "https",
+        "count": 6
+      },
+      {
+        "word": "event",
+        "count": 6
+      },
+      {
+        "word": "build",
+        "count": 6
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_3911_5208",
+      "rev_m_1429_1720",
+      "rev_m_1166_1486",
+      "rev_m_4876_9514",
+      "rev_m_9582_20677"
+    ]
+  },
+  "fac_0142cab1783c": {
+    "faculty_id": "fac_0142cab1783c",
+    "canonical_name": "MANU JOSE",
+    "review_count": 4,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-06-23T09:31:39",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 1,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "jose",
+        "count": 4
+      },
+      {
+        "word": "analog",
+        "count": 3
+      },
+      {
+        "word": "electronics",
+        "count": 3
+      },
+      {
+        "word": "binu",
+        "count": 3
+      },
+      {
+        "word": "ben",
+        "count": 3
+      },
+      {
+        "word": "votes",
+        "count": 3
+      },
+      {
+        "word": "phone",
+        "count": 3
+      },
+      {
+        "word": "redacted",
+        "count": 3
+      },
+      {
+        "word": "sudarshan",
+        "count": 2
+      },
+      {
+        "word": "reddy",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1904_2323",
+      "rev_m_1282_1726",
+      "rev_m_2779_3694",
+      "rev_m_8332_14335"
+    ]
+  },
+  "fac_001864b03fad": {
+    "faculty_id": "fac_001864b03fad",
+    "canonical_name": "CARLIN JEMIMAH G J",
+    "review_count": 0,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": null,
+    "source_breakdown": {},
+    "recurring_keywords": [],
+    "low_sample": true,
+    "review_ids": []
+  },
+  "fac_75fbc0bffd5b": {
+    "faculty_id": "fac_75fbc0bffd5b",
+    "canonical_name": "AHMAD HASAN",
+    "review_count": 4,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-08T21:24:18",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 3,
+      "WhatsApp Chat - ffcs'29.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "ahmad",
+        "count": 4
+      },
+      {
+        "word": "electronic",
+        "count": 3
+      },
+      {
+        "word": "manikandan",
+        "count": 3
+      },
+      {
+        "word": "saidulu",
+        "count": 3
+      },
+      {
+        "word": "systems",
+        "count": 2
+      },
+      {
+        "word": "votes",
+        "count": 2
+      },
+      {
+        "word": "shaik",
+        "count": 2
+      },
+      {
+        "word": "vote",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1473_1605",
+      "rev_m_3346_4473",
+      "rev_m_3407_4542",
+      "rev_m_3379_5487"
+    ]
+  },
+  "fac_dc98c8b14fe4": {
+    "faculty_id": "fac_dc98c8b14fe4",
+    "canonical_name": "MOHD HAMMAD NAEEM",
+    "review_count": 7,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-08T11:27:10",
+    "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 2,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "mohd",
+        "count": 14
+      },
+      {
+        "word": "hammad",
+        "count": 7
+      },
+      {
+        "word": "naeem",
+        "count": 7
+      },
+      {
+        "word": "nadeem",
+        "count": 6
+      },
+      {
+        "word": "bhat",
+        "count": 6
+      },
+      {
+        "word": "security",
+        "count": 5
+      },
+      {
+        "word": "analysis",
+        "count": 5
+      },
+      {
+        "word": "management",
+        "count": 5
+      },
+      {
+        "word": "want",
+        "count": 5
+      },
+      {
+        "word": "porfolio",
+        "count": 3
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1152_1455",
+      "rev_m_8756_14988",
+      "rev_m_2980_4292",
+      "rev_m_9074_15554",
+      "rev_m_9188_15883",
+      "rev_m_9245_16084",
+      "rev_m_4526_6535"
+    ]
+  },
+  "fac_13088fa066c6": {
+    "faculty_id": "fac_13088fa066c6",
+    "canonical_name": "VIJAYAKUMAR K P",
+    "review_count": 17,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-08T23:48:22",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5,
+      "WhatsApp Chat - ffcs'29.zip": 6,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
+    },
+    "recurring_keywords": [
+      {
+        "word": "vijayakumar",
+        "count": 18
+      },
+      {
+        "word": "java",
+        "count": 13
+      },
+      {
+        "word": "how",
+        "count": 7
+      },
+      {
+        "word": "manual",
+        "count": 5
+      },
+      {
+        "word": "want",
+        "count": 5
+      },
+      {
+        "word": "sherly",
+        "count": 4
+      },
+      {
+        "word": "attached",
+        "count": 4
+      },
+      {
+        "word": "phone",
+        "count": 4
+      },
+      {
+        "word": "redacted",
+        "count": 4
+      },
+      {
+        "word": "photo",
+        "count": 4
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1930_2375",
+      "rev_m_2439_3203",
+      "rev_m_1146_1448",
+      "rev_m_2674_3536",
+      "rev_m_1820_2596",
+      "rev_m_1968_2837",
+      "rev_m_1992_2874",
+      "rev_m_3472_4674",
+      "rev_m_8615_14769",
+      "rev_m_2101_3086",
+      "rev_m_8893_15150",
+      "rev_m_4197_5665",
+      "rev_m_8943_15278",
+      "rev_m_9110_15652",
+      "rev_m_9124_15696",
+      "rev_m_9183_15875",
+      "rev_m_3419_5570"
+    ]
+  },
+  "fac_921e5c52967a": {
+    "faculty_id": "fac_921e5c52967a",
+    "canonical_name": "OM KUMAR C U",
+    "review_count": 5,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-08T22:06:20",
+    "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 2,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
+    },
+    "recurring_keywords": [
+      {
+        "word": "kumar",
+        "count": 8
+      },
+      {
+        "word": "ashutosh",
+        "count": 7
+      },
+      {
+        "word": "tripathi",
+        "count": 7
+      },
+      {
+        "word": "german",
+        "count": 5
+      },
+      {
+        "word": "sugumar",
+        "count": 4
+      },
+      {
+        "word": "want",
+        "count": 3
+      },
+      {
+        "word": "need",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1776_2501",
+      "rev_m_9050_15510",
+      "rev_m_9060_15531",
+      "rev_m_4550_6590",
+      "rev_m_3386_5511"
+    ]
+  },
+  "fac_20d8e0954cbc": {
+    "faculty_id": "fac_20d8e0954cbc",
+    "canonical_name": "SIVABALAKRISHNAN M",
+    "review_count": 16,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-06T22:49:43",
+    "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 3,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 6,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 7
+    },
+    "recurring_keywords": [
+      {
+        "word": "sivabalakrishnan",
+        "count": 18
+      },
+      {
+        "word": "want",
+        "count": 11
+      },
+      {
+        "word": "dbms",
+        "count": 10
+      },
+      {
+        "word": "reena",
+        "count": 9
+      },
+      {
+        "word": "roy",
+        "count": 9
+      },
+      {
+        "word": "sahaya",
+        "count": 8
+      },
+      {
+        "word": "beni",
+        "count": 8
+      },
+      {
+        "word": "swaminathan",
+        "count": 6
+      },
+      {
+        "word": "database",
+        "count": 5
+      },
+      {
+        "word": "sharmiladevi",
+        "count": 4
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_826_910",
+      "rev_m_2788_3709",
+      "rev_m_8196_14173",
+      "rev_m_2948_3951",
+      "rev_m_4090_5537",
+      "rev_m_8938_15263",
+      "rev_m_2868_4087",
+      "rev_m_9026_15443",
+      "rev_m_9037_15473",
+      "rev_m_9061_15534",
+      "rev_m_3028_4443",
+      "rev_m_9147_15755",
+      "rev_m_9155_15788",
+      "rev_m_4344_6007",
+      "rev_m_4345_6010",
+      "rev_m_4350_6030"
+    ]
+  },
+  "fac_b37cfa0cc212": {
+    "faculty_id": "fac_b37cfa0cc212",
+    "canonical_name": "PRADEEP K",
+    "review_count": 25,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-10-24T11:13:30",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 10,
+      "WhatsApp Chat - ffcs'29.zip": 11,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 4
+    },
+    "recurring_keywords": [
+      {
+        "word": "pradeep",
+        "count": 26
+      },
+      {
+        "word": "java",
+        "count": 17
+      },
+      {
+        "word": "votes",
+        "count": 6
+      },
+      {
+        "word": "need",
+        "count": 6
+      },
+      {
+        "word": "want",
+        "count": 6
+      },
+      {
+        "word": "devi",
+        "count": 5
+      },
+      {
+        "word": "how",
+        "count": 4
+      },
+      {
+        "word": "indra",
+        "count": 4
+      },
+      {
+        "word": "priyadarshini",
+        "count": 3
+      },
+      {
+        "word": "sheena",
+        "count": 3
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_4808_6413",
+      "rev_m_8046_13881",
+      "rev_m_1278_1722",
+      "rev_m_3105_4189",
+      "rev_m_3204_4307",
+      "rev_m_3536_4777",
+      "rev_m_8687_14896",
+      "rev_m_2346_3411",
+      "rev_m_8698_14916",
+      "rev_m_3687_5040",
+      "rev_m_8783_15018",
+      "rev_m_8814_15057",
+      "rev_m_2999_4345",
+      "rev_m_9121_15691",
+      "rev_m_3089_4565",
+      "rev_m_3093_4578",
+      "rev_m_3094_4584",
+      "rev_m_3185_4862",
+      "rev_m_3199_4918",
+      "rev_m_3226_5028",
+      "rev_m_3297_5252",
+      "rev_m_9298_16245",
+      "rev_m_3424_5582",
+      "rev_m_9522_20507",
+      "rev_m_9565_20645"
+    ]
+  },
+  "fac_3394c2423559": {
+    "faculty_id": "fac_3394c2423559",
+    "canonical_name": "NEELANARAYANAN V",
+    "review_count": 1,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-10-24T23:04:35",
+    "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 1
+    },
+    "recurring_keywords": [],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_3544_5947"
+    ]
+  },
+  "fac_ae4447c49c47": {
+    "faculty_id": "fac_ae4447c49c47",
+    "canonical_name": "V. SAKTHIVEL",
+    "review_count": 10,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-07T20:09:00",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 8
     },
     "recurring_keywords": [
       {
         "word": "sakthivel",
+        "count": 10
+      },
+      {
+        "word": "software",
+        "count": 7
+      },
+      {
+        "word": "engineering",
+        "count": 7
+      },
+      {
+        "word": "how",
+        "count": 3
+      },
+      {
+        "word": "attended",
+        "count": 2
+      },
+      {
+        "word": "elakya",
+        "count": 2
+      },
+      {
+        "word": "want",
+        "count": 2
+      },
+      {
+        "word": "need",
+        "count": 2
+      },
+      {
+        "word": "elakiya",
         "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_7316_10485",
-      "rev_m_9206_15942"
+      "rev_m_1559_1893",
+      "rev_m_3311_4436",
+      "rev_m_3471_4673",
+      "rev_m_4313_5960",
+      "rev_m_4366_6099",
+      "rev_m_4375_6119",
+      "rev_m_4384_6163",
+      "rev_m_9206_15942",
+      "rev_m_4428_6318"
     ]
   },
   "fac_5aedf2458fc0": {
     "faculty_id": "fac_5aedf2458fc0",
     "canonical_name": "RAJESH M",
-    "review_count": 2,
+    "review_count": 27,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -435,34 +1258,89 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-08T17:12:17",
+    "last_review_date": "2026-07-08T23:47:33",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 7,
+      "WhatsApp Chat - ffcs'29.zip": 18,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 2
     },
     "recurring_keywords": [
       {
-        "word": "want",
-        "count": 2
-      },
-      {
         "word": "rajesh",
-        "count": 2
+        "count": 29
       },
       {
         "word": "database",
-        "count": 2
+        "count": 17
+      },
+      {
+        "word": "suhail",
+        "count": 15
+      },
+      {
+        "word": "votes",
+        "count": 15
+      },
+      {
+        "word": "systems",
+        "count": 15
+      },
+      {
+        "word": "want",
+        "count": 15
+      },
+      {
+        "word": "leninisha",
+        "count": 9
+      },
+      {
+        "word": "shanmugam",
+        "count": 9
+      },
+      {
+        "word": "dbms",
+        "count": 9
+      },
+      {
+        "word": "kowsigan",
+        "count": 8
       }
     ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_2126_2640",
+      "rev_m_2135_2666",
+      "rev_m_836_920",
+      "rev_m_1372_1890",
+      "rev_m_1854_2649",
+      "rev_m_1884_2728",
+      "rev_m_3394_4565",
+      "rev_m_2002_2886",
+      "rev_m_4145_5596",
+      "rev_m_2837_4039",
       "rev_m_9095_15607",
-      "rev_m_9279_16190"
+      "rev_m_3075_4531",
+      "rev_m_3112_4632",
+      "rev_m_3155_4735",
+      "rev_m_3162_4751",
+      "rev_m_3184_4859",
+      "rev_m_4389_6190",
+      "rev_m_3193_4897",
+      "rev_m_4406_6246",
+      "rev_m_3213_4975",
+      "rev_m_3266_5158",
+      "rev_m_3308_5290",
+      "rev_m_3313_5312",
+      "rev_m_4570_6647",
+      "rev_m_9279_16190",
+      "rev_m_3403_5539",
+      "rev_m_3418_5567"
     ]
   },
   "fac_28406d22b302": {
     "faculty_id": "fac_28406d22b302",
     "canonical_name": "PRIYADARSHINI J",
-    "review_count": 1,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -478,9 +1356,14 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-07-08T07:04:43",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
     "recurring_keywords": [
+      {
+        "word": "priyadarshini",
+        "count": 2
+      },
       {
         "word": "evening",
         "count": 2
@@ -488,13 +1371,14 @@
     ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_2378_3074",
       "rev_m_9243_16074"
     ]
   },
   "fac_35648db19c1c": {
     "faculty_id": "fac_35648db19c1c",
     "canonical_name": "SRIDHAR R",
-    "review_count": 1,
+    "review_count": 5,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -508,20 +1392,67 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T20:55:05",
+    "last_review_date": "2026-07-08T18:44:34",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 1
+      "WhatsApp Chat - ffcs'29.zip": 3,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 1,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "sridhar",
+        "count": 5
+      },
+      {
+        "word": "fundamentals",
+        "count": 4
+      },
+      {
+        "word": "virtual",
+        "count": 4
+      },
+      {
+        "word": "augmented",
+        "count": 4
+      },
+      {
+        "word": "reality",
+        "count": 4
+      },
+      {
+        "word": "want",
+        "count": 4
+      },
+      {
+        "word": "pls",
+        "count": 4
+      },
+      {
+        "word": "swap",
+        "count": 4
+      },
+      {
+        "word": "tcc",
+        "count": 2
+      },
+      {
+        "word": "any",
+        "count": 2
+      }
+    ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_9235_16046"
+      "rev_m_3222_5013",
+      "rev_m_9235_16046",
+      "rev_m_3235_5043",
+      "rev_m_3273_5179",
+      "rev_m_4583_6686"
     ]
   },
   "fac_87b0702fb852": {
     "faculty_id": "fac_87b0702fb852",
     "canonical_name": "DOMINIC SAVIO M",
-    "review_count": 4,
+    "review_count": 13,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -535,36 +1466,59 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-10-24T11:49:21",
+    "last_review_date": "2026-10-24T23:04:06",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 4
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 7,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "dominic",
-        "count": 4
+        "count": 13
       },
       {
         "word": "savio",
-        "count": 4
+        "count": 5
       },
       {
         "word": "how",
         "count": 3
+      },
+      {
+        "word": "dont",
+        "count": 2
+      },
+      {
+        "word": "notes",
+        "count": 2
+      },
+      {
+        "word": "can",
+        "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_2214_2690",
+      "rev_m_890_968",
+      "rev_m_1115_1305",
+      "rev_m_1119_1316",
+      "rev_m_1172_1382",
+      "rev_m_752_821",
+      "rev_m_1349_1832",
+      "rev_m_3039_4103",
+      "rev_m_3047_4112",
       "rev_m_9302_16258",
       "rev_m_9306_16262",
-      "rev_m_9573_20662"
+      "rev_m_9573_20662",
+      "rev_m_5368_11392"
     ]
   },
   "fac_6ee18e020f02": {
     "faculty_id": "fac_6ee18e020f02",
     "canonical_name": "KAVITHA J C",
-    "review_count": 19,
+    "review_count": 24,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -578,14 +1532,16 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-21T21:18:45",
+    "last_review_date": "2026-06-27T21:41:22",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 19
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 19,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "kavitha",
-        "count": 19
+        "count": 24
       },
       {
         "word": "computation",
@@ -644,13 +1600,18 @@
       "rev_m_6094_8154",
       "rev_m_6138_8226",
       "rev_m_6990_9705",
-      "rev_m_8118_14027"
+      "rev_m_1192_1409",
+      "rev_m_8118_14027",
+      "rev_m_3303_4427",
+      "rev_m_3304_4428",
+      "rev_m_2090_3068",
+      "rev_m_2876_4108"
     ]
   },
   "fac_ba6fb39fb3f9": {
     "faculty_id": "fac_ba6fb39fb3f9",
     "canonical_name": "KAVIPRIYA G",
-    "review_count": 2,
+    "review_count": 4,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -664,34 +1625,41 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2025-12-04T10:48:25",
+    "last_review_date": "2026-06-27T13:36:02",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 2
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
     },
     "recurring_keywords": [
+      {
+        "word": "kavipriya",
+        "count": 4
+      },
       {
         "word": "votes",
         "count": 4
       },
       {
-        "word": "kavipriya",
+        "word": "vote",
         "count": 2
       },
       {
-        "word": "vote",
+        "word": "daa",
         "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_2098_2454",
-      "rev_m_6650_8944"
+      "rev_m_6650_8944",
+      "rev_m_2186_2786",
+      "rev_m_4017_5444"
     ]
   },
   "fac_612d89c653ab": {
     "faculty_id": "fac_612d89c653ab",
     "canonical_name": "PANDIYARAJU V",
-    "review_count": 1,
+    "review_count": 3,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -705,20 +1673,64 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-25T17:08:18",
+    "last_review_date": "2026-10-24T14:09:11",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "can",
+        "count": 4
+      },
+      {
+        "word": "pandiyaraju",
+        "count": 4
+      },
+      {
+        "word": "daa",
+        "count": 3
+      },
+      {
+        "word": "jayaram",
+        "count": 3
+      },
+      {
+        "word": "vote",
+        "count": 2
+      },
+      {
+        "word": "get",
+        "count": 2
+      },
+      {
+        "word": "some",
+        "count": 2
+      },
+      {
+        "word": "reviews",
+        "count": 2
+      },
+      {
+        "word": "sudheer",
+        "count": 2
+      },
+      {
+        "word": "kumar",
+        "count": 2
+      }
+    ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_8567_14697"
+      "rev_m_2356_3029",
+      "rev_m_8567_14697",
+      "rev_m_5291_11286"
     ]
   },
   "fac_dad6e72e8218": {
     "faculty_id": "fac_dad6e72e8218",
     "canonical_name": "SELLAM V",
-    "review_count": 1,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -734,18 +1746,25 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-10-24T11:18:19",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "sellam",
+        "count": 2
+      }
+    ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_1474_1785",
       "rev_m_9569_20653"
     ]
   },
   "fac_a748b31379ab": {
     "faculty_id": "fac_a748b31379ab",
     "canonical_name": "TAHIR MUJTABA",
-    "review_count": 4,
+    "review_count": 18,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -759,40 +1778,80 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-08T17:30:01",
+    "last_review_date": "2026-10-24T13:26:09",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5,
+      "WhatsApp Chat - ffcs'29.zip": 9,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 4
     },
     "recurring_keywords": [
       {
         "word": "tahir",
-        "count": 4
+        "count": 19
+      },
+      {
+        "word": "bacse",
+        "count": 15
       },
       {
         "word": "mujtaba",
-        "count": 3
-      },
-      {
-        "word": "how",
-        "count": 2
+        "count": 13
       },
       {
         "word": "computation",
-        "count": 2
+        "count": 9
+      },
+      {
+        "word": "votes",
+        "count": 9
+      },
+      {
+        "word": "models",
+        "count": 7
+      },
+      {
+        "word": "sandhya",
+        "count": 5
+      },
+      {
+        "word": "jani",
+        "count": 5
+      },
+      {
+        "word": "anbarasi",
+        "count": 5
+      },
+      {
+        "word": "padmavathy",
+        "count": 4
       }
     ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_2183_2770",
+      "rev_m_770_841",
+      "rev_m_1096_1354",
+      "rev_m_1380_1950",
+      "rev_m_2081_3016",
+      "rev_m_2083_3025",
+      "rev_m_2700_3825",
+      "rev_m_2710_3838",
+      "rev_m_2711_3845",
+      "rev_m_4193_5661",
       "rev_m_9091_15600",
       "rev_m_9093_15605",
       "rev_m_9160_15805",
-      "rev_m_9283_16203"
+      "rev_m_3240_5073",
+      "rev_m_9283_16203",
+      "rev_m_4643_6799",
+      "rev_m_5261_11216",
+      "rev_m_5287_11270"
     ]
   },
   "fac_7aa6dbb5b0f7": {
     "faculty_id": "fac_7aa6dbb5b0f7",
     "canonical_name": "RABINDRA KUMAR SINGH",
-    "review_count": 4,
+    "review_count": 8,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -806,21 +1865,39 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-25T12:45:33",
+    "last_review_date": "2026-07-07T20:48:18",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 4
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - ffcs'29.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
     },
     "recurring_keywords": [
       {
-        "word": "singh",
-        "count": 3
+        "word": "kumar",
+        "count": 8
       },
       {
-        "word": "kumar",
-        "count": 3
+        "word": "singh",
+        "count": 7
       },
       {
         "word": "rabindra",
+        "count": 6
+      },
+      {
+        "word": "want",
+        "count": 2
+      },
+      {
+        "word": "any",
+        "count": 2
+      },
+      {
+        "word": "sankari",
+        "count": 2
+      },
+      {
+        "word": "ravichandran",
         "count": 2
       }
     ],
@@ -828,14 +1905,18 @@
     "review_ids": [
       "rev_m_5871_7695",
       "rev_m_7356_10580",
+      "rev_m_1770_2493",
       "rev_m_8534_14617",
-      "rev_m_8553_14648"
+      "rev_m_8553_14648",
+      "rev_m_2089_3055",
+      "rev_m_4367_6100",
+      "rev_m_4434_6350"
     ]
   },
   "fac_8cc9e21d7e03": {
     "faculty_id": "fac_8cc9e21d7e03",
     "canonical_name": "LAKSHMI HARIKA PALIVELA",
-    "review_count": 6,
+    "review_count": 13,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -849,50 +1930,52 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-10-24T15:09:01",
+    "last_review_date": "2026-10-26T20:02:58",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 5,
+      "WhatsApp Chat - ffcs'29.zip": 3,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5
     },
     "recurring_keywords": [
       {
         "word": "lakshmi",
-        "count": 6
+        "count": 14
+      },
+      {
+        "word": "pathi",
+        "count": 4
+      },
+      {
+        "word": "jakkamputi",
+        "count": 4
+      },
+      {
+        "word": "suggestions",
+        "count": 4
       },
       {
         "word": "votes",
         "count": 4
       },
       {
-        "word": "phone",
-        "count": 3
-      },
-      {
-        "word": "redacted",
-        "count": 3
-      },
-      {
-        "word": "structures",
-        "count": 2
+        "word": "any",
+        "count": 4
       },
       {
         "word": "pankaja",
-        "count": 2
+        "count": 3
       },
       {
-        "word": "vote",
-        "count": 2
+        "word": "computational",
+        "count": 3
       },
       {
-        "word": "attached",
-        "count": 2
+        "word": "engineering",
+        "count": 3
       },
       {
-        "word": "sticker",
-        "count": 2
-      },
-      {
-        "word": "webp",
-        "count": 2
+        "word": "gobinath",
+        "count": 3
       }
     ],
     "low_sample": true,
@@ -900,15 +1983,22 @@
       "rev_m_1139_1163",
       "rev_m_3851_5120",
       "rev_m_7459_10872",
-      "rev_m_8097_13992",
+      "rev_m_1143_1440",
+      "rev_m_2457_3245",
+      "rev_m_2462_3259",
+      "rev_m_3546_4797",
+      "rev_m_2111_3097",
       "rev_m_8702_14920",
-      "rev_m_9589_20687"
+      "rev_m_9589_20687",
+      "rev_m_5303_11304",
+      "rev_m_3532_5924",
+      "rev_m_5407_11455"
     ]
   },
   "fac_4d1c9449366e": {
     "faculty_id": "fac_4d1c9449366e",
     "canonical_name": "VIDHYA V",
-    "review_count": 4,
+    "review_count": 9,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -922,22 +2012,45 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-08T16:59:13",
+    "last_review_date": "2026-10-24T09:55:25",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 4
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - ffcs'29.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3
     },
     "recurring_keywords": [
       {
         "word": "vidhya",
-        "count": 4
+        "count": 9
+      },
+      {
+        "word": "wanna",
+        "count": 2
+      },
+      {
+        "word": "swap",
+        "count": 2
+      },
+      {
+        "word": "uma",
+        "count": 2
+      },
+      {
+        "word": "maheshwari",
+        "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_4695_6265",
       "rev_m_5542_7325",
+      "rev_m_2657_3773",
+      "rev_m_2660_3776",
+      "rev_m_4143_5594",
       "rev_m_8880_15134",
-      "rev_m_9278_16189"
+      "rev_m_4567_6641",
+      "rev_m_9278_16189",
+      "rev_m_5183_11097"
     ]
   },
   "fac_8c1000c932e6": {
@@ -986,7 +2099,7 @@
   "fac_cd06b09d22ee": {
     "faculty_id": "fac_cd06b09d22ee",
     "canonical_name": "SAURABH CHANDRA MAURY",
-    "review_count": 11,
+    "review_count": 14,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1000,18 +2113,20 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-25T16:35:41",
+    "last_review_date": "2026-10-24T09:55:38",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 11
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 10,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3,
+      "WhatsApp Chat - ffcs'29.zip": 1
     },
     "recurring_keywords": [
       {
         "word": "saurabh",
-        "count": 10
+        "count": 14
       },
       {
         "word": "paul",
-        "count": 6
+        "count": 8
       },
       {
         "word": "votes",
@@ -1038,11 +2153,11 @@
         "count": 2
       },
       {
-        "word": "avg",
+        "word": "system",
         "count": 2
       },
       {
-        "word": "quite",
+        "word": "ramesh",
         "count": 2
       }
     ],
@@ -1054,17 +2169,20 @@
       "rev_m_7432_10803",
       "rev_m_7441_10814",
       "rev_m_8042_13869",
+      "rev_m_2452_3227",
       "rev_m_8435_14477",
       "rev_m_8441_14483",
       "rev_m_8449_14491",
       "rev_m_8452_14494",
-      "rev_m_8565_14695"
+      "rev_m_3434_4620",
+      "rev_m_3063_4512",
+      "rev_m_5184_11098"
     ]
   },
   "fac_37b69d32f686": {
     "faculty_id": "fac_37b69d32f686",
     "canonical_name": "ASHIS BERA",
-    "review_count": 13,
+    "review_count": 24,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1078,18 +2196,32 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-06T23:09:20",
+    "last_review_date": "2026-07-07T18:30:40",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 13
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 13,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 8,
+      "WhatsApp Chat - ffcs'29.zip": 3
     },
     "recurring_keywords": [
       {
         "word": "bera",
-        "count": 13
+        "count": 24
       },
       {
         "word": "somnath",
-        "count": 12
+        "count": 13
+      },
+      {
+        "word": "ashis",
+        "count": 8
+      },
+      {
+        "word": "maths",
+        "count": 7
+      },
+      {
+        "word": "who",
+        "count": 5
       },
       {
         "word": "poulomi",
@@ -1097,10 +2229,6 @@
       },
       {
         "word": "statistics",
-        "count": 4
-      },
-      {
-        "word": "who",
         "count": 4
       },
       {
@@ -1112,16 +2240,8 @@
         "count": 4
       },
       {
-        "word": "probablity",
-        "count": 2
-      },
-      {
-        "word": "want",
-        "count": 2
-      },
-      {
-        "word": "how",
-        "count": 2
+        "word": "discrete",
+        "count": 4
       }
     ],
     "low_sample": true,
@@ -1137,14 +2257,25 @@
       "rev_m_5084_6761",
       "rev_m_5106_6798",
       "rev_m_7420_10763",
+      "rev_m_1522_1839",
+      "rev_m_1716_2097",
+      "rev_m_2164_2743",
+      "rev_m_2192_2794",
+      "rev_m_940_1076",
+      "rev_m_2133_3124",
+      "rev_m_3863_5254",
       "rev_m_8750_14982",
-      "rev_m_9166_15818"
+      "rev_m_4317_5970",
+      "rev_m_9166_15818",
+      "rev_m_4369_6105",
+      "rev_m_4378_6138",
+      "rev_m_3201_4935"
     ]
   },
   "fac_95f6283563f7": {
     "faculty_id": "fac_95f6283563f7",
     "canonical_name": "SAGITHYA T",
-    "review_count": 7,
+    "review_count": 11,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1160,23 +2291,33 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-07-06T19:58:16",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 7
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 7,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "sagithya",
-        "count": 7
+        "count": 11
       },
       {
         "word": "linear",
-        "count": 3
+        "count": 5
       },
       {
         "word": "algebra",
-        "count": 3
+        "count": 5
       },
       {
         "word": "jaganathan",
+        "count": 2
+      },
+      {
+        "word": "need",
+        "count": 2
+      },
+      {
+        "word": "how",
         "count": 2
       }
     ],
@@ -1188,13 +2329,17 @@
       "rev_m_2218_2694",
       "rev_m_2231_2718",
       "rev_m_5952_7883",
+      "rev_m_3647_4986",
+      "rev_m_2678_3795",
+      "rev_m_2691_3813",
+      "rev_m_4298_5925",
       "rev_m_9142_15742"
     ]
   },
   "fac_bfca3a1c8637": {
     "faculty_id": "fac_bfca3a1c8637",
     "canonical_name": "MEGALA M",
-    "review_count": 0,
+    "review_count": 3,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1208,16 +2353,47 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
-    "recurring_keywords": [],
+    "last_review_date": "2026-07-08T15:42:35",
+    "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 3
+    },
+    "recurring_keywords": [
+      {
+        "word": "discrete",
+        "count": 3
+      },
+      {
+        "word": "megala",
+        "count": 3
+      },
+      {
+        "word": "want",
+        "count": 3
+      },
+      {
+        "word": "linear",
+        "count": 2
+      },
+      {
+        "word": "algebra",
+        "count": 2
+      },
+      {
+        "word": "math",
+        "count": 2
+      }
+    ],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_3015_4399",
+      "rev_m_3288_5225",
+      "rev_m_3305_5277"
+    ]
   },
   "fac_f111202b5a4a": {
     "faculty_id": "fac_f111202b5a4a",
     "canonical_name": "FATHIMA SAFIKAA S N",
-    "review_count": 6,
+    "review_count": 9,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1231,28 +2407,64 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-23T22:21:58",
+    "last_review_date": "2026-07-08T19:34:32",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 6,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3
     },
     "recurring_keywords": [
       {
-        "word": "annis",
-        "count": 6
+        "word": "fathima",
+        "count": 9
       },
       {
-        "word": "fathima",
-        "count": 6
+        "word": "annis",
+        "count": 7
+      },
+      {
+        "word": "would",
+        "count": 3
+      },
+      {
+        "word": "again",
+        "count": 3
+      },
+      {
+        "word": "chill",
+        "count": 2
+      },
+      {
+        "word": "best",
+        "count": 2
+      },
+      {
+        "word": "can",
+        "count": 2
+      },
+      {
+        "word": "teaching",
+        "count": 2
+      },
+      {
+        "word": "very",
+        "count": 2
+      },
+      {
+        "word": "well",
+        "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_4825_6430",
       "rev_m_4844_6450",
+      "rev_m_891_969",
+      "rev_m_1518_1834",
       "rev_m_8339_14348",
       "rev_m_8347_14361",
       "rev_m_8350_14367",
-      "rev_m_8500_14570"
+      "rev_m_8500_14570",
+      "rev_m_4588_6704"
     ]
   },
   "fac_0e1749d4aaa4": {
@@ -1336,7 +2548,7 @@
   "fac_b206ccd7fb63": {
     "faculty_id": "fac_b206ccd7fb63",
     "canonical_name": "UMA MAHESWARI S",
-    "review_count": 6,
+    "review_count": 10,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1350,18 +2562,20 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2025-12-05T15:57:56",
+    "last_review_date": "2026-06-27T15:03:36",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 6,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "uma",
-        "count": 6
+        "count": 10
       },
       {
         "word": "maheswari",
-        "count": 6
+        "count": 10
       },
       {
         "word": "dsa",
@@ -1373,111 +2587,6 @@
       },
       {
         "word": "sidiq",
-        "count": 3
-      }
-    ],
-    "low_sample": true,
-    "review_ids": [
-      "rev_m_1318_1397",
-      "rev_m_1374_1462",
-      "rev_m_1390_1488",
-      "rev_m_4706_6276",
-      "rev_m_4888_6498",
-      "rev_m_7177_10155"
-    ]
-  },
-  "fac_074e6f74394d": {
-    "faculty_id": "fac_074e6f74394d",
-    "canonical_name": "DHANASEKAR S",
-    "review_count": 5,
-    "rated_count": 0,
-    "rating_mean": null,
-    "rating_median": null,
-    "rating_min": null,
-    "rating_max": null,
-    "rating_distribution": {
-      "1_star": 0,
-      "2_star": 0,
-      "3_star": 0,
-      "4_star": 0,
-      "5_star": 0
-    },
-    "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-26T22:27:38",
-    "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 5
-    },
-    "recurring_keywords": [
-      {
-        "word": "dhanasekar",
-        "count": 6
-      },
-      {
-        "word": "how",
-        "count": 2
-      },
-      {
-        "word": "basua",
-        "count": 2
-      }
-    ],
-    "low_sample": true,
-    "review_ids": [
-      "rev_m_1966_2261",
-      "rev_m_2470_3073",
-      "rev_m_8122_14033",
-      "rev_m_8225_14219",
-      "rev_m_8657_14848"
-    ]
-  },
-  "fac_a48a3947a7cb": {
-    "faculty_id": "fac_a48a3947a7cb",
-    "canonical_name": "RAJESH KUMAR MOHAPATRA",
-    "review_count": 14,
-    "rated_count": 0,
-    "rating_mean": null,
-    "rating_median": null,
-    "rating_min": null,
-    "rating_max": null,
-    "rating_distribution": {
-      "1_star": 0,
-      "2_star": 0,
-      "3_star": 0,
-      "4_star": 0,
-      "5_star": 0
-    },
-    "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-06T21:32:00",
-    "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 14
-    },
-    "recurring_keywords": [
-      {
-        "word": "kumar",
-        "count": 14
-      },
-      {
-        "word": "rajesh",
-        "count": 13
-      },
-      {
-        "word": "mohapatra",
-        "count": 13
-      },
-      {
-        "word": "how",
-        "count": 4
-      },
-      {
-        "word": "probability",
-        "count": 3
-      },
-      {
-        "word": "dropping",
-        "count": 3
-      },
-      {
-        "word": "pls",
         "count": 3
       },
       {
@@ -1495,6 +2604,170 @@
     ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_1318_1397",
+      "rev_m_1374_1462",
+      "rev_m_1390_1488",
+      "rev_m_4706_6276",
+      "rev_m_4888_6498",
+      "rev_m_7177_10155",
+      "rev_m_1434_1725",
+      "rev_m_1524_1841",
+      "rev_m_1842_2629",
+      "rev_m_2627_3741"
+    ]
+  },
+  "fac_074e6f74394d": {
+    "faculty_id": "fac_074e6f74394d",
+    "canonical_name": "DHANASEKAR S",
+    "review_count": 16,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-06T18:13:01",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - ffcs'29.zip": 6,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 6
+    },
+    "recurring_keywords": [
+      {
+        "word": "dhanasekar",
+        "count": 18
+      },
+      {
+        "word": "how",
+        "count": 8
+      },
+      {
+        "word": "linear",
+        "count": 5
+      },
+      {
+        "word": "algebra",
+        "count": 5
+      },
+      {
+        "word": "discrete",
+        "count": 5
+      },
+      {
+        "word": "math",
+        "count": 4
+      },
+      {
+        "word": "any",
+        "count": 3
+      },
+      {
+        "word": "tdd",
+        "count": 3
+      },
+      {
+        "word": "maths",
+        "count": 2
+      },
+      {
+        "word": "basua",
+        "count": 2
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
+      "rev_m_1966_2261",
+      "rev_m_2470_3073",
+      "rev_m_1151_1454",
+      "rev_m_2440_3206",
+      "rev_m_2597_3446",
+      "rev_m_2616_3468",
+      "rev_m_8225_14219",
+      "rev_m_3145_4239",
+      "rev_m_1688_2384",
+      "rev_m_1814_2585",
+      "rev_m_1995_2878",
+      "rev_m_8657_14848",
+      "rev_m_2320_3376",
+      "rev_m_3031_4452",
+      "rev_m_4299_5928",
+      "rev_m_4305_5940"
+    ]
+  },
+  "fac_a48a3947a7cb": {
+    "faculty_id": "fac_a48a3947a7cb",
+    "canonical_name": "RAJESH KUMAR MOHAPATRA",
+    "review_count": 21,
+    "rated_count": 0,
+    "rating_mean": null,
+    "rating_median": null,
+    "rating_min": null,
+    "rating_max": null,
+    "rating_distribution": {
+      "1_star": 0,
+      "2_star": 0,
+      "3_star": 0,
+      "4_star": 0,
+      "5_star": 0
+    },
+    "bayesian_smoothed_rating_separate": null,
+    "last_review_date": "2026-07-08T16:37:10",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 13,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2,
+      "WhatsApp Chat - ffcs'29.zip": 6
+    },
+    "recurring_keywords": [
+      {
+        "word": "kumar",
+        "count": 20
+      },
+      {
+        "word": "rajesh",
+        "count": 19
+      },
+      {
+        "word": "mohapatra",
+        "count": 17
+      },
+      {
+        "word": "pls",
+        "count": 6
+      },
+      {
+        "word": "how",
+        "count": 5
+      },
+      {
+        "word": "probability",
+        "count": 3
+      },
+      {
+        "word": "attached",
+        "count": 3
+      },
+      {
+        "word": "phone",
+        "count": 3
+      },
+      {
+        "word": "redacted",
+        "count": 3
+      },
+      {
+        "word": "photo",
+        "count": 3
+      }
+    ],
+    "low_sample": true,
+    "review_ids": [
       "rev_m_1637_1818",
       "rev_m_2788_3732",
       "rev_m_2924_3983",
@@ -1506,9 +2779,16 @@
       "rev_m_7246_10378",
       "rev_m_7349_10573",
       "rev_m_7527_11052",
+      "rev_m_2639_3497",
       "rev_m_8126_14037",
-      "rev_m_8914_15174",
-      "rev_m_9152_15777"
+      "rev_m_2978_4011",
+      "rev_m_1657_2349",
+      "rev_m_2134_3125",
+      "rev_m_3011_4379",
+      "rev_m_9152_15777",
+      "rev_m_3208_4957",
+      "rev_m_3217_4992",
+      "rev_m_3311_5301"
     ]
   },
   "fac_ef02551caeeb": {
@@ -1537,7 +2817,7 @@
   "fac_90f486c05e27": {
     "faculty_id": "fac_90f486c05e27",
     "canonical_name": "RUPCHAND SUTRADHAR",
-    "review_count": 0,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1551,11 +2831,25 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
-    "recurring_keywords": [],
+    "last_review_date": "2026-07-08T22:00:00",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
+    },
+    "recurring_keywords": [
+      {
+        "word": "rupchand",
+        "count": 2
+      },
+      {
+        "word": "tdd",
+        "count": 2
+      }
+    ],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_4564_6632",
+      "rev_m_4612_6754"
+    ]
   },
   "fac_a9f380a37719": {
     "faculty_id": "fac_a9f380a37719",
@@ -1583,7 +2877,7 @@
   "fac_802c2e7102a0": {
     "faculty_id": "fac_802c2e7102a0",
     "canonical_name": "PULAK KONAR",
-    "review_count": 3,
+    "review_count": 10,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1597,18 +2891,20 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-27T18:19:41",
+    "last_review_date": "2026-10-24T09:56:07",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 3
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 3,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
-        "word": "pulak",
-        "count": 3
+        "word": "konar",
+        "count": 11
       },
       {
-        "word": "konar",
-        "count": 3
+        "word": "pulak",
+        "count": 10
       },
       {
         "word": "iss",
@@ -1617,19 +2913,50 @@
       {
         "word": "baar",
         "count": 2
+      },
+      {
+        "word": "kumar",
+        "count": 2
+      },
+      {
+        "word": "drop",
+        "count": 2
+      },
+      {
+        "word": "teaching",
+        "count": 2
+      },
+      {
+        "word": "heard",
+        "count": 2
+      },
+      {
+        "word": "how",
+        "count": 2
+      },
+      {
+        "word": "maths",
+        "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_6309_8424",
+      "rev_m_1567_1904",
+      "rev_m_1703_2081",
+      "rev_m_824_906",
+      "rev_m_3641_4980",
       "rev_m_8896_15154",
-      "rev_m_8897_15155"
+      "rev_m_8897_15155",
+      "rev_m_2953_4244",
+      "rev_m_4500_6445",
+      "rev_m_5186_11100"
     ]
   },
   "fac_01f7855ffce3": {
     "faculty_id": "fac_01f7855ffce3",
     "canonical_name": "GUGA PRIYA G",
-    "review_count": 3,
+    "review_count": 1,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1643,63 +2970,20 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-10-24T10:58:04",
+    "last_review_date": "2026-10-24T09:27:46",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 3
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
     },
-    "recurring_keywords": [
-      {
-        "word": "phone",
-        "count": 15
-      },
-      {
-        "word": "redacted",
-        "count": 15
-      },
-      {
-        "word": "attached",
-        "count": 7
-      },
-      {
-        "word": "team",
-        "count": 5
-      },
-      {
-        "word": "photo",
-        "count": 4
-      },
-      {
-        "word": "jpg",
-        "count": 4
-      },
-      {
-        "word": "priya",
-        "count": 3
-      },
-      {
-        "word": "part",
-        "count": 3
-      },
-      {
-        "word": "space",
-        "count": 3
-      },
-      {
-        "word": "escape",
-        "count": 3
-      }
-    ],
+    "recurring_keywords": [],
     "low_sample": true,
     "review_ids": [
-      "rev_m_2783_3727",
-      "rev_m_7803_12224",
-      "rev_m_9556_20635"
+      "rev_m_5149_11024"
     ]
   },
   "fac_615716b47d6a": {
     "faculty_id": "fac_615716b47d6a",
     "canonical_name": "ABRAHAM SUDHARSON PONRAJ",
-    "review_count": 20,
+    "review_count": 30,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1713,21 +2997,31 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T22:24:01",
+    "last_review_date": "2026-07-08T23:27:39",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 20
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 19,
+      "WhatsApp Chat - ffcs'29.zip": 6,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5
     },
     "recurring_keywords": [
       {
+        "word": "abraham",
+        "count": 19
+      },
+      {
         "word": "ponraj",
         "count": 14
+      },
+      {
+        "word": "thomas",
+        "count": 12
       },
       {
         "word": "caroline",
         "count": 10
       },
       {
-        "word": "abraham",
+        "word": "operating",
         "count": 8
       },
       {
@@ -1739,24 +3033,16 @@
         "count": 7
       },
       {
+        "word": "want",
+        "count": 7
+      },
+      {
         "word": "soni",
         "count": 6
       },
       {
         "word": "ishwarya",
         "count": 6
-      },
-      {
-        "word": "sheena",
-        "count": 5
-      },
-      {
-        "word": "kiruthika",
-        "count": 5
-      },
-      {
-        "word": "pradhan",
-        "count": 5
       }
     ],
     "low_sample": true,
@@ -1779,14 +3065,24 @@
       "rev_m_7197_10209",
       "rev_m_7418_10751",
       "rev_m_7835_13093",
+      "rev_m_1387_1993",
+      "rev_m_1904_2760",
+      "rev_m_2127_3117",
+      "rev_m_3572_4855",
+      "rev_m_2257_3289",
       "rev_m_9207_15946",
-      "rev_m_9239_16061"
+      "rev_m_4387_6172",
+      "rev_m_4392_6201",
+      "rev_m_4505_6469",
+      "rev_m_3380_5488",
+      "rev_m_4625_6771",
+      "rev_m_3410_5549"
     ]
   },
   "fac_d3e7b5ab5a89": {
     "faculty_id": "fac_d3e7b5ab5a89",
     "canonical_name": "CHANTHINI BASKAR",
-    "review_count": 0,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1800,16 +3096,30 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
-    "recurring_keywords": [],
+    "last_review_date": "2026-10-26T20:09:00",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
+    },
+    "recurring_keywords": [
+      {
+        "word": "chanthini",
+        "count": 2
+      },
+      {
+        "word": "baskar",
+        "count": 2
+      }
+    ],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_2745_3629",
+      "rev_m_5423_11478"
+    ]
   },
   "fac_2f26c5c4f3e5": {
     "faculty_id": "fac_2f26c5c4f3e5",
     "canonical_name": "KARTHIKEYAN P R",
-    "review_count": 7,
+    "review_count": 8,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1825,12 +3135,13 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-06-22T16:45:34",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 7
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 7,
+      "WhatsApp Chat - ffcs'29.zip": 1
     },
     "recurring_keywords": [
       {
         "word": "karthikeyan",
-        "count": 7
+        "count": 8
       },
       {
         "word": "phone",
@@ -1875,6 +3186,7 @@
       "rev_m_3121_4212",
       "rev_m_4572_6084",
       "rev_m_7167_10128",
+      "rev_m_1076_1306",
       "rev_m_8222_14215",
       "rev_m_8226_14220",
       "rev_m_8237_14233"
@@ -1883,7 +3195,7 @@
   "fac_5e029f10605d": {
     "faculty_id": "fac_5e029f10605d",
     "canonical_name": "SINDHUJA M",
-    "review_count": 1,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1899,11 +3211,38 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-07-06T11:13:17",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "embedded",
+        "count": 2
+      },
+      {
+        "word": "systems",
+        "count": 2
+      },
+      {
+        "word": "sindhuja",
+        "count": 2
+      },
+      {
+        "word": "want",
+        "count": 2
+      },
+      {
+        "word": "chanthini",
+        "count": 2
+      },
+      {
+        "word": "bhaskar",
+        "count": 2
+      }
+    ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_4253_5781",
       "rev_m_9028_15455"
     ]
   },
@@ -1952,7 +3291,7 @@
   "fac_a511c113575c": {
     "faculty_id": "fac_a511c113575c",
     "canonical_name": "MANOJ KUMAR R",
-    "review_count": 6,
+    "review_count": 14,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -1968,15 +3307,37 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-10-24T15:15:49",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 6
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 6,
+      "WhatsApp Chat - ffcs'29.zip": 6,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "kumar",
-        "count": 6
+        "count": 14
       },
       {
         "word": "manoj",
+        "count": 12
+      },
+      {
+        "word": "berlin",
+        "count": 5
+      },
+      {
+        "word": "hency",
+        "count": 5
+      },
+      {
+        "word": "embedded",
+        "count": 5
+      },
+      {
+        "word": "vydeki",
+        "count": 4
+      },
+      {
+        "word": "microcontrollers",
         "count": 4
       },
       {
@@ -1984,29 +3345,29 @@
         "count": 4
       },
       {
-        "word": "embedded",
+        "word": "john",
         "count": 3
       },
       {
-        "word": "how",
+        "word": "sahaya",
         "count": 3
-      },
-      {
-        "word": "microcontrollers",
-        "count": 2
-      },
-      {
-        "word": "vigneshwaran",
-        "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_5568_7355",
       "rev_m_7456_10851",
+      "rev_m_737_799",
+      "rev_m_1066_1273",
       "rev_m_8127_14039",
+      "rev_m_1872_2708",
+      "rev_m_1873_2711",
+      "rev_m_1887_2731",
       "rev_m_8644_14831",
+      "rev_m_2184_3206",
+      "rev_m_3627_4952",
       "rev_m_8677_14876",
+      "rev_m_4259_5807",
       "rev_m_9590_20688"
     ]
   },
@@ -2036,7 +3397,7 @@
   "fac_967685314998": {
     "faculty_id": "fac_967685314998",
     "canonical_name": "SRITAMA ROY",
-    "review_count": 1,
+    "review_count": 6,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2050,20 +3411,60 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-10-24T17:24:55",
+    "last_review_date": "2026-10-26T19:55:38",
     "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 4,
+      "WhatsApp Chat - ffcs'29.zip": 1,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 1
     },
-    "recurring_keywords": [],
+    "recurring_keywords": [
+      {
+        "word": "sritama",
+        "count": 6
+      },
+      {
+        "word": "roy",
+        "count": 6
+      },
+      {
+        "word": "embedded",
+        "count": 2
+      },
+      {
+        "word": "dhanush",
+        "count": 2
+      },
+      {
+        "word": "reviews",
+        "count": 2
+      },
+      {
+        "word": "any",
+        "count": 2
+      },
+      {
+        "word": "doesn",
+        "count": 2
+      },
+      {
+        "word": "like",
+        "count": 2
+      }
+    ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_9600_20703"
+      "rev_m_5204_11120",
+      "rev_m_5206_11126",
+      "rev_m_3533_5925",
+      "rev_m_9600_20703",
+      "rev_m_5404_11447",
+      "rev_m_5405_11453"
     ]
   },
   "fac_e524d3bed355": {
     "faculty_id": "fac_e524d3bed355",
     "canonical_name": "REVATHI S",
-    "review_count": 4,
+    "review_count": 18,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2077,38 +3478,52 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T09:03:08",
+    "last_review_date": "2026-10-26T20:21:32",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 4
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 4,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 5,
+      "WhatsApp Chat - ffcs'29.zip": 9
     },
     "recurring_keywords": [
       {
         "word": "revathi",
-        "count": 4
+        "count": 18
       },
       {
         "word": "phone",
-        "count": 4
+        "count": 8
       },
       {
         "word": "redacted",
-        "count": 4
+        "count": 8
+      },
+      {
+        "word": "brindha",
+        "count": 7
+      },
+      {
+        "word": "sujithra",
+        "count": 7
+      },
+      {
+        "word": "dbms",
+        "count": 7
+      },
+      {
+        "word": "teaching",
+        "count": 6
+      },
+      {
+        "word": "want",
+        "count": 6
       },
       {
         "word": "how",
-        "count": 3
+        "count": 5
       },
       {
-        "word": "secure",
-        "count": 2
-      },
-      {
-        "word": "trust",
-        "count": 2
-      },
-      {
-        "word": "one",
-        "count": 2
+        "word": "attached",
+        "count": 5
       }
     ],
     "low_sample": true,
@@ -2116,13 +3531,27 @@
       "rev_m_1924_2202",
       "rev_m_2756_3692",
       "rev_m_7796_11791",
-      "rev_m_9176_15850"
+      "rev_m_2063_2551",
+      "rev_m_2077_2571",
+      "rev_m_2184_2784",
+      "rev_m_1025_1190",
+      "rev_m_2449_3215",
+      "rev_m_1212_1552",
+      "rev_m_1216_1567",
+      "rev_m_3009_4366",
+      "rev_m_3029_4446",
+      "rev_m_3032_4457",
+      "rev_m_3043_4488",
+      "rev_m_9176_15850",
+      "rev_m_3209_4961",
+      "rev_m_3325_5363",
+      "rev_m_5424_11479"
     ]
   },
   "fac_43695d43afe9": {
     "faculty_id": "fac_43695d43afe9",
     "canonical_name": "SOFANA REKA S",
-    "review_count": 3,
+    "review_count": 4,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2138,40 +3567,54 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-06-27T11:40:36",
     "source_breakdown": {
+      "WhatsApp Chat - ffcs'29.zip": 1,
       "WhatsApp Chat - '29 FFCS 1.2.zip": 3
     },
     "recurring_keywords": [
       {
+        "word": "teaching",
+        "count": 6
+      },
+      {
         "word": "soumya",
-        "count": 3
+        "count": 4
+      },
+      {
+        "word": "marking",
+        "count": 4
       },
       {
         "word": "sofana",
+        "count": 4
+      },
+      {
+        "word": "control",
         "count": 3
       },
       {
         "word": "ranjan",
-        "count": 2
+        "count": 3
+      },
+      {
+        "word": "mid",
+        "count": 3
+      },
+      {
+        "word": "fat",
+        "count": 3
       },
       {
         "word": "reka",
-        "count": 2
+        "count": 3
       },
       {
-        "word": "control",
-        "count": 2
-      },
-      {
-        "word": "systems",
-        "count": 2
-      },
-      {
-        "word": "strict",
+        "word": "kumar",
         "count": 2
       }
     ],
     "low_sample": true,
     "review_ids": [
+      "rev_m_1080_1313",
       "rev_m_8364_14402",
       "rev_m_8366_14404",
       "rev_m_8738_14970"
@@ -2180,7 +3623,7 @@
   "fac_82beb6646fa2": {
     "faculty_id": "fac_82beb6646fa2",
     "canonical_name": "SANDHYA P",
-    "review_count": 0,
+    "review_count": 7,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2194,16 +3637,68 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
-    "recurring_keywords": [],
+    "last_review_date": "2026-10-24T23:35:52",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 4,
+      "WhatsApp Chat - ffcs'29.zip": 3
+    },
+    "recurring_keywords": [
+      {
+        "word": "sandhya",
+        "count": 10
+      },
+      {
+        "word": "how",
+        "count": 6
+      },
+      {
+        "word": "blockchain",
+        "count": 5
+      },
+      {
+        "word": "moc",
+        "count": 4
+      },
+      {
+        "word": "want",
+        "count": 3
+      },
+      {
+        "word": "any",
+        "count": 3
+      },
+      {
+        "word": "tcc",
+        "count": 2
+      },
+      {
+        "word": "malathi",
+        "count": 2
+      },
+      {
+        "word": "other",
+        "count": 2
+      },
+      {
+        "word": "attached",
+        "count": 2
+      }
+    ],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_1863_2279",
+      "rev_m_2434_3198",
+      "rev_m_1985_2863",
+      "rev_m_4503_6449",
+      "rev_m_3284_5212",
+      "rev_m_3335_5395",
+      "rev_m_5370_11394"
+    ]
   },
   "fac_a8b9854f55f6": {
     "faculty_id": "fac_a8b9854f55f6",
     "canonical_name": "ANUBHA PEARLINE S",
-    "review_count": 20,
+    "review_count": 24,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2219,20 +3714,22 @@
     "bayesian_smoothed_rating_separate": null,
     "last_review_date": "2026-06-27T14:37:56",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 20
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 20,
+      "WhatsApp Chat - ffcs'29.zip": 2,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
     },
     "recurring_keywords": [
       {
         "word": "votes",
-        "count": 33
+        "count": 36
       },
       {
         "word": "anubha",
-        "count": 19
+        "count": 23
       },
       {
         "word": "pearline",
-        "count": 17
+        "count": 20
       },
       {
         "word": "oops",
@@ -2240,7 +3737,11 @@
       },
       {
         "word": "vote",
-        "count": 10
+        "count": 11
+      },
+      {
+        "word": "any",
+        "count": 6
       },
       {
         "word": "menaka",
@@ -2256,10 +3757,6 @@
       },
       {
         "word": "elakiya",
-        "count": 5
-      },
-      {
-        "word": "indra",
         "count": 5
       }
     ],
@@ -2283,14 +3780,18 @@
       "rev_m_7330_10536",
       "rev_m_7343_10563",
       "rev_m_7388_10681",
+      "rev_m_1366_1851",
       "rev_m_8198_14189",
+      "rev_m_1653_2339",
+      "rev_m_3996_5416",
+      "rev_m_4004_5431",
       "rev_m_8815_15058"
     ]
   },
   "fac_c6478be51cf8": {
     "faculty_id": "fac_c6478be51cf8",
     "canonical_name": "SENTHIL PRAKASH P N",
-    "review_count": 7,
+    "review_count": 28,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2304,67 +3805,90 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-07-07T22:38:16",
+    "last_review_date": "2026-07-08T09:56:30",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 7
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 7,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 11,
+      "WhatsApp Chat - ffcs'29.zip": 10
     },
     "recurring_keywords": [
       {
         "word": "senthil",
-        "count": 6
+        "count": 24
       },
       {
         "word": "prakash",
-        "count": 5
-      },
-      {
-        "word": "how",
-        "count": 4
+        "count": 24
       },
       {
         "word": "java",
+        "count": 18
+      },
+      {
+        "word": "how",
+        "count": 17
+      },
+      {
+        "word": "want",
         "count": 4
       },
       {
-        "word": "mithu",
-        "count": 2
-      },
-      {
-        "word": "sarkar",
-        "count": 2
-      },
-      {
-        "word": "better",
-        "count": 2
-      },
-      {
-        "word": "than",
-        "count": 2
-      },
-      {
-        "word": "pls",
-        "count": 2
-      },
-      {
         "word": "taa",
-        "count": 2
+        "count": 4
+      },
+      {
+        "word": "attached",
+        "count": 3
+      },
+      {
+        "word": "phone",
+        "count": 3
+      },
+      {
+        "word": "redacted",
+        "count": 3
+      },
+      {
+        "word": "photo",
+        "count": 3
       }
     ],
     "low_sample": true,
     "review_ids": [
       "rev_m_4603_6122",
       "rev_m_4606_6125",
+      "rev_m_2090_2588",
+      "rev_m_2158_2717",
+      "rev_m_779_860",
       "rev_m_8085_13951",
+      "rev_m_2478_3283",
+      "rev_m_3049_4116",
+      "rev_m_3119_4208",
       "rev_m_8425_14466",
+      "rev_m_1808_2576",
+      "rev_m_1825_2606",
+      "rev_m_3371_4534",
       "rev_m_8526_14605",
+      "rev_m_1970_2839",
+      "rev_m_3494_4702",
+      "rev_m_2026_2918",
+      "rev_m_3505_4723",
       "rev_m_8575_14715",
-      "rev_m_9241_16067"
+      "rev_m_3510_4730",
+      "rev_m_3518_4750",
+      "rev_m_2318_3374",
+      "rev_m_2560_3660",
+      "rev_m_2952_4241",
+      "rev_m_4250_5776",
+      "rev_m_9241_16067",
+      "rev_m_3248_5095",
+      "rev_m_3275_5186"
     ]
   },
   "fac_aa4b682b2343": {
     "faculty_id": "fac_aa4b682b2343",
     "canonical_name": "SARANYA M",
-    "review_count": 8,
+    "review_count": 11,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2378,9 +3902,11 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2025-11-08T08:48:42",
+    "last_review_date": "2026-07-07T22:50:06",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 8
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 8,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1,
+      "WhatsApp Chat - ffcs'29.zip": 2
     },
     "recurring_keywords": [
       {
@@ -2393,7 +3919,7 @@
       },
       {
         "word": "saranya",
-        "count": 9
+        "count": 13
       },
       {
         "word": "sandip",
@@ -2433,13 +3959,16 @@
       "rev_m_3215_4319",
       "rev_m_3429_4576",
       "rev_m_3469_4622",
-      "rev_m_4674_6221"
+      "rev_m_4674_6221",
+      "rev_m_3678_5028",
+      "rev_m_2547_3637",
+      "rev_m_3247_5094"
     ]
   },
   "fac_81a764554f7c": {
     "faculty_id": "fac_81a764554f7c",
     "canonical_name": "PRABHAKARAN R",
-    "review_count": 0,
+    "review_count": 2,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2453,16 +3982,26 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
-    "recurring_keywords": [],
+    "last_review_date": "2026-10-24T10:04:35",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 2
+    },
+    "recurring_keywords": [
+      {
+        "word": "prabhakaran",
+        "count": 2
+      }
+    ],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_4391_6196",
+      "rev_m_5210_11130"
+    ]
   },
   "fac_c6885cbbfbdc": {
     "faculty_id": "fac_c6885cbbfbdc",
     "canonical_name": "PRIYADARSHINI R R",
-    "review_count": 0,
+    "review_count": 1,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2476,11 +4015,15 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": null,
-    "source_breakdown": {},
+    "last_review_date": "2026-10-24T14:13:17",
+    "source_breakdown": {
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 1
+    },
     "recurring_keywords": [],
     "low_sample": true,
-    "review_ids": []
+    "review_ids": [
+      "rev_m_5293_11288"
+    ]
   },
   "fac_d75c5b97175e": {
     "faculty_id": "fac_d75c5b97175e",
@@ -2588,7 +4131,7 @@
   "fac_b48ac6e28950": {
     "faculty_id": "fac_b48ac6e28950",
     "canonical_name": "BHULAKSHMI BONTHU",
-    "review_count": 1,
+    "review_count": 13,
     "rated_count": 0,
     "rating_mean": null,
     "rating_median": null,
@@ -2602,19 +4145,69 @@
       "5_star": 0
     },
     "bayesian_smoothed_rating_separate": null,
-    "last_review_date": "2026-06-25T15:08:35",
+    "last_review_date": "2026-10-24T15:11:09",
     "source_breakdown": {
-      "WhatsApp Chat - '29 FFCS 1.2.zip": 1
+      "WhatsApp Chat - ffcs'29.zip": 9,
+      "WhatsApp Chat - '29 FFCS 1.2.zip": 1,
+      "WhatsApp Chat - '29 FFCS 2.1.zip": 3
     },
     "recurring_keywords": [
       {
+        "word": "bhulakshmi",
+        "count": 11
+      },
+      {
+        "word": "cloud",
+        "count": 11
+      },
+      {
+        "word": "bonthu",
+        "count": 10
+      },
+      {
+        "word": "infrastructure",
+        "count": 8
+      },
+      {
+        "word": "want",
+        "count": 8
+      },
+      {
+        "word": "architecture",
+        "count": 6
+      },
+      {
         "word": "votes",
         "count": 5
+      },
+      {
+        "word": "phone",
+        "count": 5
+      },
+      {
+        "word": "redacted",
+        "count": 5
+      },
+      {
+        "word": "tcc",
+        "count": 4
       }
     ],
     "low_sample": true,
     "review_ids": [
-      "rev_m_8564_14688"
+      "rev_m_1793_2549",
+      "rev_m_1974_2843",
+      "rev_m_8564_14688",
+      "rev_m_2004_2893",
+      "rev_m_2877_4109",
+      "rev_m_3158_4743",
+      "rev_m_4395_6212",
+      "rev_m_3189_4876",
+      "rev_m_3195_4901",
+      "rev_m_3203_4938",
+      "rev_m_4437_6355",
+      "rev_m_3255_5121",
+      "rev_m_5304_11305"
     ]
   }
 }

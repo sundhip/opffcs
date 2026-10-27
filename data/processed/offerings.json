@@ -16,7 +16,7 @@
     "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 2,
         "raw_data": {
@@ -47,7 +47,7 @@
     "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 3,
         "raw_data": {
@@ -78,7 +78,7 @@
     "bitmask": 2173416666606210967837794941212701623032695037739014629732125413516051366950607377288652961403219348038238704900403499939419114015462696745202606979503075446234996889941322288108121618432,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Qualitative and Quantitative Sk",
         "row": 4,
         "raw_data": {
@@ -109,7 +109,7 @@
     "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Humanities, Social Science and ",
         "row": 2,
         "raw_data": {
@@ -124,10 +124,10 @@
     ]
   },
   {
-    "id": "off_ANCILLARY_faculty_unassigned_D1_TD1_",
-    "course_code": "ANCILLARY",
-    "faculty_id": "faculty_unassigned",
-    "faculty_name": "[Unassigned]",
+    "id": "off_BAMGT213_fac_7f09aba7d667_D1_TD1_",
+    "course_code": "BAMGT213",
+    "faculty_id": "fac_7f09aba7d667",
+    "faculty_name": "SHAMAL S",
     "theory_slots": [
       "D1",
       "TD1"
@@ -140,13 +140,554 @@
     "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
         "row": 2,
         "raw_data": {
-          "col_0": "ANCILLARY",
-          "col_1": "OPEN ELECTIVE COURSES ANCILLARY",
-          "col_2": "No matching teacher found",
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Content and Brand Storytelling",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT213",
+          "col_1": "Content and Brand Storytelling",
+          "col_2": "SHAMAL S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMGT215_fac_f95f71b5f97c_D1_TD1_",
+    "course_code": "BAMGT215",
+    "faculty_id": "fac_f95f71b5f97c",
+    "faculty_name": "SRILALITHA R",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "SRILALITHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMGT215_fac_86e039a3567f_D1_TD1_",
+    "course_code": "BAMGT215",
+    "faculty_id": "fac_86e039a3567f",
+    "faculty_name": "NISHA R",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Emotional Intelligence",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT215",
+          "col_1": "Emotional Intelligence",
+          "col_2": "NISHA R",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMGT217_fac_acdd51cc7e46_D1_TD1_",
+    "course_code": "BAMGT217",
+    "faculty_id": "fac_acdd51cc7e46",
+    "faculty_name": "SUDARSANAM S K",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 5,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "FinTech",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT217",
+          "col_1": "FinTech",
+          "col_2": "SUDARSANAM S K",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM204_fac_f56e14b7b81a_D1_TD1_",
+    "course_code": "BAHUM204",
+    "faculty_id": "fac_f56e14b7b81a",
+    "faculty_name": "BUVANESH C",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 6,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Fixed Income Securities",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM204",
+          "col_1": "Fixed Income Securities",
+          "col_2": "BUVANESH C",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM205_fac_ce985dd55121_D1_TD1_",
+    "course_code": "BAHUM205",
+    "faculty_id": "fac_ce985dd55121",
+    "faculty_name": "BILAL A NAZEER",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 7,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "BILAL A NAZEER",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM205_fac_96c0bb47c229_D1_TD1_",
+    "course_code": "BAHUM205",
+    "faculty_id": "fac_96c0bb47c229",
+    "faculty_name": "SONY RAJ S S",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 8,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SONY RAJ S S",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM205_fac_9d5ee1540bf9_D1_TD1_",
+    "course_code": "BAHUM205",
+    "faculty_id": "fac_9d5ee1540bf9",
+    "faculty_name": "SHERIN PRIYAN",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 9,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Intellectual Property Rights an",
+        "row": 4,
+        "raw_data": {
+          "col_0": "BAHUM205",
+          "col_1": "Intellectual Property Rights and the Law",
+          "col_2": "SHERIN PRIYAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM203_fac_d3e9d4f3f2ad_D1_TD1_",
+    "course_code": "BAHUM203",
+    "faculty_id": "fac_d3e9d4f3f2ad",
+    "faculty_name": "MARIA EVELYN JUCUNDA M",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 10,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Options, Futures, and Derivativ",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM203",
+          "col_1": "Options, Futures, and Derivatives",
+          "col_2": "MARIA EVELYN JUCUNDA M",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMGT221_fac_0142cab1783c_D1_TD1_",
+    "course_code": "BAMGT221",
+    "faculty_id": "fac_0142cab1783c",
+    "faculty_name": "MANU JOSE",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 11,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "MANU JOSE",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAMGT221_fac_001864b03fad_D1_TD1_",
+    "course_code": "BAMGT221",
+    "faculty_id": "fac_001864b03fad",
+    "faculty_name": "CARLIN JEMIMAH G J",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 12,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Personal Wealth Management",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAMGT221",
+          "col_1": "Personal Wealth Management",
+          "col_2": "CARLIN JEMIMAH G J",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM202_fac_75fbc0bffd5b_D1_TD1_",
+    "course_code": "BAHUM202",
+    "faculty_id": "fac_75fbc0bffd5b",
+    "faculty_name": "AHMAD HASAN",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 13,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 2,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "AHMAD HASAN",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "off_BAHUM202_fac_dc98c8b14fe4_D1_TD1_",
+    "course_code": "BAHUM202",
+    "faculty_id": "fac_dc98c8b14fe4",
+    "faculty_name": "MOHD HAMMAD NAEEM",
+    "theory_slots": [
+      "D1",
+      "TD1"
+    ],
+    "raw_theory_slot": "D1+TD1",
+    "lab_session": null,
+    "raw_lab_slot": null,
+    "venue": null,
+    "review_text": null,
+    "bitmask": 11345764388342374405394870841513502884691376006619870005812013266778656868674072791191142581425268757836083782444628762904596416823296,
+    "source_refs": [
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "OPEN ELECTIVE COURSES ANCILLARY",
+        "row": 14,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
+          "col_3": "D1+TD1",
+          "col_4": "MON / WED",
+          "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
+        }
+      },
+      {
+        "file": "upload_test_upload.xlsx",
+        "sheet": "Security Analysis and Portfolio",
+        "row": 3,
+        "raw_data": {
+          "col_0": "BAHUM202",
+          "col_1": "Security Analysis and Portfolio Management",
+          "col_2": "MOHD HAMMAD NAEEM",
           "col_3": "D1+TD1",
           "col_4": "MON / WED",
           "col_5": "D1: MON 9:50\u201310:40 AM; TD1: WED 10:45\u201311:35 AM"
@@ -181,7 +722,7 @@
     "bitmask": 1224719659679537497954986628210478841855978772988968634677011659404031634832019938764440702171960500131477776348322428684950074394679422216023742653226066685385553165428286930319848019102522437867143168,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 2,
         "raw_data": {
@@ -225,7 +766,7 @@
     "bitmask": 1224719659679537497954986628210478841855978772988968634677011659404031634832019938764440702171960500131477776348322428684950074394679422216023742653226066685385553165428286930319848019102522437867143168,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 3,
         "raw_data": {
@@ -269,7 +810,7 @@
     "bitmask": 4562436266539758063685099140593703247070233423221739510756913793520220212284963701887759937055770815269806809271831145784408449244072693808609126252253839456985861886885855935273590788265607168,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 4,
         "raw_data": {
@@ -313,7 +854,7 @@
     "bitmask": 4562436266539758063685099140593703247070233423221739510756913793520220212284963701887759937055770815269806809271831145784408449244072693808609126252253839456985861886885855935273590788265607168,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 5,
         "raw_data": {
@@ -357,7 +898,7 @@
     "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987508151346502141120314644670469146438785829388994065084148636952885422289073413444433210433927137623251563009498962404666291290157155004448768,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 6,
         "raw_data": {
@@ -401,7 +942,7 @@
     "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987508151346502141120314644670469146438785829388994065084148636952885422289073413444433210433927137623251563009498962404666291290157155004448768,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Software Engineering",
         "row": 7,
         "raw_data": {
@@ -445,7 +986,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 2,
         "raw_data": {
@@ -489,7 +1030,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 3,
         "raw_data": {
@@ -533,7 +1074,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 4,
         "raw_data": {
@@ -577,7 +1118,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 5,
         "raw_data": {
@@ -621,7 +1162,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 6,
         "raw_data": {
@@ -665,7 +1206,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918969734607424332945754901786106615470213410676831936432355124409379926886765005634541265251226551214387095927926030336,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 7,
         "raw_data": {
@@ -709,7 +1250,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 8,
         "raw_data": {
@@ -753,7 +1294,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 9,
         "raw_data": {
@@ -797,7 +1338,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156559247956933830470860877451585826012298506511831602579649851817136600988879137608400299921219857036924420246800450700967936,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 10,
         "raw_data": {
@@ -841,7 +1382,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918967271984385600873577967573989837091139930220503214890846697511749452500686496084013429470676418587492351803639463936,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 11,
         "raw_data": {
@@ -885,7 +1426,7 @@
     "bitmask": 253019000706985938343894079003099172865313362234423156548918967271984385600873577967573989837091139930220503214890846697511749452500686496084013429470676418587492351803639463936,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Fundamentals of Artificial Inte",
         "row": 12,
         "raw_data": {
@@ -920,7 +1461,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 2,
         "raw_data": {
@@ -952,7 +1493,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 3,
         "raw_data": {
@@ -984,7 +1525,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 4,
         "raw_data": {
@@ -1016,7 +1557,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 5,
         "raw_data": {
@@ -1048,7 +1589,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 6,
         "raw_data": {
@@ -1080,7 +1621,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 7,
         "raw_data": {
@@ -1112,7 +1653,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 8,
         "raw_data": {
@@ -1144,7 +1685,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 9,
         "raw_data": {
@@ -1176,7 +1717,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 10,
         "raw_data": {
@@ -1208,7 +1749,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 11,
         "raw_data": {
@@ -1240,7 +1781,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 12,
         "raw_data": {
@@ -1272,7 +1813,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 13,
         "raw_data": {
@@ -1304,7 +1845,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 14,
         "raw_data": {
@@ -1336,7 +1877,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 15,
         "raw_data": {
@@ -1368,7 +1909,7 @@
     "bitmask": 518182913447907201728295073798347106028161765856098624612186044973024021710589087677591531695124325424303325509052493890701782301488048209666731909895293368868720199337462324002816,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Discrete Mathematics and Linear",
         "row": 16,
         "raw_data": {
@@ -1409,7 +1950,7 @@
     "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 2,
         "raw_data": {
@@ -1453,7 +1994,7 @@
     "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 3,
         "raw_data": {
@@ -1497,7 +2038,7 @@
     "bitmask": 47587584957081974348374318011889518133205480785172110504165098222136891906321359275101619945690830537032475040483496302077770705494568075264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 4,
         "raw_data": {
@@ -1541,7 +2082,7 @@
     "bitmask": 47587584957081974338045328350043432873201607166920088042749726320754815471360388836012380519053908632816567250097135796245016256847506571264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 5,
         "raw_data": {
@@ -1585,7 +2126,7 @@
     "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987555715695333755769469907750123706452014073378188735699492147055316372048482531958079361480276016212593054938525555522002185626409511644299264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 6,
         "raw_data": {
@@ -1629,7 +2170,7 @@
     "bitmask": 5136846567472522845822592234649724248311899191462723100300328710987555715695333755769469907750123706452014073378188735699492147055316372048482531958079361480276016212593054938525555522002185626409511644299264,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 7,
         "raw_data": {
@@ -1673,7 +2214,7 @@
     "bitmask": 47587584957081974338045330812666471605273784101132204821128799801211144192901897262910010993439987142367095085877685928871911000971793137664,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 8,
         "raw_data": {
@@ -1717,7 +2258,7 @@
     "bitmask": 47587584957081974338045330812666471605273784101132204821128799801211144192901897262910010993439987142367095085877685928871911000971793137664,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 9,
         "raw_data": {
@@ -1761,7 +2302,7 @@
     "bitmask": 4562436266539758063685099140593703247070233423221739558321262625134869367548043356447773165299760009940422152781933576734167858362586339959655475130843180948914888480003191829609843144905457664,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 10,
         "raw_data": {
@@ -1805,7 +2346,7 @@
     "bitmask": 4562436266539758063685099140593703247070233423221739558321262625134869367548043356447773165299760009940422152781933576734167858362586339959655475130843180948914888480003191829609843144905457664,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 11,
         "raw_data": {
@@ -1849,7 +2390,7 @@
     "bitmask": 1224719659679537497954986628210478841855978772988968634677011706968380466446669094027520356731973728375466971018937772195052505344438831334537388804272415563974894657357313523437183913438774794506993664,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Embedded Systems Architecture",
         "row": 12,
         "raw_data": {
@@ -1893,7 +2434,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 2,
         "raw_data": {
@@ -1937,7 +2478,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 3,
         "raw_data": {
@@ -1981,7 +2522,7 @@
     "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 4,
         "raw_data": {
@@ -2025,7 +2566,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296705795065383953381587466906855271564143890192277645769185165972291375685698559,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Distributed Ledger Technology",
         "row": 5,
         "raw_data": {
@@ -2069,7 +2610,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 2,
         "raw_data": {
@@ -2113,7 +2654,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 3,
         "raw_data": {
@@ -2157,7 +2698,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296242627260574291030846617404414290996865162779271482391562859500150406760104959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 4,
         "raw_data": {
@@ -2201,7 +2742,7 @@
     "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 5,
         "raw_data": {
@@ -2245,7 +2786,7 @@
     "bitmask": 1061238606741313949139548366057343371166584505481289418789885858637431391392557844560801019632621626324802184814749139424953714617218721840019283775050242579360348409470034345969320959,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 6,
         "raw_data": {
@@ -2289,7 +2830,7 @@
     "bitmask": 1061238606741313949139548311139014464371433123896003237173889362068384456518851258441725078810165697284296705795065383953381587466906855271564143890192277645769185165972291375685698559,
     "source_refs": [
       {
-        "file": "subject_teachers_slots_reviews_corrected_v2.xlsx",
+        "file": "upload_test_upload.xlsx",
         "sheet": "Cloud Automation Technologies",
         "row": 7,
         "raw_data": {

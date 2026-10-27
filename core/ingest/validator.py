@@ -1,6 +1,6 @@
 import difflib
 from typing import Dict, List, Any, Optional, Tuple, Set
-from core.ingest.models import Course, Faculty, Offering, SourceRef
+from core.ingest.models import Course, Faculty, Offering, SourceRef, KNOWN_COURSE_CREDITS
 from core.slots.clash import meetings_to_bitmask
 from core.slots.slot_map import default_slot_map
 
@@ -40,15 +40,24 @@ class IngestionValidator:
             source_ref = item["source_ref"]
             
             # Course model
+            has_th = bool(theory_slots)
+            has_lb = bool(lab_session)
             if c_code not in courses_dict:
                 courses_dict[c_code] = Course(
                     id=c_code,
                     code=c_code,
                     title=c_title,
+                    credits=KNOWN_COURSE_CREDITS.get(c_code, 3),
+                    has_theory=has_th,
+                    has_lab=has_lb,
                     source_refs=[source_ref]
                 )
             else:
                 courses_dict[c_code].source_refs.append(source_ref)
+                if has_th:
+                    courses_dict[c_code].has_theory = True
+                if has_lb:
+                    courses_dict[c_code].has_lab = True
                 
             # Faculty model
             if f_id not in faculty_dict:

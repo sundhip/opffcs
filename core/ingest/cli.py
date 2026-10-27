@@ -35,7 +35,7 @@ def run_ingestion(excel_path: str, out_dir: str, mapping_path: str = None) -> Di
         # Default to standard per_course header mapping
         file_conf = {
             "sheet_mode": "per_course",
-            "has_header": true,
+            "has_header": True,
             "columns": {
                 "course_code": "Course Code",
                 "course_title": "Subject",
@@ -109,7 +109,7 @@ def run_ingestion(excel_path: str, out_dir: str, mapping_path: str = None) -> Di
             raw_tslot = get_val("theory_slot", "Theory Slot")
             raw_lslot = get_val("lab_slot", "Lab Slot")
             raw_venue = get_val("venue", "Venue")
-            raw_review = get_val("review", "Reviews / Ratings")
+            raw_review = get_val("review", "Reviews / Ratings") or get_val("teacher review / rating", "Teacher Review / Rating") or get_val("review", "Review")
             
             # Fallback if course_code is missing in row: check sheet name
             norm_code = normalize_course_code(raw_code)
