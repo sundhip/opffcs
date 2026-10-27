@@ -46,7 +46,7 @@
 
 ### Match Example 2: `rev_m_1318_1397` -> UMA MAHESWARI S
 - **Score**: 0.85
-- **Reasons**: exact_alias:UMA MAHESWARI, exact_alias:S UMA MAHESWARI
+- **Reasons**: exact_alias:S UMA MAHESWARI, exact_alias:UMA MAHESWARI
 > "How's Uma Maheswari mam for DSA?"
 
 ### Match Example 3: `rev_m_1374_1462` -> UMA MAHESWARI S

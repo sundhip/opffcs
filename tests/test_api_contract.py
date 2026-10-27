@@ -72,18 +72,32 @@ def test_api_slots_grid(client):
 def test_api_favourites_crud(client):
     sample_key = "TEST_COURSE::TEST_FACULTY::A1+TA1::NONE::NONE"
 
-    # Add
-    post_res = client.post("/api/favourites", json={"offering_key": sample_key, "notes": "Top pick"})
+    # Add with name, notes, and payload
+    post_res = client.post("/api/favourites", json={
+        "offering_key": sample_key,
+        "name": "My Top Schedule",
+        "notes": "Top pick",
+        "payload": {"offering_keys": [sample_key]}
+    })
     assert post_res.status_code == 200
     fav_data = post_res.json()
     assert fav_data["offering_key"] == sample_key
     fav_id = fav_data["id"]
 
-    # List
+    # List and verify staleness
     list_res = client.get("/api/favourites")
     assert list_res.status_code == 200
-    keys = [f["offering_key"] for f in list_res.json()]
-    assert sample_key in keys
+    fav_item = next(f for f in list_res.json() if f["offering_key"] == sample_key)
+    assert fav_item["name"] == "My Top Schedule"
+    assert fav_item["is_stale"] is True  # Fake sample key does not exist in active dataset
+
+    # Patch / rename
+    patch_res = client.patch(f"/api/favourites/{fav_id}", json={
+        "name": "Renamed Schedule",
+        "notes": "Updated note"
+    })
+    assert patch_res.status_code == 200
+    assert patch_res.json()["name"] == "Renamed Schedule"
 
     # Delete
     del_res = client.delete(f"/api/favourites/{fav_id}")
@@ -93,6 +107,44 @@ def test_api_favourites_crud(client):
     list_res_after = client.get("/api/favourites")
     keys_after = [f["offering_key"] for f in list_res_after.json()]
     assert sample_key not in keys_after
+
+
+def test_api_match_queue_and_decide(client):
+    # Test queue
+    q_res = client.get("/api/matches/queue?limit=10")
+    assert q_res.status_code == 200
+    q_data = q_res.json()
+    assert "total" in q_data
+    assert "items" in q_data
+
+    # Test decide on a dummy review
+    decide_res = client.post("/api/matches/decide", json={
+        "review_id": "rev_non_existent_test",
+        "decision": "IGNORE",
+        "notes": "Test decide contract"
+    })
+    assert decide_res.status_code == 200
+    assert decide_res.json()["status"] == "success"
+
+
+def test_api_faculty_compare_and_search(client):
+    # Fetch first 2 faculty to compare
+    list_res = client.get("/api/faculty?limit=2")
+    items = list_res.json()["items"]
+    if len(items) >= 2:
+        f1, f2 = items[0]["id"], items[1]["id"]
+        cmp_res = client.get(f"/api/faculty/compare?faculty_ids={f1},{f2}")
+        assert cmp_res.status_code == 200
+        cmp_data = cmp_res.json()
+        assert cmp_data["count"] == 2
+        assert len(cmp_data["items"]) == 2
+
+        # Test search on detail
+        det_res = client.get(f"/api/faculty/{f1}?search=good")
+        assert det_res.status_code == 200
+        det_data = det_res.json()
+        assert "source_breakdown" in det_data
+        assert "ambiguous_count" in det_data
 
 def test_api_generate_job_lifecycle(client):
     # Fetch first 2 courses

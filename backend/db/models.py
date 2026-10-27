@@ -155,7 +155,9 @@ class Favourite(Base):
 
     id = Column(String, primary_key=True)
     offering_key = Column(String, unique=True, index=True, nullable=False)
+    name = Column(String, nullable=True)
     notes = Column(String, nullable=True)
+    payload = Column(JSON, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
 class ImportRun(Base):

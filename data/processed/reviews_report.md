@@ -47,14 +47,14 @@ Generated from 1 chat file(s) across 1 processed files.
 - **Timestamp**: `2025-10-31T22:13:15` | **Sender**: `usr_3548c6b8ad20f25c`
 - **Confidence**: `0.50` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: [], Courses: [], Slots: []
-- **Reasons**: matched_keywords:strict,marks,chill, found_academic_title
+- **Reasons**: matched_keywords:marks,chill,strict, found_academic_title
 > "anik sir a good teacher. he is chill too. we had him for java last year and for signals this year. not very strict. if u make notes of whatever he teachs you will be good enough for exams. he will make sure u dont fail. like since last sem people ..."
 
 ### Example 3: Review ID `rev_m_2474_3078`
 - **Source**: `WhatsApp Chat - '29 FFCS 1.2.zip` (lines 3078-3157)
 - **Timestamp**: `2025-11-01T21:28:06` | **Sender**: `usr_3079edb43be484fe`
 - **Confidence**: `0.45` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: ['SARANYA M', 'KUMAR'], Courses: [], Slots: []
+- **Mentions**: Names: ['KUMAR', 'SARANYA M'], Courses: [], Slots: []
 - **Reasons**: linked_rapid_continuation, found_known_faculty
 > "Engineering Physics :- Navamathavan R. Gopinath M. Dayasindhu Dey Jitendra Narayan D Punithavelan N. Rajasekarakumar V Parasuraman E. Ranjani Seshadri Ravi Kumar Biroju Karthikeyan S Swaathi P Ramkumar Prasanna Devi K Rajesh Goswami Rishab Antoshb..."
 
@@ -94,8 +94,8 @@ Generated from 1 chat file(s) across 1 processed files.
 - **Source**: `WhatsApp Chat - '29 FFCS 1.2.zip` (lines 8066-8075)
 - **Timestamp**: `2025-11-19T19:36:04` | **Sender**: `usr_3ca26a1686356105`
 - **Confidence**: `0.30` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: [], Courses: [], Slots: ['L56', 'L55', 'L51', 'L57', 'L52', 'L58', 'F1', 'L12', 'L11']
-- **Reasons**: found_academic_title, found_slot_label:F1,L51,L52
+- **Mentions**: Names: [], Courses: [], Slots: ['L55', 'L57', 'L51', 'L52', 'L58', 'L12', 'L11', 'F1', 'L56']
+- **Reasons**: found_slot_label:F1,L51,L52, found_academic_title
 > "Structured and Object-Oriented Programming Faculty - MANORANJITHAM M Slot-F1 lab slot - L51+L52+L57+L58  Needed: Faculty - ELAKYA R Slot- F1 Lab slot - L11+L12+L55+L56"
 
 ### Example 9: Review ID `rev_m_6772_9153`
@@ -118,7 +118,7 @@ Generated from 1 chat file(s) across 1 processed files.
 - **Source**: `WhatsApp Chat - '29 FFCS 1.2.zip` (lines 10535-10535)
 - **Timestamp**: `2025-12-06T09:38:20` | **Sender**: `usr_11598b9537cb656d`
 - **Confidence**: `0.30` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: [], Courses: [], Slots: ['L49', 'L5', 'L31', 'L6']
+- **Mentions**: Names: [], Courses: [], Slots: ['L31', 'L5', 'L49', 'L6']
 - **Reasons**: found_slot_label:L5,L6,L31, found_academic_title
 > "Do any of u want poulemi de's class with lab slot L5+L6 ? Dm if u have a faculty for same subject with L31+32 or L49+50  slot pls"
 
@@ -151,6 +151,6 @@ Generated from 1 chat file(s) across 1 processed files.
 - **Timestamp**: `2026-07-07T17:56:04` | **Sender**: `usr_7edb080db904d54a`
 - **Confidence**: `0.55` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['KUMAR'], Courses: [], Slots: ['F1']
-- **Reasons**: found_slot_label:F1, found_known_faculty
+- **Reasons**: found_known_faculty, found_slot_label:F1
 > "Probability  F1 Have : jaganathan B Want : anyone except pulak or krishna kumar"
 

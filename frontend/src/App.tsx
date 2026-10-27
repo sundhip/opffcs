@@ -1,0 +1,240 @@
+import React, { useEffect } from "react";
+import { useAppStore, NavTab } from "./store/useAppStore";
+import { Planner } from "./components/planner/Planner";
+import { ResultsBrowser } from "./components/results/ResultsBrowser";
+import { FacultyView } from "./components/faculty/FacultyView";
+import { FavouritesPage } from "./components/favourites/FavouritesPage";
+import { MatchResolutionPage } from "./components/matches/MatchResolutionPage";
+import {
+  Layers,
+  Calendar,
+  User,
+  Star,
+  HelpCircle,
+  Moon,
+  Sun,
+  ShieldCheck,
+  Activity
+} from "lucide-react";
+
+export const App: React.FC = () => {
+  const {
+    activeTab,
+    setActiveTab,
+    theme,
+    toggleTheme,
+    isLoadingData,
+    loadInitialData,
+    generationResult,
+    favourites
+  } = useAppStore();
+
+  useEffect(() => {
+    loadInitialData();
+  }, []);
+
+  const validCount = generationResult?.total_valid ?? 0;
+  const favCount = favourites.length;
+
+  return (
+    <div className={`min-h-screen flex flex-col ${theme === "dark" ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"}`}>
+      {/* Top Navbar */}
+      <header className="sticky top-0 z-30 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 no-print">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+          {/* Logo & Brand */}
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center shadow-md">
+              <Layers className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="font-extrabold text-base tracking-tight text-white font-sans">
+                  Resumio <span className="text-indigo-400">FFCS</span>
+                </h1>
+                <span className="px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[9px] font-bold uppercase tracking-wider">
+                  VIT Local
+                </span>
+              </div>
+              <span className="text-[10px] text-slate-400 block -mt-0.5">
+                Timetable Maker & Review Platform
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop Navigation Tabs */}
+          <nav className="hidden md:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/80">
+            <button
+              onClick={() => setActiveTab("planner")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "planner"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              Planner
+            </button>
+
+            <button
+              onClick={() => setActiveTab("results")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "results"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <Calendar className="w-3.5 h-3.5" />
+              Timetables
+              {validCount > 0 && (
+                <span className="ml-1 px-1.5 py-0.2 bg-indigo-900 text-indigo-200 text-[10px] rounded-full font-mono font-bold">
+                  {validCount}
+                </span>
+              )}
+            </button>
+
+            <button
+              onClick={() => setActiveTab("faculty")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "faculty"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <User className="w-3.5 h-3.5" />
+              Faculty & Reviews
+            </button>
+
+            <button
+              onClick={() => setActiveTab("favourites")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "favourites"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <Star className="w-3.5 h-3.5" />
+              Favourites
+              {favCount > 0 && (
+                <span className="ml-1 px-1.5 py-0.2 bg-amber-500/30 text-amber-300 text-[10px] rounded-full font-mono font-bold">
+                  {favCount}
+                </span>
+              )}
+            </button>
+
+            <button
+              onClick={() => setActiveTab("matches")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "matches"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <HelpCircle className="w-3.5 h-3.5" />
+              Match Queue
+            </button>
+          </nav>
+
+          {/* Right Toolbar: System Status & Theme */}
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-slate-800/80 border border-slate-700/80 rounded-lg text-[11px] text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>127.0.0.1:8000</span>
+            </div>
+
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white transition"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-indigo-400" />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main View Area */}
+      <main className="flex-1 pb-20 md:pb-8">
+        {isLoadingData ? (
+          <div className="max-w-md mx-auto py-24 text-center space-y-4">
+            <div className="w-10 h-10 border-3 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p className="text-sm text-slate-400 font-medium">
+              Connecting to local database and loading courses...
+            </p>
+          </div>
+        ) : (
+          <>
+            {activeTab === "planner" && <Planner />}
+            {activeTab === "results" && <ResultsBrowser />}
+            {activeTab === "faculty" && <FacultyView />}
+            {activeTab === "favourites" && <FavouritesPage />}
+            {activeTab === "matches" && <MatchResolutionPage />}
+          </>
+        )}
+      </main>
+
+      {/* Mobile Sticky Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-1.5 flex justify-around items-center no-print">
+        <button
+          onClick={() => setActiveTab("planner")}
+          className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
+            activeTab === "planner" ? "text-indigo-400" : "text-slate-400"
+          }`}
+        >
+          <Layers className="w-4 h-4" />
+          <span>Planner</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab("results")}
+          className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
+            activeTab === "results" ? "text-indigo-400" : "text-slate-400"
+          }`}
+        >
+          <Calendar className="w-4 h-4" />
+          <span>Timetable</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab("faculty")}
+          className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
+            activeTab === "faculty" ? "text-indigo-400" : "text-slate-400"
+          }`}
+        >
+          <User className="w-4 h-4" />
+          <span>Faculty</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab("favourites")}
+          className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
+            activeTab === "favourites" ? "text-indigo-400" : "text-slate-400"
+          }`}
+        >
+          <Star className="w-4 h-4" />
+          <span>Starred</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab("matches")}
+          className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
+            activeTab === "matches" ? "text-indigo-400" : "text-slate-400"
+          }`}
+        >
+          <HelpCircle className="w-4 h-4" />
+          <span>Queue</span>
+        </button>
+      </nav>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800/80 py-4 bg-slate-950 text-slate-500 text-xs no-print">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>Resumio FFCS: 100% Offline & Local-First • Zero Cloud Telemetry</span>
+          </div>
+          <span>Brute-Force Oracle Verified • 720-bit Clash Detection</span>
+        </div>
+      </footer>
+    </div>
+  );
+};

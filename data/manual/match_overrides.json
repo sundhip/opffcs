@@ -1,0 +1,7 @@
+{
+  "rev_non_existent_test": {
+    "decision": "IGNORE",
+    "faculty_id": null,
+    "notes": "Test decide contract"
+  }
+}

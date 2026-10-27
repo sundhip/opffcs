@@ -20,6 +20,20 @@ from backend.api import (
 # Initialize database schema
 Base.metadata.create_all(bind=engine)
 
+# Ensure optional columns on favourites table if migrating
+with engine.connect() as conn:
+    from sqlalchemy import text
+    try:
+        conn.execute(text("ALTER TABLE favourites ADD COLUMN name VARCHAR"))
+        conn.commit()
+    except Exception:
+        pass
+    try:
+        conn.execute(text("ALTER TABLE favourites ADD COLUMN payload JSON"))
+        conn.commit()
+    except Exception:
+        pass
+
 app = FastAPI(
     title="Resumio FFCS Timetable Maker API",
     description="Local-first personal FFCS timetable generation and faculty review matching platform for VIT.",
@@ -51,6 +65,8 @@ app.include_router(routes_generate.router, prefix="/api")
 FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 if FRONTEND_DIST.exists():
     app.mount("/static", StaticFiles(directory=str(FRONTEND_DIST)), name="static")
+    if (FRONTEND_DIST / "assets").exists():
+        app.mount("/assets", StaticFiles(directory=str(FRONTEND_DIST / "assets")), name="assets")
 
 @app.get("/", response_class=HTMLResponse)
 def index_page():
