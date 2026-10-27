@@ -80,7 +80,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Source**: `WhatsApp Chat - '29 FFCS 1.2.zip` (lines 9802-9814)
 - **Timestamp**: `2025-12-05T06:43:01` | **Sender**: `usr_a64df68f4e6c0681`
 - **Confidence**: `0.30` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: [], Courses: [], Slots: ['L31', 'G1', 'L44', 'L43', 'L32', 'F1']
+- **Mentions**: Names: [], Courses: [], Slots: ['L31', 'L43', 'L44', 'L32', 'F1', 'G1']
 - **Reasons**: found_academic_title, found_slot_label:F1,G1,L31
 > "For OOPS Have: Manoranjitham - F1  WANT: Any faculty with G1, L31+L32+L43+L44  Additionally, I have to travel 70 KM everyday to go home.  Overall 150 KM round trip (counting deviation)  Pls help"
 
@@ -105,7 +105,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Timestamp**: `2026-06-21T20:19:29` | **Sender**: `usr_f209b4492f75bd14`
 - **Confidence**: `0.75` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['KUMAR'], Courses: [], Slots: []
-- **Reasons**: matched_keywords:average,lenient,teaching, found_known_faculty
+- **Reasons**: found_known_faculty, matched_keywords:lenient,teaching,average
 > "Gajanand gupta Lenin babu Avadhesh kumar sharma Maya rathnasabathy  What abt these faculties? [21/06/26, 8:20:10 PM] ~ Ratchana: Hey seniors pls give honest feedback for OS, average teaching, lenient correction, for second slot not highted in the ..."
 
 ### Example 10: Review ID `rev_m_8315_14317`
@@ -144,7 +144,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Source**: `WhatsApp Chat - ffcs'29.zip` (lines 5021-5024)
 - **Timestamp**: `2026-07-07T20:56:21` | **Sender**: `usr_baac81f5682ce190`
 - **Confidence**: `0.55` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: ['FACE'], Courses: [], Slots: ['TE2', 'E2']
+- **Mentions**: Names: ['FACE'], Courses: [], Slots: ['E2', 'TE2']
 - **Reasons**: found_slot_label:E2,TE2, found_known_faculty
 > "STS E2+ TE2 Have: Face Need: Sixphrase"
 

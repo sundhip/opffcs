@@ -464,13 +464,13 @@ export const ResultsBrowser: React.FC = () => {
 
       {/* 2. Top Schedule Shape Filter Pills */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-md space-y-2">
-        <div className="flex items-center justify-between px-1">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1">
           <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            Timetable Shapes & Variations:
+            Distinct Timetable Shapes ({rawTimetables.length} Unique Grid Layouts):
           </span>
-          <span className="text-[11px] text-slate-400 font-mono">
-            Showing {filteredTimetables.length} of {rawTimetables.length} variations
+          <span className="text-[11px] text-amber-300 font-mono font-semibold">
+            Showing Shape {filteredTimetables.length > 0 ? currentResultIndex + 1 : 0} of {filteredTimetables.length} distinct layouts
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -536,17 +536,32 @@ export const ResultsBrowser: React.FC = () => {
                 >
                   <div className="flex items-center gap-1.5">
                     <span className={`text-[11px] font-bold font-mono ${isSelected ? "text-[#c6f052]" : "text-slate-300"}`}>
-                      #{idx + 1}
+                      Shape #{idx + 1}
                     </span>
                     <span className="text-[10px]">{badge.icon}</span>
-                    <span className="text-[10px] font-medium text-slate-300 truncate max-w-[80px]">
+                    <span className="text-[10px] font-medium text-slate-300 truncate max-w-[90px]">
                       {badge.label}
                     </span>
                   </div>
-                  <div className="text-[9px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
+                  <div className="text-[9px] font-mono text-slate-400 flex items-center gap-1.5 mt-0.5">
                     <span>{tt.score.toFixed(1)} pts</span>
                     <span>•</span>
                     <span>{tt.working_days.length}d</span>
+                    {(() => {
+                      const teacherPerms = tt.course_options?.reduce(
+                        (acc, c) => acc * Math.max(1, c.available_teachers?.length || 1),
+                        1
+                      ) || 1;
+                      if (teacherPerms > 1) {
+                        return (
+                          <>
+                            <span>•</span>
+                            <span className="text-amber-400 font-semibold">{teacherPerms} fac</span>
+                          </>
+                        );
+                      }
+                      return null;
+                    })()}
                   </div>
                 </button>
               );
@@ -707,8 +722,8 @@ export const ResultsBrowser: React.FC = () => {
           courseTitles={courseTitlesMap}
           courseCredits={courseCreditsMap}
           timetableObj={currentTimetable}
-          title={`Conflict-Free Timetable (ID: ${currentTimetable.timetable_id})`}
-          subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")}`}
+          title={`Distinct Timetable Shape #${currentResultIndex + 1} of ${filteredTimetables.length}`}
+          subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")} • Swap teachers in the table below to keep this exact shape`}
           onReset={() => setActiveTab("planner")}
         />
       )}

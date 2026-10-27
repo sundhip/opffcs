@@ -140,3 +140,39 @@ def test_day_pattern_morning_and_afternoon(test_offerings, metadata):
     )
     res_aft = engine.generate(req_aft, test_offerings, metadata, {})
     assert res_aft.total_valid == 1
+
+def test_distinct_shapes_groups_teachers():
+    """Verifies that multiple teachers teaching the exact same slots are grouped into one distinct shape."""
+    engine = TimetableSearchEngine()
+    offerings = [
+        # Two teachers for Course A in A1+TA1
+        {"id": "c1_t1", "course_code": "C1", "faculty_id": "f1", "canonical_name": "Prof Alpha", "theory_slots": ["A1", "TA1"], "lab_session": None},
+        {"id": "c1_t2", "course_code": "C1", "faculty_id": "f2", "canonical_name": "Prof Beta", "theory_slots": ["A1", "TA1"], "lab_session": None},
+        # One teacher for Course A in B1+TB1
+        {"id": "c1_t3", "course_code": "C1", "faculty_id": "f3", "canonical_name": "Prof Gamma", "theory_slots": ["B1", "TB1"], "lab_session": None},
+        # Two teachers for Course B in C1+TC1
+        {"id": "c2_t1", "course_code": "C2", "faculty_id": "f4", "canonical_name": "Prof Delta", "theory_slots": ["C1", "TC1"], "lab_session": None},
+        {"id": "c2_t2", "course_code": "C2", "faculty_id": "f5", "canonical_name": "Prof Epsilon", "theory_slots": ["C1", "TC1"], "lab_session": None},
+    ]
+    meta = {"C1": {"credits": 3, "title": "C1"}, "C2": {"credits": 3, "title": "C2"}}
+    ratings = {"f1": 4.5, "f2": 3.8, "f3": 4.0, "f4": 4.8, "f5": 4.2}
+
+    req = GenerateRequest(
+        courses=[CourseSelection(course_code="C1"), CourseSelection(course_code="C2")],
+        distinct_shapes_only=True,
+        max_results=10
+    )
+    res = engine.generate(req, offerings, meta, ratings)
+
+    # There are 2 distinct shapes: (A1+TA1, C1+TC1) and (B1+TB1, C1+TC1)
+    # NOT 2 * 2 + 1 * 2 = 6 redundant permutations!
+    assert res.total_valid == 2
+    assert len(res.timetables) == 2
+
+    # Check available teachers in the shape
+    shape_a1 = next(t for t in res.timetables if any(m.slot_label == "A1" for blocks in t.per_day_timeline.values() for m in blocks))
+    c1_opt = next(o for o in shape_a1.course_options if o.course_code == "C1")
+    assert len(c1_opt.available_teachers) == 2
+    assert c1_opt.available_teachers[0].faculty_name == "Prof Alpha" # Best rated (4.5) first
+    assert c1_opt.available_teachers[1].faculty_name == "Prof Beta"
+

@@ -98,7 +98,8 @@ def test_oracle_brute_force_200_random_instances():
             hard_constraints=hard_constraints,
             preferences=SoftPreferences(),
             max_results=500,
-            time_budget_seconds=5.0
+            time_budget_seconds=5.0,
+            distinct_shapes_only=False
         )
 
         # 4. Filter domains for oracle

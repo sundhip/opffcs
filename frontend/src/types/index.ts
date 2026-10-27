@@ -38,8 +38,27 @@ export interface MeetingBlock {
   venue?: string | null;
 }
 
+export interface AvailableTeacher {
+  offering_id: string;
+  offering_key: string;
+  faculty_id?: string | null;
+  faculty_name: string;
+  rating_mean?: number | null;
+  venue?: string | null;
+}
+
+export interface CourseShapeOption {
+  course_code: string;
+  theory_slots: string[];
+  lab_slots: string[];
+  current_offering_id: string;
+  current_faculty_name: string;
+  available_teachers: AvailableTeacher[];
+}
+
 export interface GeneratedTimetable {
   timetable_id: string;
+  shape_id?: string | null;
   offering_ids: string[];
   offering_keys: string[];
   per_day_timeline: Record<string, MeetingBlock[]>;
@@ -54,6 +73,7 @@ export interface GeneratedTimetable {
   unrated_faculty_count: number;
   score: number;
   score_breakdown: Record<string, number>;
+  course_options?: CourseShapeOption[];
 }
 
 export interface InfeasibleExplanation {

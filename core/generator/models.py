@@ -38,9 +38,26 @@ class GenerateRequest(BaseModel):
     locked_offerings: List[str] = Field(default_factory=list) # Offering IDs or stable keys
     hard_constraints: HardConstraints = Field(default_factory=HardConstraints)
     preferences: SoftPreferences = Field(default_factory=SoftPreferences)
-    max_results: int = Field(default=20, ge=1, le=1000)
+    max_results: int = Field(default=50, ge=1, le=1000)
     time_budget_seconds: float = Field(default=5.0, ge=0.5, le=30.0)
     seed: Optional[int] = 42
+    distinct_shapes_only: bool = True
+
+class AvailableTeacher(BaseModel):
+    offering_id: str
+    offering_key: str
+    faculty_id: Optional[str] = None
+    faculty_name: str
+    rating_mean: Optional[float] = None
+    venue: Optional[str] = None
+
+class CourseShapeOption(BaseModel):
+    course_code: str
+    theory_slots: List[str]
+    lab_slots: List[str]
+    current_offering_id: str
+    current_faculty_name: str
+    available_teachers: List[AvailableTeacher] = Field(default_factory=list)
 
 class MeetingBlock(BaseModel):
     day: str
@@ -56,6 +73,7 @@ class MeetingBlock(BaseModel):
 
 class GeneratedTimetable(BaseModel):
     timetable_id: str
+    shape_id: Optional[str] = None
     offering_ids: List[str]
     offering_keys: List[str]
     per_day_timeline: Dict[str, List[MeetingBlock]]
@@ -70,6 +88,7 @@ class GeneratedTimetable(BaseModel):
     unrated_faculty_count: int
     score: float
     score_breakdown: Dict[str, float]
+    course_options: List[CourseShapeOption] = Field(default_factory=list)
 
 class InfeasibleExplanation(BaseModel):
     empty_domain_courses: List[str] = Field(default_factory=list)

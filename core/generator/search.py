@@ -6,7 +6,7 @@ from typing import Dict, List, Set, Tuple, Any, Optional
 
 from core.generator.models import (
     GenerateRequest, GenerateResponse, GeneratedTimetable,
-    MeetingBlock, InfeasibleExplanation
+    MeetingBlock, InfeasibleExplanation, CourseShapeOption, AvailableTeacher
 )
 from core.generator.evaluator import evaluate_timetable, min_to_time_str
 from core.slots.clash import OfferingsBitmaskIndex
@@ -280,10 +280,260 @@ class TimetableSearchEngine:
                 if not is_exhaustive[0] and len(heap) >= request.max_results:
                     return
 
-        # Start search
         init_day_mins = {d: 0 for d in WEEKDAYS}
         init_day_intervals = {d: [] for d in WEEKDAYS}
-        backtrack(0, 0, [], init_day_mins, init_day_intervals)
+
+        if request.distinct_shapes_only:
+            # Group domain candidates into distinct slot shapes per course
+            shapes_per_course: Dict[str, List[Dict[str, Any]]] = {}
+            for c_sel in ordered_courses:
+                cc = c_sel.course_code.upper()
+                shape_map: Dict[Tuple, Dict[str, Any]] = {}
+                for off in filtered_domains[cc]:
+                    th = tuple(sorted(off.get("theory_slots") or []))
+                    lab_info = off.get("lab_session")
+                    if isinstance(lab_info, dict):
+                        lb = tuple(sorted(lab_info.get("slots") or lab_info.get("labels") or []))
+                    elif hasattr(lab_info, "slots"):
+                        lb = tuple(sorted(lab_info.slots or []))
+                    elif hasattr(lab_info, "labels"):
+                        lb = tuple(sorted(lab_info.labels or []))
+                    elif isinstance(lab_info, list):
+                        lb = tuple(sorted(lab_info))
+                    else:
+                        lb = ()
+                    shape_key = (th, lb)
+
+                    off_id = off["id"]
+                    f_id = off.get("faculty_id")
+                    f_name = off.get("raw_name") or off.get("canonical_name", "Unknown")
+                    f_rating = faculty_ratings.get(f_id)
+
+                    teacher_info = {
+                        "offering_id": off_id,
+                        "offering_key": off.get("stable_key") or off_id,
+                        "faculty_id": f_id,
+                        "faculty_name": f_name,
+                        "rating_mean": f_rating,
+                        "venue": off.get("venue"),
+                        "offering": off
+                    }
+
+                    if shape_key not in shape_map:
+                        shape_map[shape_key] = {
+                            "shape_key": shape_key,
+                            "course_code": cc,
+                            "theory_slots": list(th),
+                            "lab_slots": list(lb),
+                            "mask": candidate_cache[off_id]["mask"],
+                            "meetings": candidate_cache[off_id]["meetings"],
+                            "day_meetings": candidate_cache[off_id]["day_meetings"],
+                            "teachers": []
+                        }
+                    shape_map[shape_key]["teachers"].append(teacher_info)
+
+                # Sort teachers inside each shape group by rating descending
+                for sh in shape_map.values():
+                    sh["teachers"].sort(
+                        key=lambda t: (t["rating_mean"] if t["rating_mean"] is not None else -1.0),
+                        reverse=True
+                    )
+                shapes_per_course[cc] = list(shape_map.values())
+
+            def backtrack_shapes(
+                course_idx: int,
+                current_mask: int,
+                chosen_shapes: List[Dict[str, Any]],
+                day_mins: Dict[str, int],
+                day_intervals: Dict[str, List[Tuple[int, int]]]
+            ):
+                node_counter[0] += 1
+                if (node_counter[0] & 127) == 0:
+                    if time.perf_counter() > deadline:
+                        is_exhaustive[0] = False
+                        return
+
+                if course_idx == len(ordered_courses):
+                    active_days = [d for d in WEEKDAYS if day_mins[d] > 0]
+                    free_days_list = [d for d in WEEKDAYS if day_mins[d] == 0]
+
+                    if request.hard_constraints.min_working_days and len(active_days) < request.hard_constraints.min_working_days:
+                        return
+                    if request.hard_constraints.max_working_days and len(active_days) > request.hard_constraints.max_working_days:
+                        return
+                    if request.hard_constraints.min_free_days_count and len(free_days_list) < request.hard_constraints.min_free_days_count:
+                        return
+
+                    total_valid[0] += 1
+
+                    # Unique shape ID based strictly on slot layout across courses
+                    shape_tokens = [f"{sh['course_code']}:{sh['shape_key']}" for sh in chosen_shapes]
+                    shape_id = hashlib.sha256("::".join(sorted(shape_tokens)).encode("utf-8")).hexdigest()[:16]
+
+                    if shape_id in visited_timetable_ids:
+                        return
+                    visited_timetable_ids.add(shape_id)
+
+                    primary_off_ids = []
+                    primary_off_keys = []
+                    course_options = []
+                    timeline: Dict[str, List[MeetingBlock]] = {d: [] for d in WEEKDAYS}
+                    fac_ratings_subset = {}
+
+                    for sh in chosen_shapes:
+                        best_teacher = sh["teachers"][0]
+                        primary_off_ids.append(best_teacher["offering_id"])
+                        primary_off_keys.append(best_teacher["offering_key"])
+                        fac_ratings_subset[best_teacher["faculty_id"]] = best_teacher["rating_mean"]
+
+                        avail = [
+                            AvailableTeacher(
+                                offering_id=t["offering_id"],
+                                offering_key=t["offering_key"],
+                                faculty_id=t["faculty_id"],
+                                faculty_name=t["faculty_name"],
+                                rating_mean=t["rating_mean"],
+                                venue=t["venue"]
+                            )
+                            for t in sh["teachers"]
+                        ]
+
+                        course_options.append(CourseShapeOption(
+                            course_code=sh["course_code"],
+                            theory_slots=sh["theory_slots"],
+                            lab_slots=sh["lab_slots"],
+                            current_offering_id=best_teacher["offering_id"],
+                            current_faculty_name=best_teacher["faculty_name"],
+                            available_teachers=avail
+                        ))
+
+                        for m in sh["meetings"]:
+                            timeline[m.day].append(MeetingBlock(
+                                day=m.day,
+                                start_time=min_to_time_str(m.start_min),
+                                end_time=min_to_time_str(m.end_min),
+                                start_min=m.start_min,
+                                end_min=m.end_min,
+                                kind=m.kind,
+                                slot_label=m.slot_label,
+                                course_code=sh["course_code"],
+                                faculty_name=best_teacher["faculty_name"],
+                                venue=best_teacher.get("venue")
+                            ))
+
+                    score, breakdown, metrics = evaluate_timetable(timeline, fac_ratings_subset, request.preferences)
+
+                    tt = GeneratedTimetable(
+                        timetable_id=f"tt_{shape_id}",
+                        shape_id=shape_id,
+                        offering_ids=sorted(primary_off_ids),
+                        offering_keys=sorted(primary_off_keys),
+                        per_day_timeline=timeline,
+                        working_days=metrics["working_days"],
+                        free_days=metrics["free_days"],
+                        gap_minutes_per_day=metrics["gap_minutes_per_day"],
+                        longest_gap_minutes=metrics["longest_gap_minutes"],
+                        max_daily_hours=metrics["max_daily_hours"],
+                        earliest_start=metrics["earliest_start"],
+                        latest_end=metrics["latest_end"],
+                        avg_faculty_rating=metrics["avg_faculty_rating"],
+                        unrated_faculty_count=metrics["unrated_faculty_count"],
+                        score=metrics["score"],
+                        score_breakdown=metrics["score_breakdown"],
+                        course_options=course_options
+                    )
+
+                    tie_counter[0] += 1
+                    if len(heap) < request.max_results:
+                        heapq.heappush(heap, (score, tie_counter[0], tt))
+                    elif score > heap[0][0]:
+                        heapq.heapreplace(heap, (score, tie_counter[0], tt))
+
+                    return
+
+                c_sel = ordered_courses[course_idx]
+                cc = c_sel.course_code.upper()
+                shapes = shapes_per_course[cc]
+
+                for sh in shapes:
+                    cand_mask = sh["mask"]
+
+                    # 1. Bitmask clash check (O(1))
+                    if (current_mask & cand_mask) != 0:
+                        continue
+
+                    # 2. Daily constraints check
+                    violates = False
+                    new_day_mins = dict(day_mins)
+                    new_day_intervals = {d: list(day_intervals[d]) for d in WEEKDAYS}
+
+                    for day, mtgs in sh["day_meetings"].items():
+                        if not mtgs:
+                            continue
+
+                        if day in request.hard_constraints.free_days:
+                            violates = True
+                            break
+
+                        added_mins = sum(end - start for start, end, _, _ in mtgs)
+                        if max_daily_mins and (new_day_mins[day] + added_mins) > max_daily_mins:
+                            violates = True
+                            break
+
+                        if request.hard_constraints.day_pattern == "HALF_DAY":
+                            has_morning = any(end <= LUNCH_START for start, end, _, _ in mtgs)
+                            has_afternoon = any(start >= LUNCH_END for start, end, _, _ in mtgs)
+                            if has_morning and has_afternoon:
+                                violates = True
+                                break
+                            existing = new_day_intervals[day]
+                            if existing:
+                                exist_morning = any(e <= LUNCH_START for s, e in existing)
+                                exist_afternoon = any(s >= LUNCH_END for s, e in existing)
+                                if (has_morning and exist_afternoon) or (has_afternoon and exist_morning):
+                                    violates = True
+                                    break
+
+                        merged = new_day_intervals[day] + [(s, e) for s, e, _, _ in mtgs]
+                        merged.sort()
+                        if max_consec_mins and self._has_consecutive_violation(merged, max_consec_mins):
+                            violates = True
+                            break
+
+                        new_day_mins[day] += added_mins
+                        new_day_intervals[day] = merged
+
+                    if violates:
+                        continue
+
+                    # Forward checking on remaining courses
+                    pruned = False
+                    new_mask = current_mask | cand_mask
+                    for next_idx in range(course_idx + 1, len(ordered_courses)):
+                        next_cc = ordered_courses[next_idx].course_code.upper()
+                        has_compatible_shape = any(
+                            (new_mask & next_sh["mask"]) == 0
+                            for next_sh in shapes_per_course[next_cc]
+                        )
+                        if not has_compatible_shape:
+                            pruned = True
+                            break
+
+                    if pruned:
+                        continue
+
+                    backtrack_shapes(
+                        course_idx + 1,
+                        new_mask,
+                        chosen_shapes + [sh],
+                        new_day_mins,
+                        new_day_intervals
+                    )
+
+            backtrack_shapes(0, 0, [], init_day_mins, init_day_intervals)
+        else:
+            # Classic offering-level search (used by exhaustive Cartesian oracle)
+            backtrack(0, 0, [], init_day_mins, init_day_intervals)
 
         # Sort top-K results descending by score
         ranked_timetables = [item[2] for item in sorted(heap, key=lambda x: x[0], reverse=True)]

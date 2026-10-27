@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from "react";
-import { MeetingBlock, GeneratedTimetable } from "../../types";
+import React, { useState, useMemo, useEffect } from "react";
+import { MeetingBlock, GeneratedTimetable, AvailableTeacher } from "../../types";
 import { getCoursePalette } from "../../utils/colors";
 import {
   FlaskConical,
@@ -26,6 +26,7 @@ export interface WeeklyTimetableProps {
   onBlockClick?: (block: MeetingBlock) => void;
   onDownload?: () => void;
   onReset?: () => void;
+  onTeacherChange?: (courseCode: string, teacher: AvailableTeacher) => void;
   timetableObj?: GeneratedTimetable;
 }
 
@@ -172,10 +173,40 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
   onBlockClick,
   onDownload,
   onReset,
-  timetableObj
+  timetableObj,
+  onTeacherChange
 }) => {
   const [viewMode, setViewMode] = useState<"matrix" | "timeline">("matrix");
   const [activePopover, setActivePopover] = useState<MeetingBlock | null>(null);
+
+  // Local state for user-selected teacher per course in this shape
+  const [customTeachers, setCustomTeachers] = useState<Record<string, AvailableTeacher>>({});
+
+  // Reset custom teacher selections when timetable/shape changes
+  useEffect(() => {
+    setCustomTeachers({});
+  }, [timetableObj?.timetable_id]);
+
+  // Derive active timeline where meeting blocks carry the user's selected teacher
+  const activeTimeline = useMemo(() => {
+    if (Object.keys(customTeachers).length === 0) return timeline;
+
+    const nextTimeline: Record<string, MeetingBlock[]> = {};
+    Object.entries(timeline).forEach(([day, blocks]) => {
+      nextTimeline[day] = blocks.map((b) => {
+        const ct = customTeachers[b.course_code];
+        if (ct) {
+          return {
+            ...b,
+            faculty_name: ct.faculty_name,
+            venue: ct.venue || b.venue
+          };
+        }
+        return b;
+      });
+    });
+    return nextTimeline;
+  }, [timeline, customTeachers]);
 
   // Group all enrolled course offerings and split into separate Theory & Lab rows
   const enrolledCoursesSummary = useMemo(() => {
@@ -195,7 +226,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
       }
     > = {};
 
-    Object.entries(timeline).forEach(([_, blocks]) => {
+    Object.entries(activeTimeline).forEach(([_, blocks]) => {
       blocks.forEach((b) => {
         const cc = b.course_code;
         if (!courseMap[cc]) {
@@ -276,7 +307,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
     });
 
     return rows;
-  }, [timeline, courseTitles, courseCredits]);
+  }, [activeTimeline, courseTitles, courseCredits]);
 
   const totalRegisteredCredits = useMemo(() => {
     return enrolledCoursesSummary.reduce((sum, item) => sum + item.credits, 0);
@@ -284,7 +315,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
 
   // Helper to find if a slot matrix cell is occupied
   const getCellOccupancy = (day: string, period: MatrixPeriod) => {
-    const dayMeetings = timeline[day] || [];
+    const dayMeetings = activeTimeline[day] || [];
     const dayMatrix = DAY_SLOT_MATRIX[day];
     if (!dayMatrix) return null;
 
@@ -574,8 +605,60 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                       </td>
                       <td className="py-3 px-4 font-mono font-bold text-slate-100">{item.courseCode}</td>
                       <td className="py-3 px-4 font-medium text-slate-200">{item.courseTitle}</td>
-                      <td className="py-3 px-4 text-slate-300">{item.facultyName}</td>
-                      <td className="py-3 px-4 font-mono text-slate-400">{item.venue}</td>
+                      <td className="py-3 px-4 text-slate-300">
+                        {(() => {
+                          const courseOpt = timetableObj?.course_options?.find(
+                            (o) => o.course_code.toUpperCase() === item.courseCode.toUpperCase()
+                          );
+                          const avail = courseOpt?.available_teachers || [];
+                          const selectedTeacher =
+                            customTeachers[item.courseCode] ||
+                            avail.find((t) => t.faculty_name === item.facultyName) ||
+                            avail[0];
+
+                          if (avail.length > 1) {
+                            return (
+                              <div className="flex items-center gap-2">
+                                <select
+                                  value={selectedTeacher?.offering_id || ""}
+                                  onChange={(e) => {
+                                    const t = avail.find((opt) => opt.offering_id === e.target.value);
+                                    if (t) {
+                                      setCustomTeachers((prev) => ({ ...prev, [item.courseCode]: t }));
+                                      if (onTeacherChange) onTeacherChange(item.courseCode, t);
+                                    }
+                                  }}
+                                  className="bg-slate-800 border border-slate-700 hover:border-amber-400 text-slate-100 text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer shadow-sm transition max-w-[220px]"
+                                  title={`Choose teacher for ${item.courseCode} in this timetable shape`}
+                                >
+                                  {avail.map((t) => (
+                                    <option key={t.offering_id} value={t.offering_id}>
+                                      {t.faculty_name} {t.rating_mean != null ? `(${t.rating_mean.toFixed(1)} ★)` : "(Unrated)"}
+                                    </option>
+                                  ))}
+                                </select>
+                                <span className="text-[10px] text-amber-400 font-bold bg-amber-950/70 border border-amber-800/60 px-1.5 py-0.5 rounded whitespace-nowrap">
+                                  {avail.length} options
+                                </span>
+                              </div>
+                            );
+                          }
+
+                          return (
+                            <div className="flex items-center gap-1.5">
+                              <span>{selectedTeacher?.faculty_name || item.facultyName}</span>
+                              {selectedTeacher?.rating_mean != null && (
+                                <span className="text-[10px] text-amber-400 font-semibold font-mono">
+                                  ({selectedTeacher.rating_mean.toFixed(1)} ★)
+                                </span>
+                              )}
+                            </div>
+                          );
+                        })()}
+                      </td>
+                      <td className="py-3 px-4 font-mono text-slate-400">
+                        {customTeachers[item.courseCode]?.venue || item.venue || "TBA"}
+                      </td>
                       <td className="py-3 px-4 text-right font-mono font-bold text-slate-100">{item.credits}</td>
                     </tr>
                   ))}
