@@ -240,13 +240,24 @@ class TimetableExporter:
             pal = get_course_palette(c.get("course_code", ""))
             hex_clean = pal["hexBg"].replace("#", "").upper()
 
+            th_slots = c.get("theory_slots", [])
+            th_str = "+".join(str(s) for s in th_slots) if isinstance(th_slots, list) and th_slots else (str(th_slots) if th_slots else "—")
+
+            lb_slots = c.get("lab_slots", [])
+            if isinstance(lb_slots, list):
+                lb_str = "+".join(str(s) for s in lb_slots) if lb_slots else "—"
+            elif isinstance(lb_slots, dict):
+                lb_str = lb_slots.get("raw_slot") or "+".join(str(s) for s in (lb_slots.get("slots") or lb_slots.get("labels", [])))
+            else:
+                lb_str = str(lb_slots) if lb_slots else "—"
+
             row_data = [
                 c.get("course_code", ""),
                 c.get("course_title", ""),
                 c.get("credits", 0),
                 c.get("faculty_name", ""),
-                "+".join(c.get("theory_slots", [])) if c.get("theory_slots") else "—",
-                "+".join(c.get("lab_slots", [])) if c.get("lab_slots") else "—",
+                th_str,
+                lb_str,
                 c.get("venue") or "—",
                 f"{c.get('rating_mean', 0.0):.1f}" if c.get("rating_mean") else "Unrated",
                 c.get("review_count", 0)
@@ -521,9 +532,22 @@ class TimetableExporter:
             bg_color = rl_colors.HexColor(pal["hexBg"])
             c_table_styles.append(('BACKGROUND', (0, c_idx), (0, c_idx), bg_color))
 
-            slots_str = "+".join(c.get("theory_slots", []))
-            if c.get("lab_slots"):
-                slots_str += (" / " if slots_str else "") + "+".join(c.get("lab_slots", []))
+            th_slots = c.get("theory_slots", [])
+            th_str = "+".join(str(s) for s in th_slots) if isinstance(th_slots, list) and th_slots else (str(th_slots) if th_slots else "")
+
+            lb_slots = c.get("lab_slots", [])
+            if isinstance(lb_slots, list):
+                lb_str = "+".join(str(s) for s in lb_slots) if lb_slots else ""
+            elif isinstance(lb_slots, dict):
+                lb_str = lb_slots.get("raw_slot") or "+".join(str(s) for s in (lb_slots.get("slots") or lb_slots.get("labels", [])))
+            else:
+                lb_str = str(lb_slots) if lb_slots else ""
+
+            slots_str = th_str
+            if lb_str:
+                slots_str = f"{slots_str} / {lb_str}" if slots_str else lb_str
+            if not slots_str:
+                slots_str = "—"
 
             rating_str = f"{c.get('rating_mean', 0.0):.1f} ({c.get('review_count', 0)})" if c.get('rating_mean') else "Unrated"
 
@@ -711,20 +735,30 @@ class TimetableExporter:
             for idx, fav in enumerate(favourites_list, start=1):
                 name = fav.get("name") or f"Favourite_{idx}"
                 safe_name = "".join(c for c in name if c.isalnum() or c in (' ', '_', '-')).strip()
-                tt_payload = fav.get("payload") or {}
+                if not safe_name:
+                    safe_name = f"Favourite_{idx}"
 
-                if not tt_payload or "per_day_timeline" not in tt_payload:
+                tt = fav.get("timetable")
+                if not tt:
+                    raw_payload = fav.get("payload") or {}
+                    tt = raw_payload.get("timetable", raw_payload)
+
+                if not tt or not isinstance(tt, dict) or "per_day_timeline" not in tt:
                     continue
 
-                courses = tt_payload.get("courses_data", [])
-                excel_bytes = cls.export_to_excel(tt_payload, courses)
+                courses = fav.get("courses") or tt.get("courses_data", [])
+
+                excel_bytes = cls.export_to_excel(tt, courses)
                 zf.writestr(f"{safe_name}/{safe_name}.xlsx", excel_bytes)
 
-                pdf_bytes = cls.export_to_pdf(tt_payload, courses)
+                pdf_bytes = cls.export_to_pdf(tt, courses)
                 zf.writestr(f"{safe_name}/{safe_name}.pdf", pdf_bytes)
 
-                csv_str = cls.export_to_csv(tt_payload, courses)
+                csv_str = cls.export_to_csv(tt, courses)
                 zf.writestr(f"{safe_name}/{safe_name}.csv", csv_str.encode("utf-8-sig"))
+
+                png_bytes = cls.export_to_png(tt, courses)
+                zf.writestr(f"{safe_name}/{safe_name}.png", png_bytes)
 
         zip_buf.seek(0)
         return zip_buf.getvalue()

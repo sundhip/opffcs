@@ -80,8 +80,8 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Source**: `WhatsApp Chat - '29 FFCS 1.2.zip` (lines 9802-9814)
 - **Timestamp**: `2025-12-05T06:43:01` | **Sender**: `usr_a64df68f4e6c0681`
 - **Confidence**: `0.30` | **Explicit Rating**: None (opinion only)
-- **Mentions**: Names: [], Courses: [], Slots: ['L31', 'L43', 'L44', 'L32', 'F1', 'G1']
-- **Reasons**: found_academic_title, found_slot_label:F1,G1,L31
+- **Mentions**: Names: [], Courses: [], Slots: ['L31', 'L32', 'L44', 'F1', 'L43', 'G1']
+- **Reasons**: found_slot_label:F1,G1,L31, found_academic_title
 > "For OOPS Have: Manoranjitham - F1  WANT: Any faculty with G1, L31+L32+L43+L44  Additionally, I have to travel 70 KM everyday to go home.  Overall 150 KM round trip (counting deviation)  Pls help"
 
 ### Example 7: Review ID `rev_m_465_496`
@@ -105,7 +105,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Timestamp**: `2026-06-21T20:19:29` | **Sender**: `usr_f209b4492f75bd14`
 - **Confidence**: `0.75` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['KUMAR'], Courses: [], Slots: []
-- **Reasons**: found_known_faculty, matched_keywords:lenient,teaching,average
+- **Reasons**: found_known_faculty, matched_keywords:lenient,average,teaching
 > "Gajanand gupta Lenin babu Avadhesh kumar sharma Maya rathnasabathy  What abt these faculties? [21/06/26, 8:20:10 PM] ~ Ratchana: Hey seniors pls give honest feedback for OS, average teaching, lenient correction, for second slot not highted in the ..."
 
 ### Example 10: Review ID `rev_m_8315_14317`
@@ -113,7 +113,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Timestamp**: `2026-06-22T21:57:23` | **Sender**: `usr_7c3f9fd0443ef66f`
 - **Confidence**: `0.65` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['RAJESH'], Courses: [], Slots: []
-- **Reasons**: found_academic_title, found_known_faculty
+- **Reasons**: found_known_faculty, found_academic_title
 > "I dunno abt Suganya but rajesh is goated faculty"
 
 ### Example 11: Review ID `rev_m_1995_2878`
@@ -121,7 +121,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Timestamp**: `2026-06-25T21:06:58` | **Sender**: `usr_7c4f5e49f2dc8e30`
 - **Confidence**: `0.65` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['DHANASEKAR S'], Courses: [], Slots: []
-- **Reasons**: found_academic_title, found_known_faculty
+- **Reasons**: found_known_faculty, found_academic_title
 > "Except radha s and dhanasekar suggest any good faculty [25/06/26, 9:06:58 PM] ~ ~AB:  <attached: [PHONE_REDACTED]-PHOTO-2026-06-25-21-06-59.jpg>"
 
 ### Example 12: Review ID `rev_m_2588_3698`
@@ -145,7 +145,7 @@ Generated from 3 chat file(s) across 3 processed files.
 - **Timestamp**: `2026-07-07T20:56:21` | **Sender**: `usr_baac81f5682ce190`
 - **Confidence**: `0.55` | **Explicit Rating**: None (opinion only)
 - **Mentions**: Names: ['FACE'], Courses: [], Slots: ['E2', 'TE2']
-- **Reasons**: found_slot_label:E2,TE2, found_known_faculty
+- **Reasons**: found_known_faculty, found_slot_label:E2,TE2
 > "STS E2+ TE2 Have: Face Need: Sixphrase"
 
 ### Example 15: Review ID `rev_m_9445_18313`

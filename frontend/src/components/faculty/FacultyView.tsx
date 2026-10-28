@@ -354,14 +354,15 @@ export const FacultyView: React.FC = () => {
                   )}
 
                   {/* Rating Histogram / Distribution */}
-                  {facultyDetail.rating_summary && (
+                  {facultyDetail.rating_summary && facultyDetail.rating_summary.rating_distribution && (
                     <div className="bg-[#121218] border border-neutral-800 rounded-xl p-4 space-y-2 text-xs">
                       <span className="font-semibold text-neutral-200 block mb-2">
                         Rating Distribution (1 to 5 Stars):
                       </span>
                       {[5, 4, 3, 2, 1].map((star) => {
-                        const count = facultyDetail.rating_summary?.rating_distribution[star.toString()] || 0;
-                        const total = facultyDetail.rating_summary?.rated_count || 1;
+                        const dist = facultyDetail.rating_summary?.rating_distribution || {};
+                        const count = dist[star.toString()] || 0;
+                        const total = Math.max(1, facultyDetail.rating_summary?.rated_count || 1);
                         const pct = Math.round((count / total) * 100);
 
                         return (
@@ -390,26 +391,35 @@ export const FacultyView: React.FC = () => {
                       Courses & Slots Taught:
                     </span>
                     <div className="space-y-2">
-                      {facultyDetail.offerings.map((off) => (
-                        <div
-                          key={off.id}
-                          className="bg-[#121218] border border-neutral-800 rounded-xl p-3 text-xs flex justify-between items-center"
-                        >
-                          <div>
-                            <span className="font-bold text-neutral-100 font-mono">{off.course_code}</span>
-                            <span className="text-neutral-400 ml-2">{off.course_title}</span>
-                            <div className="text-[11px] text-neutral-400 mt-1">
-                              Theory: {off.theory_slots.join("+") || "None"} • Lab:{" "}
-                              {off.lab_session?.labels.join("+") || "None"}
+                      {facultyDetail.offerings.map((off) => {
+                        const labStr = off.lab_session
+                          ? off.lab_session.raw_slot ||
+                            (Array.isArray(off.lab_session.slots) ? off.lab_session.slots.join("+") : "") ||
+                            (Array.isArray(off.lab_session.labels) ? off.lab_session.labels.join("+") : "") ||
+                            "None"
+                          : "None";
+
+                        return (
+                          <div
+                            key={off.id}
+                            className="bg-[#121218] border border-neutral-800 rounded-xl p-3 text-xs flex justify-between items-center"
+                          >
+                            <div>
+                              <span className="font-bold text-neutral-100 font-mono">{off.course_code}</span>
+                              <span className="text-neutral-400 ml-2">{off.course_title}</span>
+                              <div className="text-[11px] text-neutral-400 mt-1">
+                                Theory: {off.theory_slots && off.theory_slots.length > 0 ? off.theory_slots.join("+") : "None"} • Lab:{" "}
+                                {labStr}
+                              </div>
                             </div>
+                            {off.venue && (
+                              <span className="px-2 py-0.5 rounded bg-[#181820] border border-neutral-700 font-mono text-[11px] text-neutral-300">
+                                {off.venue}
+                              </span>
+                            )}
                           </div>
-                          {off.venue && (
-                            <span className="px-2 py-0.5 rounded bg-[#181820] border border-neutral-700 font-mono text-[11px] text-neutral-300">
-                              {off.venue}
-                            </span>
-                          )}
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
 

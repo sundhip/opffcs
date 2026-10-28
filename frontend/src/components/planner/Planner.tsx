@@ -383,7 +383,10 @@ export const Planner: React.FC = () => {
                             <option value="">Any available slot (Solver decides)</option>
                             {offerings.map((off) => {
                               const thStr = off.theory_slots?.join("+") || "None";
-                              const lbStr = off.lab_session?.labels?.join("+") || (off as any).lab_slots?.join("+") || "None";
+                              const lbStr = (off.lab_session as any)?.raw_slot ||
+                                ((off.lab_session as any)?.slots ? (off.lab_session as any).slots.join("+") :
+                                ((off.lab_session as any)?.labels ? (off.lab_session as any).labels.join("+") :
+                                ((off as any).lab_slots ? (off as any).lab_slots.join("+") : "None")));
                               return (
                                 <option key={off.id} value={off.id}>
                                   {off.faculty_name} • Theory: {thStr} • Lab: {lbStr}
@@ -405,7 +408,10 @@ export const Planner: React.FC = () => {
                                 (f) => f.id === off.faculty_id || f.canonical_name?.toUpperCase() === fName.toUpperCase()
                               );
                               const thStr = off.theory_slots?.join("+") || "None";
-                              const lbStr = off.lab_session?.labels?.join("+") || (off as any).lab_slots?.join("+") || "None";
+                              const lbStr = (off.lab_session as any)?.raw_slot ||
+                                ((off.lab_session as any)?.slots ? (off.lab_session as any).slots.join("+") :
+                                ((off.lab_session as any)?.labels ? (off.lab_session as any).labels.join("+") :
+                                ((off as any).lab_slots ? (off as any).lab_slots.join("+") : "None")));
 
                               return (
                                 <div

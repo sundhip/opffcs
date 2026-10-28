@@ -34,7 +34,7 @@ def enrich_course_details(db: Session, timetable: Dict[str, Any], provided_cours
                     seen.add(cc)
                     details.append({
                         "course_code": cc,
-                        "course_title": cc,
+                        "course_title": m.get("course_title") or cc,
                         "faculty_name": m.get("faculty_name", "Staff"),
                         "credits": 3,
                         "theory_slots": [m.get("slot_label")] if m.get("kind") == "theory" else [],
@@ -48,20 +48,31 @@ def enrich_course_details(db: Session, timetable: Dict[str, Any], provided_cours
     offerings = db.query(Offering).filter(Offering.id.in_(offering_ids)).all()
     results = []
     for off in offerings:
-        course = db.query(Course).filter(Course.code == off.course_code).first()
+        course = db.query(Course).filter(Course.id == off.course_id).first()
         faculty = db.query(Faculty).filter(Faculty.id == off.faculty_id).first()
-        rating = db.query(FacultyRating).filter(FacultyRating.faculty_id == off.faculty_id).first()
+        rating = db.query(FacultyRating).filter(FacultyRating.faculty_id == off.faculty_id).first() if faculty else None
+
+        lab_slots = []
+        if isinstance(off.lab_session, dict):
+            lab_slots = off.lab_session.get("slots") or off.lab_session.get("labels", [])
+        elif isinstance(off.lab_session, list):
+            lab_slots = off.lab_session
+
+        c_code = course.code if course else "UNKNOWN"
+        c_title = course.title if course else c_code
+        c_credits = course.credits if course else 3
+        f_name = faculty.canonical_name if faculty else "Staff"
 
         results.append({
-            "course_code": off.course_code,
-            "course_title": course.title if course else off.course_code,
-            "credits": course.credits if course else 3,
-            "faculty_name": faculty.display_name if faculty else "Staff",
+            "course_code": c_code,
+            "course_title": c_title,
+            "credits": c_credits,
+            "faculty_name": f_name,
             "theory_slots": off.theory_slots or [],
-            "lab_slots": off.lab_slots or [],
+            "lab_slots": lab_slots or [],
             "venue": off.venue,
-            "rating_mean": rating.rating_mean if rating else 0.0,
-            "review_count": rating.review_count if rating else 0
+            "rating_mean": rating.rating_mean if (rating and rating.rating_mean is not None) else 0.0,
+            "review_count": rating.review_count if (rating and rating.review_count is not None) else 0
         })
     return results
 
@@ -145,14 +156,26 @@ def export_favourites_zip(payload: FavouritesExportPayload, db: Session = Depend
         if not favs:
             raise HTTPException(status_code=404, detail="No favourites found to export.")
 
-        fav_dicts = [
-            {
+        fav_dicts = []
+        for f in favs:
+            raw_payload = f.payload or {}
+            # Unwrap timetable if nested
+            tt = raw_payload.get("timetable", raw_payload)
+            if not isinstance(tt, dict) or "per_day_timeline" not in tt:
+                continue
+
+            courses = enrich_course_details(db, tt, raw_payload.get("courses_data"))
+            fav_dicts.append({
                 "id": f.id,
                 "name": f.name or f"Timetable_{f.id[:6]}",
-                "payload": f.payload
-            }
-            for f in favs
-        ]
+                "timetable": tt,
+                "courses": courses,
+                "payload": raw_payload
+            })
+
+        if not fav_dicts:
+            raise HTTPException(status_code=400, detail="None of the selected favourites contain full timetable data to export.")
+
         zip_bytes = TimetableExporter.export_favourites_bundle(fav_dicts)
         return Response(
             content=zip_bytes,

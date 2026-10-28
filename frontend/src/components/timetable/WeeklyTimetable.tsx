@@ -105,21 +105,21 @@ interface MatrixPeriod {
 }
 
 const MORNING_PERIODS: MatrixPeriod[] = [
-  { periodIdx: 0, periodNum: 1, theoryTime: "08:00 AM to 08:50 AM", labTime: "08:00 AM to 08:50 AM", theoryStartMin: 480, theoryEndMin: 530, labStartMin: 480, labEndMin: 530 },
-  { periodIdx: 1, periodNum: 2, theoryTime: "08:55 AM to 09:45 AM", labTime: "08:50 AM to 09:40 AM", theoryStartMin: 535, theoryEndMin: 585, labStartMin: 530, labEndMin: 580 },
-  { periodIdx: 2, periodNum: 3, theoryTime: "09:50 AM to 10:40 AM", labTime: "09:50 AM to 10:40 AM", theoryStartMin: 590, theoryEndMin: 640, labStartMin: 590, labEndMin: 640 },
-  { periodIdx: 3, periodNum: 4, theoryTime: "10:45 AM to 11:35 AM", labTime: "10:40 AM to 11:30 AM", theoryStartMin: 645, theoryEndMin: 695, labStartMin: 640, labEndMin: 690 },
-  { periodIdx: 4, periodNum: 5, theoryTime: "11:40 AM to 12:30 PM", labTime: "11:40 AM to 12:30 PM", theoryStartMin: 700, theoryEndMin: 750, labStartMin: 700, labEndMin: 750 },
-  { periodIdx: 5, periodNum: 6, theoryTime: "12:35 PM to 01:25 PM", labTime: "12:30 PM to 01:20 PM", theoryStartMin: 755, theoryEndMin: 805, labStartMin: 750, labEndMin: 800 }
+  { periodIdx: 0, periodNum: 1, theoryTime: "08:00 - 08:50", labTime: "08:00 - 08:50", theoryStartMin: 480, theoryEndMin: 530, labStartMin: 480, labEndMin: 530 },
+  { periodIdx: 1, periodNum: 2, theoryTime: "08:55 - 09:45", labTime: "08:50 - 09:40", theoryStartMin: 535, theoryEndMin: 585, labStartMin: 530, labEndMin: 580 },
+  { periodIdx: 2, periodNum: 3, theoryTime: "09:50 - 10:40", labTime: "09:50 - 10:40", theoryStartMin: 590, theoryEndMin: 640, labStartMin: 590, labEndMin: 640 },
+  { periodIdx: 3, periodNum: 4, theoryTime: "10:45 - 11:35", labTime: "10:40 - 11:30", theoryStartMin: 645, theoryEndMin: 695, labStartMin: 640, labEndMin: 690 },
+  { periodIdx: 4, periodNum: 5, theoryTime: "11:40 - 12:30", labTime: "11:40 - 12:30", theoryStartMin: 700, theoryEndMin: 750, labStartMin: 700, labEndMin: 750 },
+  { periodIdx: 5, periodNum: 6, theoryTime: "12:35 - 01:25", labTime: "12:30 - 01:20", theoryStartMin: 755, theoryEndMin: 805, labStartMin: 750, labEndMin: 800 }
 ];
 
 const AFTERNOON_PERIODS: MatrixPeriod[] = [
-  { periodIdx: 6, periodNum: 7, theoryTime: "02:00 PM to 02:50 PM", labTime: "02:00 PM to 02:50 PM", theoryStartMin: 840, theoryEndMin: 890, labStartMin: 840, labEndMin: 890 },
-  { periodIdx: 7, periodNum: 8, theoryTime: "02:55 PM to 03:45 PM", labTime: "02:50 PM to 03:40 PM", theoryStartMin: 895, theoryEndMin: 945, labStartMin: 890, labEndMin: 940 },
-  { periodIdx: 8, periodNum: 9, theoryTime: "03:50 PM to 04:40 PM", labTime: "03:50 PM to 04:40 PM", theoryStartMin: 950, theoryEndMin: 1000, labStartMin: 950, labEndMin: 1000 },
-  { periodIdx: 9, periodNum: 10, theoryTime: "04:45 PM to 05:35 PM", labTime: "04:40 PM to 05:30 PM", theoryStartMin: 1005, theoryEndMin: 1055, labStartMin: 1000, labEndMin: 1050 },
-  { periodIdx: 10, periodNum: 11, theoryTime: "05:40 PM to 06:30 PM", labTime: "05:40 PM to 06:30 PM", theoryStartMin: 1060, theoryEndMin: 1110, labStartMin: 1060, labEndMin: 1110 },
-  { periodIdx: 11, periodNum: 12, theoryTime: "06:35 PM to 07:25 PM", labTime: "06:30 PM to 07:20 PM", theoryStartMin: 1115, theoryEndMin: 1165, labStartMin: 1110, labEndMin: 1160 }
+  { periodIdx: 6, periodNum: 7, theoryTime: "02:00 - 02:50", labTime: "02:00 - 02:50", theoryStartMin: 840, theoryEndMin: 890, labStartMin: 840, labEndMin: 890 },
+  { periodIdx: 7, periodNum: 8, theoryTime: "02:55 - 03:45", labTime: "02:50 - 03:40", theoryStartMin: 895, theoryEndMin: 945, labStartMin: 890, labEndMin: 940 },
+  { periodIdx: 8, periodNum: 9, theoryTime: "03:50 - 04:40", labTime: "03:50 - 04:40", theoryStartMin: 950, theoryEndMin: 1000, labStartMin: 950, labEndMin: 1000 },
+  { periodIdx: 9, periodNum: 10, theoryTime: "04:45 - 05:35", labTime: "04:40 - 05:30", theoryStartMin: 1005, theoryEndMin: 1055, labStartMin: 1000, labEndMin: 1050 },
+  { periodIdx: 10, periodNum: 11, theoryTime: "05:40 - 06:30", labTime: "05:40 - 06:30", theoryStartMin: 1060, theoryEndMin: 1110, labStartMin: 1060, labEndMin: 1110 },
+  { periodIdx: 11, periodNum: 12, theoryTime: "06:35 - 07:25", labTime: "06:30 - 07:20", theoryStartMin: 1115, theoryEndMin: 1165, labStartMin: 1110, labEndMin: 1160 }
 ];
 
 const DAY_SLOT_MATRIX: Record<string, { theory: (string | null)[]; lab: string[] }> = {
@@ -466,7 +466,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                   ))}
                   {/* Lunch Theory Header */}
                   <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-neutral-800 bg-[#14141c] min-w-[95px]">
-                    <div>01:25 PM to 02:00 PM</div>
+                    <div>01:25 - 02:00</div>
                   </th>
                   {AFTERNOON_PERIODS.map((p) => (
                     <th key={`th-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-300 min-w-[95px] bg-[#0e0e13] last:border-r-0">
@@ -487,7 +487,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                   ))}
                   {/* Lunch Lab Header */}
                   <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-neutral-800 bg-[#14141c] min-w-[95px]">
-                    <div>01:20 PM to 02:00 PM</div>
+                    <div>01:20 - 02:00</div>
                   </th>
                   {AFTERNOON_PERIODS.map((p) => (
                     <th key={`lb-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-400 min-w-[95px] bg-[#0b0b10] last:border-r-0">
