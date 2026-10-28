@@ -69,14 +69,16 @@ export const api = {
   async getFacultyDetail(
     facultyId: string,
     search?: string,
-    limit: number = 20,
-    offset: number = 0
+    limit: number = 30,
+    offset: number = 0,
+    reviewType?: string
   ): Promise<FacultyDetail> {
     const sp = new URLSearchParams({
       reviews_limit: limit.toString(),
       reviews_offset: offset.toString()
     });
     if (search) sp.set("search", search);
+    if (reviewType) sp.set("review_type", reviewType);
     return fetchJson<FacultyDetail>(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}?${sp.toString()}`);
   },
 

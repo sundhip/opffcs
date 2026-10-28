@@ -18,10 +18,12 @@ export interface LiveFilters {
   maxGapMinutes: number | null;
   sortBy: "score" | "fewest_gaps" | "most_free_days" | "best_rating" | "earliest_finish";
   shapeFilter?: "ALL" | "MORNING" | "AFTERNOON" | "FREE_DAYS" | "COMPACT" | "BALANCED";
-  gapsFilter?: "ALL" | "LESS" | "MEDIUM" | "HIGH";
-  finishFilter?: "ALL" | "EARLY" | "MID" | "LATE";
-  halfDaysFilter?: "ALL" | "HIGH" | "LESS";
-  daysFilter?: "ALL" | "BALANCED" | "FOUR_DAY" | "FIVE_DAY";
+  gapsFilter?: "ALL" | "ZERO" | "LESS" | "MEDIUM" | "WIDE" | "NO_MON_GAP" | "NO_FRI_GAP";
+  finishFilter?: "ALL" | "VERY_EARLY" | "EARLY" | "MID" | "LATE";
+  startFilter?: "ALL" | "START_8AM" | "START_LATE" | "START_NOON" | "START_AFTERNOON";
+  halfDaysFilter?: "ALL" | "FULL_HALF" | "HIGH_HALF" | "MOD_HALF" | "NO_HALF";
+  daysFilter?: "ALL" | "BALANCED" | "LIGHT" | "FOUR_DAY" | "MON_OFF" | "FRI_OFF" | "WED_OFF" | "FIVE_DAY";
+  facultyQualityFilter?: "ALL" | "TOP_RATED" | "GOOD_RATED" | "REVIEWED_ONLY";
 }
 
 export const DEFAULT_HARD_CONSTRAINTS: HardConstraints = {
@@ -429,8 +431,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     shapeFilter: "ALL",
     gapsFilter: "ALL",
     finishFilter: "ALL",
+    startFilter: "ALL",
     halfDaysFilter: "ALL",
-    daysFilter: "ALL"
+    daysFilter: "ALL",
+    facultyQualityFilter: "ALL"
   },
   setLiveFilters: (updates) => {
     set((state) => ({

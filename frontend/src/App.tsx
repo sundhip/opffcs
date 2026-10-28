@@ -41,13 +41,13 @@ export const App: React.FC = () => {
   const favCount = favourites.length;
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === "dark" ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"}`}>
+    <div className={`min-h-screen flex flex-col ${theme === "dark" ? "bg-[#000000] text-neutral-100" : "bg-neutral-50 text-neutral-900"}`}>
       {/* Top Navbar */}
-      <header className="sticky top-0 z-30 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 no-print">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-30 bg-[#09090c]/95 backdrop-blur-md border-b border-neutral-800 no-print">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           {/* Logo & Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-amber-500 flex items-center justify-center shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-amber-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
               <Layers className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -59,20 +59,20 @@ export const App: React.FC = () => {
                   VIT Local
                 </span>
               </div>
-              <span className="text-[10px] text-slate-400 block -mt-0.5">
+              <span className="text-[10px] text-neutral-400 block -mt-0.5">
                 Timetable Maker & Review Platform
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation Tabs */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/80">
+          <nav className="hidden md:flex items-center gap-1 bg-[#141419] p-1 rounded-xl border border-neutral-800">
             <button
               onClick={() => setActiveTab("planner")}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "planner"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
@@ -84,13 +84,13 @@ export const App: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "results"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <Calendar className="w-3.5 h-3.5" />
               Timetables
               {validCount > 0 && (
-                <span className="ml-1 px-1.5 py-0.2 bg-indigo-900 text-indigo-200 text-[10px] rounded-full font-mono font-bold">
+                <span className="ml-1 px-1.5 py-0.2 bg-indigo-950 text-indigo-300 border border-indigo-700/60 text-[10px] rounded-full font-mono font-bold">
                   {validCount}
                 </span>
               )}
@@ -101,7 +101,7 @@ export const App: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "faculty"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <User className="w-3.5 h-3.5" />
@@ -113,13 +113,13 @@ export const App: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "saved" || activeTab === "favourites"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <Archive className="w-3.5 h-3.5" />
               Saved
               {favCount > 0 && (
-                <span className="ml-1 px-1.5 py-0.2 bg-amber-500/30 text-amber-300 text-[10px] rounded-full font-mono font-bold">
+                <span className="ml-1 px-1.5 py-0.2 bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] rounded-full font-mono font-bold">
                   {favCount}
                 </span>
               )}
@@ -130,7 +130,7 @@ export const App: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "data"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <UploadCloud className="w-3.5 h-3.5" />
@@ -142,7 +142,7 @@ export const App: React.FC = () => {
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
                 activeTab === "matches"
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800"
               }`}
             >
               <HelpCircle className="w-3.5 h-3.5" />
@@ -152,14 +152,14 @@ export const App: React.FC = () => {
 
           {/* Right Toolbar: System Status & Theme */}
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-slate-800/80 border border-slate-700/80 rounded-lg text-[11px] text-slate-300">
+            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-[#141419] border border-neutral-800 rounded-lg text-[11px] text-neutral-300">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>127.0.0.1:8000</span>
             </div>
 
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white transition"
+              className="p-2 rounded-xl bg-[#141419] hover:bg-neutral-800 border border-neutral-800 text-neutral-300 hover:text-white transition"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-indigo-400" />}

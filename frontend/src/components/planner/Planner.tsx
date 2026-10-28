@@ -101,9 +101,9 @@ export const Planner: React.FC = () => {
   }, [courses, selectedCourseCodes]);
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 py-6">
+    <div className="space-y-8 w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Top Banner: Credits & Status */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-[#09090c] border border-neutral-800 rounded-2xl p-5 shadow-lg flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold text-slate-100 flex items-center gap-2">
             <Layers className="w-5 h-5 text-indigo-400" />

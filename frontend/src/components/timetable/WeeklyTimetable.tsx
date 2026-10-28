@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { MeetingBlock, GeneratedTimetable, AvailableTeacher } from "../../types";
 import { getCoursePalette } from "../../utils/colors";
+import { useAppStore } from "../../store/useAppStore";
 import {
   FlaskConical,
   BookOpen,
@@ -12,9 +13,14 @@ import {
   Sparkles,
   RotateCcw,
   CheckCircle2,
-  Calendar
+  Calendar,
+  FileSpreadsheet,
+  FileText,
+  ImageIcon,
+  ArrowUpRight,
+  Check
 } from "lucide-react";
-import { downloadTimetableExport } from "../../utils/exporter";
+import { downloadTimetableExport, ExportFormat } from "../../utils/exporter";
 
 export interface WeeklyTimetableProps {
   timeline: Record<string, MeetingBlock[]>;
@@ -176,11 +182,38 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
   timetableObj,
   onTeacherChange
 }) => {
+  const { facultyList, setSelectedFacultyId, setActiveTab } = useAppStore();
   const [viewMode, setViewMode] = useState<"matrix" | "timeline">("matrix");
   const [activePopover, setActivePopover] = useState<MeetingBlock | null>(null);
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+  const [exportSuccessMsg, setExportSuccessMsg] = useState<string | null>(null);
 
   // Local state for user-selected teacher per course in this shape
   const [customTeachers, setCustomTeachers] = useState<Record<string, AvailableTeacher>>({});
+
+  const handleDownloadClick = () => {
+    if (onDownload) {
+      onDownload();
+    } else {
+      setIsDownloadModalOpen(true);
+    }
+  };
+
+  const handleFormatExport = async (format: ExportFormat) => {
+    if (!timetableObj) return;
+    setIsExporting(true);
+    try {
+      await downloadTimetableExport(timetableObj, format);
+      setExportSuccessMsg(`Successfully downloaded ${format.toUpperCase()} file.`);
+      setTimeout(() => setExportSuccessMsg(null), 3500);
+      setIsDownloadModalOpen(false);
+    } catch (err: any) {
+      alert(`Export failed: ${err.message || "Unknown error"}`);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   // Reset custom teacher selections when timetable/shape changes
   useEffect(() => {
@@ -355,12 +388,20 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
   };
 
   return (
-    <div className={`timetable-container bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl ${className}`}>
+    <div className={`timetable-container bg-[#000000] border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl ${className}`}>
+      {/* Toast Alert */}
+      {exportSuccessMsg && (
+        <div className="fixed bottom-6 right-6 z-50 bg-emerald-950 border border-emerald-700/80 text-emerald-200 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-semibold animate-in fade-in">
+          <Check className="w-4 h-4 text-emerald-400" />
+          <span>{exportSuccessMsg}</span>
+        </div>
+      )}
+
       {/* 1. Header & Actions Bar */}
-      <div className="p-4 sm:p-5 bg-slate-850/90 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
+      <div className="p-4 sm:p-5 bg-[#09090c] border-b border-neutral-800 flex flex-wrap items-center justify-between gap-4">
         <div>
-          {title && <h3 className="font-bold text-slate-100 text-lg sm:text-xl tracking-tight">{title}</h3>}
-          {subtitle && <p className="text-xs text-slate-400 mt-1 font-medium">{subtitle}</p>}
+          {title && <h3 className="font-bold text-neutral-100 text-lg sm:text-xl tracking-tight">{title}</h3>}
+          {subtitle && <p className="text-xs text-neutral-400 mt-1 font-medium">{subtitle}</p>}
         </div>
 
         {/* 3 Core Action Buttons */}
@@ -368,17 +409,9 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
           {/* Download Timetable (Green) */}
           <button
             type="button"
-            onClick={() => {
-              if (onDownload) {
-                onDownload();
-              } else if (timetableObj) {
-                downloadTimetableExport(timetableObj, "png");
-              } else {
-                window.print();
-              }
-            }}
+            onClick={handleDownloadClick}
             className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-2 shadow-md hover:shadow-emerald-600/30 transition-all active:scale-95"
-            title="Download Timetable as High-Resolution PNG / PDF"
+            title="Download Timetable as Excel, PDF, PNG, CSV, or ZIP"
           >
             <Download className="w-4 h-4" />
             <span>Download Timetable</span>
@@ -388,10 +421,10 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
           <button
             type="button"
             onClick={() => setViewMode(viewMode === "matrix" ? "timeline" : "matrix")}
-            className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-md hover:shadow-amber-500/30 transition-all active:scale-95"
+            className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs flex items-center gap-2 shadow-md hover:shadow-amber-500/30 transition-all active:scale-95"
             title="Toggle between VIT Slot Matrix View and Continuous Minute-based Timeline View"
           >
-            <Sparkles className="w-4 h-4 text-slate-950" />
+            <Sparkles className="w-4 h-4 text-neutral-950" />
             <span>{viewMode === "matrix" ? "Enable Quick Visualization" : "Switch to Slot Matrix"}</span>
           </button>
 
@@ -418,46 +451,46 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
       {viewMode === "matrix" ? (
         /* ======================== MODE A: VIT SLOT MATRIX ======================== */
         <div className="p-4 sm:p-6 space-y-6">
-          <div className="overflow-x-auto rounded-xl border border-slate-700/80 shadow-inner bg-slate-950">
-            <table className="w-full border-collapse text-center select-none min-w-[1100px]">
+          <div className="overflow-x-auto rounded-xl border border-neutral-800 shadow-inner bg-[#07070a]">
+            <table className="w-full border-collapse text-center select-none min-w-[1200px]">
               <thead>
                 {/* Header Row 1: Theory Hours */}
-                <tr className="bg-slate-900 border-b border-slate-700 text-slate-200">
-                  <th className="py-2.5 px-3 text-[11px] font-extrabold uppercase tracking-wider border-r border-slate-700 bg-slate-850 w-24">
+                <tr className="bg-[#0e0e13] border-b border-neutral-800 text-neutral-200">
+                  <th className="sticky left-0 z-30 bg-[#121218] border-r-2 border-neutral-700 w-24 min-w-[90px] py-2.5 px-3 text-[11px] font-black uppercase tracking-wider text-neutral-200 shadow-md">
                     THEORY HOURS
                   </th>
                   {MORNING_PERIODS.map((p) => (
-                    <th key={`th-m-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-slate-700/80 text-slate-300">
+                    <th key={`th-m-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-300 min-w-[95px] bg-[#0e0e13]">
                       <div>{p.theoryTime}</div>
                     </th>
                   ))}
                   {/* Lunch Theory Header */}
-                  <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-slate-700/80 bg-slate-900/90 w-20">
+                  <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-neutral-800 bg-[#14141c] min-w-[95px]">
                     <div>01:25 PM to 02:00 PM</div>
                   </th>
                   {AFTERNOON_PERIODS.map((p) => (
-                    <th key={`th-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-slate-700/80 text-slate-300 last:border-r-0">
+                    <th key={`th-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-300 min-w-[95px] bg-[#0e0e13] last:border-r-0">
                       <div>{p.theoryTime}</div>
                     </th>
                   ))}
                 </tr>
 
                 {/* Header Row 2: Lab Hours */}
-                <tr className="bg-slate-900/90 border-b-2 border-slate-700 text-slate-300">
-                  <th className="py-2.5 px-3 text-[11px] font-extrabold uppercase tracking-wider border-r border-slate-700 bg-slate-850">
+                <tr className="bg-[#0b0b10] border-b border-neutral-700/80 text-neutral-400">
+                  <th className="sticky left-0 z-30 bg-[#121218] border-r-2 border-neutral-700 w-24 min-w-[90px] py-2 px-3 text-[11px] font-black uppercase tracking-wider text-neutral-300 shadow-md">
                     LAB HOURS
                   </th>
                   {MORNING_PERIODS.map((p) => (
-                    <th key={`lb-m-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-slate-700/80 text-slate-400">
+                    <th key={`lb-m-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-400 min-w-[95px] bg-[#0b0b10]">
                       <div>{p.labTime}</div>
                     </th>
                   ))}
                   {/* Lunch Lab Header */}
-                  <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-slate-700/80 bg-slate-900/90">
+                  <th className="py-2 px-1 text-[10px] font-extrabold text-amber-400 border-r border-neutral-800 bg-[#14141c] min-w-[95px]">
                     <div>01:20 PM to 02:00 PM</div>
                   </th>
                   {AFTERNOON_PERIODS.map((p) => (
-                    <th key={`lb-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-slate-700/80 text-slate-400 last:border-r-0">
+                    <th key={`lb-a-${p.periodIdx}`} className="py-2 px-1 text-[10px] font-semibold border-r border-neutral-800 text-neutral-400 min-w-[95px] bg-[#0b0b10] last:border-r-0">
                       <div>{p.labTime}</div>
                     </th>
                   ))}
@@ -468,9 +501,9 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                 {WEEKDAYS.map((day, dIdx) => {
                   const dayMatrix = DAY_SLOT_MATRIX[day];
                   return (
-                    <tr key={day} className="border-b border-slate-800 hover:bg-slate-900/30 transition-colors">
-                      {/* Day Label Cell */}
-                      <td className="py-3 px-3 font-extrabold text-xs text-slate-100 bg-slate-850 border-r border-slate-700">
+                    <tr key={day} className="border-b border-neutral-800/80 hover:bg-neutral-900/30 transition-colors">
+                      {/* Day Label Cell - STICKY LEFT */}
+                      <td className="sticky left-0 z-20 bg-[#101015] border-r-2 border-neutral-700 py-3 px-3 font-black text-xs text-neutral-100 text-center select-none shadow-md w-24 min-w-[90px]">
                         {day}
                       </td>
 
@@ -481,25 +514,40 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                         const lbDef = dayMatrix.lab[p.periodIdx];
 
                         if (occ) {
+                          const palette = getCoursePalette(occ.meeting.course_code);
+                          const isLab = occ.kind === "lab";
                           return (
                             <td
                               key={`cell-${day}-${p.periodIdx}`}
                               onClick={() => handleCellClick(occ.meeting)}
-                              className="p-1.5 border-r border-slate-700/80 bg-[#c6f052] dark:bg-[#b0e82c] text-slate-950 font-bold cursor-pointer hover:brightness-105 active:scale-98 transition shadow-xs"
+                              className="p-1.5 border-r border-neutral-800/80 cursor-pointer hover:brightness-115 active:scale-98 transition shadow-xs align-top relative group"
+                              style={{
+                                backgroundColor: palette.hexBg,
+                                borderColor: palette.hexBorder,
+                                color: palette.hexText
+                              }}
                               title={`${occ.meeting.course_code} (${occ.meeting.faculty_name}) • Slot ${occ.label}`}
                             >
-                              <div className="text-[10px] font-bold tracking-tight text-slate-800 leading-none">
-                                {occ.label}
+                              <div className="flex items-center justify-between gap-1 leading-none mb-1">
+                                <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-black/45 tracking-wider">
+                                  {occ.label}
+                                </span>
+                                <span className="text-[9px] font-black px-1 py-0.2 rounded bg-black/35 uppercase">
+                                  {isLab ? "LAB" : "TH"}
+                                </span>
                               </div>
-                              <div className="text-[12px] font-black text-black tracking-tight uppercase leading-tight mt-1">
+                              <div className="text-[11px] font-black tracking-tight uppercase leading-tight font-sans">
                                 {occ.meeting.course_code}
+                              </div>
+                              <div className="text-[9px] font-medium opacity-85 truncate mt-0.5 leading-tight">
+                                {occ.meeting.faculty_name}
                               </div>
                             </td>
                           );
                         }
 
                         return (
-                          <td key={`cell-${day}-${p.periodIdx}`} className="p-2 border-r border-slate-800 text-slate-500 text-[11px] font-mono bg-slate-950/40">
+                          <td key={`cell-${day}-${p.periodIdx}`} className="p-2 border-r border-neutral-800/60 text-neutral-500 text-[10px] font-mono bg-[#07070a]">
                             <div>{thDef || "-"} / {lbDef}</div>
                           </td>
                         );
@@ -510,7 +558,7 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                         <td
                           rowSpan={5}
                           data-testid="lunch-column"
-                          className="bg-slate-900 border-r border-slate-700 text-amber-400 font-black text-xs tracking-widest text-center select-none py-4 px-2 shadow-inner align-middle"
+                          className="bg-[#0e0e14] border-r border-neutral-800 text-amber-400 font-black text-xs tracking-widest text-center select-none py-4 px-2 shadow-inner align-middle"
                           style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
                         >
                           LUNCH
@@ -524,25 +572,40 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                         const lbDef = dayMatrix.lab[p.periodIdx];
 
                         if (occ) {
+                          const palette = getCoursePalette(occ.meeting.course_code);
+                          const isLab = occ.kind === "lab";
                           return (
                             <td
                               key={`cell-${day}-${p.periodIdx}`}
                               onClick={() => handleCellClick(occ.meeting)}
-                              className="p-1.5 border-r border-slate-700/80 last:border-r-0 bg-[#c6f052] dark:bg-[#b0e82c] text-slate-950 font-bold cursor-pointer hover:brightness-105 active:scale-98 transition shadow-xs"
+                              className="p-1.5 border-r border-neutral-800/80 last:border-r-0 cursor-pointer hover:brightness-115 active:scale-98 transition shadow-xs align-top relative group"
+                              style={{
+                                backgroundColor: palette.hexBg,
+                                borderColor: palette.hexBorder,
+                                color: palette.hexText
+                              }}
                               title={`${occ.meeting.course_code} (${occ.meeting.faculty_name}) • Slot ${occ.label}`}
                             >
-                              <div className="text-[10px] font-bold tracking-tight text-slate-800 leading-none">
-                                {occ.label}
+                              <div className="flex items-center justify-between gap-1 leading-none mb-1">
+                                <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-black/45 tracking-wider">
+                                  {occ.label}
+                                </span>
+                                <span className="text-[9px] font-black px-1 py-0.2 rounded bg-black/35 uppercase">
+                                  {isLab ? "LAB" : "TH"}
+                                </span>
                               </div>
-                              <div className="text-[12px] font-black text-black tracking-tight uppercase leading-tight mt-1">
+                              <div className="text-[11px] font-black tracking-tight uppercase leading-tight font-sans">
                                 {occ.meeting.course_code}
+                              </div>
+                              <div className="text-[9px] font-medium opacity-85 truncate mt-0.5 leading-tight">
+                                {occ.meeting.faculty_name}
                               </div>
                             </td>
                           );
                         }
 
                         return (
-                          <td key={`cell-${day}-${p.periodIdx}`} className="p-2 border-r border-slate-800 last:border-r-0 text-slate-500 text-[11px] font-mono bg-slate-950/40">
+                          <td key={`cell-${day}-${p.periodIdx}`} className="p-2 border-r border-neutral-800/60 last:border-r-0 text-neutral-500 text-[10px] font-mono bg-[#07070a]">
                             <div>{thDef || "-"} / {lbDef}</div>
                           </td>
                         );
@@ -555,20 +618,20 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
           </div>
 
           {/* Enrolled Course Details Summary Table */}
-          <div className="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden shadow-lg">
-            <div className="px-5 py-3.5 bg-slate-850 border-b border-slate-800 flex items-center justify-between">
-              <h4 className="font-bold text-sm text-slate-100 flex items-center gap-2">
+          <div className="bg-[#08080b] rounded-xl border border-neutral-800 overflow-hidden shadow-xl mt-6">
+            <div className="px-5 py-3.5 bg-[#0e0e14] border-b border-neutral-800 flex items-center justify-between">
+              <h4 className="font-bold text-sm text-neutral-100 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 Enrolled Courses Summary
               </h4>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-950 text-indigo-300 border border-indigo-700/60 font-mono">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-900 text-neutral-300 border border-neutral-700 font-mono">
                 {enrolledCoursesSummary.length} Courses Registered
               </span>
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-slate-200">
-                <thead className="bg-slate-900 border-b border-slate-800 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+              <table className="w-full text-left text-xs text-neutral-200">
+                <thead className="bg-[#0b0b10] border-b border-neutral-800 text-[11px] font-bold text-neutral-400 uppercase tracking-wider">
                   <tr>
                     <th className="py-3 px-4">Slot</th>
                     <th className="py-3 px-4">Course Code</th>
@@ -578,9 +641,9 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                     <th className="py-3 px-4 text-right">Credits</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/80">
+                <tbody className="divide-y divide-neutral-800/80">
                   {enrolledCoursesSummary.map((item) => (
-                    <tr key={item.id} className="hover:bg-slate-900/50 transition">
+                    <tr key={item.id} className="hover:bg-neutral-900/40 transition">
                       <td className="py-3 px-4 font-mono font-bold">
                         <div className="flex items-center gap-2">
                           <span
@@ -603,9 +666,9 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                           </span>
                         </div>
                       </td>
-                      <td className="py-3 px-4 font-mono font-bold text-slate-100">{item.courseCode}</td>
-                      <td className="py-3 px-4 font-medium text-slate-200">{item.courseTitle}</td>
-                      <td className="py-3 px-4 text-slate-300">
+                      <td className="py-3 px-4 font-mono font-bold text-neutral-100">{item.courseCode}</td>
+                      <td className="py-3 px-4 font-medium text-neutral-200">{item.courseTitle}</td>
+                      <td className="py-3 px-4 text-neutral-300">
                         {(() => {
                           const courseOpt = timetableObj?.course_options?.find(
                             (o) => o.course_code.toUpperCase() === item.courseCode.toUpperCase()
@@ -615,57 +678,77 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
                             customTeachers[item.courseCode] ||
                             avail.find((t) => t.faculty_name === item.facultyName) ||
                             avail[0];
-
-                          if (avail.length > 1) {
-                            return (
-                              <div className="flex items-center gap-2">
-                                <select
-                                  value={selectedTeacher?.offering_id || ""}
-                                  onChange={(e) => {
-                                    const t = avail.find((opt) => opt.offering_id === e.target.value);
-                                    if (t) {
-                                      setCustomTeachers((prev) => ({ ...prev, [item.courseCode]: t }));
-                                      if (onTeacherChange) onTeacherChange(item.courseCode, t);
-                                    }
-                                  }}
-                                  className="bg-slate-800 border border-slate-700 hover:border-amber-400 text-slate-100 text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer shadow-sm transition max-w-[220px]"
-                                  title={`Choose teacher for ${item.courseCode} in this timetable shape`}
-                                >
-                                  {avail.map((t) => (
-                                    <option key={t.offering_id} value={t.offering_id}>
-                                      {t.faculty_name} {t.rating_mean != null ? `(${t.rating_mean.toFixed(1)} ★)` : "(Unrated)"}
-                                    </option>
-                                  ))}
-                                </select>
-                                <span className="text-[10px] text-amber-400 font-bold bg-amber-950/70 border border-amber-800/60 px-1.5 py-0.5 rounded whitespace-nowrap">
-                                  {avail.length} options
-                                </span>
-                              </div>
-                            );
-                          }
+                          const effectiveFacultyName = selectedTeacher?.faculty_name || item.facultyName;
+                          const facMatch = facultyList.find(
+                            (f) => f.canonical_name?.toUpperCase() === effectiveFacultyName?.toUpperCase()
+                          );
 
                           return (
-                            <div className="flex items-center gap-1.5">
-                              <span>{selectedTeacher?.faculty_name || item.facultyName}</span>
-                              {selectedTeacher?.rating_mean != null && (
-                                <span className="text-[10px] text-amber-400 font-semibold font-mono">
-                                  ({selectedTeacher.rating_mean.toFixed(1)} ★)
-                                </span>
+                            <div className="flex flex-wrap items-center gap-2">
+                              {avail.length > 1 ? (
+                                <div className="flex items-center gap-2">
+                                  <select
+                                    value={selectedTeacher?.offering_id || ""}
+                                    onChange={(e) => {
+                                      const t = avail.find((opt) => opt.offering_id === e.target.value);
+                                      if (t) {
+                                        setCustomTeachers((prev) => ({ ...prev, [item.courseCode]: t }));
+                                        if (onTeacherChange) onTeacherChange(item.courseCode, t);
+                                      }
+                                    }}
+                                    className="bg-neutral-900 border border-neutral-700 hover:border-amber-400 text-neutral-100 text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer shadow-sm transition max-w-[220px]"
+                                    title={`Choose teacher for ${item.courseCode} in this timetable shape`}
+                                  >
+                                    {avail.map((t) => (
+                                      <option key={t.offering_id} value={t.offering_id}>
+                                        {t.faculty_name} {t.rating_mean != null ? `(${t.rating_mean.toFixed(1)} ★)` : "(Unrated)"}
+                                      </option>
+                                    ))}
+                                  </select>
+                                  <span className="text-[10px] text-amber-400 font-bold bg-amber-950/70 border border-amber-800/60 px-1.5 py-0.5 rounded whitespace-nowrap">
+                                    {avail.length} options
+                                  </span>
+                                </div>
+                              ) : (
+                                <div className="flex items-center gap-1.5">
+                                  <span>{effectiveFacultyName}</span>
+                                  {selectedTeacher?.rating_mean != null && (
+                                    <span className="text-[10px] text-amber-400 font-semibold font-mono">
+                                      ({selectedTeacher.rating_mean.toFixed(1)} ★)
+                                    </span>
+                                  )}
+                                </div>
                               )}
+
+                              {/* Direct Reviews link */}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (facMatch) {
+                                    setSelectedFacultyId(facMatch.id);
+                                  }
+                                  setActiveTab("faculty");
+                                }}
+                                className="px-2 py-0.5 rounded bg-amber-500/10 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 text-[10px] font-bold font-mono transition flex items-center gap-1"
+                                title={`View student reviews and feedback for ${effectiveFacultyName}`}
+                              >
+                                <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
+                                <span>Reviews</span>
+                              </button>
                             </div>
                           );
                         })()}
                       </td>
-                      <td className="py-3 px-4 font-mono text-slate-400">
+                      <td className="py-3 px-4 font-mono text-neutral-400">
                         {customTeachers[item.courseCode]?.venue || item.venue || "TBA"}
                       </td>
-                      <td className="py-3 px-4 text-right font-mono font-bold text-slate-100">{item.credits}</td>
+                      <td className="py-3 px-4 text-right font-mono font-bold text-neutral-100">{item.credits}</td>
                     </tr>
                   ))}
                 </tbody>
-                <tfoot className="bg-slate-900/80 border-t-2 border-slate-700 text-xs font-bold text-slate-100">
+                <tfoot className="bg-[#0b0b10] border-t-2 border-neutral-800 text-xs font-bold text-neutral-100">
                   <tr>
-                    <td colSpan={5} className="py-3.5 px-4 text-right uppercase tracking-wider text-slate-300">
+                    <td colSpan={5} className="py-3.5 px-4 text-right uppercase tracking-wider text-neutral-300">
                       Total Registered Credits:
                     </td>
                     <td className="py-3.5 px-4 text-right font-mono text-emerald-400 text-sm">
@@ -792,11 +875,11 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
       {/* 3. Interactive Class Details Modal */}
       {activePopover && (
         <div
-          className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 z-50"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
           onClick={() => setActivePopover(null)}
         >
           <div
-            className="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
+            className="bg-[#0c0c10] border border-neutral-800 rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
@@ -805,24 +888,24 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
               <div>
                 <span
                   className={`text-xs font-mono font-semibold px-2 py-0.5 rounded uppercase ${
-                    activePopover.kind === "lab" ? "bg-emerald-900 text-emerald-200" : "bg-indigo-900 text-indigo-200"
+                    activePopover.kind === "lab" ? "bg-emerald-950 text-emerald-300 border border-emerald-800/60" : "bg-indigo-950 text-indigo-300 border border-indigo-800/60"
                   }`}
                 >
                   {activePopover.kind.toUpperCase()} SESSION • {activePopover.slot_label}
                 </span>
-                <h4 className="text-xl font-bold text-slate-100 mt-2">{activePopover.course_code}</h4>
-                <p className="text-sm text-slate-400">{courseTitles[activePopover.course_code] || "VIT University Course"}</p>
+                <h4 className="text-xl font-bold text-neutral-100 mt-2">{activePopover.course_code}</h4>
+                <p className="text-sm text-neutral-400">{courseTitles[activePopover.course_code] || "VIT University Course"}</p>
               </div>
               <button
                 onClick={() => setActivePopover(null)}
-                className="text-slate-400 hover:text-slate-200 p-1 text-lg font-bold"
+                className="text-neutral-400 hover:text-neutral-200 p-1 text-lg font-bold"
                 aria-label="Close dialog"
               >
                 ✕
               </button>
             </div>
 
-            <div className="mt-5 space-y-3 border-t border-slate-800 pt-4 text-sm text-slate-300">
+            <div className="mt-5 space-y-3 border-t border-neutral-800 pt-4 text-sm text-neutral-300">
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-indigo-400" />
                 <span>
@@ -842,14 +925,166 @@ export const WeeklyTimetable: React.FC<WeeklyTimetableProps> = ({
               )}
             </div>
 
-            <div className="mt-6 flex justify-end">
+            {/* Direct reviews button in popover */}
+            {activePopover.faculty_name && (
+              <div className="mt-4 pt-3 border-t border-neutral-800/80">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const fac = facultyList.find(
+                      (f) => f.canonical_name?.toUpperCase() === activePopover.faculty_name?.toUpperCase()
+                    );
+                    if (fac) setSelectedFacultyId(fac.id);
+                    setActiveTab("faculty");
+                    setActivePopover(null);
+                  }}
+                  className="w-full py-2.5 px-4 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-700 rounded-xl text-xs font-bold text-amber-300 flex items-center justify-center gap-2 transition"
+                >
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <span>View Student Reviews for {activePopover.faculty_name}</span>
+                </button>
+              </div>
+            )}
+
+            <div className="mt-5 flex justify-end">
               <button
                 onClick={() => setActivePopover(null)}
-                className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition"
+                className="px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-xl text-sm font-semibold transition"
               >
                 Dismiss
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* 4. Built-in Format Selection Download Modal (Fallback) */}
+      {isDownloadModalOpen && timetableObj && (
+        <div
+          className="fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+          onClick={() => setIsDownloadModalOpen(false)}
+        >
+          <div
+            className="bg-[#0c0c10] border border-neutral-800 rounded-3xl p-6 max-w-lg w-full shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-4 mb-4">
+              <div>
+                <h4 className="text-lg font-bold text-neutral-100 flex items-center gap-2">
+                  <Download className="w-5 h-5 text-emerald-400" />
+                  Download Timetable
+                </h4>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Select your preferred high-resolution format for download.
+                </p>
+              </div>
+              <button
+                onClick={() => setIsDownloadModalOpen(false)}
+                className="p-1 rounded-lg text-neutral-400 hover:text-white text-lg font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            {isExporting ? (
+              <div className="py-12 text-center space-y-3">
+                <div className="w-10 h-10 border-3 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                <p className="text-sm font-semibold text-neutral-200">Generating High-Resolution Export...</p>
+                <p className="text-xs text-neutral-400">Rendering slots, courses, and metrics without clipped text.</p>
+              </div>
+            ) : (
+              <div className="space-y-2.5">
+                <button
+                  onClick={() => handleFormatExport("excel")}
+                  className="w-full p-3.5 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-800 hover:border-emerald-500/50 rounded-2xl flex items-center justify-between text-left transition group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                      <FileSpreadsheet className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-sm text-neutral-100 block">Excel Spreadsheet (.xlsx)</span>
+                      <span className="text-[11px] text-neutral-400">
+                        3 sheets: Formatted period grid with colors, registered courses, and free-time metrics
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-emerald-400 transition" />
+                </button>
+
+                <button
+                  onClick={() => handleFormatExport("pdf")}
+                  className="w-full p-3.5 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-800 hover:border-rose-500/50 rounded-2xl flex items-center justify-between text-left transition group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center border border-rose-500/30">
+                      <FileText className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-sm text-neutral-100 block">PDF Document (.pdf)</span>
+                      <span className="text-[11px] text-neutral-400">
+                        Landscape A4 print-ready vector document with zero clipped text
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-rose-400 transition" />
+                </button>
+
+                <button
+                  onClick={() => handleFormatExport("png")}
+                  className="w-full p-3.5 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-800 hover:border-amber-500/50 rounded-2xl flex items-center justify-between text-left transition group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
+                      <ImageIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-sm text-neutral-100 block">PNG Image (.png)</span>
+                      <span className="text-[11px] text-neutral-400">
+                        2x scale high-resolution image for phone wallpaper or quick reference
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 transition" />
+                </button>
+
+                <button
+                  onClick={() => handleFormatExport("csv")}
+                  className="w-full p-3.5 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-800 hover:border-cyan-500/50 rounded-2xl flex items-center justify-between text-left transition group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+                      <Calendar className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-sm text-neutral-100 block">CSV Schedule (.csv)</span>
+                      <span className="text-[11px] text-neutral-400">
+                        Tabular rows for each lecture and lab meeting with UTF-8 BOM
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-cyan-400 transition" />
+                </button>
+
+                <button
+                  onClick={() => handleFormatExport("bundle")}
+                  className="w-full p-3.5 bg-[#141419] hover:bg-[#1a1a22] border border-neutral-800 hover:border-indigo-500/50 rounded-2xl flex items-center justify-between text-left transition group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                      <Download className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-sm text-neutral-100 block">Complete Bundle (.zip)</span>
+                      <span className="text-[11px] text-neutral-400">
+                        ZIP archive containing Excel, PDF, PNG, CSV, and timetable JSON
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-indigo-400 transition" />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

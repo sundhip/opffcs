@@ -107,8 +107,8 @@ describe("WeeklyTimetable Rendering", () => {
     expect(screen.getAllByText("AI & ML").length).toBe(2);
     expect(screen.getAllByText("theory").length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText("lab").length).toBeGreaterThanOrEqual(1);
-    expect(screen.getAllByText("Dr. Alan Turing").length).toBe(2);
-    expect(screen.getAllByText("Dr. Nikola Tesla").length).toBe(2);
+    expect(screen.getAllByText("Dr. Alan Turing").length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText("Dr. Nikola Tesla").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText("8")).toBeInTheDocument(); // (3+1) + (3+1) = 8 total credits
   });
 

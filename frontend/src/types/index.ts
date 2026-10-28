@@ -181,6 +181,9 @@ export interface FacultyDetail {
   }[];
   reviews: {
     total: number;
+    feedback_count?: number;
+    rating_count?: number;
+    all_count?: number;
     limit: number;
     offset: number;
     items: {
@@ -194,6 +197,8 @@ export interface FacultyDetail {
       confidence: number;
       match_score: number;
       match_reasons: string[];
+      kind?: string;
+      tags?: string[];
     }[];
   };
 }

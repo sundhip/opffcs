@@ -41,6 +41,7 @@ export const FacultyView: React.FC = () => {
   const [facultyDetail, setFacultyDetail] = useState<FacultyDetail | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
   const [reviewSearch, setReviewSearch] = useState("");
+  const [reviewType, setReviewType] = useState<"feedback" | "rating" | "all">("feedback");
   const [reviewsOffset, setReviewsOffset] = useState(0);
 
   // Comparison view modal
@@ -48,7 +49,20 @@ export const FacultyView: React.FC = () => {
   const [compareData, setCompareData] = useState<any[]>([]);
   const [isLoadingCompare, setIsLoadingCompare] = useState(false);
 
-  // Fetch detail when selectedFacultyId changes
+  // Auto-select faculty with reviews on initial mount if none selected
+  useEffect(() => {
+    if (!selectedFacultyId && facultyList.length > 0) {
+      const withReviews = [...facultyList].filter((f) => f.review_count > 0);
+      if (withReviews.length > 0) {
+        withReviews.sort((a, b) => b.review_count - a.review_count);
+        setSelectedFacultyId(withReviews[0].id);
+      } else {
+        setSelectedFacultyId(facultyList[0].id);
+      }
+    }
+  }, [selectedFacultyId, facultyList, setSelectedFacultyId]);
+
+  // Fetch detail when selectedFacultyId, reviewSearch, reviewType or reviewsOffset changes
   useEffect(() => {
     if (!selectedFacultyId) {
       setFacultyDetail(null);
@@ -59,7 +73,7 @@ export const FacultyView: React.FC = () => {
     setIsLoadingDetail(true);
 
     api
-      .getFacultyDetail(selectedFacultyId, reviewSearch, 15, reviewsOffset)
+      .getFacultyDetail(selectedFacultyId, reviewSearch, 30, reviewsOffset, reviewType)
       .then((data) => {
         if (isMounted) setFacultyDetail(data);
       })
@@ -71,7 +85,7 @@ export const FacultyView: React.FC = () => {
     return () => {
       isMounted = false;
     };
-  }, [selectedFacultyId, reviewSearch, reviewsOffset]);
+  }, [selectedFacultyId, reviewSearch, reviewsOffset, reviewType]);
 
   // Fetch comparison data when modal opens
   useEffect(() => {
@@ -116,15 +130,15 @@ export const FacultyView: React.FC = () => {
   }, [facultyList, search, minRating, hasReviewsOnly, sortBy]);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 py-6">
+    <div className="space-y-6 w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Top Controls Bar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-[#09090c] border border-neutral-800 rounded-2xl p-5 shadow-lg flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-neutral-100 flex items-center gap-2">
             <User className="w-5 h-5 text-indigo-400" />
             Faculty Directory & Reviews
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-neutral-400 mt-1">
             Browse verified ratings, read contextual student feedback, and compare professors.
           </p>
         </div>
@@ -142,27 +156,27 @@ export const FacultyView: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs">
+      <div className="bg-[#09090c] border border-neutral-800 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs">
         <div className="flex flex-wrap items-center gap-4">
           {/* Search Input */}
           <div className="relative w-64">
-            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search faculty name..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full pl-9 pr-3 py-1.5 bg-[#141419] border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
 
           {/* Min Rating Filter */}
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Min Rating:</span>
+            <span className="text-neutral-400">Min Rating:</span>
             <select
               value={minRating ?? ""}
               onChange={(e) => setMinRating(e.target.value ? parseFloat(e.target.value) : null)}
-              className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
+              className="bg-[#141419] border border-neutral-700 rounded-lg px-2.5 py-1 text-neutral-200 focus:outline-none"
             >
               <option value="">Any</option>
               <option value="3.0">3.0 ★ & Above</option>
@@ -173,11 +187,11 @@ export const FacultyView: React.FC = () => {
 
           {/* Sort By */}
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Sort By:</span>
+            <span className="text-neutral-400">Sort By:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
+              className="bg-[#141419] border border-neutral-700 rounded-lg px-2.5 py-1 text-neutral-200 focus:outline-none"
             >
               <option value="rating">Highest Rating</option>
               <option value="reviews">Most Reviews</option>
@@ -186,18 +200,18 @@ export const FacultyView: React.FC = () => {
           </div>
 
           {/* Has Reviews Only Checkbox */}
-          <label className="flex items-center gap-1.5 text-slate-300 cursor-pointer">
+          <label className="flex items-center gap-1.5 text-neutral-300 cursor-pointer">
             <input
               type="checkbox"
               checked={hasReviewsOnly}
               onChange={(e) => setHasReviewsOnly(e.target.checked)}
-              className="rounded bg-slate-800 border-slate-700 text-indigo-600"
+              className="rounded bg-neutral-800 border-neutral-700 text-indigo-600"
             />
             <span>Has Reviews Only</span>
           </label>
         </div>
 
-        <span className="text-slate-400">
+        <span className="text-neutral-400">
           Showing {filteredFaculty.length} of {facultyList.length} faculty
         </span>
       </div>
@@ -210,11 +224,11 @@ export const FacultyView: React.FC = () => {
           return (
             <div
               key={f.id}
-              className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm hover:border-slate-700 transition flex flex-col justify-between gap-4"
+              className="bg-[#09090c] border border-neutral-800 rounded-2xl p-5 shadow-sm hover:border-neutral-700 transition flex flex-col justify-between gap-4"
             >
               <div>
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-bold text-slate-100 text-sm leading-snug">
+                  <h3 className="font-bold text-neutral-100 text-sm leading-snug">
                     {f.canonical_name}
                   </h3>
 
@@ -224,15 +238,15 @@ export const FacultyView: React.FC = () => {
                       {f.rating_mean.toFixed(2)}
                     </span>
                   ) : (
-                    <span className="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-[10px] font-medium border border-slate-700 flex-shrink-0">
+                    <span className="px-2 py-0.5 rounded-full bg-neutral-800 text-neutral-400 text-[10px] font-medium border border-neutral-700 flex-shrink-0">
                       Unrated
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-3 mt-2 text-xs text-slate-400">
+                <div className="flex items-center gap-3 mt-2 text-xs text-neutral-400">
                   <span className="flex items-center gap-1">
-                    <MessageSquare className="w-3 h-3 text-slate-500" />
+                    <MessageSquare className="w-3 h-3 text-neutral-500" />
                     {f.review_count} review(s)
                   </span>
                   {f.low_sample && (
@@ -245,14 +259,14 @@ export const FacultyView: React.FC = () => {
               </div>
 
               {/* Bottom Buttons */}
-              <div className="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+              <div className="flex items-center justify-between pt-3 border-t border-neutral-800 text-xs">
                 <button
                   type="button"
                   onClick={() => toggleFacultyForComparison(f.id)}
                   className={`px-2.5 py-1 rounded-lg border text-[11px] font-medium transition ${
                     isCompared
                       ? "bg-indigo-600 border-indigo-500 text-white"
-                      : "bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-500"
+                      : "bg-[#141419] border-neutral-700 text-neutral-300 hover:border-neutral-500"
                   }`}
                 >
                   {isCompared ? "In Comparison" : "+ Compare"}
@@ -265,7 +279,7 @@ export const FacultyView: React.FC = () => {
                     setReviewsOffset(0);
                     setReviewSearch("");
                   }}
-                  className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg font-semibold flex items-center gap-1 transition"
+                  className="px-3 py-1 bg-[#141419] hover:bg-[#1f1f26] text-neutral-200 border border-neutral-700/80 rounded-lg font-semibold flex items-center gap-1 transition"
                 >
                   <span>Reviews & Info</span>
                   <ArrowRight className="w-3 h-3 text-indigo-400" />
@@ -279,22 +293,22 @@ export const FacultyView: React.FC = () => {
       {/* Faculty Detail Drawer Modal */}
       {selectedFacultyId && (
         <div
-          className="fixed inset-0 bg-slate-950/80 backdrop-blur-xs flex items-center justify-end z-50 overflow-hidden"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-end z-50 overflow-hidden"
           onClick={() => setSelectedFacultyId(null)}
         >
           <div
-            className="bg-slate-900 border-l border-slate-700 w-full max-w-2xl h-full shadow-2xl flex flex-col justify-between overflow-hidden"
+            className="bg-[#09090c] border-l border-neutral-800 w-full max-w-2xl h-full shadow-2xl flex flex-col justify-between overflow-hidden"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
           >
             {/* Header */}
-            <div className="p-6 border-b border-slate-800 flex items-start justify-between gap-4">
+            <div className="p-6 border-b border-neutral-800 flex items-start justify-between gap-4 bg-[#0e0e14]">
               <div>
-                <h3 className="text-xl font-bold text-slate-100">
+                <h3 className="text-xl font-bold text-neutral-100">
                   {facultyDetail?.canonical_name || "Loading Faculty Details..."}
                 </h3>
-                <span className="text-xs text-slate-400 block mt-0.5">
+                <span className="text-xs text-neutral-400 block mt-0.5">
                   Raw Name in Offerings: {facultyDetail?.raw_name || "--"}
                 </span>
 
@@ -304,7 +318,7 @@ export const FacultyView: React.FC = () => {
                       <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                       {facultyDetail.rating_summary.rating_mean?.toFixed(2) || "Unrated"} / 5.0
                     </span>
-                    <span className="text-xs text-slate-300">
+                    <span className="text-xs text-neutral-300">
                       Based on {facultyDetail.rating_summary.rated_count} explicit rating(s) and{" "}
                       {facultyDetail.rating_summary.review_count} matched review(s)
                     </span>
@@ -314,7 +328,7 @@ export const FacultyView: React.FC = () => {
 
               <button
                 onClick={() => setSelectedFacultyId(null)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white text-lg font-bold"
+                className="p-1 rounded-lg text-neutral-400 hover:text-white text-lg font-bold"
               >
                 ✕
               </button>
@@ -323,7 +337,7 @@ export const FacultyView: React.FC = () => {
             {/* Scrollable Body */}
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               {isLoadingDetail ? (
-                <div className="text-center py-12 text-slate-400 text-sm">
+                <div className="text-center py-12 text-neutral-400 text-sm">
                   Loading faculty details and reviews...
                 </div>
               ) : facultyDetail ? (
@@ -341,8 +355,8 @@ export const FacultyView: React.FC = () => {
 
                   {/* Rating Histogram / Distribution */}
                   {facultyDetail.rating_summary && (
-                    <div className="bg-slate-800/60 border border-slate-700 rounded-xl p-4 space-y-2 text-xs">
-                      <span className="font-semibold text-slate-200 block mb-2">
+                    <div className="bg-[#121218] border border-neutral-800 rounded-xl p-4 space-y-2 text-xs">
+                      <span className="font-semibold text-neutral-200 block mb-2">
                         Rating Distribution (1 to 5 Stars):
                       </span>
                       {[5, 4, 3, 2, 1].map((star) => {
@@ -352,16 +366,16 @@ export const FacultyView: React.FC = () => {
 
                         return (
                           <div key={star} className="flex items-center gap-3">
-                            <span className="w-12 text-slate-400 font-mono flex items-center gap-1">
+                            <span className="w-12 text-neutral-400 font-mono flex items-center gap-1">
                               {star} <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
                             </span>
-                            <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div className="flex-1 h-2 bg-neutral-800 rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-amber-400 rounded-full"
                                 style={{ width: `${pct}%` }}
                               />
                             </div>
-                            <span className="w-10 text-right text-slate-400 font-mono text-[11px]">
+                            <span className="w-10 text-right text-neutral-400 font-mono text-[11px]">
                               {count}
                             </span>
                           </div>
@@ -372,25 +386,25 @@ export const FacultyView: React.FC = () => {
 
                   {/* Courses & Offerings Taught */}
                   <div>
-                    <span className="font-semibold text-slate-200 text-xs block mb-2">
+                    <span className="font-semibold text-neutral-200 text-xs block mb-2">
                       Courses & Slots Taught:
                     </span>
                     <div className="space-y-2">
                       {facultyDetail.offerings.map((off) => (
                         <div
                           key={off.id}
-                          className="bg-slate-800/80 border border-slate-700/80 rounded-xl p-3 text-xs flex justify-between items-center"
+                          className="bg-[#121218] border border-neutral-800 rounded-xl p-3 text-xs flex justify-between items-center"
                         >
                           <div>
-                            <span className="font-bold text-slate-100 font-mono">{off.course_code}</span>
-                            <span className="text-slate-400 ml-2">{off.course_title}</span>
-                            <div className="text-[11px] text-slate-400 mt-1">
+                            <span className="font-bold text-neutral-100 font-mono">{off.course_code}</span>
+                            <span className="text-neutral-400 ml-2">{off.course_title}</span>
+                            <div className="text-[11px] text-neutral-400 mt-1">
                               Theory: {off.theory_slots.join("+") || "None"} • Lab:{" "}
                               {off.lab_session?.labels.join("+") || "None"}
                             </div>
                           </div>
                           {off.venue && (
-                            <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 font-mono text-[11px] text-slate-300">
+                            <span className="px-2 py-0.5 rounded bg-[#181820] border border-neutral-700 font-mono text-[11px] text-neutral-300">
                               {off.venue}
                             </span>
                           )}
@@ -399,14 +413,14 @@ export const FacultyView: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Reviews Section with Search */}
+                  {/* Reviews Section with Category Tabs & Search */}
                   <div>
-                    <div className="flex items-center justify-between gap-4 mb-3">
-                      <span className="font-semibold text-slate-200 text-xs">
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+                      <span className="font-semibold text-neutral-200 text-xs">
                         Student Reviews ({facultyDetail.reviews.total}):
                       </span>
                       <div className="relative w-48">
-                        <Search className="w-3 h-3 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
+                        <Search className="w-3 h-3 text-neutral-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
                         <input
                           type="text"
                           placeholder="Search reviews..."
@@ -415,44 +429,115 @@ export const FacultyView: React.FC = () => {
                             setReviewSearch(e.target.value);
                             setReviewsOffset(0);
                           }}
-                          className="w-full pl-8 pr-2 py-1 bg-slate-800 border border-slate-700 rounded-lg text-xs text-slate-100 focus:outline-none"
+                          className="w-full pl-8 pr-2 py-1 bg-[#141419] border border-neutral-700 rounded-lg text-xs text-neutral-100 focus:outline-none"
                         />
                       </div>
                     </div>
 
+                    {/* Review Type Category Filters */}
+                    <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121218] border border-neutral-800 rounded-xl mb-3.5">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setReviewType("feedback");
+                          setReviewsOffset(0);
+                        }}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
+                          reviewType === "feedback"
+                            ? "bg-indigo-600 text-white shadow-sm"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        <Sparkles className="w-3 h-3" />
+                        <span>Genuine Feedback ({facultyDetail.reviews.feedback_count ?? facultyDetail.reviews.total})</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setReviewType("rating");
+                          setReviewsOffset(0);
+                        }}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
+                          reviewType === "rating"
+                            ? "bg-amber-600 text-white shadow-sm"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        <Star className="w-3 h-3 fill-current" />
+                        <span>With Ratings ({facultyDetail.reviews.rating_count ?? 0})</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setReviewType("all");
+                          setReviewsOffset(0);
+                        }}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
+                          reviewType === "all"
+                            ? "bg-neutral-800 text-white shadow-sm"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        <span>All Mentions ({facultyDetail.reviews.all_count ?? facultyDetail.reviews.total})</span>
+                      </button>
+                    </div>
+
                     <div className="space-y-3">
                       {facultyDetail.reviews.items.length === 0 ? (
-                        <p className="text-xs text-slate-500 py-4 text-center">
-                          No reviews found matching your search.
+                        <p className="text-xs text-neutral-500 py-6 text-center bg-[#121218] rounded-xl border border-neutral-800">
+                          No reviews found matching this filter.
                         </p>
                       ) : (
                         facultyDetail.reviews.items.map((r) => (
                           <div
                             key={r.review_id}
-                            className="bg-slate-800/70 border border-slate-700/80 rounded-xl p-3.5 space-y-2 text-xs"
+                            className="bg-[#121218] border border-neutral-800 rounded-2xl p-4 space-y-2.5 text-xs shadow-sm hover:border-neutral-700 transition"
                           >
-                            <div className="flex items-center justify-between gap-2">
-                              {r.explicit_rating != null ? (
-                                <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold font-mono text-[11px]">
-                                  {r.explicit_rating} / 5.0 ★
-                                </span>
-                              ) : (
-                                <span className="text-[10px] text-slate-500 font-mono">
-                                  No explicit score
-                                </span>
-                              )}
-                              <span className="text-[10px] text-slate-400 font-mono">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                {r.explicit_rating != null ? (
+                                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold font-mono text-xs flex items-center gap-1">
+                                    <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                                    {r.explicit_rating} / 5.0
+                                  </span>
+                                ) : (
+                                  <span className="text-[10px] text-neutral-400 font-mono px-2 py-0.5 rounded bg-neutral-900 border border-neutral-800">
+                                    Student Opinion
+                                  </span>
+                                )}
+
+                                {/* Tags */}
+                                {r.tags && r.tags.map((t, tIdx) => {
+                                  let tagColor = "bg-neutral-900 text-neutral-300 border-neutral-800";
+                                  if (t.includes("Lenient")) tagColor = "bg-emerald-950/80 text-emerald-300 border-emerald-800/60";
+                                  else if (t.includes("Chill")) tagColor = "bg-cyan-950/80 text-cyan-300 border-cyan-800/60";
+                                  else if (t.includes("Strict")) tagColor = "bg-rose-950/80 text-rose-300 border-rose-800/60";
+                                  else if (t.includes("Good") || t.includes("★")) tagColor = "bg-amber-950/80 text-amber-300 border-amber-800/60";
+                                  else if (t.includes("Attendance")) tagColor = "bg-purple-950/80 text-purple-300 border-purple-800/60";
+                                  else if (t.includes("Marks")) tagColor = "bg-indigo-950/80 text-indigo-300 border-indigo-800/60";
+
+                                  return (
+                                    <span key={tIdx} className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${tagColor}`}>
+                                      {t}
+                                    </span>
+                                  );
+                                })}
+                              </div>
+
+                              <span className="text-[10px] text-neutral-400 font-mono">
                                 {r.timestamp ? r.timestamp.slice(0, 10) : "Review"}
                               </span>
                             </div>
 
                             {/* Escaped plain text review */}
-                            <p className="text-slate-200 leading-relaxed font-sans whitespace-pre-wrap select-text">
+                            <p className="text-neutral-100 leading-relaxed font-sans whitespace-pre-wrap select-text text-[12.5px]">
                               {r.text}
                             </p>
 
-                            <div className="flex items-center justify-between pt-1 border-t border-slate-700/50 text-[10px] text-slate-400 font-mono">
-                              <span className="truncate max-w-[200px]">
+                            <div className="flex items-center justify-between pt-2 border-t border-neutral-800/60 text-[10px] text-neutral-400 font-mono">
+                              <span className="truncate max-w-[220px]">
                                 Source: {r.source_zip ? r.source_zip.replace(".zip", "") : "WhatsApp Chat"}
                               </span>
                               <span>Match score: {(r.match_score * 100).toFixed(0)}%</span>
@@ -472,33 +557,33 @@ export const FacultyView: React.FC = () => {
       {/* Comparison Modal */}
       {isCompareOpen && (
         <div
-          className="fixed inset-0 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto"
+          className="fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto"
           onClick={() => setIsCompareOpen(false)}
         >
           <div
-            className="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-5xl w-full shadow-2xl my-8 relative"
+            className="bg-[#0c0c10] border border-neutral-800 rounded-3xl p-6 max-w-5xl w-full shadow-2xl my-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-4 mb-6">
               <div>
-                <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-neutral-100 flex items-center gap-2">
                   <GitCompare className="w-5 h-5 text-indigo-400" />
                   Faculty Comparison
                 </h3>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-neutral-400 mt-1">
                   Side-by-side comparison of ratings, offerings, and student review metrics.
                 </p>
               </div>
               <button
                 onClick={() => setIsCompareOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white text-lg font-bold"
+                className="p-1 rounded-lg text-neutral-400 hover:text-white text-lg font-bold"
               >
                 ✕
               </button>
             </div>
 
             {isLoadingCompare ? (
-              <div className="text-center py-12 text-slate-400 text-sm">
+              <div className="text-center py-12 text-neutral-400 text-sm">
                 Loading comparison metrics...
               </div>
             ) : (
@@ -506,28 +591,28 @@ export const FacultyView: React.FC = () => {
                 {compareData.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4 space-y-4"
+                    className="bg-[#121218] border border-neutral-800 rounded-2xl p-4 space-y-4"
                   >
                     <div>
-                      <h4 className="font-bold text-sm text-slate-100">{item.canonical_name}</h4>
+                      <h4 className="font-bold text-sm text-neutral-100">{item.canonical_name}</h4>
                       <div className="mt-2 flex items-center gap-2">
                         {item.rating_summary?.rating_mean != null ? (
                           <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold font-mono text-xs border border-amber-500/40">
                             {item.rating_summary.rating_mean.toFixed(2)} ★
                           </span>
                         ) : (
-                          <span className="text-xs text-slate-400">Unrated</span>
+                          <span className="text-xs text-neutral-400">Unrated</span>
                         )}
-                        <span className="text-xs text-slate-400">
+                        <span className="text-xs text-neutral-400">
                           ({item.rating_summary?.review_count || 0} reviews)
                         </span>
                       </div>
                     </div>
 
-                    <div className="space-y-1.5 text-xs text-slate-300 border-t border-slate-700 pt-3">
-                      <div className="text-[11px] font-semibold text-slate-400">Courses Taught:</div>
+                    <div className="space-y-1.5 text-xs text-neutral-300 border-t border-neutral-800 pt-3">
+                      <div className="text-[11px] font-semibold text-neutral-400">Courses Taught:</div>
                       {item.courses_taught.map((cStr: string) => (
-                        <div key={cStr} className="text-xs text-slate-200 truncate">
+                        <div key={cStr} className="text-xs text-neutral-200 truncate">
                           • {cStr}
                         </div>
                       ))}
