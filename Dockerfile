@@ -17,6 +17,7 @@ FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app \
     PORT=8000 \
     RESUMIO_HOST=0.0.0.0 \
     ALLOWED_ORIGINS="*"
@@ -34,9 +35,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend code, data, and built frontend dist
+# Copy core algorithms, backend code, data, and built frontend dist
+COPY core/ ./core/
 COPY backend/ ./backend/
 COPY data/ ./data/
+COPY .salt* ./
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
 # Expose port (Render/Railway/Cloud Run inject $PORT)

@@ -8,6 +8,8 @@ services:
     envVars:
       - key: PORT
         value: 10000
+      - key: PYTHONPATH
+        value: "/app"
       - key: RESUMIO_HOST
         value: 0.0.0.0
       - key: ALLOWED_ORIGINS
