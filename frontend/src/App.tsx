@@ -5,16 +5,20 @@ import { ResultsBrowser } from "./components/results/ResultsBrowser";
 import { FacultyView } from "./components/faculty/FacultyView";
 import { FavouritesPage } from "./components/favourites/FavouritesPage";
 import { MatchResolutionPage } from "./components/matches/MatchResolutionPage";
+import { DataManagementPage } from "./components/data/DataManagementPage";
 import {
   Layers,
   Calendar,
   User,
   Star,
+  Archive,
   HelpCircle,
   Moon,
   Sun,
   ShieldCheck,
-  Activity
+  Activity,
+  UploadCloud,
+  Database
 } from "lucide-react";
 
 export const App: React.FC = () => {
@@ -43,13 +47,13 @@ export const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
           {/* Logo & Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-amber-500 flex items-center justify-center shadow-md">
               <Layers className="w-5 h-5 text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-extrabold text-base tracking-tight text-white font-sans">
-                  Resumio <span className="text-indigo-400">FFCS</span>
+                  OP <span className="text-amber-400">FFCS</span>
                 </h1>
                 <span className="px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[9px] font-bold uppercase tracking-wider">
                   VIT Local
@@ -105,20 +109,32 @@ export const App: React.FC = () => {
             </button>
 
             <button
-              onClick={() => setActiveTab("favourites")}
+              onClick={() => setActiveTab("saved")}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
-                activeTab === "favourites"
+                activeTab === "saved" || activeTab === "favourites"
                   ? "bg-indigo-600 text-white shadow-sm"
                   : "text-slate-300 hover:text-white hover:bg-slate-700/50"
               }`}
             >
-              <Star className="w-3.5 h-3.5" />
-              Favourites
+              <Archive className="w-3.5 h-3.5" />
+              Saved
               {favCount > 0 && (
                 <span className="ml-1 px-1.5 py-0.2 bg-amber-500/30 text-amber-300 text-[10px] rounded-full font-mono font-bold">
                   {favCount}
                 </span>
               )}
+            </button>
+
+            <button
+              onClick={() => setActiveTab("data")}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeTab === "data"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+              }`}
+            >
+              <UploadCloud className="w-3.5 h-3.5" />
+              Upload & Data
             </button>
 
             <button
@@ -166,8 +182,9 @@ export const App: React.FC = () => {
             {activeTab === "planner" && <Planner />}
             {activeTab === "results" && <ResultsBrowser />}
             {activeTab === "faculty" && <FacultyView />}
-            {activeTab === "favourites" && <FavouritesPage />}
+            {(activeTab === "saved" || activeTab === "favourites") && <FavouritesPage />}
             {activeTab === "matches" && <MatchResolutionPage />}
+            {activeTab === "data" && <DataManagementPage />}
           </>
         )}
       </main>
@@ -205,23 +222,23 @@ export const App: React.FC = () => {
         </button>
 
         <button
-          onClick={() => setActiveTab("favourites")}
+          onClick={() => setActiveTab("saved")}
           className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
-            activeTab === "favourites" ? "text-indigo-400" : "text-slate-400"
+            activeTab === "saved" || activeTab === "favourites" ? "text-indigo-400" : "text-slate-400"
           }`}
         >
-          <Star className="w-4 h-4" />
-          <span>Starred</span>
+          <Archive className="w-4 h-4" />
+          <span>Saved</span>
         </button>
 
         <button
-          onClick={() => setActiveTab("matches")}
+          onClick={() => setActiveTab("data")}
           className={`flex flex-col items-center gap-1 py-1 px-2 rounded-lg text-[10px] font-semibold ${
-            activeTab === "matches" ? "text-indigo-400" : "text-slate-400"
+            activeTab === "data" ? "text-indigo-400" : "text-slate-400"
           }`}
         >
-          <HelpCircle className="w-4 h-4" />
-          <span>Queue</span>
+          <UploadCloud className="w-4 h-4" />
+          <span>Upload</span>
         </button>
       </nav>
 
@@ -230,7 +247,7 @@ export const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Resumio FFCS: 100% Offline & Local-First • Zero Cloud Telemetry</span>
+            <span>OP FFCS: 100% Offline & Local-First • Zero Cloud Telemetry</span>
           </div>
           <span>Brute-Force Oracle Verified • 720-bit Clash Detection</span>
         </div>

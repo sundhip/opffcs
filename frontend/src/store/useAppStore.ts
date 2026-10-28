@@ -10,7 +10,7 @@ import {
 } from "../types";
 import { api } from "../services/api";
 
-export type NavTab = "planner" | "results" | "faculty" | "favourites" | "matches";
+export type NavTab = "planner" | "results" | "faculty" | "saved" | "favourites" | "matches" | "data";
 
 export interface LiveFilters {
   requiredFreeDay: string | null;
@@ -18,6 +18,10 @@ export interface LiveFilters {
   maxGapMinutes: number | null;
   sortBy: "score" | "fewest_gaps" | "most_free_days" | "best_rating" | "earliest_finish";
   shapeFilter?: "ALL" | "MORNING" | "AFTERNOON" | "FREE_DAYS" | "COMPACT" | "BALANCED";
+  gapsFilter?: "ALL" | "LESS" | "MEDIUM" | "HIGH";
+  finishFilter?: "ALL" | "EARLY" | "MID" | "LATE";
+  halfDaysFilter?: "ALL" | "HIGH" | "LESS";
+  daysFilter?: "ALL" | "BALANCED" | "FOUR_DAY" | "FIVE_DAY";
 }
 
 export const DEFAULT_HARD_CONSTRAINTS: HardConstraints = {
@@ -422,7 +426,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     requiredFaculty: null,
     maxGapMinutes: null,
     sortBy: "score",
-    shapeFilter: "ALL"
+    shapeFilter: "ALL",
+    gapsFilter: "ALL",
+    finishFilter: "ALL",
+    halfDaysFilter: "ALL",
+    daysFilter: "ALL"
   },
   setLiveFilters: (updates) => {
     set((state) => ({
@@ -527,8 +535,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       const pattern = params.get("pattern");
       const freedaysStr = params.get("freedays");
 
-      if (tab && ["planner", "results", "faculty", "favourites", "matches"].includes(tab)) {
-        set({ activeTab: tab });
+      if (tab && ["planner", "results", "faculty", "saved", "favourites", "matches", "data"].includes(tab)) {
+        set({ activeTab: tab === "favourites" ? "saved" : tab });
       }
       if (coursesStr) {
         const codes = coursesStr.split(",").filter(Boolean);

@@ -178,5 +178,34 @@ export const api = {
     return fetchJson(`${API_BASE}/generate/${encodeURIComponent(jobId)}`, {
       method: "DELETE"
     });
+  },
+
+  // Datasets & Data Upload
+  async getDatasets(): Promise<any[]> {
+    return fetchJson<any[]>(`${API_BASE}/datasets`);
+  },
+
+  async uploadDataset(file: File, datasetName?: string, dryRun: boolean = false): Promise<any> {
+    const formData = new FormData();
+    formData.append("file", file);
+    if (datasetName) formData.append("dataset_name", datasetName);
+    formData.append("dry_run", dryRun ? "true" : "false");
+    formData.append("force", "true");
+
+    const res = await fetch(`${API_BASE}/datasets/upload`, {
+      method: "POST",
+      body: formData
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ detail: "Upload failed" }));
+      throw new Error(err.detail || "Upload failed");
+    }
+    return res.json();
+  },
+
+  async activateDataset(datasetId: string): Promise<any> {
+    return fetchJson(`${API_BASE}/datasets/${encodeURIComponent(datasetId)}/activate`, {
+      method: "POST"
+    });
   }
 };

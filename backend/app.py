@@ -37,8 +37,8 @@ with engine.connect() as conn:
         pass
 
 app = FastAPI(
-    title="Resumio FFCS Timetable Maker API",
-    description="Local-first personal FFCS timetable generation and faculty review matching platform for VIT.",
+    title="OP FFCS Timetable Maker API",
+    description="Local-first personal OP FFCS timetable generation and faculty review matching platform for VIT.",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
@@ -85,7 +85,7 @@ def index_page():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumio FFCS Timetable Maker</title>
+    <title>OP FFCS Timetable Maker</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 40px; display: flex; justify-content: center; align-items: center; min-height: 80vh; }
         .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 32px; max-width: 600px; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); }
@@ -102,7 +102,7 @@ def index_page():
 <body>
     <div class="card">
         <span class="badge">SYSTEM READY</span>
-        <h1>Resumio FFCS Timetable Maker</h1>
+        <h1>OP FFCS Timetable Maker</h1>
         <p>Local-first, constraint-guided timetable generator with fast interval clash engine and privacy-safe faculty reviews.</p>
         <ul class="endpoints">
             <li><span>API Interactive Documentation</span> <a href="/docs">OpenAPI /docs &rarr;</a></li>

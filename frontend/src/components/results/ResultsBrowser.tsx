@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useAppStore } from "../../store/useAppStore";
 import { WeeklyTimetable } from "../timetable/WeeklyTimetable";
+import { ShapesSidebar } from "./ShapesSidebar";
 import { GeneratedTimetable } from "../../types";
 import {
   ChevronLeft,
   ChevronRight,
-  Star,
   Printer,
   Sparkles,
   SlidersHorizontal,
@@ -22,11 +22,57 @@ import {
   FileSpreadsheet,
   FileText,
   Image as ImageIcon,
-  Archive
+  Archive,
+  LayoutGrid,
+  RotateCcw,
+  Sun,
+  Sunset,
+  PanelLeftClose,
+  PanelLeftOpen
 } from "lucide-react";
 import { downloadTimetableExport, ExportFormat } from "../../utils/exporter";
 
-export type TimetableShape = "ALL" | "MORNING" | "AFTERNOON" | "FREE_DAYS" | "COMPACT" | "BALANCED";
+export function getGapMinutes(tt: GeneratedTimetable): number {
+  return Object.values(tt.gap_minutes_per_day).reduce((s, m) => s + m, 0);
+}
+
+export function getGapCategory(tt: GeneratedTimetable): "LESS" | "MEDIUM" | "HIGH" {
+  const totalGap = getGapMinutes(tt);
+  if (totalGap <= 60) return "LESS";
+  if (totalGap <= 180) return "MEDIUM";
+  return "HIGH";
+}
+
+export function getFinishCategory(tt: GeneratedTimetable): "EARLY" | "MID" | "LATE" {
+  const latest = tt.latest_end || "19:00";
+  if (latest <= "15:40") return "EARLY";
+  if (latest <= "17:30") return "MID";
+  return "LATE";
+}
+
+export function getHalfDaysCount(tt: GeneratedTimetable): number {
+  let count = 0;
+  for (const day of ["MON", "TUE", "WED", "THU", "FRI"]) {
+    const mtgs = tt.per_day_timeline[day] || [];
+    if (mtgs.length === 0) continue;
+    const isMorningOnly = mtgs.every((m) => m.end_min <= 840);
+    const isAfternoonOnly = mtgs.every((m) => m.start_min >= 840);
+    if (isMorningOnly || isAfternoonOnly) {
+      count++;
+    }
+  }
+  return count;
+}
+
+export function getHalfDaysCategory(tt: GeneratedTimetable): "HIGH" | "LESS" {
+  return getHalfDaysCount(tt) >= 3 ? "HIGH" : "LESS";
+}
+
+export function getDaysCategory(tt: GeneratedTimetable): "BALANCED" | "FOUR_DAY" | "FIVE_DAY" {
+  if (tt.free_days && tt.free_days.length > 0) return "FOUR_DAY";
+  if (tt.max_daily_hours <= 5.0 && tt.working_days.length >= 4) return "BALANCED";
+  return "FIVE_DAY";
+}
 
 export function getTimetableShapeBadge(tt: GeneratedTimetable): { label: string; icon: string } {
   if (tt.free_days && tt.free_days.length > 0) {
@@ -52,40 +98,6 @@ export function getTimetableShapeBadge(tt: GeneratedTimetable): { label: string;
   return { label: "Balanced", icon: "⚖️" };
 }
 
-export function matchesShape(tt: GeneratedTimetable, shape: TimetableShape): boolean {
-  if (shape === "ALL") return true;
-  if (shape === "MORNING") {
-    let morningCount = 0;
-    let afternoonCount = 0;
-    Object.values(tt.per_day_timeline).forEach((mtgs) => {
-      mtgs.forEach((m) => {
-        if (m.end_min <= 840) morningCount++;
-        else afternoonCount++;
-      });
-    });
-    return (tt.latest_end ? tt.latest_end <= "14:00" : false) || morningCount >= afternoonCount * 1.5;
-  }
-  if (shape === "AFTERNOON") {
-    let afternoonCount = 0;
-    Object.values(tt.per_day_timeline).forEach((mtgs) => {
-      mtgs.forEach((m) => {
-        if (m.start_min >= 840) afternoonCount++;
-      });
-    });
-    return afternoonCount > 0;
-  }
-  if (shape === "FREE_DAYS") {
-    return tt.free_days && tt.free_days.length > 0;
-  }
-  if (shape === "COMPACT") {
-    return tt.longest_gap_minutes <= 60;
-  }
-  if (shape === "BALANCED") {
-    return tt.max_daily_hours <= 5.0 && tt.working_days.length >= 4;
-  }
-  return true;
-}
-
 export const ResultsBrowser: React.FC = () => {
   const {
     generationResult,
@@ -103,10 +115,10 @@ export const ResultsBrowser: React.FC = () => {
   } = useAppStore();
 
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
-  const [favouriteModalTimetable, setFavouriteModalTimetable] = useState<GeneratedTimetable | null>(null);
-  const [favouriteName, setFavouriteName] = useState("");
-  const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
+  const [saveModalTimetable, setSaveModalTimetable] = useState<GeneratedTimetable | null>(null);
+  const [saveName, setSaveName] = useState("");
   const [isExporting, setIsExporting] = useState(false);
+  const [isShapesSidebarVisible, setIsShapesSidebarVisible] = useState(true);
 
   const courseTitlesMap = useMemo(() => {
     const map: Record<string, string> = {};
@@ -133,6 +145,26 @@ export const ResultsBrowser: React.FC = () => {
   const filteredTimetables = useMemo(() => {
     let list = [...rawTimetables];
 
+    // 1. Free Gaps filter
+    if (liveFilters.gapsFilter && liveFilters.gapsFilter !== "ALL") {
+      list = list.filter((tt) => getGapCategory(tt) === liveFilters.gapsFilter);
+    }
+
+    // 2. Daily Finish Time filter
+    if (liveFilters.finishFilter && liveFilters.finishFilter !== "ALL") {
+      list = list.filter((tt) => getFinishCategory(tt) === liveFilters.finishFilter);
+    }
+
+    // 3. Half Days filter
+    if (liveFilters.halfDaysFilter && liveFilters.halfDaysFilter !== "ALL") {
+      list = list.filter((tt) => getHalfDaysCategory(tt) === liveFilters.halfDaysFilter);
+    }
+
+    // 4. Days / Workload filter
+    if (liveFilters.daysFilter && liveFilters.daysFilter !== "ALL") {
+      list = list.filter((tt) => getDaysCategory(tt) === liveFilters.daysFilter);
+    }
+
     // Filter by required free day
     if (liveFilters.requiredFreeDay) {
       list = list.filter((tt) => tt.free_days.includes(liveFilters.requiredFreeDay!));
@@ -151,11 +183,6 @@ export const ResultsBrowser: React.FC = () => {
           dayBlocks.some((b) => b.faculty_name.toLowerCase().includes(q))
         );
       });
-    }
-
-    // Filter by schedule shape
-    if (liveFilters.shapeFilter && liveFilters.shapeFilter !== "ALL") {
-      list = list.filter((tt) => matchesShape(tt, liveFilters.shapeFilter!));
     }
 
     // Sort
@@ -179,19 +206,62 @@ export const ResultsBrowser: React.FC = () => {
     return list;
   }, [rawTimetables, liveFilters]);
 
-  // Compute counts for all distinct timetable shapes across the generated set
-  const shapeCounts = useMemo(() => {
+  // Dynamic filter count calculations
+  const filterCounts = useMemo(() => {
     return {
-      ALL: rawTimetables.length,
-      MORNING: rawTimetables.filter((t) => matchesShape(t, "MORNING")).length,
-      AFTERNOON: rawTimetables.filter((t) => matchesShape(t, "AFTERNOON")).length,
-      FREE_DAYS: rawTimetables.filter((t) => matchesShape(t, "FREE_DAYS")).length,
-      COMPACT: rawTimetables.filter((t) => matchesShape(t, "COMPACT")).length,
-      BALANCED: rawTimetables.filter((t) => matchesShape(t, "BALANCED")).length
+      gaps: {
+        ALL: rawTimetables.length,
+        LESS: rawTimetables.filter((t) => getGapCategory(t) === "LESS").length,
+        MEDIUM: rawTimetables.filter((t) => getGapCategory(t) === "MEDIUM").length,
+        HIGH: rawTimetables.filter((t) => getGapCategory(t) === "HIGH").length
+      },
+      finish: {
+        ALL: rawTimetables.length,
+        EARLY: rawTimetables.filter((t) => getFinishCategory(t) === "EARLY").length,
+        MID: rawTimetables.filter((t) => getFinishCategory(t) === "MID").length,
+        LATE: rawTimetables.filter((t) => getFinishCategory(t) === "LATE").length
+      },
+      halfDays: {
+        ALL: rawTimetables.length,
+        HIGH: rawTimetables.filter((t) => getHalfDaysCategory(t) === "HIGH").length,
+        LESS: rawTimetables.filter((t) => getHalfDaysCategory(t) === "LESS").length
+      },
+      days: {
+        ALL: rawTimetables.length,
+        BALANCED: rawTimetables.filter((t) => getDaysCategory(t) === "BALANCED").length,
+        FOUR_DAY: rawTimetables.filter((t) => getDaysCategory(t) === "FOUR_DAY").length,
+        FIVE_DAY: rawTimetables.filter((t) => getDaysCategory(t) === "FIVE_DAY").length
+      }
     };
   }, [rawTimetables]);
 
-  const currentTimetable: GeneratedTimetable | undefined = filteredTimetables[currentResultIndex];
+  const activeFilterCount = useMemo(() => {
+    let count = 0;
+    if (liveFilters.gapsFilter && liveFilters.gapsFilter !== "ALL") count++;
+    if (liveFilters.finishFilter && liveFilters.finishFilter !== "ALL") count++;
+    if (liveFilters.halfDaysFilter && liveFilters.halfDaysFilter !== "ALL") count++;
+    if (liveFilters.daysFilter && liveFilters.daysFilter !== "ALL") count++;
+    if (liveFilters.requiredFreeDay) count++;
+    if (liveFilters.requiredFaculty) count++;
+    if (liveFilters.maxGapMinutes != null) count++;
+    return count;
+  }, [liveFilters]);
+
+  const resetAllFilters = () => {
+    setLiveFilters({
+      gapsFilter: "ALL",
+      finishFilter: "ALL",
+      halfDaysFilter: "ALL",
+      daysFilter: "ALL",
+      requiredFreeDay: null,
+      requiredFaculty: null,
+      maxGapMinutes: null,
+      sortBy: "score"
+    });
+  };
+
+  const safeIndex = filteredTimetables.length > 0 ? Math.min(currentResultIndex, filteredTimetables.length - 1) : 0;
+  const currentTimetable: GeneratedTimetable | undefined = filteredTimetables[safeIndex];
 
   // Arrow key navigation listener
   useEffect(() => {
@@ -199,19 +269,19 @@ export const ResultsBrowser: React.FC = () => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
 
       if (e.key === "ArrowLeft") {
-        if (currentResultIndex > 0) setCurrentResultIndex(currentResultIndex - 1);
+        if (safeIndex > 0) setCurrentResultIndex(safeIndex - 1);
       } else if (e.key === "ArrowRight") {
-        if (currentResultIndex < filteredTimetables.length - 1) {
-          setCurrentResultIndex(currentResultIndex + 1);
+        if (safeIndex < filteredTimetables.length - 1) {
+          setCurrentResultIndex(safeIndex + 1);
         }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentResultIndex, filteredTimetables.length, setCurrentResultIndex]);
+  }, [safeIndex, filteredTimetables.length, setCurrentResultIndex]);
 
-  // Check favourite status
-  const isCurrentFavourite = useMemo(() => {
+  // Check saved status
+  const isCurrentSaved = useMemo(() => {
     if (!currentTimetable) return false;
     const key = `tt:${currentTimetable.timetable_id}`;
     return favourites.some((f) => f.offering_key === key);
@@ -239,7 +309,7 @@ export const ResultsBrowser: React.FC = () => {
   }
 
   // If infeasible
-  if (filteredTimetables.length === 0) {
+  if (filteredTimetables.length === 0 && rawTimetables.length === 0) {
     const exp = generationResult.infeasible_explanation;
     return (
       <div className="max-w-4xl mx-auto py-12 px-4">
@@ -296,25 +366,25 @@ export const ResultsBrowser: React.FC = () => {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 py-6">
-      {/* 1. Results Navigation & Summary Top Bar */}
+      {/* 1. Results Navigation, Download Bar & Top Actions */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg flex flex-wrap items-center justify-between gap-4">
         {/* Left: Index Pager */}
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1 bg-slate-800 rounded-xl p-1 border border-slate-700">
             <button
-              onClick={() => setCurrentResultIndex(Math.max(0, currentResultIndex - 1))}
-              disabled={currentResultIndex === 0}
+              onClick={() => setCurrentResultIndex(Math.max(0, safeIndex - 1))}
+              disabled={safeIndex === 0}
               aria-label="Previous timetable"
               className="p-1.5 rounded-lg text-slate-300 hover:text-white disabled:opacity-40 disabled:hover:text-slate-300 transition"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <span className="px-3 text-xs font-mono font-bold text-slate-100">
-              {currentResultIndex + 1} / {filteredTimetables.length}
+              {filteredTimetables.length > 0 ? safeIndex + 1 : 0} / {filteredTimetables.length}
             </span>
             <button
-              onClick={() => setCurrentResultIndex(Math.min(filteredTimetables.length - 1, currentResultIndex + 1))}
-              disabled={currentResultIndex >= filteredTimetables.length - 1}
+              onClick={() => setCurrentResultIndex(Math.min(filteredTimetables.length - 1, safeIndex + 1))}
+              disabled={safeIndex >= filteredTimetables.length - 1}
               aria-label="Next timetable"
               className="p-1.5 rounded-lg text-slate-300 hover:text-white disabled:opacity-40 disabled:hover:text-slate-300 transition"
             >
@@ -323,7 +393,7 @@ export const ResultsBrowser: React.FC = () => {
           </div>
 
           <span className="text-xs text-slate-400 hidden sm:inline">
-            (of {generationResult.total_valid} total valid schedules)
+            (of {generationResult.total_valid} total layouts)
           </span>
 
           <span
@@ -337,28 +407,46 @@ export const ResultsBrowser: React.FC = () => {
           </span>
         </div>
 
-        {/* Right: Actions (Favourite, Compare, Print) */}
-        <div className="flex items-center gap-2">
-          {/* Favourite Button */}
+        {/* Right: Actions (Save Timetable, Compare, Downloads) */}
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Shapes Sidebar Toggle Button */}
           <button
-            aria-label="Bookmark this timetable"
+            onClick={() => setIsShapesSidebarVisible(!isShapesSidebarVisible)}
+            className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition ${
+              isShapesSidebarVisible
+                ? "bg-indigo-600/20 text-indigo-300 border-indigo-500/50"
+                : "bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500"
+            }`}
+            title="Toggle Shapes layout preview panel"
+          >
+            {isShapesSidebarVisible ? (
+              <PanelLeftClose className="w-3.5 h-3.5 text-indigo-400" />
+            ) : (
+              <PanelLeftOpen className="w-3.5 h-3.5 text-indigo-400" />
+            )}
+            <span>Shapes Panel</span>
+          </button>
+
+          {/* Saved Timetable Button (Matching Image 2 Stacked Drawer) */}
+          <button
+            aria-label="Save this timetable"
             onClick={() => {
               if (currentTimetable) {
-                setFavouriteName(`Schedule #${currentResultIndex + 1} (${currentTimetable.free_days.join(", ") || "5 days"})`);
-                setFavouriteModalTimetable(currentTimetable);
+                setSaveName(`Schedule #${safeIndex + 1} (${currentTimetable.free_days.join(", ") || "5 days"})`);
+                setSaveModalTimetable(currentTimetable);
               }
             }}
             className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition ${
-              isCurrentFavourite
-                ? "bg-amber-500/20 text-amber-300 border-amber-500/50"
+              isCurrentSaved
+                ? "bg-amber-500/20 text-amber-300 border-amber-500/50 shadow-sm shadow-amber-500/20"
                 : "bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500"
             }`}
           >
-            <Star className={`w-3.5 h-3.5 ${isCurrentFavourite ? "fill-amber-400 text-amber-400" : ""}`} />
-            {isCurrentFavourite ? "Favourited" : "Favourite"}
+            <Archive className={`w-3.5 h-3.5 ${isCurrentSaved ? "text-amber-400 fill-amber-400/30" : "text-slate-400"}`} />
+            <span>{isCurrentSaved ? "Saved" : "Save Timetable"}</span>
           </button>
 
-          {/* Compare Toggle Button */}
+          {/* Compare Button */}
           <button
             onClick={() => {
               if (currentTimetable) toggleCompareTimetable(currentTimetable.timetable_id);
@@ -370,7 +458,7 @@ export const ResultsBrowser: React.FC = () => {
             }`}
           >
             <GitCompare className="w-3.5 h-3.5" />
-            Compare ({comparedTimetableIds.length}/3)
+            <span>Compare ({comparedTimetableIds.length}/3)</span>
           </button>
 
           {comparedTimetableIds.length >= 2 && (
@@ -382,6 +470,54 @@ export const ResultsBrowser: React.FC = () => {
             </button>
           )}
 
+          {/* 1-Click Export Buttons Toolbar */}
+          <div className="flex items-center gap-1 bg-slate-850 p-1 rounded-xl border border-slate-750">
+            <button
+              onClick={() => currentTimetable && downloadTimetableExport(currentTimetable, "excel", setIsExporting)}
+              disabled={!currentTimetable || isExporting}
+              className="p-1.5 hover:bg-slate-700/80 rounded-lg text-emerald-400 hover:text-emerald-300 transition"
+              title="Download Excel (.xlsx)"
+            >
+              <FileSpreadsheet className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={() => currentTimetable && downloadTimetableExport(currentTimetable, "pdf", setIsExporting)}
+              disabled={!currentTimetable || isExporting}
+              className="p-1.5 hover:bg-slate-700/80 rounded-lg text-rose-400 hover:text-rose-300 transition"
+              title="Download PDF (.pdf)"
+            >
+              <FileText className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={() => currentTimetable && downloadTimetableExport(currentTimetable, "csv", setIsExporting)}
+              disabled={!currentTimetable || isExporting}
+              className="p-1.5 hover:bg-slate-700/80 rounded-lg text-cyan-400 hover:text-cyan-300 transition"
+              title="Download CSV (.csv)"
+            >
+              <FileText className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={() => currentTimetable && downloadTimetableExport(currentTimetable, "png", setIsExporting)}
+              disabled={!currentTimetable || isExporting}
+              className="p-1.5 hover:bg-slate-700/80 rounded-lg text-amber-400 hover:text-amber-300 transition"
+              title="Download PNG Image (.png)"
+            >
+              <ImageIcon className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={() => currentTimetable && downloadTimetableExport(currentTimetable, "bundle", setIsExporting)}
+              disabled={!currentTimetable || isExporting}
+              className="p-1.5 hover:bg-slate-700/80 rounded-lg text-indigo-400 hover:text-indigo-300 transition font-bold"
+              title="Download All Formats (.zip)"
+            >
+              <Download className="w-4 h-4" />
+            </button>
+          </div>
+
           {/* Print Button */}
           <button
             onClick={() => window.print()}
@@ -390,375 +526,360 @@ export const ResultsBrowser: React.FC = () => {
           >
             <Printer className="w-4 h-4" />
           </button>
+        </div>
+      </div>
 
-          {/* Export Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setIsExportMenuOpen(!isExportMenuOpen)}
-              disabled={!currentTimetable || isExporting}
-              className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white border border-indigo-500 text-xs font-semibold flex items-center gap-1.5 transition"
-              title="Export timetable in Excel, PDF, CSV, PNG, or ZIP"
-            >
-              <Download className="w-3.5 h-3.5" />
-              {isExporting ? "Exporting..." : "Export"}
-            </button>
-
-            {isExportMenuOpen && currentTimetable && (
-              <div className="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl z-50 py-1.5 text-xs">
-                <button
-                  onClick={() => {
-                    setIsExportMenuOpen(false);
-                    downloadTimetableExport(currentTimetable, "excel", setIsExporting);
-                  }}
-                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
-                >
-                  <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Excel (.xlsx)</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setIsExportMenuOpen(false);
-                    downloadTimetableExport(currentTimetable, "pdf", setIsExporting);
-                  }}
-                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
-                >
-                  <FileText className="w-3.5 h-3.5 text-rose-400" />
-                  <span>PDF Document (.pdf)</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setIsExportMenuOpen(false);
-                    downloadTimetableExport(currentTimetable, "csv", setIsExporting);
-                  }}
-                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
-                >
-                  <FileText className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>CSV File (.csv)</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setIsExportMenuOpen(false);
-                    downloadTimetableExport(currentTimetable, "png", setIsExporting);
-                  }}
-                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 text-slate-200 flex items-center gap-2"
-                >
-                  <ImageIcon className="w-3.5 h-3.5 text-amber-400" />
-                  <span>High-Res Image (.png)</span>
-                </button>
-                <div className="border-t border-slate-700 my-1"></div>
-                <button
-                  onClick={() => {
-                    setIsExportMenuOpen(false);
-                    downloadTimetableExport(currentTimetable, "bundle", setIsExporting);
-                  }}
-                  className="w-full text-left px-3.5 py-2 hover:bg-slate-700 font-semibold text-indigo-300 flex items-center gap-2"
-                >
-                  <Archive className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>All Formats (.zip)</span>
-                </button>
-              </div>
+      {/* 2. Comprehensive Multi-Dimensional Filters Bar */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-md space-y-3.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+          <div className="flex items-center gap-2">
+            <SlidersHorizontal className="w-4 h-4 text-indigo-400" />
+            <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+              Timetable Filters & Layout Controls
+            </span>
+            {activeFilterCount > 0 && (
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">
+                {activeFilterCount} Active
+              </span>
             )}
           </div>
-        </div>
-      </div>
 
-      {/* 2. Top Schedule Shape Filter Pills */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 shadow-md space-y-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1">
-          <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5 uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            Distinct Timetable Shapes ({rawTimetables.length} Unique Grid Layouts):
-          </span>
-          <span className="text-[11px] text-amber-300 font-mono font-semibold">
-            Showing Shape {filteredTimetables.length > 0 ? currentResultIndex + 1 : 0} of {filteredTimetables.length} distinct layouts
-          </span>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {[
-            { id: "ALL" as const, label: "All Variations", icon: "✨", count: shapeCounts.ALL },
-            { id: "MORNING" as const, label: "Morning Heavy", icon: "🌅", count: shapeCounts.MORNING },
-            { id: "AFTERNOON" as const, label: "Afternoon Heavy", icon: "🌇", count: shapeCounts.AFTERNOON },
-            { id: "FREE_DAYS" as const, label: "4-Day / Free Day", icon: "🌴", count: shapeCounts.FREE_DAYS },
-            { id: "COMPACT" as const, label: "Minimal Gaps", icon: "⚡", count: shapeCounts.COMPACT },
-            { id: "BALANCED" as const, label: "Balanced Load", icon: "⚖️", count: shapeCounts.BALANCED }
-          ].map((shape) => {
-            const isActive = (liveFilters.shapeFilter || "ALL") === shape.id;
-            return (
-              <button
-                key={shape.id}
-                onClick={() => setLiveFilters({ shapeFilter: shape.id })}
-                className={`px-3.5 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-2 transition active:scale-95 ${
-                  isActive
-                    ? "bg-amber-500/20 text-amber-300 border-amber-500/70 shadow-sm shadow-amber-500/20"
-                    : "bg-slate-800/80 hover:bg-slate-800 text-slate-300 border-slate-700/80 hover:border-slate-600"
-                }`}
-              >
-                <span>{shape.icon}</span>
-                <span>{shape.label}</span>
-                <span className={`px-1.5 py-0.5 rounded-md text-[10px] font-mono ${
-                  isActive ? "bg-amber-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-300"
-                }`}>
-                  {shape.count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* 3. Horizontal Variation Selector Ribbon */}
-      {filteredTimetables.length > 0 && (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3 shadow-md flex items-center gap-3">
-          {/* Previous Button */}
-          <button
-            onClick={() => setCurrentResultIndex(Math.max(0, currentResultIndex - 1))}
-            disabled={currentResultIndex === 0}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
-            title="Previous Variation (Left Arrow)"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-
-          {/* Scrollable Ribbon */}
-          <div className="flex-1 overflow-x-auto flex items-center gap-2 py-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
-            {filteredTimetables.map((tt, idx) => {
-              const isSelected = idx === currentResultIndex;
-              const badge = getTimetableShapeBadge(tt);
-              return (
-                <button
-                  key={tt.timetable_id}
-                  onClick={() => setCurrentResultIndex(idx)}
-                  className={`shrink-0 px-3 py-1.5 rounded-xl border text-left transition-all active:scale-95 ${
-                    isSelected
-                      ? "bg-slate-800 border-[#c6f052] ring-2 ring-[#c6f052]/60 shadow-lg shadow-[#c6f052]/10"
-                      : "bg-slate-850/80 hover:bg-slate-800 border-slate-750 text-slate-400 hover:text-slate-200"
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5">
-                    <span className={`text-[11px] font-bold font-mono ${isSelected ? "text-[#c6f052]" : "text-slate-300"}`}>
-                      Shape #{idx + 1}
-                    </span>
-                    <span className="text-[10px]">{badge.icon}</span>
-                    <span className="text-[10px] font-medium text-slate-300 truncate max-w-[90px]">
-                      {badge.label}
-                    </span>
-                  </div>
-                  <div className="text-[9px] font-mono text-slate-400 flex items-center gap-1.5 mt-0.5">
-                    <span>{tt.score.toFixed(1)} pts</span>
-                    <span>•</span>
-                    <span>{tt.working_days.length}d</span>
-                    {(() => {
-                      const teacherPerms = tt.course_options?.reduce(
-                        (acc, c) => acc * Math.max(1, c.available_teachers?.length || 1),
-                        1
-                      ) || 1;
-                      if (teacherPerms > 1) {
-                        return (
-                          <>
-                            <span>•</span>
-                            <span className="text-amber-400 font-semibold">{teacherPerms} fac</span>
-                          </>
-                        );
-                      }
-                      return null;
-                    })()}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Next Button */}
-          <button
-            onClick={() => setCurrentResultIndex(Math.min(filteredTimetables.length - 1, currentResultIndex + 1))}
-            disabled={currentResultIndex >= filteredTimetables.length - 1}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
-            title="Next Variation (Right Arrow)"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-
-          {/* Jump to index input */}
-          <div className="hidden sm:flex items-center gap-1.5 pl-2 border-l border-slate-800 shrink-0">
-            <span className="text-[11px] text-slate-400 font-medium">Jump #</span>
-            <input
-              type="number"
-              min={1}
-              max={filteredTimetables.length}
-              placeholder={String(currentResultIndex + 1)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  const val = parseInt((e.target as HTMLInputElement).value, 10);
-                  if (!isNaN(val) && val >= 1 && val <= filteredTimetables.length) {
-                    setCurrentResultIndex(val - 1);
-                    (e.target as HTMLInputElement).value = "";
-                  }
-                }
-              }}
-              className="w-14 bg-slate-800 border border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-100 font-mono text-center focus:outline-none focus:ring-1 focus:ring-amber-400"
-            />
-          </div>
-        </div>
-      )}
-
-      {/* 4. Live Filters & Sorting Bar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4 text-xs">
-        <div className="flex flex-wrap items-center gap-4">
-          <span className="font-semibold text-slate-400 flex items-center gap-1.5">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-400" />
-            Live Client Filters:
-          </span>
-
-          {/* Sort By Dropdown */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Sort:</span>
-            <select
-              value={liveFilters.sortBy}
-              onChange={(e) => setLiveFilters({ sortBy: e.target.value as any })}
-              className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
-            >
-              <option value="score">Overall Score</option>
-              <option value="fewest_gaps">Fewest Gaps</option>
-              <option value="most_free_days">Most Free Days</option>
-              <option value="best_rating">Best Faculty Rating</option>
-              <option value="earliest_finish">Earliest Daily Finish</option>
-            </select>
-          </div>
-
-          {/* Required Free Day Filter */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Must Have Free:</span>
-            <select
-              value={liveFilters.requiredFreeDay || ""}
-              onChange={(e) => setLiveFilters({ requiredFreeDay: e.target.value || null })}
-              className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
-            >
-              <option value="">Any Free Days</option>
-              <option value="MON">Monday Free</option>
-              <option value="FRI">Friday Free</option>
-              <option value="WED">Wednesday Free</option>
-            </select>
-          </div>
-
-          {/* Max Gap Filter */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Max Gap:</span>
-            <select
-              value={liveFilters.maxGapMinutes ?? ""}
-              onChange={(e) =>
-                setLiveFilters({
-                  maxGapMinutes: e.target.value ? parseInt(e.target.value) : null
-                })
-              }
-              className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
-            >
-              <option value="">Any Gap</option>
-              <option value="60">≤ 60 mins</option>
-              <option value="120">≤ 2 hours</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Score & Score Breakdown Tooltip */}
-        {currentTimetable && (
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1 rounded-xl border border-slate-700">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-              <span className="text-slate-400">Overall Score:</span>
-              <span className="font-bold text-slate-100 font-mono">
-                {currentTimetable.score.toFixed(3)}
-              </span>
+            {activeFilterCount > 0 && (
+              <button
+                onClick={resetAllFilters}
+                className="text-xs text-rose-400 hover:text-rose-300 flex items-center gap-1 font-semibold transition"
+              >
+                <RotateCcw className="w-3 h-3" />
+                Reset Filters
+              </button>
+            )}
+
+            <div className="flex items-center gap-1.5 text-xs text-slate-400">
+              <span>Sort:</span>
+              <select
+                value={liveFilters.sortBy}
+                onChange={(e) => setLiveFilters({ sortBy: e.target.value as any })}
+                className="bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none"
+              >
+                <option value="score">Overall Score</option>
+                <option value="fewest_gaps">Fewest Gaps</option>
+                <option value="most_free_days">Most Free Days</option>
+                <option value="best_rating">Best Faculty Rating</option>
+                <option value="earliest_finish">Earliest Daily Finish</option>
+              </select>
             </div>
           </div>
-        )}
-      </div>
+        </div>
 
-      {/* 3. Free-Time Summary & Metrics Bar */}
-      {currentTimetable && (
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase block">Free Days</span>
-            <span className="text-sm font-bold text-emerald-400 mt-0.5 block">
-              {currentTimetable.free_days.length > 0 ? currentTimetable.free_days.join(", ") : "0 days"}
+        {/* Filter Groups Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          {/* A. Free Gaps Filter */}
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1">
+              <Coffee className="w-3 h-3 text-amber-400" />
+              Free Gaps:
             </span>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                { id: "ALL" as const, label: "All Gaps", count: filterCounts.gaps.ALL },
+                { id: "LESS" as const, label: "Less (≤60m)", count: filterCounts.gaps.LESS },
+                { id: "MEDIUM" as const, label: "Med (61-180m)", count: filterCounts.gaps.MEDIUM },
+                { id: "HIGH" as const, label: "High (>180m)", count: filterCounts.gaps.HIGH }
+              ].map((opt) => {
+                const isActive = (liveFilters.gapsFilter || "ALL") === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => setLiveFilters({ gapsFilter: opt.id })}
+                    className={`px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-amber-500/20 text-amber-300 border-amber-500/70 shadow-sm"
+                        : "bg-slate-800 hover:bg-slate-750 text-slate-300 border-slate-700"
+                    }`}
+                  >
+                    <span>{opt.label}</span>
+                    <span className={`px-1 py-0.2 rounded text-[9px] font-mono ${isActive ? "bg-amber-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-400"}`}>
+                      {opt.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase block">Weekly Class Time</span>
-            <span className="text-sm font-bold text-slate-100 mt-0.5 block">
-              {(totalWeeklyClassMinutes / 60).toFixed(1)} hrs
+          {/* B. Daily Finish Time Filter */}
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1">
+              <Clock className="w-3 h-3 text-cyan-400" />
+              Daily Finish:
             </span>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                { id: "ALL" as const, label: "Any Finish", count: filterCounts.finish.ALL },
+                { id: "EARLY" as const, label: "Early (≤15:40)", count: filterCounts.finish.EARLY },
+                { id: "MID" as const, label: "Mid (15:50-17:30)", count: filterCounts.finish.MID },
+                { id: "LATE" as const, label: "Late (>17:30)", count: filterCounts.finish.LATE }
+              ].map((opt) => {
+                const isActive = (liveFilters.finishFilter || "ALL") === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => setLiveFilters({ finishFilter: opt.id })}
+                    className={`px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-cyan-500/20 text-cyan-300 border-cyan-500/70 shadow-sm"
+                        : "bg-slate-800 hover:bg-slate-750 text-slate-300 border-slate-700"
+                    }`}
+                  >
+                    <span>{opt.label}</span>
+                    <span className={`px-1 py-0.2 rounded text-[9px] font-mono ${isActive ? "bg-cyan-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-400"}`}>
+                      {opt.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase block">Total Idle Gaps</span>
-            <span className="text-sm font-bold text-indigo-300 mt-0.5 block">
-              {totalGapMinutes} mins
+          {/* C. Half Days Filter */}
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1">
+              <Sun className="w-3 h-3 text-orange-400" />
+              Half Days (Morning/Afternoon):
             </span>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                { id: "ALL" as const, label: "Any", count: filterCounts.halfDays.ALL },
+                { id: "HIGH" as const, label: "High Half Days (≥3d)", count: filterCounts.halfDays.HIGH },
+                { id: "LESS" as const, label: "Less Half Days (<3d)", count: filterCounts.halfDays.LESS }
+              ].map((opt) => {
+                const isActive = (liveFilters.halfDaysFilter || "ALL") === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => setLiveFilters({ halfDaysFilter: opt.id })}
+                    className={`px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-orange-500/20 text-orange-300 border-orange-500/70 shadow-sm"
+                        : "bg-slate-800 hover:bg-slate-750 text-slate-300 border-slate-700"
+                    }`}
+                  >
+                    <span>{opt.label}</span>
+                    <span className={`px-1 py-0.2 rounded text-[9px] font-mono ${isActive ? "bg-orange-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-400"}`}>
+                      {opt.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase block">Daily Window</span>
-            <span className="text-sm font-bold text-slate-100 mt-0.5 block">
-              {currentTimetable.earliest_start || "--"} – {currentTimetable.latest_end || "--"}
+          {/* D. Workload / Days Filter */}
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1">
+              <Calendar className="w-3 h-3 text-emerald-400" />
+              Days & Workload:
             </span>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center col-span-2 sm:col-span-1">
-            <span className="text-[10px] text-slate-400 font-semibold uppercase block">Avg Faculty Rating</span>
-            <span className="text-sm font-bold text-amber-300 mt-0.5 block">
-              {currentTimetable.avg_faculty_rating != null
-                ? `${currentTimetable.avg_faculty_rating.toFixed(2)} ★`
-                : "Unrated"}
-            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                { id: "ALL" as const, label: "All", count: filterCounts.days.ALL },
+                { id: "BALANCED" as const, label: "Balanced Load", count: filterCounts.days.BALANCED },
+                { id: "FOUR_DAY" as const, label: "4-Day Week", count: filterCounts.days.FOUR_DAY },
+                { id: "FIVE_DAY" as const, label: "5-Day Week", count: filterCounts.days.FIVE_DAY }
+              ].map((opt) => {
+                const isActive = (liveFilters.daysFilter || "ALL") === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => setLiveFilters({ daysFilter: opt.id })}
+                    className={`px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/70 shadow-sm"
+                        : "bg-slate-800 hover:bg-slate-750 text-slate-300 border-slate-700"
+                    }`}
+                  >
+                    <span>{opt.label}</span>
+                    <span className={`px-1 py-0.2 rounded text-[9px] font-mono ${isActive ? "bg-emerald-400 text-slate-950 font-bold" : "bg-slate-700 text-slate-400"}`}>
+                      {opt.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-      )}
+      </div>
 
-      {/* 4. The Timetable Grid */}
-      {currentTimetable && (
-        <WeeklyTimetable
-          timeline={currentTimetable.per_day_timeline}
-          courseTitles={courseTitlesMap}
-          courseCredits={courseCreditsMap}
-          timetableObj={currentTimetable}
-          title={`Distinct Timetable Shape #${currentResultIndex + 1} of ${filteredTimetables.length}`}
-          subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")} • Swap teachers in the table below to keep this exact shape`}
-          onReset={() => setActiveTab("planner")}
-        />
-      )}
+      {/* Main Two-Column View: Shapes Sidebar (Left) + Timetable (Right) */}
+      <div className={`grid grid-cols-1 ${isShapesSidebarVisible ? "lg:grid-cols-12" : ""} gap-6 items-start`}>
+        {/* Left Column: Shapes Sidebar (Image 1) */}
+        {isShapesSidebarVisible && (
+          <div className="lg:col-span-3 sticky top-20">
+            <ShapesSidebar
+              timetables={filteredTimetables}
+              selectedIndex={safeIndex}
+              onSelectIndex={setCurrentResultIndex}
+            />
+          </div>
+        )}
 
-      {/* Modal: Save to Favourites */}
-      {favouriteModalTimetable && (
+        {/* Right Column: Timetable Content */}
+        <div className={`${isShapesSidebarVisible ? "lg:col-span-9" : "col-span-12"} space-y-6 min-w-0`}>
+          {/* Horizontal Quick Ribbon */}
+          {filteredTimetables.length > 0 && (
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3 shadow-md flex items-center gap-3">
+              <button
+                onClick={() => setCurrentResultIndex(Math.max(0, safeIndex - 1))}
+                disabled={safeIndex === 0}
+                className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
+                title="Previous Variation"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              <div className="flex-1 overflow-x-auto flex items-center gap-2 py-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+                {filteredTimetables.map((tt, idx) => {
+                  const isSelected = idx === safeIndex;
+                  const badge = getTimetableShapeBadge(tt);
+                  return (
+                    <button
+                      key={tt.timetable_id || `ribbon-${idx}`}
+                      onClick={() => setCurrentResultIndex(idx)}
+                      className={`shrink-0 px-3 py-1.5 rounded-xl border text-left transition-all active:scale-95 ${
+                        isSelected
+                          ? "bg-slate-800 border-[#c6f052] ring-2 ring-[#c6f052]/60 shadow-lg shadow-[#c6f052]/10"
+                          : "bg-slate-850/80 hover:bg-slate-800 border-slate-750 text-slate-400 hover:text-slate-200"
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5">
+                        <span className={`text-[11px] font-bold font-mono ${isSelected ? "text-[#c6f052]" : "text-slate-300"}`}>
+                          Shape #{idx + 1}
+                        </span>
+                        <span className="text-[10px]">{badge.icon}</span>
+                        <span className="text-[10px] font-medium text-slate-300 truncate max-w-[90px]">
+                          {badge.label}
+                        </span>
+                      </div>
+                      <div className="text-[9px] font-mono text-slate-400 flex items-center gap-1.5 mt-0.5">
+                        <span>{tt.score.toFixed(1)} pts</span>
+                        <span>•</span>
+                        <span>{tt.working_days.length}d</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={() => setCurrentResultIndex(Math.min(filteredTimetables.length - 1, safeIndex + 1))}
+                disabled={safeIndex >= filteredTimetables.length - 1}
+                className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 disabled:opacity-40 disabled:hover:bg-slate-800 transition shrink-0"
+                title="Next Variation"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+
+          {/* Free-Time Summary & Metrics Bar */}
+          {currentTimetable && (
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
+                <span className="text-[10px] text-slate-400 font-semibold uppercase block">Free Days</span>
+                <span className="text-sm font-bold text-emerald-400 mt-0.5 block">
+                  {currentTimetable.free_days.length > 0 ? currentTimetable.free_days.join(", ") : "0 days"}
+                </span>
+              </div>
+
+              <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
+                <span className="text-[10px] text-slate-400 font-semibold uppercase block">Weekly Class Time</span>
+                <span className="text-sm font-bold text-slate-100 mt-0.5 block">
+                  {(totalWeeklyClassMinutes / 60).toFixed(1)} hrs
+                </span>
+              </div>
+
+              <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
+                <span className="text-[10px] text-slate-400 font-semibold uppercase block">Total Idle Gaps</span>
+                <span className="text-sm font-bold text-indigo-300 mt-0.5 block">
+                  {totalGapMinutes} mins
+                </span>
+              </div>
+
+              <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
+                <span className="text-[10px] text-slate-400 font-semibold uppercase block">Daily Window</span>
+                <span className="text-sm font-bold text-slate-100 mt-0.5 block">
+                  {currentTimetable.earliest_start || "--"} – {currentTimetable.latest_end || "--"}
+                </span>
+              </div>
+
+              <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center col-span-2 sm:col-span-1">
+                <span className="text-[10px] text-slate-400 font-semibold uppercase block">Avg Faculty Rating</span>
+                <span className="text-sm font-bold text-amber-300 mt-0.5 block">
+                  {currentTimetable.avg_faculty_rating != null
+                    ? `${currentTimetable.avg_faculty_rating.toFixed(2)} ★`
+                    : "Unrated"}
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* The Timetable Grid */}
+          {currentTimetable ? (
+            <WeeklyTimetable
+              timeline={currentTimetable.per_day_timeline}
+              courseTitles={courseTitlesMap}
+              courseCredits={courseCreditsMap}
+              timetableObj={currentTimetable}
+              title={`Distinct Timetable Shape #${safeIndex + 1} of ${filteredTimetables.length}`}
+              subtitle={`Score: ${currentTimetable.score.toFixed(3)} • Working Days: ${currentTimetable.working_days.join(", ")} • Swap teachers in the table below to keep this exact shape`}
+              onReset={() => setActiveTab("planner")}
+            />
+          ) : (
+            <div className="p-12 text-center bg-slate-900 border border-slate-800 rounded-2xl">
+              <p className="text-slate-400 text-sm">No timetables match the selected filters.</p>
+              <button
+                onClick={resetAllFilters}
+                className="mt-3 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold"
+              >
+                Reset All Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Modal: Save to Saved Timetables (Image 2) */}
+      {saveModalTimetable && (
         <div
           className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 z-50"
-          onClick={() => setFavouriteModalTimetable(null)}
+          onClick={() => setSaveModalTimetable(null)}
         >
           <div
             className="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             <h4 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-              <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-              Save Timetable to Favourites
+              <Archive className="w-5 h-5 text-amber-400 fill-amber-400/20" />
+              Save Timetable
             </h4>
             <p className="text-xs text-slate-400 mt-1">
-              Give this timetable a custom nickname to quickly compare or reopen it later in the Planner.
+              Give this timetable a custom nickname to quickly compare, export, or reopen it later in the Planner.
             </p>
 
             <div className="mt-4">
               <label className="block text-xs font-semibold text-slate-300 mb-1">Schedule Name</label>
               <input
                 type="text"
-                value={favouriteName}
-                onChange={(e) => setFavouriteName(e.target.value)}
+                value={saveName}
+                onChange={(e) => setSaveName(e.target.value)}
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
 
             <div className="mt-6 flex justify-end gap-3">
               <button
-                onClick={() => setFavouriteModalTimetable(null)}
+                onClick={() => setSaveModalTimetable(null)}
                 className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-semibold transition"
               >
                 Cancel
@@ -766,15 +887,15 @@ export const ResultsBrowser: React.FC = () => {
               <button
                 onClick={async () => {
                   await toggleFavouriteTimetable(
-                    favouriteName || "Saved Timetable",
-                    favouriteModalTimetable.offering_keys,
-                    favouriteModalTimetable
+                    saveName || "Saved Timetable",
+                    saveModalTimetable.offering_keys,
+                    saveModalTimetable
                   );
-                  setFavouriteModalTimetable(null);
+                  setSaveModalTimetable(null);
                 }}
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold transition"
               >
-                Save to Favourites
+                Save Timetable
               </button>
             </div>
           </div>

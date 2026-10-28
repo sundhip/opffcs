@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 import { FavouriteItem } from "../../types";
 import { downloadFavouritesZip } from "../../utils/exporter";
 import {
-  Star,
+  Archive,
   Trash2,
   Edit2,
   Play,
@@ -51,14 +51,14 @@ export const FavouritesPage: React.FC = () => {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 py-6">
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex items-center justify-between">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-            <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-            Bookmarked & Favourite Timetables
+            <Archive className="w-5 h-5 text-indigo-400" />
+            Saved Timetables
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Re-open any saved timetable in the Planner, edit notes, or check for dataset staleness.
+            Re-open any saved timetable in the Planner, edit notes, or export conflict-free schedules.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ export const FavouritesPage: React.FC = () => {
             onClick={() => downloadFavouritesZip()}
             disabled={favourites.length === 0}
             className="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed border border-indigo-500 rounded-xl text-xs font-semibold text-white flex items-center gap-1.5 transition"
-            title="Export all favourites as a ZIP archive"
+            title="Export all saved timetables as a ZIP archive"
           >
             <Download className="w-3.5 h-3.5" />
-            Export All (.zip)
+            Export All Saved (.zip)
           </button>
           <span className="px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-xl text-xs font-semibold text-slate-300">
             {favourites.length} Saved Schedule(s)
@@ -80,10 +80,10 @@ export const FavouritesPage: React.FC = () => {
 
       {favourites.length === 0 ? (
         <div className="bg-slate-900 border border-slate-800 rounded-3xl p-12 text-center max-w-md mx-auto">
-          <Star className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-slate-200">No Favourites Saved Yet</h3>
+          <Archive className="w-12 h-12 text-slate-600 mx-auto mb-3" />
+          <h3 className="text-base font-bold text-slate-200">No Timetables Saved Yet</h3>
           <p className="text-xs text-slate-400 mt-1">
-            When browsing generated schedules in the Results tab, click "Favourite" to save them here.
+            When browsing generated schedules in the Timetables tab, click "Save Timetable" to bookmark them here.
           </p>
           <button
             onClick={() => setActiveTab("planner")}
