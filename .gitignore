@@ -3,14 +3,18 @@ data/privacy_salt.txt
 .salt
 .secrets/
 
-# Databases
-*.db
+# Databases (ignore temporary WAL files, track seeded app.db)
 *.db-shm
 *.db-wal
-data/app.db*
+data/app.db-shm
+data/app.db-wal
+ffcs.db
+data/backups/
+!data/app.db
 
-# Raw user uploads & chat ZIPs
-data/raw/
+# Raw user uploads & chat ZIPs (ignore large zips, track canonical excel)
+data/raw/*
+!data/raw/subject_teachers_slots_reviews_corrected_v2.xlsx
 
 # Python & Caches
 __pycache__/
