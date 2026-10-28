@@ -125,7 +125,10 @@ TEACHING_KEYWORDS = [
     "good", "great", "best", "chill", "lenient", "strict", "marks", "teaching",
     "average", "cats", "fat", "da", "correction", "attendance", "ppt", "notes",
     "quiz", "project", "lab", "friendly", "worst", "bad", "avoid", "easy", "grading",
-    "internal", "super", "nice", "fine", "helpful", "waste", "strict correction"
+    "internal", "super", "nice", "fine", "helpful", "waste", "strict correction",
+    "better", "recommend", "take", "choose", "skip", "score", "grade", "faculty",
+    "prof", "sir", "madam", "mam", "paper", "exam", "clear", "doubt", "subject",
+    "experience", "explains", "knowledgeable", "decent", "strictness", "pass", "fail"
 ]
 
 def classify_review_kind(text: str, explicit_rating: Optional[float]) -> str:
@@ -134,11 +137,10 @@ def classify_review_kind(text: str, explicit_rating: Optional[float]) -> str:
     t_lower = text.lower()
     if any(p in t_lower for p in ["have:", "want:", "need:"]) or (t_lower.startswith("have") and "want" in t_lower):
         return "swap"
-    if any(k in t_lower for k in TEACHING_KEYWORDS):
-        return "feedback"
     if t_lower.strip().startswith("how is") or t_lower.strip().startswith("hows") or t_lower.strip().startswith("how's") or t_lower.strip().startswith("any review"):
         return "inquiry"
-    return "general"
+    # All matched student opinion messages are genuine reviews/feedback
+    return "feedback"
 
 def extract_review_tags(text: str, explicit_rating: Optional[float]) -> List[str]:
     tags = []
@@ -165,7 +167,7 @@ def extract_review_tags(text: str, explicit_rating: Optional[float]) -> List[str
 def get_faculty_detail(
     faculty_id: str,
     search: Optional[str] = None,
-    review_type: Optional[str] = Query("feedback", description="feedback | rating | all"),
+    review_type: Optional[str] = Query("all", description="all | feedback | rating"),
     reviews_limit: int = Query(30, ge=1, le=100),
     reviews_offset: int = Query(0, ge=0),
     db: Session = Depends(get_db)
@@ -235,13 +237,16 @@ def get_faculty_detail(
         if kind == "feedback":
             feedback_items.append(item)
 
-    # Sort all items so feedback & ratings appear first, then by confidence and date
-    all_items.sort(key=lambda x: (
+    # Sort items so ratings & rich feedback appear first, then by confidence and date
+    sort_key = lambda x: (
         x["explicit_rating"] is not None,
         x["kind"] == "feedback",
         x["confidence"] or 0,
         x["timestamp"] or ""
-    ), reverse=True)
+    )
+    all_items.sort(key=sort_key, reverse=True)
+    feedback_items.sort(key=sort_key, reverse=True)
+    rating_items.sort(key=sort_key, reverse=True)
 
     # Filter by review_type
     if review_type == "rating":

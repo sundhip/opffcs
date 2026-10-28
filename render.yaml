@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: op-ffcs
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: RESUMIO_HOST
+        value: 0.0.0.0
+      - key: ALLOWED_ORIGINS
+        value: "*"

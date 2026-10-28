@@ -41,26 +41,13 @@ export const FacultyView: React.FC = () => {
   const [facultyDetail, setFacultyDetail] = useState<FacultyDetail | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
   const [reviewSearch, setReviewSearch] = useState("");
-  const [reviewType, setReviewType] = useState<"feedback" | "rating" | "all">("feedback");
+  const [reviewType, setReviewType] = useState<"feedback" | "rating" | "all">("all");
   const [reviewsOffset, setReviewsOffset] = useState(0);
 
   // Comparison view modal
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [compareData, setCompareData] = useState<any[]>([]);
   const [isLoadingCompare, setIsLoadingCompare] = useState(false);
-
-  // Auto-select faculty with reviews on initial mount if none selected
-  useEffect(() => {
-    if (!selectedFacultyId && facultyList.length > 0) {
-      const withReviews = [...facultyList].filter((f) => f.review_count > 0);
-      if (withReviews.length > 0) {
-        withReviews.sort((a, b) => b.review_count - a.review_count);
-        setSelectedFacultyId(withReviews[0].id);
-      } else {
-        setSelectedFacultyId(facultyList[0].id);
-      }
-    }
-  }, [selectedFacultyId, facultyList, setSelectedFacultyId]);
 
   // Fetch detail when selectedFacultyId, reviewSearch, reviewType or reviewsOffset changes
   useEffect(() => {
@@ -449,6 +436,22 @@ export const FacultyView: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => {
+                          setReviewType("all");
+                          setReviewsOffset(0);
+                        }}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
+                          reviewType === "all"
+                            ? "bg-indigo-600 text-white shadow-sm"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        <MessageSquare className="w-3.5 h-3.5" />
+                        <span>All Student Reviews ({facultyDetail.reviews.all_count ?? facultyDetail.reviews.total})</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => {
                           setReviewType("feedback");
                           setReviewsOffset(0);
                         }}
@@ -458,8 +461,8 @@ export const FacultyView: React.FC = () => {
                             : "text-neutral-400 hover:text-white"
                         }`}
                       >
-                        <Sparkles className="w-3 h-3" />
-                        <span>Genuine Feedback ({facultyDetail.reviews.feedback_count ?? facultyDetail.reviews.total})</span>
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Direct Feedback ({facultyDetail.reviews.feedback_count ?? facultyDetail.reviews.total})</span>
                       </button>
 
                       <button
@@ -474,23 +477,8 @@ export const FacultyView: React.FC = () => {
                             : "text-neutral-400 hover:text-white"
                         }`}
                       >
-                        <Star className="w-3 h-3 fill-current" />
+                        <Star className="w-3.5 h-3.5 fill-current" />
                         <span>With Ratings ({facultyDetail.reviews.rating_count ?? 0})</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setReviewType("all");
-                          setReviewsOffset(0);
-                        }}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
-                          reviewType === "all"
-                            ? "bg-neutral-800 text-white shadow-sm"
-                            : "text-neutral-400 hover:text-white"
-                        }`}
-                      >
-                        <span>All Mentions ({facultyDetail.reviews.all_count ?? facultyDetail.reviews.total})</span>
                       </button>
                     </div>
 

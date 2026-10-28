@@ -114,3 +114,12 @@ def index_page():
     </div>
 </body>
 </html>"""
+
+@app.get("/{full_path:path}", response_class=HTMLResponse)
+def catch_all_spa(full_path: str):
+    """Client-side routing fallback so page refreshes and direct links in SPA work seamlessly."""
+    if not full_path.startswith("api") and not full_path.startswith("docs") and not full_path.startswith("redoc"):
+        index_file = FRONTEND_DIST / "index.html"
+        if index_file.exists():
+            return index_file.read_text(encoding="utf-8")
+    return index_page()
